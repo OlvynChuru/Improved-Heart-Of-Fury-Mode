@@ -1,0 +1,1548 @@
+@20103=~Cure Light Wounds
+(Necromancy)
+
+Level: 1
+Sphere: Healing
+Range: Touch
+Duration: Instant
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest heals 10 Hit Points to the creature's body and cures intoxication. This spell has no effect on undead, constructs, or extraplanar creatures.~
+@20110=~Shillelagh
+(Alteration)
+
+Level: 1
+Sphere: Combat, Plant
+Range: 0
+Duration: 4 rounds + 1 round/level
+Casting Time: 2
+Area of Effect: The caster
+Saving Throw: None
+
+This spell enables the caster to create a magical club that grants a +5 bonus to attack rolls and inflicts 2d4+5 points of damage. The club's enchantment level is +5 for determining which creatures it can hit. Strength, proficiency, and specialization bonuses and penalties apply normally.~
+@20113=~Doom
+(Alteration)
+
+Level: 1
+Sphere: Charm
+Range: 25 ft.
+Duration: 1 turn
+Casting Time: 9
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell causes a feeling of doom to overwhelm the target. For the duration of the spell, the target receives a -2 penalty to its attack rolls and Saving Throws. There is no Saving Throw for this spell. Multiple Doom spells are cumulative, giving the target additional penalties.~
+@20114=~Cause Light Wounds
+(Necromancy)
+
+Level: 1
+Sphere: Healing
+Range: Touch
+Duration: Instant
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+By casting this spell and touching a creature, the priest deals 10 points of damage to the creature's body. This spell has no effect on undead, constructs, or extraplanar creatures. It cannot be cast by good-aligned characters.~
+@20203=~Chant
+(Conjuration/Summoning)
+
+Level: 2
+Sphere: Combat
+Range: Visual range of the caster
+Duration: 1 turn
+Casting Time: 9
+Area of Effect: 60-ft. radius
+Saving Throw: None
+
+By means of the Chant spell, the priest brings special favor upon <PRO_HIMHER>self and <PRO_HISHER> party and causes harm to <PRO_HISHER> enemies. When the Chant spell is completed, all the priest's allies within the area of effect gain a +1 bonus to attack rolls, minimum damage rolls, and Saving Throws. Furthermore, damage dice for all effects outside a weapon's base damage is reduced by 1. For example, a 6d6 fireball will do 6d5 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d2 fire damage instead. The priest's enemies suffer from the opposite effects.
+
+Multiple chants are not cumulative.~
+@20206=~Flame Blade
+(Evocation)
+
+Level: 2
+Sphere: Elemental Fire
+Range: 0
+Duration: 4 rounds + 1 round/level
+Casting Time: 4
+Area of Effect: The caster
+Saving Throw: None
+
+With this spell, the caster causes a blazing ray of red-hot fire to spring forth from <PRO_HISHER> hand. The blade uses the scimitar proficiency, but it will make the caster proficient with scimitars if <PRO_HESHE> is not already proficient with them. The blade deals no physical damage, but it deals 4d8 fire damage with each hit and will deal double damage on a critical hit just like a normal weapon would. It counts as a +1 weapon for determining what it can hit, but it does not get an enchantment bonus to hit or damage. It does not get any bonus to damage from Strength, but it will get a THAC0 bonus when wielded by a strong character. Effects that cause a character to deal maximum damage will not cause this weapon to deal maximum damage.~
+@20207=~Goodberry
+(Alteration, Evocation)
+
+Level: 2
+Sphere: Plant
+Range: Touch
+Duration: Permanent
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: None
+
+Casting a Goodberry spell creates 3 magical berries that the caster can carry with <PRO_HIMHER>. Each berry restores 4 Hit Points when eaten.~
+@20209=~Know Alignment
+(Divination)
+
+Level: 2
+Sphere: Divination
+Range: Visual range of the caster
+Duration: 1 turn
+Casting Time: 9
+Area of Effect: 1 creature
+Saving Throw: None
+
+A Know Alignment spell enables the priest to read the aura of a creature. Evil creatures will glow red, neutrals blue, and good creatures will glow green for a brief period. There is no Saving Throw.~
+@20217=~Cure Moderate Wounds
+(Necromancy)
+
+Level: 2
+Sphere: Healing
+Range: Touch
+Duration: Instant
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+A stronger version of the 1st-level priest spell Cure Light Wounds, Cure Moderate Wounds heals 15 Hit Points and cures intoxication. This spell has no effect on undead, constructs, or extraplanar creatures.~
+@20218=~Alicorn Lance
+(Invocation)
+
+Level: 2
+Sphere: Combat
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell creates a silver-hued, partially ethereal lance shaped in the form of an alicorn (a unicorn horn). The caster chooses a target, and the alicorn lance instantaneously fires at it, inflicting 4d6 points of piercing damage with no saving throw possible. Although the alicorn lance dissipates after it strikes, it always leaves a silvery radiance around the target that makes it easier to see and hit, giving it a -2 penalty to its Armor Class for 3 rounds. The target's Magic Resistance, if it has any, does not affect this spell.~
+@20219=~Beast Claw
+(Alteration)
+
+Level: 2
+Sphere: Combat
+Range: 0
+Duration: 1 turn
+Casting Time: 5
+Area of Effect: The caster
+Saving Throw: None
+
+This spell transforms the caster's arms into the claws of a mighty beast, giving the caster +3 Strength and the ability to rake an opponent for 2d10 (plus Strength bonus) points of slashing damage. The caster can attack two additional times per round with the beast claws, with a +2 bonus to hit. The beast claws count as nonmagical weapons.~
+@20220=~Cause Moderate Wounds
+(Necromancy)
+
+Level: 2
+Sphere: Healing
+Range: Touch
+Duration: Instant
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+By casting this spell and touching a creature, the priest deals 15 points of damage to the creature's body. This spell has no effect on undead, constructs, or extraplanar creatures. It cannot be cast by good-aligned characters.~
+@20303=~Dispel Magic
+(Abjuration)
+
+Level: 3
+Sphere: Protection
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 6
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+Dispel Magic removes magical effects upon anyone within the area of effect, including deafness and feeblemindedness. This includes magically created items and the effects of spells and potions. It does not, however, affect magical items themselves.~
+@20311=~Rigid Thinking
+(Enchantment/Charm)
+
+Level: 3
+Sphere: Law
+Range: Visual range of the caster
+Duration: 1 round/level
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+The target of this spell must make a Save vs. Spell at -2 or randomly wander, attack the nearest person, or stand confused.~
+@20312=~Strength of One
+(Alteration)
+
+Level: 3
+Sphere: Law
+Range: 0
+Duration: 7 rounds
+Casting Time: 3
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+When this spell is cast, party members within the area of effect are given a Strength score of 20. If a party member has a Strength higher than this (either naturally or through a magical item), their Strength remains unchanged. The spell lasts for 7 rounds, whereupon everyone's Strength returns to normal.~
+@20315=~Cure Medium Wounds
+(Necromancy)
+
+Level: 3
+Sphere: Healing
+Range: Touch
+Duration: Instant
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: None
+
+By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest heals 20 Hit Points to the creature's body. This spell has no effect on undead, constructs, or extraplanar creatures.~
+@20321=~Exaltation
+(Abjuration)
+
+Level: 3
+Sphere: Healing
+Range: Touch
+Duration: 1 turn
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell enables a priest to aid and protect any one being. By touch, the caster removes the effects of fear, sleep, feeblemindedness, unconsciousness, and intoxication, as well as berserk and confused states of mind. In addition, the recipient is protected against spells and other attacks that cause these effects for the duration of the spell.~
+@20322=~Moonblade
+(Invocation)
+
+Level: 3
+Sphere: Combat, Sun
+Range: 0
+Duration: 2 turns
+Casting Time: 6
+Area of Effect: The caster
+Saving Throw: None
+
+This spell summons forth a silent, weightless sword-like construct made of moonlight that extends four feet from the caster's hand. The moonblade is considered a +4 weapon for determining what creatures it can hit, though the bonus does not apply to attack rolls made with it. In addition, due to the insubstantial nature of the moonblade, damage bonuses from Strength do not apply, though to hit bonuses do. The moonblade uses the scimitar proficiency, but it gives the wielder proficiency in scimitars unless <PRO_HESHE> already has it.
+
+The strike of a moonblade drains a target's vitality, inflicting 1d12+4 points of magic damage, plus an additional 2d12 points to undead, who are particularly susceptible. A successful strike also temporarily scrambles magic, causing any spells the target casts in the next round to fail.~
+@20330=~Cause Medium Wounds
+(Necromancy)
+
+Level: 3
+Sphere: Healing
+Range: Touch
+Duration: Instant
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: None
+
+By casting this spell and touching a creature, the priest deals 20 points of damage to the creature's body. This spell has no effect on undead, constructs, or extraplanar creatures. Cause Medium Wounds cannot be cast by good-aligned characters.~
+@20401=~Cure Serious Wounds
+(Necromancy)
+
+Level: 4
+Sphere: Healing
+Range: Touch
+Duration: Instant
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: None
+
+By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest heals 30 Hit Points and cures intoxication. This spell has no effect on undead, constructs, or extraplanar creatures.~
+@20411=~Poison
+(Necromancy)
+
+Level: 4
+Sphere: Healing
+Range: Touch
+Duration: 60 seconds
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+This spell grants the caster the ability to touch a creature and instantly poison it unless it makes a successful Save vs. Poison at -3. The poison deals 60 points of damage over 60 seconds and then dissipates from the target's body. Poison can only be cast by evil-aligned characters.~
+@20413=~Negative Plane Protection
+(Abjuration)
+
+Level: 4
+Sphere: Protection, Necromantic
+Range: Touch
+Duration: 9 rounds
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell affords the caster or the touched creature partial protection from undead monsters with Negative Energy Plane connections (such as vampires) and certain weapons and spells that drain energy levels. Negative Plane Protection opens a channel to the Positive Energy Plane, offsetting the effects of the negative energy attack. A creature under its effects is protected against any form of level draining for the duration of the spell, as well as the Strength draining of shadows. The creature also has protection from the spells Larloch's Minor Drain, Ray of Enfeeblement, Vampiric Touch, Soul Eater, Darts of Bone, Energy Drain, Cause Wounds, Harm, Unholy Blight, Cloud of Pestilence, Wither, Ethereal Retribution, Absorb Health, and some innate abilities of certain undead. This spell cannot be cast on the Negative Energy Plane.~
+@20414=~Cause Serious Wounds
+(Necromancy)
+
+Level: 4
+Sphere: Healing
+Range: Touch
+Duration: Instant
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: None
+
+By casting this spell and touching a creature, the priest deals 30 points of damage to the creature's body. This spell has no effect on undead, constructs, or extraplanar creatures. It cannot be cast by good-aligned characters.~
+@20415=~Farsight
+(Divination)
+
+Level: 4
+Range: Special
+Duration: 3 rounds + 1 round/level
+Casting Time: Instant
+Area of Effect: Special
+Saving Throw: None
+
+When Farsight is cast, the caster is able to view an area of an unexplored map. After casting the spell, simply click on a section of the map that you want to view. For the duration of the spell, the caster can spy on that area, noting creatures and fortifications.
+
+Farsight has no casting time, can be cast immediately after another spell, and can be cast while the game is paused.~
+@20419=~Produce Fire
+(Alteration)
+
+Level: 4
+Sphere: Elemental Fire
+Range: Visual range of the caster
+Duration: 1 round
+Casting Time: 7
+Area of Effect: 4-ft. radius
+Saving Throw: None
+
+When cast, flames erupt from the target point, dealing 1d4 points of fire damage per level of the caster to all creatures within the spell's radius. Creatures will take damage once per round regardless of when they enter the area of effect. There is no Saving Throw.~
+@20422=~Blood Rage
+(Alteration)
+
+Level: 4
+Sphere: Combat
+Range: Visual range of the caster
+Duration: 1 turn
+Casting Time: 7
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell works only on player characters or allied creatures. When cast, the target of this spell goes berserk, attacking the nearest creature until that creature is dead, then moving on to the next target. While under Blood Rage, the target is immune to charm, sleep, fear, hold, stunning, confusion, emotion, symbol spells, and related effects. In addition, the target's movement rate is doubled and <PRO_HESHE> gains +5 to hit, +7 to damage, and +5 to Strength. The spell has several disadvantages, however: The Hit Points of the target are masked for the duration of the spell, and the target cannot benefit from any effect that heals Hit Points. At the end of the spell's duration, the target becomes fatigued and <PRO_HISHER> Strength drops to 3 for 1 turn. Blood Rage cannot affect—and cannot be cast by—creatures of lawful alignment.~
+@20424=~Unfailing Endurance
+(Necromancy)
+
+Level: 4
+Sphere: Necromantic
+Range: 100 feet
+Duration: Instant
+Casting Time: 9
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+This spell restores the stamina of all allies within the target area, eliminating any fatigue.~
+@20425=~Star Metal Cudgel
+(Conjuration)
+
+Level: 4
+Sphere: Combat
+Range: 0
+Duration: 3 turns
+Casting Time: 7
+Area of Effect: The caster
+Saving Throw: None
+
+This spell creates a meteoric iron magical club that deals 1d6+3 points of crushing damage, confers a +3 bonus to attack rolls, and is treated as a +6 weapon for purposes of what it can hit. Strength, proficiency, and specialization bonuses and penalties apply normally. The club deals an additional 4d6 points of crushing damage against unnatural creatures (undead, elementals, golems, outer-planar creatures, etc.). It can strike enemies that require cold iron weapons to hit.~
+@20426=~Smashing Wave
+(Invocation)
+
+Level: 4
+Sphere: Elemental Water
+Range: 100 ft.
+Duration: Instant
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: Special
+
+This spell summons a 5-ft. wide wave of water that moves in the direction willed by the caster, striking all in its path with massive force. The wave deals 5d12 points of crushing damage; in addition, struck creatures may be either stunned (50% chance) or knocked unconscious (50% chance) for 2 rounds. If the creature struck makes a successful Save vs. Breath Weapon, the damage is reduced by half and the creature avoids being stunned or knocked unconscious. Fire elementals, fire salamanders, and efreet that are hit by the wave take an additional 5d12 magical cold damage with no save as the water eats away at their essence.~
+@20427=~Thorn Spray
+(Alteration)
+
+Level: 4
+Sphere: Plant
+Range: 30 ft.
+Duration: Instant
+Casting Time: 1
+Area of Effect: 17-ft. cone with 90-deg. arc
+Saving Throw: 1/2 as many thorns
+
+By means of this spell, the caster can cause a spray of barbs, spikes, thorns, and spines to spring forth from <PRO_HISHER> hand. The thorn spray covers a 17-ft.-long cone, and any creature in the area of the cone will be pierced by 2d10 thorns, or half as many on a successful Save vs. Breath. Each thorn deals 1d3 piercing damage. The thorns deal damage separately and will break multiple mirror images or stoneskins. The target's Magic Resistance, if it has any, will not protect against the thorns.~
+@20502=~Cure Critical Wounds
+(Necromancy)
+
+Level: 5
+Sphere: Healing
+Range: Touch
+Duration: Instant
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: None
+
+By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest heals 50 Hit Points and cures intoxication. This spell has no effect on undead, constructs, or extraplanar creatures. It cannot be cast by evil-aligned characters.~
+@20507=~Champion's Strength
+(Alteration)
+
+Level: 5
+Sphere: Law
+Range: Visual range of the caster
+Duration: 1 turn
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: None
+
+When this spell is cast, the priest effectively draws on the strength of <PRO_HISHER> deity and lends it to the target creature, in effect creating a champion. The target's Strength is set to 25 for 1 turn. As soon as the spell is cast, the caster becomes fatigued, suffering a penalty to all <PRO_HISHER> rolls. The drawback to this spell is that the priest must concentrate on the connection between the target and <PRO_HISHER> deity for the duration of the spell, hence losing the ability to cast any additional spells during this time. The effect lasts for one turn or until dispelled.~
+@20510=~Cause Critical Wounds
+(Necromancy)
+
+Level: 5
+Sphere: Healing
+Range: Touch
+Duration: Instant
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: None
+
+By casting this spell and touching a creature, the priest deals 50 points of magic damage to the creature's body. This spell has no effect on undead, constructs, or extraplanar creatures. It can be cast only by evil-aligned characters.~
+@20519=~Spike Stones
+(Alteration, Enchantment)
+
+Level: 5
+Sphere: Elemental Earth
+Range: Visual range of the caster
+Duration: 12 rounds
+Casting Time: 6
+Area of Effect: 8-ft. radius
+Saving Throw: Special
+
+This spell warps the surrounding rock, reshaping the terrain into spiked projections that blend into the background. Any creature entering the area takes 2d4 Hit Points of piercing damage per round and has its movement rate reduced by 30%.~
+@20522=~Animal Rage
+(Enchantment)
+
+Level: 5
+Sphere: Combat
+Range: Touch
+Duration: 15 rounds
+Casting Time: 8
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell only functions on allies. It imbues the target creature with animal ferocity. The target creature gains +3 Strength, +3 to hit, +5 damage, +30 Hit Points, +30% movement rate, and a +3 bonus to all Saving Throws. The target loses the ability to cast spells while Animal Rage is in effect; when enemies are within sight, <PRO_HESHE> immediately attacks in melee, using whatever is in hand.~
+@20603=~Blade Barrier
+(Evocation)
+
+Level: 6
+Sphere: Guardian/Creation
+Range: 0
+Duration: 4 rounds
+Casting Time: 9
+Area of Effect: 5-ft. radius
+Saving Throw: 1/2
+
+This spell conjures forth a wall of circling, razor-sharp blades that whirl and flash around the caster, creating an immobile barrier. Any creature attempting to pass through the blade barrier suffers 8d8 points of damage, with a Save vs. Spell for half damage. The caster is immobile for the duration of the spell.~
+@20606=~Fire Seeds
+(Conjuration)
+
+Level: 6
+Sphere: Elemental Fire
+Range: 0
+Duration: 1 turn/level
+Casting Time: 9
+Area of Effect: The caster
+Saving Throw: None
+
+This spell creates 4 grenade-like missiles in the priest's inventory that can be hurled at any target in sight. (These missiles last only for the spell's duration, so don't hoard them.) When they land, the seeds explode, doing 4d8 points of fire damage to everything within an 10-ft. radius. A creature struck by the explosion is allowed to make a Save vs. Spell for half damage.~
+@20608=~Harm
+(Necromancy)
+
+Level: 6
+Sphere: Healing
+Range: Touch
+Duration: Instant
+Casting Time: 9
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+When this spell is cast, the caster gains the ability to touch a target and inflict tremendous damage, reducing the target to all but 1d4 Hit Points. A Save vs. Spell at -2 negates the effect. This spell has no effect on undead, constructs, or extraplanar creatures. It can only be cast by evil-aligned characters.~
+@20609=~False Dawn
+(Evocation)
+
+Level: 6
+Sphere: Sun
+Range: 0
+Duration: Instant
+Casting Time: 9
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+False Dawn calls into existence a bright reddish light, as if a sunrise were occurring, within the area of effect. All undead creatures within the area suffer 12d6 points of magical fire damage and are blinded for two rounds after the false dawn appears. There is no Saving Throw.~
+@20612=~Bolt of Glory
+(Invocation/Evocation)
+
+Level: 6
+Sphere: Combat, Summoning
+Range: 60 ft.
+Duration: Instant
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: None
+
+By casting this spell, the priest channels a bolt of divine energy against the target. No attack roll is needed. Creatures struck suffer varying damage depending on their nature:
+
+- Prime: 10d6
+- Elemental: 5d6
+- Undead: 15d6
+- Fiend: 20d6
+
+There is no saving throw offered to the creature, and its Magic Resistance matters not.~
+@20617=~Whirlwind
+(Invocation)
+
+Level: 6
+Sphere: Elemental Air
+Range: Visual range of the caster
+Duration: Special
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: Special
+
+This spell creates a small whirlwind within the caster's sight. The whirlwind will fly around randomly, harming friend and foe alike. The caster is immune to <PRO_HISHER> own spell, and elementals and other huge creatures are also unaffected. If a creature is caught in the path of the whirlwind, it takes 4d8 crushing damage, 4d8 slashing damage, and must make a Save vs. Breath Weapon at -3 or be stunned for 2 rounds. A maximum of 8 targets can be affected, after which the whirlwind will dissipate.~
+@20618=~Spiritual Wrath
+(Invocation)
+
+Level: 6
+Sphere: Combat
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 2
+Area of Effect: Special
+Saving Throw: 1/2
+
+Upon completion of this spell, the priest becomes a focus of spiritual energy, which then shoots out from the caster in four directions, like lightning bolts. All creatures in the bolts' paths take 7d10 points of magic damage (save vs. Spell at -4 for half). Creatures of the same moral alignment (good, neutral, evil) as the caster are unaffected by the spell.~
+@20704=~Nature's Beauty
+(Illusion/Phantasm)
+
+Level: 7
+Sphere: Elemental Earth
+Range: 0
+Duration: 12 rounds
+Casting Time: 6
+Area of Effect: 15-ft. radius
+Saving Throw: Special
+
+When this spell is cast, the caster appears to undergo a remarkable transformation and becomes the very ideal of beauty: For a male, this is usually a nymph; for a female, it varies.
+
+As with a nymph, any humanoid or animal viewing the disguised caster must make a Save vs. Spell with a -3 penalty or be charmed by the caster for 12 rounds. Blind creatures are unaffected by this spell, as are non-humanoid, non-animal creatures. Elves and half-elves have a chance to resist the spell.~
+@20705=~Fire Storm
+(Evocation)
+
+Level: 7
+Sphere: Elemental Fire
+Range: Visual range of the caster
+Duration: 4 rounds
+Casting Time: 9
+Area of Effect: 14-ft. radius
+Saving Throw: 1/2
+
+This spell causes the area of effect to be covered in roaring flames, dealing 2d8 points of damage plus 1 per level of the caster to anything within the area of effect each round. Creatures are allowed a Save vs. Spell to take half damage from the blast.~
+@20707=~Sunray
+(Evocation, Alteration)
+
+Level: 7
+Sphere: Sun
+Range: Visual range of the caster
+Duration: 6 rounds
+Casting Time: 4
+Area of Effect: 18-ft. radius
+Saving Throw: Special
+
+This spell allows the caster to evoke a dazzling beam of light from the sky that lasts 6 rounds. Creatures in the area of effect must make a Save vs. Spell or be blinded for 2 rounds. Undead or fungoid creatures in the area of effect also take 10d6 points of damage per round (Save vs. Spell at -4 for half) and are blinded for 1 turn if they fail the save.~
+@20708=~Finger of Death
+(Necromancy)
+
+Level: 7
+Sphere: War
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: Special
+
+The caster utters the Finger of Death incantation, points <PRO_HISHER> index finger at the creature to be slain, and unless the victim makes a Save vs. Death at -2, the victim dies instantly. Even if the save is successful, however, the brush with death still inflicts 2d8+1 points of magic damage. Characters slain by Finger of Death cannot be resurrected—they are gone forever.~
+@20714=~Symbol, Pain
+(Conjuration/Summoning)
+
+Level: 7
+Sphere: Guardian
+Range: Visual range of the caster
+Duration: 11 turns
+Casting Time: 3
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+All enemies within 15 ft. of the symbol of pain at the moment it is invoked are overwhelmed by pain, suffering a -4 penalty to their attack rolls, a -2 penalty to their Dexterity scores, and a -2 penalty to their Armor Class.~
+@20720=~Earthquake
+(Alteration)
+
+Level: 7
+Sphere: Elemental Earth
+Range: 0
+Duration: Instant
+Casting Time: 9
+Area of Effect: Visual range of the caster
+Saving Throw: Special
+
+This spell causes a local tremor to rip through the ground. Enemies within sight of the caster suffer 4d10+2 points of crushing damage and must make a Save vs. Death or be knocked prone for 3 rounds. Huge creatures and airborne creatures are unaffected by this spell.~
+@20721=~Energy Blades
+(Any School)
+
+Level: 7
+Range: Special
+Duration: 4 turns
+Casting Time: 3
+Area of Effect: Special
+Saving Throw: None
+
+An energy blade is a discus made of pure energy. The disc gives +10 to THAC0, and when thrown does 1d4+5 missile damage as well as 1d10 additional electrical damage. This spell creates 1 energy disc per level of the caster and sets the caster's attacks to 9 as long as the discs are held.~
+@20722=~Storm of Vengeance
+
+Level: 7
+Range: 50 ft.
+Duration: 3 rounds
+Casting Time: 8
+Area of Effect: 15-ft. radius
+Saving Throw: Special
+
+Casting this spell causes the earth to shake and the heavens to boil with blood and energy. All enemies of the caster are struck down by acidic rain, earthquakes, and lightning.
+
+All enemies of 8th level or lower are slain instantly. The survivors are struck by acidic, poisonous rain and lightning. The storm lasts for 3 rounds; each round, the victims suffer 2d6 electrical damage, 2d6 fire damage, and 2d6 acid damage (save vs. Spell for half), plus a chance to be poisoned (save vs. Death to negate the effect) in the 1st round.~
+@20723=~Elemental Summoning
+
+Level: 7
+Range: 30 ft.
+Duration: 1 turn
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: None
+
+Drawing power from the environment, this spell summons 2 16-HD elementals randomly chosen from earth, air, or fire. The elementals stay for 1 turn and will obey the caster as long as they remain summoned. There is a 10% chance that a randomly chosen Elemental Prince will be summoned instead. The Elemental Princes rule over other elementals in their respective planes. The Elemental Prince of Air is Chan, the Elemental Prince of Earth is Sunnis, and the Elemental Prince of Fire is Zaaman Rul.~
+@20724=~Greater Elemental Summoning
+
+Level: 7
+Range: 30 ft.
+Duration: 1 turn
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: None
+
+Druids, having a more powerful link to the elements, can cast a stronger version of Elemental Summoning. This spell can summon the Elemental Princes themselves, randomly chosen from earth, air, or fire. The Elemental Prince of Air is Chan, the Elemental Prince of Earth is Sunnis, and the Elemental Prince of Fire is Zaaman Rul. The Elemental Princes stay for 1 turn and will obey the caster as long as they remain summoned.~
+@20725=~Globe of Blades
+(Evocation)
+
+Level: 7
+Sphere: Guardian, Creation
+Range: 0
+Duration: 1 turn
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: Special
+
+The priest employs this spell to set up a globe of razor-sharp blades. These whirl and flash around the caster, creating a dangerous barrier. Any creature attempting to pass through the blade barrier suffers 10d10 points of damage. Creatures within the area of the barrier when it is invoked are entitled to a Save vs. Spell at -2. If this is successful, the blades are avoided and no damage is suffered. The barrier remains for 1 turn.~
+@20726=~Summon Deva
+(Conjuration/Summoning)
+
+Level: 7
+Range: 120 ft.
+Duration: 4 rounds + 1 round/level
+Casting Time: 5
+Area of Effect: Special
+Saving Throw: None
+
+This spell opens a celestial gate and calls forth an angelic deva to fight at the caster's side until the spell expires or the deva's earthly avatar is slain.~
+@20727=~Summon Fallen Deva
+(Conjuration/Summoning)
+
+Level: 7
+Range: 120 ft.
+Duration: 4 rounds + 1 round/level
+Casting Time: 5
+Area of Effect: Special
+Saving Throw: None
+
+This spell opens an abyssal gate and calls forth a demonic deva to fight at the caster's side until the spell expires or the deva's earthly avatar is slain.~
+@20728=~Implosion
+(Evocation)
+
+Level: 7
+Range: 40 ft.
+Duration: 2 rounds
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: Special
+
+This spell creates a rift in the earth beneath the target, which implodes and closes in upon itself, crushing and burning the target and holding it for 1 round. The spell does 10d10 fire damage and 10d10 blunt damage. The victim can make a Save vs. Spell for half damage.~
+@20730=~Aura of Flaming Death
+(Evocation, Alteration)
+
+Level: 7
+Range: 0
+Duration: 1 round/2 levels
+Casting Time: 4
+Area of Effect: The caster
+Saving Throw: None
+
+This spell causes the caster to be enveloped by an aura of intense flame that both injures opponents and protects the caster from damage. This shield not only grants the user 90% Fire Resistance and an AC bonus of 4, but also protects <PRO_HIMHER> from attacks made within a 5-ft. radius. An opponent that hits the caster with any weapons or spells within this radius suffers 2d10+2 fire damage. In addition, the intense heat protects the caster from all non-magical weapons, melee or missile.~
+@20736=~Mist of Eldath
+(Invocation)
+
+Level: 7
+Sphere: Elemental
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 2
+Area of Effect: 7-ft. radius
+Saving Throw: None
+
+This spell blankets the area of effect with a silver-blue mist—any creature within the mist will be cured of disease and poison and healed 50 Hit Points.~
+@20739=~Energy Drain
+(Necromancy)
+
+Level: 7
+Sphere: Necromantic
+Range: Touch
+Duration: Permanent
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: None
+
+Casting this spell opens a channel between the caster's plane and the Negative Energy Plane. The caster acts as a conduit between the two planes, sucking life from a victim and transferring it to the Negative Energy Plane, draining <PRO_HIMHER> of 1 level of experience per 3 caster levels. The target of this spell loses levels, Hit Dice, Hit Points, and abilities permanently. These levels can only be restored by a priest's Restoration spell. This spell has no effect on undead, constructs, or extraplanar creatures. It can only be cast by evil-aligned characters.~
+@20740=~Wither
+(Necromancy)
+
+Level: 7
+Sphere: Healing
+Range: Touch
+Duration: 1 round/2 levels
+Casting Time: 7
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+This powerful spell causes the organs of the touched creature to cease functioning and wither away unless a Save vs. Death at a penalty of -7 is made. The creature affected will lose 3 Hit Points per second. The effect lasts for 1 round per 2 levels of the caster or until dispelled. For example, a 14th-level priest would cause the targeted creature to lose 18 Hit Points per round for 7 rounds. This spell has no effect on undead, constructs, or extraplanar creatures. It can only be cast by evil-aligned characters.~
+@20751=~Ethereal Retribution
+(Conjuration)
+
+Level: 7
+Sphere: Summoning
+Range: 40 ft.
+Duration: 10 rounds
+Casting Time: 8
+Area of Effect: 15-ft. radius 
+Saving Throw: Special
+
+Ghostly figures called by the Shaman swirl around the battlefield, tormenting the Shaman's adversaries. All enemies within the area of effect take 3d8 points of magic damage per round for the next 10 rounds (no save). In addition, all living enemies (undead and constructs are unaffected) must save vs. Spell at -3 every round or lose 2 points of Strength for 15 rounds. The Strength loss is cumulative, and a creature reduced to 0 Strength dies instantly.~
+@21102=~Armor
+(Conjuration)
+
+Level: 1
+Range: Touch
+Duration: 9 hours
+Casting Time: 9
+Area of Effect: 1 creature
+Saving Throw: None
+
+By means of this spell, the wizard creates a magical field of force that serves as if it were plate mail armor (AC 3). It is cumulative with Dexterity and, in the case of Fighter/Mages, with the shield bonus. The Armor spell does not hinder movement, adds no weight or encumbrance, and does not prevent spellcasting. It lasts until successfully dispelled or until the duration runs out.~
+@21111=~True Strike
+(Divination)
+
+Level: 1
+Range: 0
+Duration: 9 seconds
+Casting Time: 1
+Area of Effect: The caster
+Saving Throw: None
+
+Through magical intuition, the wizard gains a +20 bonus to THAC0, giving <HIMHER> nearly perfect accuracy with weapon attacks. Unfortunately, the effect only lasts for 9 seconds.~
+@21117=~Chill Touch
+(Necromancy)
+
+Level: 1
+Range: Touch
+Duration: Special
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+When the caster completes this spell, a blue glow encompasses <PRO_HISHER> hand, and <PRO_HESHE> uses this energy to attack the life force of an adjacent creature. No attack roll is needed. The touched creature takes 5d4 magic cold damage and must Save vs. Death or lose 3 points of Strength for 5 rounds. The Strength loss is cumulative; if the creature is reduced to 0 Strength, it dies instantly.
+
+An undead creature suffers no damage or Strength loss from Chill Touch, but will be affected by panic for 2 turns unless it successfully makes a Save vs. Spell.~
+@21119=~Larloch's Minor Drain
+(Necromancy)
+
+Level: 1
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+With this spell, the wizard drains the life force from a target and adds it to <PRO_HISHER> own. The target creature suffers 8 magic damage, while the wizard gains 8 Hit Points. If the wizard goes over <PRO_HISHER> maximum Hit Point total with this spell, <PRO_HESHE> loses them after 1 turn. This spell has no effect on constructs or undead.~
+@21126=~Expeditious Retreat
+(Alteration)
+
+Level: 1
+Range: 30000 feet
+Duration: 1 turn
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+Expeditious Retreat can only be cast on an ally. The spell quadruples the target's normal speed for a short period of time... usually long enough to escape. The target breaks free of slow and paralysis, and <PRO_HESHE> cannot be affected by slow or paralysis for the duration. While Expeditious Retreat is active, the target cannot attack, cast spells, or use any items or special abilities... <PRO_HESHE> can only run. Expeditious Retreat has extremely long range, and the caster does not need to see the target, though the caster must be familiar with the target and they must be on the same plane.~
+@21203=~Detect Invisibility
+(Divination)
+
+Level: 2
+Range: Touch
+Duration: 15 rounds
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: None
+
+The target of the Detect Invisibility spell is able to see clearly any objects or beings that are invisible, as well as any that are astral, ethereal, or out of phase. In addition, this spell enables the recipient to detect hidden or concealed creatures (e.g., Thieves hiding in shadows, halflings in underbrush, and so on). The main function of this spell is to enable the recipient to target partially invisible or sanctuaried creatures with spells. In addition, if the recipient is using AI, he or she will able to attack fully invisible creatures and target them with spells. The power to Detect Invisibility lasts for 15 rounds or until dispelled.~
+@21208=~Know Alignment
+(Divination)
+
+Level: 2
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 9
+Area of Effect: 1 creature
+Saving Throw: None
+
+A Know Alignment spell enables the priest to read the aura of a creature. Evil creatures will glow red, neutrals blue, and good creatures will glow green for a brief period. There is no Saving Throw.~
+@21209=~Luck
+(Enchantment/Charm)
+
+Level: 2
+Range: 15 ft.
+Duration: 2 turns
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: None
+
+The recipient of this spell gains extraordinary luck for the next 2 turns, receiving a +1 bonus to <PRO_HISHER> Saving Throws, attack rolls, and minimum damage/healing rolls as well as +5% to all thieving skills. Furthermore, damage dice for all effects outside a weapon's base damage is reduced by 1. For example, a 6d6 fireball will do 6d5 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d2 fire damage instead.~
+@21214=~Strength
+(Alteration)
+
+Level: 2
+Range: 20 ft.
+Duration: 1 hour/level
+Casting Time: 9
+Area of Effect: 1 creature
+Saving Throw: None
+
+Upon application of this spell, the target's Strength is magically set to 20. If the target had over 20 Strength previously, its Strength will be lowered to 20. The spell has such a long duration that at high levels it will continue even after one wakes up from a rest.~
+@21216=~Decastave
+(Evocation)
+
+Level: 2
+Range: 0
+Duration: 3 rounds + 1 round/level
+Casting Time: 2
+Area of Effect: The caster
+Saving Throw: None
+
+This spell creates a staff of force in the caster's hand. It is treated as a magical weapon, doing 1d6+2 Hit Points of damage per hit with a +2 bonus to hit, and it can hit creatures that require +2 weapons to hit. It is a staff, however, so if the caster does not have a proficiency in staff weapons, then the Decastave is used at a penalty. The staff also has the power to drain a target of 5 Hit Points on every strike. These Hit Points are added to the caster's, but they can only heal damage the caster has taken; they will not raise <PRO_HISHER> Hit Points beyond <PRO_HISHER> normal maximum.~
+@21218=~Ghoul Touch
+(Necromancy)
+
+Level: 2
+Range: Touch
+Duration: 6 rounds
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+When the caster completes this spell, a green glow encompasses <PRO_HISHER> hand. The wizard then touches a creature (no attack roll required), and the creature must make a Save vs. Death at -2 or be paralyzed for 6 rounds. Elves and undead are immune to the ghoul touch.~
+@21220=~Power Word, Sleep
+(Conjuration/Summoning)
+
+Level: 2
+Range: 40 ft.
+Duration: 5 rounds
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+When a wizard calls upon a Power Word, Sleep spell, <PRO_HESHE> causes a comatose slumber to come upon 1 creature (other than undead and certain other creatures specifically excluded from the spell's effects). Attacks against magically sleeping opponents never miss—although they will awaken after the first hit. The sleep effect will last for 5 rounds. There is no Saving Throw - only Magic Resistance will prevent the effects of the spell.~
+@21221=~Ray of Enfeeblement
+(Enchantment/Charm)
+
+Level: 2
+Range: Visual range of the caster
+Duration: 1 round/level
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+By means of a Ray of Enfeeblement, a wizard weakens an opponent, reducing its Strength and thereby the attacks that rely upon it. The victim is reduced to a Strength of 5 for the duration of the spell unless a Save vs. Spell is made at -3. This spell does not affect combat bonuses due to magical items, and those conferring increased Strength function normally. However, the target receives all the penalties for 5 Strength, such as attack and damage penalties as well as lower weight allowance. This spell has no effect on undead or constructs.~
+@21223=~Deafness
+(Illusion/Phantasm)
+
+Level: 2
+Range: 40 ft.
+Duration: Permanent
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+The Deafness spell causes the recipient to become totally unable to hear any sounds. Deafened creatures are unaffected by spells and abilities that rely on hearing, and deafened spellcasters have a 50% chance to miscast any spells. The victim is allowed a Save vs. Spell at -1 to negate the effect. Deafness can be done away with by means of Dispel Magic, Cure Disease, and similar treatments.~
+@21225=~Cat's Grace
+(Alteration)
+
+Level: 2
+Range: Touch
+Duration: 1 hour/level
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell magically increases a target's Dexterity. For the duration of the spell, the target gains +4 Dexterity.~
+@21301=~Clairvoyance
+(Divination)
+
+Level: 3
+Range: Special
+Duration: Instant
+Casting Time: 3
+Area of Effect: Current area
+Saving Throw: None
+
+The Clairvoyance spell empowers the wizard to see in <PRO_HISHER> mind the geographical features and buildings of the region <PRO_HESHE> is currently exploring. It extends to a great range, but cannot reveal creatures or their movements. This spell can be used both indoors and outdoors.~
+@21302=~Remove Magic
+(Abjuration)
+
+Level: 3
+Range: 40 ft.
+Duration: Instant
+Casting Time: 3
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+Remove Magic dispels the magical effects upon any enemies within the area. This includes effects given from spells, potions, and certain magical items such as wands. It does not, however, affect enchanted magical items.
+
+Note: While this spell dispels the individual effects of Grease, Web, Stinking Cloud, and other such spells, it does not dispel the area of effect.~
+@21311=~Protection From Missiles
+(Abjuration)
+
+Level: 3
+Range: 0
+Duration: 1 turn/level
+Casting Time: 3
+Area of Effect: The caster
+Saving Throw: None
+
+By means of this spell, the wizard gains +50% Missile Resistance. The spell lasts 1 turn per level.~
+@21313=~Skull Trap
+(Necromancy)
+
+Level: 3
+Range: Visual range of the caster
+Duration: Special
+Casting Time: 3
+Area of Effect: Special
+Saving Throw: 1/2
+
+Upon casting this spell, a skull is thrown by the caster at the target area. The skull floats in the area until a creature comes within 8 ft. of it. When this happens, the skull is triggered and explodes, damaging everyone within an 12-ft. radius. The magic damage inflicted is equal to 1d6 Hit Points per level of the caster (save vs. Breath for half), up to a maximum of 10d6. When casting this spell, it is wise to set it far away from the party lest they set it off accidentally. Resting or leaving the area the skull trap is in will make it disappear harmlessly.~
+@21314=~Vampiric Touch
+(Necromancy)
+
+Level: 3
+Range: Touch
+Duration: Instant
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: None
+
+When this spell is cast, the target loses 1d6 Hit Points for every 2 caster levels, to a maximum drain of 6d6 for a 12th-level caster. These Hit Points are added to the caster's current Hit Points, with any Hit Points over the caster's normal maximum treated as temporary additional Hit Points. The temporary Hit Points last for 1 hour. Casting Vampiric Touch again will allow the caster to gain even more Hit Points.~
+@21316=~Dire Charm
+(Enchantment/Charm)
+
+Level: 3
+Range: Visual range of the caster
+Duration: 2 turns
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+This spell is similar to the Charm Person spell. However, the affected creature will attack anyone <PRO_HESHE> perceives as hostile without being commanded to. A successful Save vs. Spell negates the effect.
+
+Dire Charm can charm both humanoids and giant humanoids.~
+@21317=~Ghost Armor
+(Conjuration/Summoning)
+
+Level: 3
+Range: Touch
+Duration: 25 rounds
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell creates a magical field of force with the strength of full plate armor (AC 1). It is cumulative with Dexterity effects and, in the case of Fighter/Mages, with the shield bonus. The Ghost Armor spell does not hinder movement, adds no weight or encumbrance, and does not prevent spellcasting. It lasts until dispelled or until the duration runs out.~
+@21322=~Detect Illusion
+(Divination)
+
+Level: 3
+Range: 0
+Duration: Instant
+Casting Time: 3
+Area of Effect: 25-ft. radius
+Saving Throw: None
+
+This spell cancels all Illusion/Phantasm spells of 5th level and lower in the area. The spells affected are Blur, Reflected Image, Invisibility, Mirror Image, Non-Detection, Improved Invisibility, Shadow Door, and Pixie Dust. The caster can control whom this spell affects; thus, it will affect only creatures that are not in the caster's party. A target's Magic Resistance, if any, does not affect this spell.~
+@21326=~Dispel Magic
+(Abjuration)
+
+Level: 3
+Range: 40 ft.
+Duration: Instant
+Casting Time: 5
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+Dispel Magic removes magical effects upon anyone within the area. This includes effects given from spells, potions and certain magical items such as wands. It does not, however, affect enchanted magical items or spell protections such as Spell Turning and Spell Deflection.
+
+Note: While this spell dispels the individual effects of Grease, Web, Stinking Cloud, and other such spells, it does not dispel the area of effect.~
+@21404=~Ice Storm
+(Evocation)
+
+Level: 4
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 4
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+When this spell is cast, shards of ice smash down on all creatures in the area of effect, doing 4d10 points of cold damage.~
+@21409=~Contagion
+(Necromancy)
+
+Level: 4
+Range: 30 ft.
+Duration: Permanent
+Casting Time: 8
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+This spell causes a major disease and weakness in a creature if it fails a Save vs. Polymorph at -5. The afflicted individual is immediately stricken with painful and distracting symptoms: boils, blotches, lesions, seeping abscesses, and so on. Strength, Dexterity, and Charisma scores are reduced by 2. The afflicted character is also slowed. These effects persist until the character receives a Cure Disease spell.~
+@21411=~Emotion, Hopelessness
+(Enchantment/Charm)
+
+Level: 4
+Range: Visual range of the caster
+Duration: 15 rounds
+Casting Time: 4
+Area of Effect: 7-ft. radius
+Saving Throw: Neg.
+
+This spell creates the emotion of hopelessness within the area of effect. All enemies who fail to Save vs. Spell at -1 just stand and do nothing for 15 rounds. This spell nullifies Emotion, Hope within the area of effect at the time of casting.~
+@21412=~Greater Malison
+(Enchantment/Charm)
+
+Level: 4
+Range: Visual range of the caster
+Duration: 2 rounds/level
+Casting Time: 4
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+This spell causes all enemies in the area of effect to suffer a -2 penalty on all their Saving Throws as long as the spell is in effect. Multiple Greater Malison spells stack, increasing the Saving Throw penalties further.~
+@21413=~Otiluke's Resilient Sphere
+(Alteration)
+
+Level: 4
+Range: Visual range of the caster
+Duration: 7 rounds
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell encloses the target in a globe of shimmering force for the duration of the spell. The resilient sphere is completely immune to all damage; the only method of removing the sphere is by the use of Dispel Magic. Hence, the creature caught inside the globe is completely safe from all attacks, but at the same time is completely unable to affect the outside world. Hostile creatures can resist the effect with Magic Resistance, but there is no Saving Throw.~
+@21414=~Spirit Armor
+(Necromancy)
+
+Level: 4
+Range: Touch
+Duration: 3 turns
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell is very similar to the 3rd-level spell Ghost Armor in that it creates an incorporeal barrier around the target's body for the duration of the spell. This spell, however, actually taps in to the target's life force in order to create the barrier. The armor itself is weightless and does not hinder movement or spellcasting at all.
+
+Spirit Armor does not work cumulatively with any other armor; however, Dexterity bonuses still apply, as well as magic rings and shield bonuses. While in effect, the Armor Class of the recipient will be 0, as if <PRO_HESHE> were wearing full plate +1. Also, due to the magical nature of the spell, <PRO_HESHE> will also receive a +3 bonus to saves vs. Spell.
+
+There is a danger, however, as when the spell runs out, the external portion of the spirit is temporarily lost, inflicting 2d4 points of magic damage upon the target.~
+@21417=~Enchanted Weapon
+(Enchantment)
+
+Level: 4
+Range: Touch
+Duration: 1 hour
+Casting Time: 4
+Area of Effect: 1 creature
+Saving Throw: None
+
+When this spell is cast on a creature, it enchants any weapons that it currently wields. For the duration of the spell, those weapons are treated as having a +6 enchantment for the purposes of determining what they can hit.~
+@21422=~Beltyn's Burning Blood
+(Necromancy)
+
+Level: 4
+Range: Visual range of the caster
+Duration: 1 round/2 levels
+Casting Time: 4
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+This spell turns a target's blood to flame, doing 3d4 Hit Points of damage every round and driving the victim berserk with pain. The target gets to save vs. Spell at -4 every round; if successful, the damage and berserk state are negated. This spell does not work against undead or extraplanar creatures that do not have blood (such as elementals). If the creature is resistant to fire, this resistance will lower or nullify the damage from this spell.~
+@21424=~Farsight
+(Divination)
+
+Level: 4
+Range: Special
+Duration: 3 rounds + 1 round/level
+Casting Time: Instant
+Area of Effect: Special
+Saving Throw: None
+
+When Farsight is cast, the caster is able to view an area of an unexplored map. After casting the spell, simply click on a section of the map that you want to view. For the duration of the spell, the caster can spy on that area, noting creatures and fortifications.
+
+Farsight has no casting time, can be cast immediately after another spell, and can be cast while the game is paused.~
+@21427=~Emotion, Courage
+(Enchantment/Charm)
+
+Level: 4
+Range: Visual range of the caster
+Duration: 15 rounds
+Casting Time: 4
+Area of Effect: 7-ft. radius
+Saving Throw: None
+
+This spell creates the emotion of courage within the area of effect. All creatures affected by the spell gain +2 to hit, as well as +10 temporary Hit Points (which can put them above their maximum Hit Points). This spell nullifies all fear effects within the area of effect at the time of casting.~
+@21428=~Emotion, Fear
+(Enchantment/Charm)
+
+Level: 4
+Range: Visual range of the caster
+Duration: 15 rounds
+Casting Time: 4
+Area of Effect: 7-ft. radius
+Saving Throw: Neg.
+
+This spell creates the emotion of fear within the area of effect. All enemies who fail to Save vs. Spell at -3 flee for 15 rounds. This spell nullifies Emotion, Courage within the area of effect at the time of casting.~
+@21429=~Emotion, Hope
+(Enchantment/Charm)
+
+Level: 4
+Range: Visual range of the caster
+Duration: 15 rounds
+Casting Time: 4
+Area of Effect: 7-ft. radius
+Saving Throw: None
+
+This spell creates the emotion of hope within the area of effect. All creatures affected by the spell gain a morale boost and +2 on their Saving Throws and attack rolls. This spell nullifies all hopelessness effects within the area of effect at the time of casting.~
+@21431=~Shout
+(Invocation)
+
+Level: 4
+Range: 0
+Duration: Instant
+Casting Time: 1
+Area of Effect: 17-ft. cone with 15-deg. arc
+Saving Throw: Special
+
+Shout grants the wizard tremendous vocal powers, allowing <PRO_HIMHER> to emit an earsplitting roar from <PRO_HISHER> mouth in a cone-shaped area of effect. Any creature within this area is deafened for 9 rounds and suffers 10d6 points of magic damage. A successful Save vs. Spell negates the deafness and reduces the damage by half. The targets are also knocked back, whether they make the save or not.~
+@21505=~Shadow Door
+(Illusion/Phantasm)
+
+Level: 5
+Range: 100
+Duration: 3 turns
+Casting Time: 1
+Area of Effect: The caster
+Saving Throw: None
+
+A combination of Dimension Door and Improved Invisibility, Shadow Door creates a door, which the caster steps through. The caster is then teleported to a point of <PRO_HISHER> choice within 100 feet. When <PRO_HESHE> arrives at that spot, <PRO_HESHE> is invisible (as per the Improved Invisibility spell), for the spell's duration. A True Seeing spell, a gem of seeing, or similar magical means can reveal the wizard.~
+@21507=~Hold Monster
+(Enchantment/Charm)
+
+Level: 5
+Range: Visual range of the caster
+Duration: 1 round/level
+Casting Time: 5
+Area of Effect: Special
+Saving Throw: Neg.
+
+This spell holds 1d4 enemies of any type (except for undead) rigidly immobile. Specifically, it affects the targeted enemy and up to 3 hostile creatures within 10 ft. of it. A successful Save vs. Spell at -2 negates the effect.
+
+Paralyzed creatures are helpless and cannot dodge or defend themselves from attacks. Being held does not prevent the worsening of the subject's condition due to wounds, disease, or poison.~
+@21515=~Oracle
+(Divination)
+
+Level: 5
+Range: 0
+Duration: Instant
+Casting Time: 1
+Area of Effect: 120-ft. radius
+Saving Throw: None
+
+When cast, this spell will cancel all Illusion/Phantasm spells within its area of effect. The spells affected are Blur, Reflected Image, Invisibility, Mirror Image, Non-Detection, Improved Invisibility, Shadow Door, Pixie Dust, Mislead, Project Image, and Simulacrum. The caster can control whom this spell affects; thus, it will affect only creatures that are not in the caster's party. A target's Magic Resistance, if any, does not affect this spell.~
+@21519=~Spell Shield
+(Abjuration)
+
+Level: 5
+Range: 0
+Duration: 8 rounds
+Casting Time: 8
+Area of Effect: The caster
+Saving Throw: None
+
+This spell forms a shield around the caster that protects <PRO_HIMHER> from dispelling effects. Dispel Magic, Remove Magic, and similar spells will have no effect on <PRO_HIMHER>. The shield is still vulnerable to spells that remove spell protections, such as Spell Thrust, Secret Word, Pierce Magic, Ruby Ray, Khelben's Warding Whip, Pierce Shield, and Spellstrike. If one of these spells is cast at the wizard, the shield dissipates. Otherwise, it will last for its duration.~
+@21524=~Shroud of Flame
+(Invocation)
+
+Level: 5
+Range: Visual range of the caster
+Duration: 1 round/2 levels (special)
+Casting Time: 5
+Area of Effect: 5-ft. radius
+Saving Throw: Neg.
+
+This spell causes a creature to burst into flames if it fails a Save vs. Spell at -5. The creature will burn for 2d6 points of fire damage every round, and gouts of flame erupt from the burning target, causing any creatures within 5 ft. to take 1d4 points of fire damage from the flames. Anyone hit by the victim's flames must also make a Save vs. Spell at -5 to avoid contracting the shroud themselves. The shroud of flame dissipates if the caster and target are no longer in the same area. This spell is particularly useful in dispersing packs of trolls and frost salamanders.~
+@21604=~Flesh to Stone
+(Alteration)
+
+Level: 6
+Range: Visual range of the caster
+Duration: Permanent
+Casting Time: 6
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+This spell turns a creature to stone. The target is allowed a Save vs. Petrification to avoid the effect. Petrification can be reversed with the 6th-level wizard spell Stone to Flesh. This spell works on cadaverous undead (i.e. zombies and ghouls), but not incorporeal and skeletal undead.~
+@21605=~Death Spell
+(Necromancy)
+
+Level: 6
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 6
+Area of Effect: 18-ft. radius
+Saving Throw: None
+
+This spell snuffs out the lives of weaker creatures in the area of effect. Any hostile creature of 15 HD or less will die, as will any hostile summoned creature of 29 HD or less. There is no Saving Throw, though Magic Resistance can prevent the effects. This spell does not affect undead creatures or constructs, nor does it affect allies.~
+@21612=~Power Word, Silence
+(Conjuration/Summoning)
+
+Level: 6
+Range: Visual range of the caster
+Duration: 4 rounds
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell allows the caster to utter one of the words of power. When spoken, Power Word, Silence can be invoked against any creature in range, preventing them from making a sound. No Saving Throw is allowed.~
+@21614=~Death Fog
+(Alteration, Evocation)
+
+Level: 6
+Range: Visual range of the caster
+Duration: 15 rounds
+Casting Time: 6
+Area of Effect: 12-ft. radius
+Saving Throw: Special
+
+This spell brings forth a billowing cloud of acidic fog. The thick fog limits movement to 50% of a creature's current movement rate. Exposure to the fog deals 4 acid damage per round, but it also gives a cumulative 50% vulnerability to acid for 11 seconds (after it deals the damage). 
+
+While in the fog, creatures must save vs. Spell every round or suffer -2 to Strength and Dexterity for the duration of that round.~
+@21615=~Chain Lightning
+(Evocation)
+
+Level: 6
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 5
+Area of Effect: Special
+Saving Throw: 1/2
+
+This spell releases a burst of electrical energy at a target; unlike the Lightning Bolt spell, however, once the bolt strikes the initial target, the electricity then jumps to the next nearest foe, losing a small amount of energy with each additional strike until it is expended. The bolt initially inflicts 1d6 Hit Points of electrical damage per level of the caster, to a maximum of 20d6 points of damage. Each jump the bolt makes reduces the damage by 1d6. Each creature that is hit is allowed a Save vs. Spell for half damage.~
+@21626=~Lich Touch
+(Necromancy)
+
+Level: 6
+Range: Touch
+Duration: 1 round/level
+Casting Time: 6
+Area of Effect: The caster
+Saving Throw: Special
+
+This spell confers the powers of a lich's touch and a lich's immunities upon the caster. The wizard gains immunity to paralysis and fear while the spell is in effect, and <PRO_HISHER> hands glow with an unearthly blue radiance. When the wizard attacks a creature with the lich's touch, that creature takes 1d2 fist damage (plus Strength bonus) and 3d10 magic cold damage, and the creature must Save vs. Paralysis at -2 or be paralyzed for 3 rounds. Undead and constructs only take the fist damage and are not paralyzed. The lich's touch can affect creatures that require +6 weapons in order to hit.~
+@21628=~Otiluke's Freezing Sphere
+(Alteration, Evocation)
+
+Level: 6
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 6
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+This spell fires an orb of cold at a creature that inflicts 1d4+2 points of cold damage per level of the caster. The target may make a Save vs. Spell at -2 for half damage.~
+@21630=~Darts of Bone
+(Necromancy)
+
+Level: 6
+Range: 0
+Duration: 5 rounds
+Casting Time: 5
+Area of Effect: The caster
+Saving Throw: None
+
+This spell creates nine darts that can be used by the caster and cannot be unequipped so long as the spell is in effect. The darts are +3, do 1d4+3 missile damage with +3 to hit, and a creature struck by a dart must Save vs. Death at -6 or take 2d6 magic damage and have its Strength reduced by 3 for 5 rounds. Strength reduction is cumulative, and hitting a single creature with multiple darts can potentially reduce its Strength to 0, killing it instantly. Undead, constructs and extraplanar creatures are immune to the magic damage and Strength reduction from these darts. The caster gains proficiency in darts as long as <PRO_HESHE> has at least one dart remaining, unless <PRO_HESHE> already has a higher level of proficiency in darts.~
+@21631=~Soul Eater
+(Necromancy)
+
+Level: 6
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 5
+Area of Effect: 7-ft. radius
+Saving Throw: None
+
+This spell deals 6d8 magic damage to all hostile living creatures within a 14-ft. radius. Any creatures that die as a result of this damage are obliterated, and their essence is transformed into a 3-Hit-Dice skeleton under control of the caster. Also, for each creature that dies in this manner, the caster gains 10 temporary hit points for 8 hours. Soul Eater has no effect on undead, constructs, and elemental creatures.~
+@21702=~Protection From The Elements
+(Abjuration)
+
+Level: 7
+Range: Touch
+Duration: 8 hours
+Casting Time: 7
+Area of Effect: 1 creature
+Saving Throw: None
+
+When the spell is cast, it confers +75% resistance to all elemental attacks—such as fire, cold, and electricity, whether magical or non magical—from spells, weapons, wands, breath weapons, etc. The effect of a Protection From The Elements spell lasts 8 hours or until dispelled.~
+@21712=~Delayed Blast Fireball
+(Invocation/Evocation)
+
+Level: 7
+Range: 40 ft.
+Duration: Special
+Casting Time: 7
+Area of Effect: 15-ft. radius
+Saving Throw: 1/2
+
+This spell creates a fireball that hovers at a point determined by the caster. The fireball will stay in position until someone walks within 9 ft.; at that point, it will explode, dealing 1d6 points of fire damage per caster level (maximum of 20d6). Victims are allowed a Save vs. Spell for half damage.~
+@21713=~Finger of Death
+(Necromancy)
+
+Level: 7
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: Special
+
+The caster utters the Finger of Death incantation, points <PRO_HISHER> index finger at the creature to be slain, and unless the victim makes a Save vs. Death at -2, the victim dies instantly. Even if the save is successful, however, the brush with death still inflicts 2d8+1 points of magic damage. Characters slain by Finger of Death cannot be resurrected—they are gone forever.~
+@21714=~Prismatic Spray
+(Conjuration/Summoning)
+
+Level: 7
+Range: 0
+Duration: Instant
+Casting Time: 7
+Area of Effect: 23-ft. cone with 90-deg. arc
+Saving Throw: Special
+
+This spell causes shimmering rays of light to flash from the wizard's hand in a 23-ft. cone. Any creature touched by the rays may be inflicted with a random effect depending on the color (see below), but any creature with fewer than 8 Hit Dice is blinded for 5 rounds regardless of any additional effect. The colors of the prismatic spray do the following:
+
+– Red: 20 magic damage (save vs. Spell at -2 for half)
+– Orange: 40 magic damage (save vs. Spell at -2 for half)
+– Yellow: 80 magic damage (save vs. Spell at -2 for half)
+– Green: Save vs. Poison at -2 or die—survivors still take 20 poison damage
+– Blue: Save vs. Petrification at -2 or turn to stone
+– Indigo: Save vs. Wand at -2 or go insane~
+@21725=~Seven Eyes
+(Abjuration)
+
+Level: 7
+Range: 0
+Duration: 2 turns
+Casting Time: 7
+Area of Effect: The caster
+Saving Throw: None
+
+This spell conjures forth seven magical orbs that float in a ring above the caster's head. Each eye has a defensive and offensive ability, though once either one is used, the eye will lose its power. The powers of each eye are described below.
+
+Eye of the Mind: This orb protects the caster against mental attacks such as charm, emotion, and fear. The eye can be expended as the 1st-level wizard spell Charm Person, bringing a humanoid creature under the caster's control for 1 turn (Save vs. Spell negates).
+
+Eye of the Sword: This eye deflects the first physical damaging attack that strikes the caster. The eye may be expended as the 1st-level wizard spell Magic Missile, creating up to 5 missiles (one for every two levels of experience besides the first) that each strike a target for 1d4+1 magic damage.
+
+Eye of the Mage: This eye absorbs one manifestation of fire, electrical, cold, or acid damage. The eye can also be expended as the 3rd-level wizard spell Lightning Bolt, dealing 1d6 electrical damage per level (capped at 10d6) to all creatures in its path.
+
+Eye of Venom: This eye halts any one attack or effect that could poison the caster. The eye can also be expended as the 4th-level priest spell Poison.
+
+Eye of the Spirit: This eye blocks one instant-death magic attack (Death Spell; Finger of Death; Power Word, Kill; Slay Living; Destruction). The wizard may instead choose to expend the eye's power as the 2nd-level wizard spell Ray of Enfeeblement, dropping a target's Strength to 5 (Save vs. Spell at -3 negates).
+
+Eye of Fortitude: This eye blocks one stunning, deafness, blindness, or silence effect. It may alternatively be expended as the 4th-level wizard spell Shout, dealing 10d6 magic damage and deafening and knocking back creatures within a 35-ft. cone (Save vs. Spell halves damage and negates deafness).
+
+Eye of Stone: This eye shields the caster from a single petrification attack. It can also be used as the 3rd-level wizard spell Hold Person, rendering humanoids of man-size or smaller immobile for 1 round/level (Save vs. Spell negates).~
+@21726=~Suffocate
+(Alteration)
+
+Level: 7
+Range: Visual range of the caster
+Duration: 4 rounds
+Casting Time: 7
+Area of Effect: 7-ft. radius
+Saving Throw: Special
+
+This spell draws the breath out of all creatures within the area of effect. Creatures that do not breathe are unaffected. Suffocating creatures suffer -4 to Armor Class, -4 to hit, -6 to Dexterity, one less attack per round, half movement rate, and take 4d8 points of magic damage per round. A successful Save vs. Breath at -4 negates all effects but 2d8 points of damage for one round. The effects begin to fade when the creature moves out of the area of effect, although it can take a round for a character to catch their second wind.~
+@21803=~Protection From Energy
+(Abjuration)
+
+Level: 8
+Range: Touch
+Duration: 8 hours
+Casting Time: 8
+Area of Effect: 1 creature
+Saving Throw: None
+
+When the spell is cast, it confers +75% immunity against all energy attacks—such as fire, cold, acid, magic, and electricity, whether from magical or non-magical sources—such as spells, weapons, wands, breath weapons, etc. This excludes any physical attacks and spell-created weapons, such as Mordenkainen's Sword and Spiritual Hammer. In other words, any physical damage, such as piercing, crushing, or slashing, will get through. This effect lasts for the duration of the spell or until dispelled.~
+@21806=~Great Shout
+(Invocation)
+
+Level: 8
+Range: 0
+Duration: Instant
+Casting Time: 1
+Area of Effect: 30-ft. cone with 45-deg. arc
+Saving Throw: 1/2
+
+Upon uttering the Great Shout, the caster releases a stunning force from <PRO_HISHER> mouth in a 30-ft. cone. The Great Shout is extremely taxing and dangerous to the user, who must Save vs. Spell or fall unconscious for 3 rounds. Creatures 15 Hit Dice and under caught within the Great Shout instantly die. All other creatures within the area of effect must save vs. Breath at -4. Those who fail the save are stunned for 2 rounds, deafened for 4 rounds, knocked back, and suffer 12d12 points of magic damage. Those who make the save are stunned for 1 round, deafened for 2 rounds, knocked back, and suffer 6d12 points of magic damage.~
+@21903=~Spellstrike
+(Abjuration, Alteration)
+
+Level: 9
+Range: 80 ft.
+Duration: Instant
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: None
+
+When this spell is cast at a target creature, it will dispel all of the magical protections that surround that creature. This includes Minor Spell Turning, Minor Globe Of Invulnerability, Spell Immunity, Globe Of Invulnerability, Minor Spell Deflection, Spell Turning, Spell Shield, Spell Deflection, and Spell Trap. The target's Magic Resistance, if any, does not affect this spell. Spellstrike will also remove the effects of an antimagic shell, such as one created by a scroll of Protection from Magic or the 6th level spell Antimagic Shell.~
+@21911=~Meteor Swarm
+(Evocation)
+
+Level: 9
+Range: 0
+Duration: 5 rounds
+Casting Time: 15
+Area of Effect: 30-ft. radius
+Saving Throw: None
+
+When the caster utters the words to this powerful spell, <PRO_HESHE> calls upon mighty forces indeed. These forces pull down meteors from above, hurling them randomly at anyone in the area of effect, which is centered on the caster. Every second, any creature in the area of effect has a 50% chance to be struck by a meteor, taking 1d12 crushing damage and 1d12 fire damage with no save. The caster is protected from the meteors, but <PRO_HISHER> allies are not. The caster is well advised to be careful in <PRO_HISHER> use of this spell.~
+@21913=~Wail of the Banshee
+(Necromancy)
+
+Level: 9
+Range: 0
+Duration: Instant
+Casting Time: 9
+Area of Effect: 15-ft. radius
+Saving Throw: Neg.
+
+At the culmination of this dreadful spell, the wizard screams like a banshee (groaning spirit). Everyone in the area of effect hears the awful cry. Those who fail a Save vs. Death at -2 die instantly. The caster and companions are immune to the effects of the wail.~
+@21914=~Energy Drain
+(Necromancy)
+
+Level: 9
+Range: Visual range of the caster
+Duration: Permanent
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: None
+
+Casting this spell opens a channel between the caster's plane and the Negative Energy Plane. The caster acts as a conduit between the two planes, sucking life from a victim and transferring it to the Negative Energy Plane, draining <PRO_HIMHER> of 1 level of experience per 3 caster levels. The target of this spell loses levels, Hit Dice, Hit Points, and abilities permanently. These levels can only be restored by a priest's Restoration spell. This spell has no effect on undead, constructs, or extraplanar creatures.~
+@21918=~Bigby's Crushing Hand
+(Evocation)
+
+Level: 9
+Range: 35 ft.
+Duration: 3 rounds
+Casting Time: 9
+Area of Effect: 1 creature
+Saving Throw: Special
+
+This spell creates a huge, disembodied fist that crushes the target and attempts to pin <PRO_HIMHER> to the ground. In the first round, the spell does 8d10 crushing damage, and the victim is pinned down for 1 round. In the second round, the victim must save vs. Paralysis at -4 or suffer 7d10 damage and be pinned down again. In the third and final round, the victim must save vs. Paralysis at -2 or receive 6d10 damage and be pinned down for 2 rounds. The hand then disappears.~
+@21920=~Energy Blades
+(Any School)
+
+Level: 9
+Range: Special
+Duration: 4 turns
+Casting Time: 3
+Area of Effect: Special
+Saving Throw: None
+
+An energy blade is a discus made of pure energy. The disc gives +10 to THAC0, and when thrown does 1d4+5 missile damage as well as 1d10 additional electrical damage. This spell creates 1 energy disc per level of the caster and sets the caster's attacks to 9 as long as the discs are held.~
+@21921=~Improved Alacrity
+(Any School)
+
+Level: 9
+Range: 0
+Duration: 2 rounds
+Casting Time: 9
+Area of Effect: The caster
+Saving Throw: None
+
+Improved Alacrity essentially erases the pause between casting spells. When cast, the wizard can begin casting a new spell the instant <PRO_HESHE> is finished casting <PRO_HISHER> current spell. The effect lasts for 2 rounds.~
+@21922=~Dragon's Breath
+(Any School)
+
+Level: 9
+Range: 320 ft.
+Duration: Instant
+Casting Time: 3
+Area of Effect: 15-ft. radius
+Saving Throw: Special
+
+This spell causes a disembodied head of a red dragon to appear and breathe fire with the strength of an adult red dragon. The dragon's breath deals 20d10 damage. The victim can save vs. Breath Weapon to take half damage.
+
+This spell will not harm party members.~
+@21923=~Summon Planetar
+(Any School)
+
+Level: 9
+Range: 120 ft.
+Duration: 4 rounds + 1 round/level
+Casting Time: 5
+Area of Effect: Special
+Saving Throw: None
+
+This spell opens a celestial gate and calls forth a planetar to fight at the caster's side until the spell expires or the planetar's avatar is slain.~
+@21924=~Summon Dark Planetar
+(Any School)
+
+Level: 9
+Range: 120 ft.
+Duration: 4 rounds + 1 round/level
+Casting Time: 5
+Area of Effect: Special
+Saving Throw: None
+
+This spell opens an abyssal gate and calls forth a fallen planetar to fight at the caster's side until the spell expires or the planetar's avatar is slain.~
+@21925=~Comet
+(Any School)
+
+Level: 9
+Range: 270 ft.
+Duration: Instant
+Casting Time: 8
+Area of Effect: 15-ft. radius
+Saving Throw: Special
+
+This spell is a more specialized version of Meteor Swarm. A huge meteor or comet strikes the earth, damaging all creatures in its path and sending out a powerful shockwave that knocks away all foes in the area of effect. Those knocked down must save vs. Paralysis or be stunned for 2 rounds. The comet itself does 10d12 fire damage and 10d12 crushing damage with no save. The caster is protected from the comet, but <PRO_HISHER> allies are not.~
