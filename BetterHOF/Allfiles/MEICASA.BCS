@@ -1,0 +1,3210 @@
+SC
+CR
+CO
+TR
+16399 1 1 0 0 "LOCALSDMWWSave" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+30OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+1 0 0 0 0"LOCALSDMWWSave" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16399 0 0 0 0 "GLOBALGEM_ACTIVE" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16400 1 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+121OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+0 0 0 0 0"" "" AC
+AC
+286OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+0 0 0 0 0"" "" AC
+AC
+120OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+0 0 0 0 0"ILDRGDIE" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16399 0 0 0 0 "LOCALSkillme" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "GLOBALGEM_ACTIVE" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+121OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+0 0 0 0 0"" "" AC
+AC
+111OB
+0 0 0 0 0 0 0 0 0 0 0 0 "CUTSPY"OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+0 0 0 0 0"" "" AC
+AC
+50OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+2 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+0 0 0 0 0"" "" AC
+AC
+63OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+1 0 0 0 0"" "" AC
+AC
+122OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+0 0 0 0 0"" "" AC
+AC
+30OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+1 0 0 0 0"LOCALSkillme" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16399 1 0 0 0 "LOCALSkillme" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16401 0 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+169OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+0 0 0 0 0"minhp1" "" AC
+AC
+131OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+0 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16436 0 0 0 0 "LOCALSME_Prepare" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16448 0 0 0 0 "ME_Rest" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+30OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+0 0 0 0 0"LOCALSME_Prepare" "" AC
+AC
+30OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+0 0 0 0 0"LOCALSME_Sorcerer_Slots" "" AC
+AC
+96OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+0 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16399 0 0 0 0 "LOCALSME_Sorcerer_Slots" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+30OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+1 0 0 0 0"LOCALSME_Sorcerer_Slots" "" AC
+AC
+30OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+6 0 0 0 0"LOCALSME_Sorcerer_Level_1" "" AC
+AC
+30OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+6 0 0 0 0"LOCALSME_Sorcerer_Level_2" "" AC
+AC
+30OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+6 0 0 0 0"LOCALSME_Sorcerer_Level_3" "" AC
+AC
+30OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+6 0 0 0 0"LOCALSME_Sorcerer_Level_4" "" AC
+AC
+30OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+6 0 0 0 0"LOCALSME_Sorcerer_Level_5" "" AC
+AC
+30OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+6 0 0 0 0"LOCALSME_Sorcerer_Level_6" "" AC
+AC
+30OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+6 0 0 0 0"LOCALSME_Sorcerer_Level_7" "" AC
+AC
+30OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+6 0 0 0 0"LOCALSME_Sorcerer_Level_8" "" AC
+AC
+30OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+6 0 0 0 0"LOCALSME_Sorcerer_Level_9" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 12 0 0 0 ""OB
+TR
+TR
+16399 0 0 0 0 "LOCALSME_Prepare" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+30OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+1 0 0 0 0"LOCALSME_Prepare" "" AC
+AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2400 0 0 0 0"LOCALSME_Rest" "" AC
+AC
+181OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2408 0 0 0 0"" "" AC
+AC
+181OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2319 0 0 0 0"" "" AC
+AC
+181OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2907 0 0 0 0"" "" AC
+AC
+181OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2802 0 0 0 0"" "" AC
+AC
+181OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2519 0 0 0 0"" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_4" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_3" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_9" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_8" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_5" "" AC
+AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+48 0 0 0 0"LOCALSME_Spellshield" "" AC
+AC
+30OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+1 0 0 0 0"GLOBALME_Icasa_Fight" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 1 0 0 0 0 0 50 0 0 0 0 ""OB
+TR
+TR
+16408 10 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 4 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16452 0 0 178 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16396 6 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Fear_Aura" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+48 0 0 0 0"LOCALSME_Fear_Aura" "" AC
+AC
+181OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+0 0 0 0 0"MEMS294" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 1 0 0 0 0 0 51 0 0 0 0 ""OB
+TR
+TR
+16408 10 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 4 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16452 0 0 178 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16396 6 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Fear_Aura" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+48 0 0 0 0"LOCALSME_Fear_Aura" "" AC
+AC
+181OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+0 0 0 0 0"MEMS294" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 1 0 0 0 0 0 52 0 0 0 0 ""OB
+TR
+TR
+16408 10 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 4 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16452 0 0 178 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16396 6 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Fear_Aura" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+48 0 0 0 0"LOCALSME_Fear_Aura" "" AC
+AC
+181OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+0 0 0 0 0"MEMS294" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 1 0 0 0 0 0 53 0 0 0 0 ""OB
+TR
+TR
+16408 10 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 4 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16452 0 0 178 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16396 6 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Fear_Aura" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+48 0 0 0 0"LOCALSME_Fear_Aura" "" AC
+AC
+181OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+0 0 0 0 0"MEMS294" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 1 0 0 0 0 0 54 0 0 0 0 ""OB
+TR
+TR
+16408 10 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 4 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16452 0 0 178 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16396 6 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Fear_Aura" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+48 0 0 0 0"LOCALSME_Fear_Aura" "" AC
+AC
+181OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+0 0 0 0 0"MEMS294" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 1 0 0 0 0 0 55 0 0 0 0 ""OB
+TR
+TR
+16408 10 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 4 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16452 0 0 178 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16396 6 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Fear_Aura" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+48 0 0 0 0"LOCALSME_Fear_Aura" "" AC
+AC
+181OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+0 0 0 0 0"MEMS294" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 50 0 0 0 0 ""OB
+TR
+TR
+16452 0 0 177 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16521 6 0 0 0 "" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16453 99 0 15 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16453 0 0 88 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16453 0 0 128 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 1073741824 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16609 262144 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16610 29 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_3" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Dispel" "GLOBAL" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+6 0 0 0 0"LOCALSME_Cast" "" AC
+AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+12 0 0 0 0"GLOBALME_Dispel" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_3" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2302 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16399 1 0 0 0 "LOCALSME_Prepare" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16452 0 0 177 0 "" "" OB
+0 0 0 0 0 0 0 1 0 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_5" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Spellshield" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+6 0 0 0 0"LOCALSME_Cast" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_5" "" AC
+AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+48 0 0 0 0"LOCALSME_Spellshield" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2519 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16399 3 0 0 0 "LOCALSME_Heard" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16452 0 0 88 0 "" "" OB
+0 0 0 0 0 0 0 1 0 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_4" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_4" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2408 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16399 1 0 0 0 "LOCALSME_Prepare" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16452 0 0 128 0 "" "" OB
+0 0 0 0 0 0 0 1 0 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_9" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_9" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2907 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16429 50 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 0 0 0 0 ""OB
+TR
+TR
+16399 1 0 0 0 "LOCALSME_Prepare" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16439 32768 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 0 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_6" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+6 0 0 0 0"LOCALSME_Cast" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_6" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2613 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 50 0 0 0 0 ""OB
+TR
+TR
+16439 32 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 -2147483648 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16609 262144 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16610 1 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_9" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Mass_Domination" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+60 0 0 0 0"LOCALSME_Mass_Domination" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_9" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+0 0 0 0 0"MEMS235" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 51 0 0 0 0 ""OB
+TR
+TR
+16439 32 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 -2147483648 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16609 262144 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16610 1 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_9" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Mass_Domination" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+60 0 0 0 0"LOCALSME_Mass_Domination" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_9" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+0 0 0 0 0"MEMS235" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 52 0 0 0 0 ""OB
+TR
+TR
+16439 32 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 -2147483648 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16609 262144 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16610 1 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_9" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Mass_Domination" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+60 0 0 0 0"LOCALSME_Mass_Domination" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_9" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+0 0 0 0 0"MEMS235" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 53 0 0 0 0 ""OB
+TR
+TR
+16439 32 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 -2147483648 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16609 262144 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16610 1 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_9" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Mass_Domination" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+60 0 0 0 0"LOCALSME_Mass_Domination" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_9" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+0 0 0 0 0"MEMS235" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 54 0 0 0 0 ""OB
+TR
+TR
+16439 32 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 -2147483648 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16609 262144 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16610 1 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_9" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Mass_Domination" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+60 0 0 0 0"LOCALSME_Mass_Domination" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_9" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+0 0 0 0 0"MEMS235" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 55 0 0 0 0 ""OB
+TR
+TR
+16439 32 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 -2147483648 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16609 262144 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16610 1 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_9" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Mass_Domination" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+60 0 0 0 0"LOCALSME_Mass_Domination" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_9" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+0 0 0 0 0"MEMS235" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 12 0 0 0 ""OB
+TR
+TR
+16408 10 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Wing_Buffet" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+30 0 0 0 0"LOCALSME_Wing_Buffet" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+0 0 0 0 0"MEMS237" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 50 0 0 0 0 ""OB
+TR
+TR
+16402 90 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 32 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16609 262144 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16610 29 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_7" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Wordstun" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+1 0 0 0 0"LOCALSME_Wordstun" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_7" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2715 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 51 0 0 0 0 ""OB
+TR
+TR
+16402 90 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 32 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16609 262144 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16610 29 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_7" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Wordstun" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+1 0 0 0 0"LOCALSME_Wordstun" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_7" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2715 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 52 0 0 0 0 ""OB
+TR
+TR
+16402 90 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 32 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16609 262144 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16610 29 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_7" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Wordstun" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+1 0 0 0 0"LOCALSME_Wordstun" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_7" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2715 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 53 0 0 0 0 ""OB
+TR
+TR
+16402 90 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 32 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16609 262144 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16610 29 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_7" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Wordstun" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+1 0 0 0 0"LOCALSME_Wordstun" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_7" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2715 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 54 0 0 0 0 ""OB
+TR
+TR
+16402 90 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 32 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16609 262144 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16610 29 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_7" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Wordstun" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+1 0 0 0 0"LOCALSME_Wordstun" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_7" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2715 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 55 0 0 0 0 ""OB
+TR
+TR
+16402 90 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 32 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16609 262144 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16610 29 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_7" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Wordstun" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+1 0 0 0 0"LOCALSME_Wordstun" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_7" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2715 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 50 0 0 0 0 ""OB
+TR
+TR
+16439 32 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 262144 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_8" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Wordblind" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+12 0 0 0 0"LOCALSME_Wordblind" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_8" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2815 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 51 0 0 0 0 ""OB
+TR
+TR
+16439 32 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 262144 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_8" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Wordblind" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+12 0 0 0 0"LOCALSME_Wordblind" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_8" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2815 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 52 0 0 0 0 ""OB
+TR
+TR
+16439 32 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 262144 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_8" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Wordblind" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+12 0 0 0 0"LOCALSME_Wordblind" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_8" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2815 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 53 0 0 0 0 ""OB
+TR
+TR
+16439 32 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 262144 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_8" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Wordblind" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+12 0 0 0 0"LOCALSME_Wordblind" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_8" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2815 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 54 0 0 0 0 ""OB
+TR
+TR
+16439 32 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 262144 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_8" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Wordblind" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+12 0 0 0 0"LOCALSME_Wordblind" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_8" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2815 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 55 0 0 0 0 ""OB
+TR
+TR
+16439 32 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 262144 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_8" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Wordblind" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+12 0 0 0 0"LOCALSME_Wordblind" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_8" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2815 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 50 0 0 0 0 ""OB
+TR
+TR
+16439 32 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16609 262144 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16610 29 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_8" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Clenched_Fist" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+30 0 0 0 0"LOCALSME_Clenched_Fist" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_8" "" AC
+AC
+181OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2818 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 51 0 0 0 0 ""OB
+TR
+TR
+16439 32 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16609 262144 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16610 29 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_8" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Clenched_Fist" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+30 0 0 0 0"LOCALSME_Clenched_Fist" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_8" "" AC
+AC
+181OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2818 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 52 0 0 0 0 ""OB
+TR
+TR
+16439 32 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16609 262144 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16610 29 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_8" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Clenched_Fist" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+30 0 0 0 0"LOCALSME_Clenched_Fist" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_8" "" AC
+AC
+181OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2818 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 53 0 0 0 0 ""OB
+TR
+TR
+16439 32 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16609 262144 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16610 29 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_8" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Clenched_Fist" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+30 0 0 0 0"LOCALSME_Clenched_Fist" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_8" "" AC
+AC
+181OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2818 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 54 0 0 0 0 ""OB
+TR
+TR
+16439 32 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16609 262144 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16610 29 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_8" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Clenched_Fist" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+30 0 0 0 0"LOCALSME_Clenched_Fist" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_8" "" AC
+AC
+181OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2818 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 55 0 0 0 0 ""OB
+TR
+TR
+16439 32 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16609 262144 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16610 29 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_8" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Clenched_Fist" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+30 0 0 0 0"LOCALSME_Clenched_Fist" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_8" "" AC
+AC
+181OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2818 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 12 0 0 0 ""OB
+TR
+TR
+16454 76 0 16 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_6" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Chainlightning" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+18 0 0 0 0"LOCALSME_Chainlightning" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_6" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2615 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 29 0 0 0 ""OB
+TR
+TR
+16454 76 0 16 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_6" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Chainlightning" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+18 0 0 0 0"LOCALSME_Chainlightning" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_6" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2615 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 30 0 0 0 ""OB
+TR
+TR
+16454 76 0 16 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_6" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Chainlightning" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+18 0 0 0 0"LOCALSME_Chainlightning" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_6" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2615 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 31 0 0 0 ""OB
+TR
+TR
+16454 76 0 16 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_6" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Chainlightning" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+18 0 0 0 0"LOCALSME_Chainlightning" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_6" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2615 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 32 0 0 0 ""OB
+TR
+TR
+16454 76 0 16 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_6" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Chainlightning" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+18 0 0 0 0"LOCALSME_Chainlightning" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_6" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2615 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 33 0 0 0 ""OB
+TR
+TR
+16454 76 0 16 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_6" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Chainlightning" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+18 0 0 0 0"LOCALSME_Chainlightning" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_6" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2615 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 34 0 0 0 ""OB
+TR
+TR
+16454 76 0 16 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_6" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Chainlightning" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+18 0 0 0 0"LOCALSME_Chainlightning" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_6" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2615 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 35 0 0 0 ""OB
+TR
+TR
+16454 76 0 16 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_6" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Chainlightning" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+18 0 0 0 0"LOCALSME_Chainlightning" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_6" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2615 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 36 0 0 0 ""OB
+TR
+TR
+16454 76 0 16 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_6" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Chainlightning" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+18 0 0 0 0"LOCALSME_Chainlightning" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_6" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2615 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+0 0 0 0 0 0 0 1 37 0 0 0 ""OB
+TR
+TR
+16454 76 0 16 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_6" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Chainlightning" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+18 0 0 0 0"LOCALSME_Chainlightning" "" AC
+AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_6" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2615 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 50 0 0 0 0 ""OB
+TR
+TR
+16454 100 0 15 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16449 0 1 0 0 "ME_Breath" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+48 0 0 0 0"LOCALSME_Breath" "" AC
+AC
+345OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2 0 0 0 0"" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+0 0 0 0 0"SPIN134" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 50 0 0 0 0 ""OB
+TR
+TR
+16452 0 0 88 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16452 0 0 128 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 4194304 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 0 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_5" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_5" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2505 0 0 0 0"" "" AC
+AC
+134OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+20 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 50 0 0 0 0 ""OB
+TR
+TR
+16439 32 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 -2147483648 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16609 262144 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_5" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_5" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2508 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 51 0 0 0 0 ""OB
+TR
+TR
+16439 32 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 -2147483648 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16609 262144 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_5" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_5" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2508 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 52 0 0 0 0 ""OB
+TR
+TR
+16439 32 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 -2147483648 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16609 262144 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_5" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_5" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2508 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 53 0 0 0 0 ""OB
+TR
+TR
+16439 32 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 -2147483648 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16609 262144 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_5" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_5" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2508 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 54 0 0 0 0 ""OB
+TR
+TR
+16439 32 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 -2147483648 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16609 262144 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_5" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_5" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2508 0 0 0 0"" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16412 0 0 0 0 "" "" OB
+2 0 0 0 57082 0 0 55 0 0 0 0 ""OB
+TR
+TR
+16439 32 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16439 -2147483648 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16609 262144 1 0 0 "" "" OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "LOCALSME_Sorcerer_Level_5" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+109OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+-1 0 0 0 0"LOCALSME_Sorcerer_Level_5" "" AC
+AC
+113OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 1 18 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+2508 0 0 0 0"" "" AC
+RE
+RS
+CR
+SC

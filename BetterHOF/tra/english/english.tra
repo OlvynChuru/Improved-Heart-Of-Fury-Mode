@@ -375,6 +375,18 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest heals 50 Hit Points and cures intoxication. This spell has no effect on undead, constructs, or extraplanar creatures. It cannot be cast by evil-aligned characters.~
+@20503=~Flame Strike
+(Evocation)
+
+Level: 5
+Sphere: Combat
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 8
+Area of Effect: 5-ft. radius
+Saving Throw: 1/2
+
+When the priest casts Flame Strike, a vertical column of fire roars downward onto a victim chosen by the caster. The spell deals 1d6 points of damage per level (to a maximum of 15d6) to the target and any nearby victims. Half of the damage, rounded down, is fire damage, and the other half is magic fire damage. The targets only take the regular fire damage on a successful Save vs. Spell.~
 @20507=~Champion's Strength
 (Alteration)
 
@@ -1423,6 +1435,30 @@ Area of Effect: 30-ft. cone with 45-deg. arc
 Saving Throw: 1/2
 
 Upon uttering the Great Shout, the caster releases a stunning force from <PRO_HISHER> mouth in a 30-ft. cone. The Great Shout is extremely taxing and dangerous to the user, who must Save vs. Spell or fall unconscious for 3 rounds. Creatures 15 Hit Dice and under caught within the Great Shout instantly die. All other creatures within the area of effect must save vs. Breath at -4. Those who fail the save are stunned for 2 rounds, deafened for 4 rounds, knocked back, and suffer 12d12 points of magic damage. Those who make the save are stunned for 1 round, deafened for 2 rounds, knocked back, and suffer 6d12 points of magic damage.~
+@21812=~Abi-Dalzim's Horrid Wilting
+(Necromancy)
+
+Level: 8
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 8
+Area of Effect: 17-ft. radius
+Saving Throw: 1/2
+
+This spell evaporates moisture from the bodies of every living creature within the area of effect, inflicting 1d8 points of magic damage per level of the caster. Affected creatures are allowed a Save vs. Spell for half damage. Water-dwelling creatures must make the save at a -8 penalty; for other creatures there is no penalty.~
+@21814=~Iron Body
+(Alteration)
+
+Level: 8
+Range: 0
+Duration: 2 turns
+Casting Time: 8
+Area of Effect: The caster
+Saving Throw: None
+
+This spell transforms the caster's body into living iron, granting <PRO_HIMHER> several powerful resistances and abilities. While the spell is in effect, the caster is 100% resistant to electricity and poison, 50% resistant to fire, and 25% resistant to all physical damage. Spells that affect respiration or the physiology of the caster, such as Abi-Dalzim's Horrid Wilting, Flaying, or Drown, are ignored. In addition, the caster's Strength is raised to 25.
+
+Unfortunately, the caster's movement becomes slow and awkward, setting <PRO_HISHER> movement rate to 25% of <PRO_HISHER> normal.~
 @21903=~Spellstrike
 (Abjuration, Alteration)
 
