@@ -6,12 +6,8 @@ TR
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
 TR
 TR
-16395 255 0 0 0 "" "" OB
-0 0 0 0 0 0 0 1 0 0 0 0 ""OB
-TR
-TR
 16412 0 0 0 0 "" "" OB
-255 0 0 0 0 0 0 0 0 0 0 0 ""OB
+0 0 0 0 0 0 0 1 95 0 0 0 ""OB
 TR
 TR
 16408 10 0 0 0 "" "" OB
@@ -43,7 +39,7 @@ OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
 OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
-24 0 0 0 0"LOCALSME_Mithrilhaste" "" AC
+18 0 0 0 0"LOCALSME_Mithrilhaste" "" AC
 AC
 115OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
@@ -91,7 +87,7 @@ OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
 OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
-24 0 0 0 0"LOCALSME_Mithrilhaste" "" AC
+18 0 0 0 0"LOCALSME_Mithrilhaste" "" AC
 AC
 115OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB

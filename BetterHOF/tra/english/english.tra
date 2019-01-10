@@ -144,6 +144,18 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 By casting this spell and touching a creature, the priest deals 15 points of damage to the creature's body. This spell has no effect on undead, constructs, or extraplanar creatures. It cannot be cast by good-aligned characters.~
+@20250=~Writhing Fog
+(Conjuration)
+
+Level: 2
+Sphere: Summoning
+Range: Visual range of the caster
+Duration: 1 turn
+Casting Time: 2
+Area of Effect: 15-ft. radius
+Saving Throw: Special
+
+This spell conjures a cloud of writhing fog that chills and hinders anyone within its area other than the caster. Creatures in the fog take 1d3 points of magic cold damage per round. In addition, there is a 20% chance that they must save vs. Death or be slowed for 1 round. Creatures immune to magic cold damage do not suffer any adverse effects from this spell.~
 @20303=~Dispel Magic
 (Abjuration)
 
@@ -230,6 +242,20 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 By casting this spell and touching a creature, the priest deals 20 points of damage to the creature's body. This spell has no effect on undead, constructs, or extraplanar creatures. Cause Medium Wounds cannot be cast by good-aligned characters.~
+@20331=~Favor of Ilmater
+(Necromancy)
+
+Level: 3
+Sphere: Necromantic, Protection
+Range: 30 ft.
+Duration: Instant
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+By invoking this spell, the caster switches <PRO_HISHER> own life force with that of the recipient, exchanging all physical injuries. The spell will only function if the caster has more Hit Points than the target before the switch is attempted. This switch is permanent until the caster uses normal methods to heal the damage. The exchange can be done from a distance so long as the spell range is not exceeded. Only the Hit Points are exchanged; the caster cannot take on other conditions from the target such as disease, poison, intoxication, and similar afflictions. 
+
+This spell cannot be cast by evil-aligned characters. It has no effect on undead, constructs, or extraplanar creatures.~
 @20401=~Cure Serious Wounds
 (Necromancy)
 
@@ -291,6 +317,18 @@ Saving Throw: None
 When Farsight is cast, the caster is able to view an area of an unexplored map. After casting the spell, simply click on a section of the map that you want to view. For the duration of the spell, the caster can spy on that area, noting creatures and fortifications.
 
 Farsight has no casting time, can be cast immediately after another spell, and can be cast while the game is paused.~
+@20416=~Cloak of Fear
+(Conjuration/Summoning)
+
+Level: 4
+Sphere: Charm
+Range: 0
+Duration: 1 turn
+Casting Time: 6
+Area of Effect: The caster
+Saving Throw: Neg.
+
+Cloak of Fear bestows the caster with an aura of fear in a 5-ft. radius for 1 turn. All creatures that enter the cloak's area of effect must make a Save vs. Spell at -2 or flee in panic for 3 rounds. The aura does not affect undead creatures.~
 @20419=~Produce Fire
 (Alteration)
 
@@ -363,6 +401,30 @@ Area of Effect: 17-ft. cone with 90-deg. arc
 Saving Throw: 1/2 as many thorns
 
 By means of this spell, the caster can cause a spray of barbs, spikes, thorns, and spines to spring forth from <PRO_HISHER> hand. The thorn spray covers a 17-ft.-long cone, and any creature in the area of the cone will be pierced by 2d10 thorns, or half as many on a successful Save vs. Breath. Each thorn deals 1d3 piercing damage. The thorns deal damage separately and will break multiple mirror images or stoneskins. The target's Magic Resistance, if it has any, will not protect against the thorns.~
+@20428=~Wall of Moonlight
+(Invocation)
+
+Level: 4
+Sphere: Protection, Sun
+Range: Visual range of the caster
+Duration: 1 turn
+Casting Time: 7
+Area of Effect: 8 ft. long, 2 ft. wide wall
+Saving Throw: None
+
+This spell invokes a shimmering tapestry of blue-white force. This wall is intangible, requiring no physical anchor, and can easily be passed through. Evil creatures passing through the wall take 2d10 magic damage; evil undead creatures and evil lycanthropes take 5d10. A creature that has passed through the wall can only take damage from it once.~
+@20450=~Spirit Fire
+(Conjuration)
+
+Level: 4
+Sphere: Summoning
+Range: 40 ft. 
+Duration: Instant 
+Casting Time: 4
+Area of Effect: 15-ft. radius 
+Saving Throw: Special
+
+As the Shaman casts this spell, energies gather together from the spirit world and form a pale blue sphere. The Shaman can throw the sphere so that it explodes into a burst of ghostly, azure flames, which deliver 1d4 points of magic damage per level of the Shaman (up to a maximum of 10d4). In addition every enemy within the area of effect will be afflicted by the Doom spell (-2 penalty to Saving Throws and attack rolls for 1 turn). A successful Save vs. Spell halves the damage. Spirits, fey creatures, elementals, and spectral undead take double damage.~
 @20502=~Cure Critical Wounds
 (Necromancy)
 
@@ -435,6 +497,18 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 This spell only functions on allies. It imbues the target creature with animal ferocity. The target creature gains +3 Strength, +3 to hit, +5 damage, +30 Hit Points, +30% movement rate, and a +3 bonus to all Saving Throws. The target loses the ability to cast spells while Animal Rage is in effect; when enemies are within sight, <PRO_HESHE> immediately attacks in melee, using whatever is in hand.~
+@20523=~Mass Cause Light Wounds
+(Necromancy)
+
+Level: 5
+Sphere: Healing
+Range: 0
+Duration: Instant
+Casting Time: 5
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+By casting this spell, the priest deals 1d8 + 1/level points of damage to nearby enemies. This spell has no effect on undead, constructs, or extraplanar creatures. It can only be cast by evil-aligned characters.~
 @20603=~Blade Barrier
 (Evocation)
 
@@ -1456,7 +1530,7 @@ Casting Time: 8
 Area of Effect: The caster
 Saving Throw: None
 
-This spell transforms the caster's body into living iron, granting <PRO_HIMHER> several powerful resistances and abilities. While the spell is in effect, the caster is 100% resistant to electricity and poison, 50% resistant to fire, and 25% resistant to all physical damage. Spells that affect respiration or the physiology of the caster, such as Abi-Dalzim's Horrid Wilting, Flaying, or Drown, are ignored. In addition, the caster's Strength is raised to 25.
+This spell transforms the caster's body into living iron, granting <PRO_HIMHER> several powerful resistances and abilities. While the spell is in effect, the caster is 100% resistant to fire and poison, and 25% resistant to all physical damage. Spells that affect respiration or the physiology of the caster, such as Abi-Dalzim's Horrid Wilting, Flaying, or Drown, are ignored. In addition, the caster's Strength is raised to 25.
 
 Unfortunately, the caster's movement becomes slow and awkward, setting <PRO_HISHER> movement rate to 25% of <PRO_HISHER> normal.~
 @21903=~Spellstrike
@@ -1582,3 +1656,10 @@ Area of Effect: 15-ft. radius
 Saving Throw: Special
 
 This spell is a more specialized version of Meteor Swarm. A huge meteor or comet strikes the earth, damaging all creatures in its path and sending out a powerful shockwave that knocks away all foes in the area of effect. Those knocked down must save vs. Paralysis or be stunned for 2 rounds. The comet itself does 10d12 fire damage and 10d12 crushing damage with no save. The caster is protected from the comet, but <PRO_HISHER> allies are not.~
+@25701=~Upon receiving the fire attack, the Dense Pudding splits in two.~
+@25702=~Upon receiving the electrical attack, the Dense Pudding splits in two.~
+@25703=~Upon receiving the slashing attack, the Fission Slime splits in two.~
+@25704=~Upon receiving the piercing attack, the Fission Slime splits in two.~
+@25705=~Upon receiving the missile attack, the Fission Slime splits in two.~
+@25706=~*attempts to hide in shadows*~
+@25707=~*attempts to detect illusions*~

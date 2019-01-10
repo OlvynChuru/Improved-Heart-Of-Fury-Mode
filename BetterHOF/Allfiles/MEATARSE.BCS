@@ -502,26 +502,6 @@ CR
 CR
 CO
 TR
-2 0 0 0 0 "" "" OB
-0 0 0 0 0 0 0 0 0 0 0 0 ""OB
-TR
-CO
-RS
-RE
-100AC
-134OB
-0 0 0 0 0 0 0 0 0 0 0 0 ""OB
-OB
-0 0 0 0 0 0 0 1 10 0 0 0 ""OB
-OB
-0 0 0 0 0 0 0 0 0 0 0 0 ""OB
-30 0 0 0 0"" "" AC
-RE
-RS
-CR
-CR
-CO
-TR
 16449 0 0 0 0 "ME_Wait" "LOCALS" OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
 TR
