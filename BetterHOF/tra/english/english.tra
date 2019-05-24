@@ -1,3 +1,12 @@
+@19001=~Identify Creature~
+@19002=~Eye of the Mind: This orb protects the caster against mental attacks such as charm, emotion, and fear. The eye can be expended as the 5th-level wizard spell Domination, bringing a creature under the caster's control for 15 rounds (Save vs. Spell at -2 negates).~
+@19003=~Eye of the Sword: This eye deflects the first physical damaging attack that strikes the caster. The eye may be expended as the 4th-level wizard spell Mordenkainen's Force Missiles, creating up to 7 missiles that strike the target.~
+@19004=~Eye of the Mage: This eye absorbs one manifestation of fire, electrical, cold, or acid damage. The eye can also be expended as the 6th-level wizard spell Chain Lightning, dealing 1d6 electrical damage per level (capped at 20d6) to the first target and bouncing to other creatures for less damage.~
+@19005=~Eye of Venom: This eye halts any one attack or effect that could poison the caster. The eye can also be expended as the 5th-level wizard spell Cloudkill.~
+@19006=~Eye of the Spirit: This eye blocks one instant-death magic attack (Death Spell; Finger of Death; Power Word, Kill; Slay Living; Destruction). The wizard may instead choose to expend the eye's power as the 5th-level priest spell Slay Living, instantly killing the target (Save vs. Death negates).~
+@19007=~Eye of Fortitude: This eye blocks one stunning, deafness, blindness, or silence effect. It may alternatively be expended as the 4th-level wizard spell Shout, dealing 10d6 magic damage and deafening and knocking back creatures within a 35-ft. cone (Save vs. Spell halves damage and negates deafness).~
+@19008=~Eye of Stone: This eye shields the caster from a single petrification attack. It can also be used as the 6th-level wizard spell Flesh to Stone, petrifying the target (Save vs. Petrification negates).~
+
 @20103=~Cure Light Wounds
 (Necromancy)
 
@@ -84,18 +93,18 @@ Area of Effect: Special
 Saving Throw: None
 
 Casting a Goodberry spell creates 3 magical berries that the caster can carry with <PRO_HIMHER>. Each berry restores 4 Hit Points when eaten.~
-@20209=~Know Alignment
+@20209=~Identify Creature
 (Divination)
 
 Level: 2
 Sphere: Divination
-Range: Visual range of the caster
-Duration: 1 turn
-Casting Time: 9
+Range: 30 ft.
+Duration: Instant
+Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: None
 
-A Know Alignment spell enables the priest to read the aura of a creature. Evil creatures will glow red, neutrals blue, and good creatures will glow green for a brief period. There is no Saving Throw.~
+An Identify Creature spell enables the caster to learn useful information about a creature. The information will include the creature's level, class, Hit Points, Armor Class, base THAC0 (excluding THAC0 bonuses), attacks per round, attributes, resistances, saving throws, and various other effects.~
 @20217=~Cure Moderate Wounds
 (Necromancy)
 
@@ -230,6 +239,30 @@ Saving Throw: None
 This spell summons forth a silent, weightless sword-like construct made of moonlight that extends four feet from the caster's hand. The moonblade is considered a +4 weapon for determining what creatures it can hit, though the bonus does not apply to attack rolls made with it. In addition, due to the insubstantial nature of the moonblade, damage bonuses from Strength do not apply, though to hit bonuses do. The moonblade uses the scimitar proficiency, but it gives the wielder proficiency in scimitars unless <PRO_HESHE> already has it.
 
 The strike of a moonblade drains a target's vitality, inflicting 1d12+4 points of magic damage, plus an additional 2d12 points to undead, who are particularly susceptible. A successful strike also temporarily scrambles magic, causing any spells the target casts in the next round to fail.~
+@20323=~Circle of Bones
+(Necromancy)
+
+Level: 3
+Sphere: Guardian, Creation
+Range: 0
+Duration: 6 rounds
+Casting Time: 3
+Area of Effect: 3-ft. radius
+Saving Throw: None
+
+This spell conjures forth a barrier of floating bones that spin rapidly around the caster. Anyone entering the path of the bones takes 1d6 crushing damage and 1d6 slashing damage per round. Circle of Bones cannot be cast by good-aligned characters.~
+@20325=~Cloudburst
+(Invocation)
+
+Level: 3
+Sphere: Elemental Water
+Range: Visual range of the caster
+Duration: 1 turn
+Casting Time: 15
+Area of Effect: 17-ft. radius
+Saving Throw: None
+
+This spell brings forth a magical rain that saturates the area of effect. All creatures in the rain gain +50% fire resistance and +25% magical fire resistance. In addition, all electricity damage dealt by creatures in the rain is increased by 50%. Fire elementals, fire salamanders, and efreet in the rain take 2d3 magical cold damage every second. Flame Blade, Shroud of Flame, and salamander auras are extinguished by Cloudburst.~
 @20330=~Cause Medium Wounds
 (Necromancy)
 
@@ -286,7 +319,7 @@ This spell grants the caster the ability to touch a creature and instantly poiso
 Level: 4
 Sphere: Protection, Necromantic
 Range: Touch
-Duration: 9 rounds
+Duration: 15 rounds
 Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: None
@@ -532,7 +565,7 @@ Casting Time: 9
 Area of Effect: The caster
 Saving Throw: None
 
-This spell creates 4 grenade-like missiles in the priest's inventory that can be hurled at any target in sight. (These missiles last only for the spell's duration, so don't hoard them.) When they land, the seeds explode, doing 4d8 points of fire damage to everything within an 10-ft. radius. A creature struck by the explosion is allowed to make a Save vs. Spell for half damage.~
+This spell creates 20 grenade-like missiles in the priest's inventory that can be hurled at any target in sight. (These missiles last only for the spell's duration, so don't hoard them.) When they land, the seeds explode, doing 4d8 points of fire damage to everything within an 10-ft. radius. A creature struck by the explosion is allowed to make a Save vs. Spell for half damage.~
 @20608=~Harm
 (Necromancy)
 
@@ -576,6 +609,18 @@ By casting this spell, the priest channels a bolt of divine energy against the t
 - Fiend: 20d6
 
 There is no saving throw offered to the creature, and its Magic Resistance matters not.~
+@20614=~Sol's Searing Orb
+(Invocation)
+
+Level: 6
+Sphere: Sun
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: Special
+
+This spell allows the caster to hurl a brilliant, searing flash at a target. When it hits, it explodes in a flash of light, doing 6d12 points of magical fire damage to the target and blinding <PRO_HIMHER> for 3 rounds if a Save vs. Spell is failed. If the Saving Throw is made, the target only takes half damage and is not blinded. Undead creatures are particularly vulnerable to this spell, taking double damage, and they have a -6 penalty to the save.~
 @20617=~Whirlwind
 (Invocation)
 
@@ -866,7 +911,7 @@ Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: None
 
-With this spell, the wizard drains the life force from a target and adds it to <PRO_HISHER> own. The target creature suffers 8 magic damage, while the wizard gains 8 Hit Points. If the wizard goes over <PRO_HISHER> maximum Hit Point total with this spell, <PRO_HESHE> loses them after 1 turn. This spell has no effect on constructs or undead.~
+With this spell, the wizard drains the life force from a target and adds it to <PRO_HISHER> own. The target creature suffers 12 magic damage, while the wizard gains 12 Hit Points. If the wizard goes over <PRO_HISHER> maximum Hit Point total with this spell, <PRO_HESHE> loses them after 1 hour. This spell has no effect on constructs or undead.~
 @21126=~Expeditious Retreat
 (Alteration)
 
@@ -889,17 +934,17 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 The target of the Detect Invisibility spell is able to see clearly any objects or beings that are invisible, as well as any that are astral, ethereal, or out of phase. In addition, this spell enables the recipient to detect hidden or concealed creatures (e.g., Thieves hiding in shadows, halflings in underbrush, and so on). The main function of this spell is to enable the recipient to target partially invisible or sanctuaried creatures with spells. In addition, if the recipient is using AI, he or she will able to attack fully invisible creatures and target them with spells. The power to Detect Invisibility lasts for 15 rounds or until dispelled.~
-@21208=~Know Alignment
+@21208=~Identify Creature
 (Divination)
 
 Level: 2
-Range: Visual range of the caster
+Range: 30 ft.
 Duration: Instant
-Casting Time: 9
+Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: None
 
-A Know Alignment spell enables the priest to read the aura of a creature. Evil creatures will glow red, neutrals blue, and good creatures will glow green for a brief period. There is no Saving Throw.~
+An Identify Creature spell enables the caster to learn useful information about a creature. The information will include the creature's level, class, Hit Points, Armor Class, base THAC0 (excluding THAC0 bonuses), attacks per round, attributes, resistances, saving throws, and various other effects.~
 @21209=~Luck
 (Enchantment/Charm)
 
@@ -1012,6 +1057,17 @@ Saving Throw: None
 Remove Magic dispels the magical effects upon any enemies within the area. This includes effects given from spells, potions, and certain magical items such as wands. It does not, however, affect enchanted magical items.
 
 Note: While this spell dispels the individual effects of Grease, Web, Stinking Cloud, and other such spells, it does not dispel the area of effect.~
+@21305=~Haste
+(Alteration)
+
+Level: 3
+Range: Visual range of the caster
+Duration: 3 rounds + 1 round/level
+Casting Time: 3
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+Haste doubles the base movement rate of all friendly creatures within the area of effect and grants them each an extra attack per round. (Spellcasting and spell effects are not sped up.) All affected by the Haste spell must be in the designated area of effect. Note that this spell negates the effects of a Slow spell. This spell is not cumulative with itself or with other similar magic.~
 @21311=~Protection From Missiles
 (Abjuration)
 
@@ -1173,7 +1229,7 @@ Casting Time: 4
 Area of Effect: 1 creature
 Saving Throw: None
 
-When this spell is cast on a creature, it enchants any weapons that it currently wields. For the duration of the spell, those weapons are treated as having a +6 enchantment for the purposes of determining what they can hit.~
+When this spell is cast on a creature, it enchants any weapons that it currently wields. For the duration of the spell, those weapons are treated as having a +5 enchantment for the purposes of determining what they can hit.~
 @21422=~Beltyn's Burning Blood
 (Necromancy)
 
@@ -1277,6 +1333,19 @@ Area of Effect: 120-ft. radius
 Saving Throw: None
 
 When cast, this spell will cancel all Illusion/Phantasm spells within its area of effect. The spells affected are Blur, Reflected Image, Invisibility, Mirror Image, Non-Detection, Improved Invisibility, Shadow Door, Pixie Dust, Mislead, Project Image, and Simulacrum. The caster can control whom this spell affects; thus, it will affect only creatures that are not in the caster's party. A target's Magic Resistance, if any, does not affect this spell.~
+@21518=~Phantom Blade
+(Evocation)
+
+Level: 5
+Range: 0
+Duration: 3 rounds + 1 round/level
+Casting Time: 5
+Area of Effect: Special
+Saving Throw: None
+
+This spell creates a translucent, shadow-like, weightless area of magical force extending from the fingers of one of the caster's hands. The silent, blade-shaped construct's cutting edges inflict slashing damage just as those of a real sword do. The phantom blade uses the long sword proficiency, but it grants the wielder proficiency in long swords if <PRO_HESHE> has none.
+
+The phantom blade acts as a +3 magical sword and deals 1d10+3 damage, but it also has +20 to hit, since it ignores all defenses. Due to its etheric nature, it causes an extra +10 magic damage against undead creatures. This sword can only be used by the caster and remains in <PRO_HISHER> hand for the duration of the spell or until dispelled.~
 @21519=~Spell Shield
 (Abjuration)
 
@@ -1296,9 +1365,9 @@ Range: Visual range of the caster
 Duration: 1 round/2 levels (special)
 Casting Time: 5
 Area of Effect: 5-ft. radius
-Saving Throw: Neg.
+Saving Throw: None
 
-This spell causes a creature to burst into flames if it fails a Save vs. Spell at -5. The creature will burn for 2d6 points of fire damage every round, and gouts of flame erupt from the burning target, causing any creatures within 5 ft. to take 1d4 points of fire damage from the flames. Anyone hit by the victim's flames must also make a Save vs. Spell at -5 to avoid contracting the shroud themselves. The shroud of flame dissipates if the caster and target are no longer in the same area. This spell is particularly useful in dispersing packs of trolls and frost salamanders.~
+This spell causes a creature to burst into flames. The creature will burn for 2d6 points of fire damage every round, and gouts of flame erupt from the burning target, causing any creatures within 5 ft. to take 1d4 points of fire damage from the flames. Anyone hit by the victim's flames will contract the shroud themselves. The shroud of flame dissipates if the caster and target are no longer in the same area. This spell is particularly useful in dispersing packs of trolls and frost salamanders.~
 @21604=~Flesh to Stone
 (Alteration)
 
@@ -1461,21 +1530,21 @@ Casting Time: 7
 Area of Effect: The caster
 Saving Throw: None
 
-This spell conjures forth seven magical orbs that float in a ring above the caster's head. Each eye has a defensive and offensive ability, though once either one is used, the eye will lose its power. The powers of each eye are described below.
+This spell conjures forth seven magical orbs that float in a ring above the caster's head. Each eye has a defensive and offensive ability, though once either one is used, the eye will lose its power. Each offensive ability can be cast instantly. The powers of each eye are described below.
 
-Eye of the Mind: This orb protects the caster against mental attacks such as charm, emotion, and fear. The eye can be expended as the 1st-level wizard spell Charm Person, bringing a humanoid creature under the caster's control for 1 turn (Save vs. Spell negates).
+Eye of the Mind: This orb protects the caster against mental attacks such as charm, emotion, and fear. The eye can be expended as the 5th-level wizard spell Domination, bringing a creature under the caster's control for 15 rounds (Save vs. Spell at -2 negates).
 
-Eye of the Sword: This eye deflects the first physical damaging attack that strikes the caster. The eye may be expended as the 1st-level wizard spell Magic Missile, creating up to 5 missiles (one for every two levels of experience besides the first) that each strike a target for 1d4+1 magic damage.
+Eye of the Sword: This eye deflects the first physical damaging attack that strikes the caster. The eye may be expended as the 4th-level wizard spell Mordenkainen's Force Missiles, creating up to 7 missiles that strike the target.
 
-Eye of the Mage: This eye absorbs one manifestation of fire, electrical, cold, or acid damage. The eye can also be expended as the 3rd-level wizard spell Lightning Bolt, dealing 1d6 electrical damage per level (capped at 10d6) to all creatures in its path.
+Eye of the Mage: This eye absorbs one manifestation of fire, electrical, cold, or acid damage. The eye can also be expended as the 6th-level wizard spell Chain Lightning, dealing 1d6 electrical damage per level (capped at 20d6) to the first target and bouncing to other creatures for less damage.
 
-Eye of Venom: This eye halts any one attack or effect that could poison the caster. The eye can also be expended as the 4th-level priest spell Poison.
+Eye of Venom: This eye halts any one attack or effect that could poison the caster. The eye can also be expended as the 5th-level wizard spell Cloudkill.
 
-Eye of the Spirit: This eye blocks one instant-death magic attack (Death Spell; Finger of Death; Power Word, Kill; Slay Living; Destruction). The wizard may instead choose to expend the eye's power as the 2nd-level wizard spell Ray of Enfeeblement, dropping a target's Strength to 5 (Save vs. Spell at -3 negates).
+Eye of the Spirit: This eye blocks one instant-death magic attack (Death Spell; Finger of Death; Power Word, Kill; Slay Living; Destruction). The wizard may instead choose to expend the eye's power as the 5th-level priest spell Slay Living, instantly killing the target (Save vs. Death negates).
 
 Eye of Fortitude: This eye blocks one stunning, deafness, blindness, or silence effect. It may alternatively be expended as the 4th-level wizard spell Shout, dealing 10d6 magic damage and deafening and knocking back creatures within a 35-ft. cone (Save vs. Spell halves damage and negates deafness).
 
-Eye of Stone: This eye shields the caster from a single petrification attack. It can also be used as the 3rd-level wizard spell Hold Person, rendering humanoids of man-size or smaller immobile for 1 round/level (Save vs. Spell negates).~
+Eye of Stone: This eye shields the caster from a single petrification attack. It can also be used as the 6th-level wizard spell Flesh to Stone, petrifying the target (Save vs. Petrification negates).~
 @21726=~Suffocate
 (Alteration)
 
@@ -1555,6 +1624,17 @@ Area of Effect: 30-ft. radius
 Saving Throw: None
 
 When the caster utters the words to this powerful spell, <PRO_HESHE> calls upon mighty forces indeed. These forces pull down meteors from above, hurling them randomly at anyone in the area of effect, which is centered on the caster. Every second, any creature in the area of effect has a 50% chance to be struck by a meteor, taking 1d12 crushing damage and 1d12 fire damage with no save. The caster is protected from the meteors, but <PRO_HISHER> allies are not. The caster is well advised to be careful in <PRO_HISHER> use of this spell.~
+@21912=~Power Word, Kill
+(Conjuration/Summoning)
+
+Level: 9
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+Power Word, Kill is perhaps the deadliest word of power. It instantly kills a single creature with 120 hit points or less. There is no Saving Throw.~
 @21913=~Wail of the Banshee
 (Necromancy)
 
