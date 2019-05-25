@@ -1570,13 +1570,13 @@ LAF ADD_SPLPROT_CONDITION STR_VAR splprot_stat=~20~ splprot_value=~100~ splprot_
 
 LAF ADD_SPLPROT_CONDITION STR_VAR splprot_stat=~20~ splprot_value=~128~ splprot_relation=~4~ RET splprot_weaktomagiccold=splprot_slot END
 
-LAF ADD_SPLPROT_CONDITION STR_VAR splprot_stat=~0x104~ splprot_value=~%splprot_notimmunetomagicfire%~ splprot_relation=~%splprot_weaktomagicfire%~ RET splprot_immunetomagicfire=splprot_slot END
+LAF ADD_SPLPROT_CONDITION STR_VAR splprot_stat=~0x104~ splprot_value= EVAL ~%splprot_notimmunetomagicfire%~ splprot_relation= EVAL ~%splprot_weaktomagicfire%~ RET splprot_immunetomagicfire=splprot_slot END
 
-LAF ADD_SPLPROT_CONDITION STR_VAR splprot_stat=~0x103~ splprot_value=~%splprot_notimmunetomagicfire%~ splprot_relation=~%splprot_weaktomagicfire%~ RET splprot_notimmuneorweaktomagicfire=splprot_slot END
+LAF ADD_SPLPROT_CONDITION STR_VAR splprot_stat=~0x103~ splprot_value= EVAL ~%splprot_notimmunetomagicfire%~ splprot_relation= EVAL ~%splprot_weaktomagicfire%~ RET splprot_notimmuneorweaktomagicfire=splprot_slot END
 
-LAF ADD_SPLPROT_CONDITION STR_VAR splprot_stat=~0x104~ splprot_value=~%splprot_notimmunetomagiccold%~ splprot_relation=~%splprot_weaktomagiccold%~ RET splprot_immunetomagiccold=splprot_slot END
+LAF ADD_SPLPROT_CONDITION STR_VAR splprot_stat=~0x104~ splprot_value= EVAL ~%splprot_notimmunetomagiccold%~ splprot_relation= EVAL ~%splprot_weaktomagiccold%~ RET splprot_immunetomagiccold=splprot_slot END
 
-LAF ADD_SPLPROT_CONDITION STR_VAR splprot_stat=~0x103~ splprot_value=~%splprot_notimmunetomagiccold%~ splprot_relation=~%splprot_weaktomagiccold%~ RET splprot_notimmuneorweaktomagiccold=splprot_slot END
+LAF ADD_SPLPROT_CONDITION STR_VAR splprot_stat=~0x103~ splprot_value= EVAL ~%splprot_notimmunetomagiccold%~ splprot_relation= EVAL ~%splprot_weaktomagiccold%~ RET splprot_notimmuneorweaktomagiccold=splprot_slot END
 
 COPY_EXISTING ~splprot.2da~ ~override~
 	SET_2DA_ENTRY 3 1 4 ~0x104~
@@ -1924,6 +1924,12 @@ COPY_EXISTING_REGEXP ~.*.bcs~ ~override~
 	COMPILE_BAF_TO_BCS
 	IF ~57082~
 
+COPY_EXISTING_REGEXP ~meorc.*.bcs~ ~override~ ~mesdor.*.bcs~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY CASE_INSENSITIVE ~!GlobalTimerNotExpired(\"ME_Orcblind\",\"GLOBAL\")~ ~False()~
+	END
+	BUT_ONLY_IF_IT_CHANGES
+
 COPY_EXISTING ~ar1103.bcs~ ~override~
 	DECOMPILE_BCS_TO_BAF
 	REPLACE_TEXTUALLY CASE_INSENSITIVE ~SetGlobal(\"KILL_FAKE_POMAB\",\"GLOBAL\",1)~ ~SetGlobal("KILL_FAKE_POMAB","GLOBAL",1)
@@ -1986,6 +1992,62 @@ COPY_EXISTING ~ar5302.bcs~ ~override~
 	REPLACE_TEXTUALLY CASE_INSENSITIVE ~CreateCreature(\"sdelfclh\",\[328.446\],E)~ ~CreateCreature("sdelfclh",[328.446],E)
 CreateCreature("sdelfbwh",[477.338],SE)~
 	COMPILE_BAF_TO_BCS
+
+COPY_EXISTING_REGEXP ~ar600[023789].bcs~ ~override~ ~ar6014.bcs~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY CASE_INSENSITIVE ~SetGlobal(\"UDSPAWN[ABC]\",\"GLOBAL\",[01])~ ~SmallWait(1)~
+	END
+
+<<<<<<<< .../script.baf
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		SetGlobal("ME_AR6001_New_Spawn","GLOBAL",1)
+END
+
+IF
+	Global("ME_AR6001_New_Spawn","GLOBAL",1)
+	Global("ME_AR6001_A_Spawned","GLOBAL",0)
+THEN
+	RESPONSE #33
+		SetGlobal("ME_AR6001_New_Spawn","GLOBAL",0)
+		SetGlobal("ME_AR6001_A_Spawned","GLOBAL",1)
+		SetGlobal("UDSPAWNB","GLOBAL",0)
+		SetGlobal("UDSPAWNC","GLOBAL",0)
+		SetGlobal("UDSPAWNA","GLOBAL",1)
+	RESPONSE #66
+		Continue()
+END
+
+IF
+	Global("ME_AR6001_New_Spawn","GLOBAL",1)
+	Global("ME_AR6001_B_Spawned","GLOBAL",0)
+THEN
+	RESPONSE #50
+		SetGlobal("ME_AR6001_New_Spawn","GLOBAL",0)
+		SetGlobal("ME_AR6001_B_Spawned","GLOBAL",1)
+		SetGlobal("UDSPAWNA","GLOBAL",0)
+		SetGlobal("UDSPAWNC","GLOBAL",0)
+		SetGlobal("UDSPAWNB","GLOBAL",1)
+	RESPONSE #50
+		Continue()
+END
+
+IF
+	Global("ME_AR6001_New_Spawn","GLOBAL",1)
+	Global("ME_AR6001_C_Spawned","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ME_AR6001_New_Spawn","GLOBAL",0)
+		SetGlobal("ME_AR6001_C_Spawned","GLOBAL",1)
+		SetGlobal("UDSPAWNA","GLOBAL",0)
+		SetGlobal("UDSPAWNB","GLOBAL",0)
+		SetGlobal("UDSPAWNC","GLOBAL",1)
+END
+>>>>>>>>
+
+EXTEND_TOP_REGEXP ~ar600[023789].bcs~ ~.../script.baf~ EVAL
 
 COPY_EXISTING ~ar6002.bcs~ ~override~
 	DECOMPILE_BCS_TO_BAF
@@ -3566,6 +3628,7 @@ Charge abilities:
 Weight: 0~
 
 COPY_EXISTING ~bolt03.itm~ ~override~
+	LPF ADD_ITEM_EFFECT INT_VAR type=2 opcode=protectionfromspell2 target=2 timing=10 duration=3 parameter2=81 insert_point=0 STR_VAR resource=~bolt03~ END
 	WRITE_SHORT firstheaderprojectile 40 //Lightning Bolt projectile
 	WRITE_LONG price 300
 	SAY IDENTIFIED_DESC ~This bolt seems to crackle with energy as it is held in the hand. When shot from the crossbow, it seems to leap towards its target, leaving behind an electrical sulfuric smell. As it hits, there is a crackle as the energy stored is released into the target's wound.
@@ -4201,8 +4264,9 @@ Requires:
 Weight: 6~
 
 COPY_EXISTING ~celebra.itm~ ~override~
-	LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=modifyslashingresistance target=2 timing=0 duration=18 parameter1=(0 - 20) resist_dispel=1 END
+	LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=modifyslashingresistance target=2 timing=0 duration=18 parameter1=(0 - 50) resist_dispel=1 END
 	LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=setcolorglowsolid target=2 timing=0 duration=18 parameter1=0x30303000 resist_dispel=1 END
+	LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=removeeffectsbyresource target=2 timing=1 resist_dispel=1 insert_point=0 STR_VAR resource=~celebra~ END
 	WRITE_BYTE firstheaderspeedfactor 2
 	WRITE_SHORT firstheaderdamage 5
 	WRITE_SHORT firstheaderthac0 5
@@ -4215,7 +4279,7 @@ COPY_EXISTING ~celebra.itm~ ~override~
 STATISTICS:
 
 Combat abilities:
-- Each hit lowers the target's Slashing Resistance by 20% for 3 rounds (cumulative; no save but Magic Resistance negates)
+- Each hit lowers the target's Slashing Resistance by 50% for 3 rounds (non-cumulative; no save but Magic Resistance negates)
 
 THAC0: +5
 Damage: 1d8+5 (slashing)
@@ -10375,7 +10439,7 @@ COPY_EXISTING ~uring2b.itm~ ~override~
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=protectionfromstring target=1 timing=2 parameter1=RESOLVE_STR_REF(~Ten Levels Drained~) END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=protectionfromportraiticon target=1 timing=2 parameter2=59 END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=protectionfromanimation target=1 timing=2 STR_VAR resource=~MEEDRAIN~ END
-	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=displayportraiticon target=1 timing=2 parameter2=142 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=displayportraiticon target=1 timing=2 parameter2=90 END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyscriptstate target=1 timing=2 parameter1=1 parameter2=2 END
 	SAY NAME2 ~Ring of Negative Plane Protection~
 	SAY IDENTIFIED_DESC ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession. For no apparent reason, this ring feels warm to the touch.
@@ -11596,16 +11660,13 @@ COPY_EXISTING ~zze6pe.itm~ ~override~
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=enchantmentvscreaturetype special=6 END
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=1 check_globals=0 duration_high=12 END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=protectionfromspell target=1 timing=2 parameter1=spellineffective STR_VAR resource=~mems204~ END
-	WRITE_LONG price 7500
+	WRITE_LONG price 3000
 	SAY NAME2 ~Pig's Eye~
 	SAY IDENTIFIED_DESC ~A beautiful weapon with a mocking name, Pig's Eye is an elven blade dedicated to the slaying of orcs. Although its proper name is Gruumshacan, most people who know of the blade refer to it as Pig's Eye. The name is an allusion to the fateful blow which Corellon Larethian, patron of the elven race, inflicted upon Gruumsh, head of the orc pantheon. The glass-encased orc eye that rests in the hilt makes it easy to recognize.
 
 The blade was crafted in 239 DR by an elven enchanter and weaponsmith named Shenarr Caith. After he had finished imbuing the weapon with its power, he gave it to his cousin, the ranger Velaic Caith, who put it to extensive use against orcs near Cormanthyr. His son, Tredain, and his grandson, Galesic, also employed the blade for hundreds of years without misfortune. Eventually, the Caith family decided to make the long migration to Evermeet. As Gruumshacan was not the family's moonblade, the Caiths decided to trade the weapon for some of the funds necessary to transform their ancient uncle Shenarr into a baelnorn. The last recorded remarks from Shenarr indicate that he was more than slightly amused at how the little blade had helped him defy death.
 
 STATISTICS:
-
-Equipped abilities:
-- Wielder is immune to the Blindness ability of orcs, though not other sources of blindness
 
 Combat abilities:
 - 50% of all hits blind orcs for 12 seconds
@@ -13419,6 +13480,9 @@ Charge abilities:
 
 Weight: 1~
 
+COPY_EXISTING ~mewightc.itm~ ~override~
+	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell2 parameter2=splprot_immunetomagiccold END
+	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=removeopcode parameter1=splprot_immunetomagiccold END
 
 COPY_EXISTING ~acolyted.cre~ ~override~
 	WRITE_ASCII classscript ~medialog~ #8
@@ -17331,8 +17395,12 @@ COPY_EXISTING ~orcwbow.cre~ ~override~ ~orca2004.cre~ ~override~
 	SET_BG2_PROFICIENCY PROFICIENCYSHORTSWORD 1
 	SET_BG2_PROFICIENCY PROFICIENCYLONGBOW 2
 
+COPY_EXISTING ~orrick.cre~ ~override~
+	REMOVE_CRE_ITEM ~RING09~
+
 COPY_EXISTING ~pbspir.cre~ ~override~
 	SAY NAME1 ~Dire Polar Bear Spirit~
+	SAY NAME2 ~Dire Polar Bear Spirit~
 	WRITE_LONG killxp 100000
 	WRITE_SHORT currenthp 1200
 	WRITE_SHORT maxhp 1200
@@ -19680,13 +19748,14 @@ COPY_EXISTING ~uhlk8010.cre~ ~override~
 
 COPY_EXISTING ~undeadlt.cre~ ~override~ //Undead Lieutenant
 	WRITE_LONG killxp 7000
-	WRITE_SHORT currenthp 150
-	WRITE_SHORT maxhp 150
+	WRITE_SHORT currenthp 120
+	WRITE_SHORT maxhp 120
 	WRITE_SHORT naturalac 0
 	WRITE_SHORT effectiveac 0
 	WRITE_BYTE strength 19
 	WRITE_BYTE dexterity 17
 	WRITE_BYTE constitution 20
+	WRITE_BYTE magicfireresistance 206 //-50%
 	WRITE_BYTE thac0 8
 	WRITE_BYTE attacksperround 2
 	WRITE_BYTE levelfirstclass 18
@@ -19882,7 +19951,8 @@ COPY_EXISTING ~wightcld.cre~ ~override~ ~rdecwig.cre~ ~override~
 	WRITE_BYTE exceptionalstrength 23
 	WRITE_BYTE dexterity 21
 	WRITE_BYTE constitution 20
-	WRITE_BYTE fireresistance 0
+	WRITE_BYTE fireresistance 206 //-50%
+	WRITE_BYTE magicfireresistance 156 //-100%
 	WRITE_BYTE coldresistance 110
 	WRITE_BYTE elecresistance 50
 	WRITE_BYTE magiccoldresistance 125
@@ -20751,6 +20821,10 @@ COPY_EXISTING ~meshadvo.cre~ ~override~ ~mesushvo.cre~ ~override~
 	SAY NAME2 ~Shadow of the Void~
 	WRITE_SHORT animation slotshadowverylargedecimal
 
+COPY_EXISTING ~meskeldb.cre~ ~override~
+	SAY NAME1 ~Skeleton Dart Thrower~
+	SAY NAME2 ~Skeleton Dart Thrower~
+
 COPY_EXISTING ~mesnakgf.cre~ ~override~
 	SAY NAME1 ~Giant Fiendish Snake~
 	SAY NAME2 ~Giant Fiendish Snake~
@@ -21572,6 +21646,10 @@ COPY_EXISTING ~sppr114.spl~ ~override~
 	LPF ALTER_SPELL_HEADER INT_VAR speed=1 END
 	SAY UNIDENTIFIED_DESC @20114
 
+COPY_EXISTING ~sppr115.spl~ ~override~
+	LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=damage parameter2=magicfiredamage END
+	SAY UNIDENTIFIED_DESC @20115
+
 COPY_EXISTING ~sppr203.spl~ ~override~
 	LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=disablespellcasting END
 	LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=modifymovementrate2 END
@@ -21724,7 +21802,7 @@ COPY_EXISTING ~sppr325.spl~ ~override~ //Cloudburst
 	LPF ADD_SPELL_EFFECT INT_VAR opcode=applyeffectslist target=2 timing=1 parameter1=195 parameter2=105 power=3 resist_dispel=1 STR_VAR resource=~mepr325d~ END
 	LPF ADD_SPELL_EFFECT INT_VAR opcode=applyeffectslist target=2 timing=1 parameter1=197 parameter2=105 power=3 resist_dispel=1 STR_VAR resource=~mepr325d~ END
 	LPF ADD_SPELL_EFFECT INT_VAR opcode=applyeffectslist target=2 timing=1 parameter1=218 parameter2=105 power=3 resist_dispel=1 STR_VAR resource=~mepr325d~ END
-	LPF ADD_SPELL_EFFECT INT_VAR opcode=removeeffectsbyresource target=2 timing=1 power=3 resist_dispel=1 insert_point=0 STR_VAR resource=~sppr325~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=removeeffectsbyresource target=2 timing=1 power=3 resist_dispel=3 insert_point=0 STR_VAR resource=~sppr325~ END
 	SAY UNIDENTIFIED_DESC @20325
 
 COPY_EXISTING ~idpro301.pro~ ~override~ //Cloudburst projectile
@@ -23938,6 +24016,7 @@ COPY_EXISTING ~kugerth.sto~ ~override~ //Gerth
 COPY_EXISTING ~kuork0.sto~ ~override~ //Orrick
 	ADD_STORE_ITEM ~udagg2b~ AFTER ~urobe1a~ #0 #0 #0 ~IDENTIFIED~ #1
 	ADD_STORE_ITEM ~ohioun02~ AFTER ~urobe1a~ #0 #0 #0 ~IDENTIFIED~ #1
+	ADD_STORE_ITEM ~ring09~ AFTER ~urobe1a~ #0 #0 #0 ~IDENTIFIED~ #1
 	ADD_STORE_ITEM ~ring08~ AFTER ~urobe1a~ #0 #0 #0 ~IDENTIFIED~ #1
 	ADD_STORE_ITEM ~clck11~ AFTER ~urobe1a~ #0 #0 #0 ~IDENTIFIED~ #2
 	ADD_STORE_ITEM ~clck10~ AFTER ~urobe1a~ #0 #0 #0 ~IDENTIFIED~ #2
@@ -24133,6 +24212,12 @@ COPY_EXISTING ~ar1201.are~ ~override~
 	END
 	LPF ALTER_ACTOR_AT_POINT INT_VAR match_x_coord=1424 match_y_coord=1311 STR_VAR cre_file=~orcwbow~ END
 	LPF ALTER_ACTOR_AT_POINT INT_VAR match_x_coord=1531 match_y_coord=1918 STR_VAR cre_file=~orcwbow~ END
+	LPF ALTER_AREA_ACTOR INT_VAR x_coord=2327 y_coord=913 STR_VAR actor_name=~Orc 4~ END
+	LPF ALTER_AREA_ACTOR INT_VAR x_coord=2505 y_coord=853 STR_VAR actor_name=~Orc 5~ END
+	LPF ALTER_AREA_ACTOR INT_VAR x_coord=1181 y_coord=642 STR_VAR actor_name=~Orc 11~ END
+	LPF ALTER_AREA_ACTOR INT_VAR x_coord=1221 y_coord=556 STR_VAR actor_name=~Orc 12~ END
+	LPF ALTER_AREA_ACTOR INT_VAR x_coord=2402 y_coord=822 STR_VAR actor_name=~Orc Archer 1~ END
+	LPF ALTER_AREA_ACTOR INT_VAR x_coord=808 y_coord=1019 STR_VAR actor_name=~Orc Archer 10~ END
 	LPF DELETE_AREA_ITEM STR_VAR item_to_delete="RNDTRE16" END
 	LPF DELETE_AREA_ITEM STR_VAR item_to_delete="SCRL73" END
 	LPF ADD_AREA_ITEM INT_VAR container_to_add_to=1 STR_VAR item_to_add=~merndt19~ END
@@ -24413,18 +24498,37 @@ COPY_EXISTING ~ar4003.are~ ~override~
 	LPF ADD_AREA_ITEM INT_VAR container_to_add_to=2 charges1=1 STR_VAR flags=~IDENTIFIED~ item_to_add=~spirit~ END
 	LPF ADD_AREA_ITEM INT_VAR container_to_add_to=3 STR_VAR item_to_add=~clck10~ END
 	LPF ADD_AREA_ITEM INT_VAR container_to_add_to=3 charges1=20 STR_VAR item_to_add=~bolt04~ END
-	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~skelblst~ actor_name=~Cold Wight 1~ END
-	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~skelblst~ actor_name=~Cold Wight 2~ END
-	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~skelblst~ actor_name=~Cold Wight 3~ END
-	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~ktwgti1~ actor_name=~Cold Wight 14~ END
+	LPF ALTER_AREA_ACTOR INT_VAR x_coord=2115 y_coord=1361 orientation=south STR_VAR actor_name=~Undead Lieutenant 3~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~ktwgti1~ actor_name=~Blast Skeleton 6~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~shadow~ actor_name=~Blast Skeleton 9~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~shadow~ actor_name=~Blast Skeleton 10~ END
+	LPF ALTER_AREA_ACTOR INT_VAR x_coord=409 y_coord=2385 STR_VAR cre_file=~shadow~ actor_name=~Blast Skeleton 11~ END
+	LPF ALTER_AREA_ACTOR INT_VAR x_coord=1218 y_coord=2095 STR_VAR cre_file=~shadow~ actor_name=~Blast Skeleton 12~ END
+	LPF ALTER_AREA_ACTOR INT_VAR x_coord=1346 y_coord=1955 STR_VAR cre_file=~shadow~ actor_name=~Blast Skeleton 13~ END
+	LPF ALTER_AREA_ACTOR INT_VAR x_coord=1481 y_coord=2076 STR_VAR cre_file=~shadow~ actor_name=~Blast Skeleton 14~ END
+	LPF ALTER_AREA_ACTOR INT_VAR x_coord=1731 y_coord=2028 STR_VAR cre_file=~shadow~ actor_name=~Blast Skeleton 15~ END
+	LPF ALTER_AREA_ACTOR INT_VAR x_coord=1608 y_coord=2068 STR_VAR cre_file=~shadow~ actor_name=~Blast Skeleton 15~ END
+	LPF ALTER_AREA_ACTOR INT_VAR x_coord=908 y_coord=856 STR_VAR cre_file=~skelblst~ actor_name=~Cold Wight 1~ END
+	LPF ALTER_AREA_ACTOR INT_VAR x_coord=1178 y_coord=811 STR_VAR cre_file=~skelbow~ actor_name=~Cold Wight 2~ END
+	LPF ALTER_AREA_ACTOR INT_VAR x_coord=1041 y_coord=741 STR_VAR cre_file=~skelblst~ actor_name=~Cold Wight 3~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~skelblst~ actor_name=~Cold Wight 13~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~skelblst~ actor_name=~Cold Wight 14~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~skelblst~ actor_name=~Cold Wight 15~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~skelblst~ actor_name=~Cold Wight 24~ END
 	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~skelblst~ actor_name=~Cold Wight 26~ END
 	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~skelblst~ actor_name=~Cold Wight 27~ END
 	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~skelblst~ actor_name=~Cold Wight 28~ END
 	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~skelblst~ actor_name=~Cold Wight 29~ END
-	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~ktwgti1~ actor_name=~Cold Wight 30~ END
-	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~ktwgti1~ actor_name=~Cold Wight 32~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~meskeldb~ actor_name=~Cold Wight 30~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~meskeldb~ actor_name=~Cold Wight 31~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~meskeldb~ actor_name=~Cold Wight 32~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~skelbow~ actor_name=~Cold Wight 33~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~skelbow~ actor_name=~Cold Wight 34~ END
 	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~ktska3~ actor_name=~Cold Wight 35~ END
 	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~ktska3~ actor_name=~Cold Wight 36~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~meskeldb~ actor_name=~Cold Wight 37~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~meskeldb~ actor_name=~Cold Wight 38~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~meskeldb~ actor_name=~Cold Wight 39~ END
 	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~ktwgti1~ actor_name=~Cold Wight 44~ END
 	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~ktwgti1~ actor_name=~Cold Wight 45~ END
 	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~ktwgti1~ actor_name=~Cold Wight 46~ END
@@ -24433,12 +24537,15 @@ COPY_EXISTING ~ar4003.are~ ~override~
 	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~ktwgti1~ actor_name=~Cold Wight 54~ END
 	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~ktwgti1~ actor_name=~Cold Wight 55~ END
 	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~ktwgti1~ actor_name=~Cold Wight 56~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~skelbow~ actor_name=~Cold Wight 57~ END
 	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~skelbow~ actor_name=~Cold Wight 58~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~skelbow~ actor_name=~Cold Wight 59~ END
 	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~skelbow~ actor_name=~Cold Wight 60~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~skelbow~ actor_name=~Cold Wight 61~ END
 	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~skelblst~ actor_name=~Skeleton Archer 1~ END
 	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~skelblst~ actor_name=~Skeleton Archer 2~ END
 	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~skelbow~ actor_name=~Skeleton Archer 3~ END
-	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~skelblst~ actor_name=~Skeleton Archer 4~ END
+	LPF ALTER_AREA_ACTOR INT_VAR x_coord=1079 y_coord=713 STR_VAR cre_file=~skelblst~ actor_name=~Skeleton Archer 4~ END
 	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~skelblst~ actor_name=~Skeleton Archer 5~ END
 	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~ktska3~ actor_name=~Poison Zombie 4~ END
 	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~ktska3~ actor_name=~Poison Zombie 4~ END
