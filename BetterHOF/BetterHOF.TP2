@@ -1532,7 +1532,10 @@ COPY_EXISTING ~dmgtypes.2da~ ~override~
 COPY_EXISTING ~itemexcl.2da~ ~override~
 	REPLACE_TEXTUALLY CASE_INSENSITIVE ~Vex.*
 ~ ~~
-
+/*
+COPY_EXISTING ~hidespl.2da~ ~override~
+	REPLACE_TEXTUALLY CASE_INSENSITIVE ~\nSPPR72[12].*~ ~~
+*/
 LAF ADD_SPLPROT_CONDITION STR_VAR splprot_stat=~0~ splprot_value=~-1~ splprot_relation=~4~ RET splprot_currenthpgreaterthanorequalto=splprot_slot END
 
 LAF ADD_SPLPROT_CONDITION STR_VAR splprot_stat=~25~ splprot_value=~-1~ splprot_relation=~4~ RET splprot_loregreaterthanorequalto=splprot_slot END
@@ -2659,6 +2662,9 @@ critters=Minotaur,Boneguard,Salamander
 interval=15~ ~~
 	REPLACE_TEXTUALLY CASE_INSENSITIVE ~SUMMON_SPAWN,~ ~~
 
+COPY_EXISTING ~ar8008.ini~ ~override~
+	REPLACE_TEXTUALLY CASE_INSENSITIVE ~events=8\_HOURS~ ~enter=8_HOURS~
+
 COPY_EXISTING ~ar8012.ini~ ~override~
 	REPLACE_TEXTUALLY CASE_INSENSITIVE ~events=2\_HOURS~ ~~
 	REPLACE_TEXTUALLY CASE_INSENSITIVE ~gnMMgSGh~ ~meamelee~
@@ -3412,6 +3418,7 @@ COPY_EXISTING ~biteme.itm~ ~override~
 	LPF ADD_ITEM_EFFECT INT_VAR type=2 power=3 opcode=displaystring target=2 timing=1 parameter1=35568 resist_dispel=1 savingthrow=vsspell insert_point=0 END
 	LPF ADD_ITEM_EFFECT INT_VAR type=2 power=3 opcode=stun target=2 timing=0 duration=18 resist_dispel=1 savingthrow=vsspell insert_point=0 END
 	LPF ADD_ITEM_EFFECT INT_VAR type=2 power=3 opcode=immunitytospellandmessage target=2 timing=0 duration=1 parameter2=63 insert_point=0 STR_VAR resource=~biteme~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=2 power=3 opcode=immunitytospellandmessage target=2 timing=0 duration=1 parameter2=25 insert_point=0 STR_VAR resource=~biteme~ END
 	WRITE_BYTE minwisdom 23
 	SAY IDENTIFIED_DESC ~This spear is of unusual construction. The haft is crystal clear and is made of some unknown material. The spearhead itself appears to be an icicle surrounded by an aura of frost. A fine mist of ice crystals surrounds the entire weapon.
 
@@ -9776,6 +9783,7 @@ COPY_EXISTING ~udagg5a.itm~ ~override~
 	WRITE_BYTE firstheaderspeedfactor 0
 	WRITE_BYTE minintelligence 25
 	WRITE_LONG price 33800
+	WRITE_LONG unusability 0x607BFFC0
 	SAY IDENTIFIED_DESC ~Like most typical daggers, this dagger has a pointed, double-edged blade. It has also been imbued with magical abilities which have increased its usefulness.
 
 STATISTICS:
@@ -13484,6 +13492,33 @@ COPY_EXISTING ~mewightc.itm~ ~override~
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell2 parameter2=splprot_immunetomagiccold END
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=removeopcode parameter1=splprot_immunetomagiccold END
 
+COPY_EXISTING ~mewyrmsp.itm~ ~override~
+	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell2 parameter2=splprot_immunetomagiccold END
+
+COPY_EXISTING ~a7afaaq.cre~ ~override~ ~a7afaaq2.cre~ ~override~ ~a7afqyx.cre~ ~override~ ~a7gasfrm.cre~ ~override~ ~l#dusky.cre~ ~override~ ~o#holvir.cre~ ~override~ ~o#korin.cre~ ~override~ ~o#nella.cre~ ~override~ ~o#severn.cre~ ~override~ ~o#teri.cre~ ~override~ ~yitur.cre~ ~override~
+	READ_LONG xp ulgiash
+	ulgiash = ulgiash + 6000
+	WRITE_LONG xp ulgiash
+	READ_BYTE strength ulgiash
+	ulgiash = ulgiash + 2
+	WRITE_BYTE strength ulgiash
+	READ_BYTE dexterity ulgiash
+	ulgiash = ulgiash + 2
+	WRITE_BYTE dexterity ulgiash
+	READ_BYTE constitution ulgiash
+	ulgiash = ulgiash + 2
+	WRITE_BYTE constitution ulgiash
+	READ_BYTE intelligence ulgiash
+	ulgiash = ulgiash + 2
+	WRITE_BYTE intelligence ulgiash
+	READ_BYTE wisdom ulgiash
+	ulgiash = ulgiash + 2
+	WRITE_BYTE wisdom ulgiash
+	READ_BYTE charisma ulgiash
+	ulgiash = ulgiash + 2
+	WRITE_BYTE charisma ulgiash
+	IF_EXISTS
+
 COPY_EXISTING ~acolyted.cre~ ~override~
 	WRITE_ASCII classscript ~medialog~ #8
 
@@ -13901,6 +13936,7 @@ COPY_EXISTING ~belhif.cre~ ~override~ //Belhifet
 	SET_BG2_PROFICIENCY PROFICIENCYBASTARDSWORD 5
 	REPLACE_CRE_ITEM ~mebossim~ #0 #0 #0 ~NONE~ ~RRING~
 	LPF ADD_CRE_EFFECT INT_VAR opcode=protectionfromopcode target=1 timing=9 parameter2=castingfailure END
+	LPF ADD_CRE_EFFECT INT_VAR opcode=protectionfromtimestop target=1 timing=9 parameter2=1 END
 	LPF ADD_CRE_EFFECT INT_VAR opcode=invisibilitydetection target=1 timing=9 parameter2=1 END
 	LPF ADD_CRE_EFFECT INT_VAR opcode=modifyvisualrange target=1 timing=9 parameter1=15 END
 
@@ -14349,6 +14385,7 @@ COPY_EXISTING ~dlsgem.cre~ ~override~ //Icasaracht's Soul Gem
 	LPF ADD_CRE_EFFECT INT_VAR opcode=modifyallsaves target=1 timing=9 parameter1=9 END
 	LPF ADD_CRE_EFFECT INT_VAR opcode=invisibilitydetection target=1 timing=1 parameter2=1 END
 	LPF ADD_CRE_EFFECT INT_VAR opcode=modifycastingtime target=1 timing=1 parameter1=6 END
+	LPF ADD_CRE_EFFECT INT_VAR opcode=protectionfromtimestop target=1 timing=9 parameter2=1 END
 
 COPY_EXISTING ~drowned.cre~ ~override~ ~rbidrow.cre~ ~override~
 	WRITE_LONG killxp 12000
@@ -15440,12 +15477,13 @@ COPY_EXISTING ~icasa.cre~ ~override~ //Icasaracht
 	LPF ADD_CRE_EFFECT INT_VAR opcode=modifyallsaves target=1 timing=9 parameter1=9 END
 	LPF ADD_CRE_EFFECT INT_VAR opcode=modifymovementrate2 target=1 timing=1 parameter1=200 parameter2=2 END
 	LPF ADD_CRE_EFFECT INT_VAR opcode=invisibilitydetection target=1 timing=1 parameter2=1 END
+	LPF ADD_CRE_EFFECT INT_VAR opcode=protectionfromtimestop target=1 timing=9 parameter2=1 END
 	LPF ADD_CRE_EFFECT INT_VAR opcode=applyspellonmovement target=1 timing=1 STR_VAR resource=~mems312~ END
 
 COPY_EXISTING ~idol.cre~ ~override~ //The Idol
 	WRITE_LONG killxp 200000
-	WRITE_SHORT currenthp 200
-	WRITE_SHORT maxhp 200
+	WRITE_SHORT currenthp 400
+	WRITE_SHORT maxhp 400
 	WRITE_SHORT naturalac 65517 //-19
 	WRITE_SHORT effectiveac 65517
 	WRITE_BYTE fireresistance 70
