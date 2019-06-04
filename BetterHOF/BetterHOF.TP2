@@ -13497,7 +13497,7 @@ COPY_EXISTING ~mewyrmsp.itm~ ~override~
 
 COPY_EXISTING ~a7afaaq.cre~ ~override~ ~a7afaaq2.cre~ ~override~ ~a7afqyx.cre~ ~override~ ~a7gasfrm.cre~ ~override~ ~l#dusky.cre~ ~override~ ~o#holvir.cre~ ~override~ ~o#korin.cre~ ~override~ ~o#nella.cre~ ~override~ ~o#severn.cre~ ~override~ ~o#teri.cre~ ~override~ ~yitur.cre~ ~override~
 	READ_LONG xp ulgiash
-	ulgiash = ulgiash + 6000
+	ulgiash = ulgiash + 5000
 	WRITE_LONG xp ulgiash
 	READ_BYTE strength ulgiash
 	ulgiash = ulgiash + 2
