@@ -900,6 +900,17 @@ Area of Effect: The caster
 Saving Throw: None
 
 Through magical intuition, the wizard gains a +20 bonus to THAC0, giving <HIMHER> nearly perfect accuracy with weapon attacks. Unfortunately, the effect only lasts for 9 seconds.~
+@21116=~Sleep
+(Enchantment/Charm)
+
+Level: 1
+Range: Visual range of the caster
+Duration: 5 rounds/level
+Casting Time: 1
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+Sleep causes a comatose slumber to come upon enemies within 15 feet of the target point. Monsters with 7 or more Hit Dice are unaffected, but any number of enemies with 6 Hit Dice or less can be put to sleep, regardless of their total Hit Dice. There is no Saving Throw. Though it's not the stuff of which legends are made, attacks against magically sleeping opponents never miss—although they will awaken after the first hit.~
 @21117=~Chill Touch
 (Necromancy)
 

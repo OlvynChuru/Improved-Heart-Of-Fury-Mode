@@ -1,16 +1,7 @@
 BACKUP ~BetterHOF/backup~
 AUTHOR ~ms98862n@pace.edu~
 
-LANGUAGE
-"English"
-ENGLISH
- ~BetterHOF/tra/english/english.tra~
-
-BEGIN ~Improved Heart of Fury Mode~
-
-PRINT ~Copying new files into override; this could take some time...~
-
-COPY ~BetterHOF/Allfiles~ ~override~
+ALWAYS
 
 OUTER_PATCH alltheconstants BEGIN
 	none=0
@@ -1395,6 +1386,34 @@ BEGIN
 		splprot_slot=numrows
 END
 
+DEFINE_PATCH_FUNCTION ~GET_2DA_ROW~
+	INT_VAR
+		starting_row=0
+		numcolumns=0
+		match_column=0
+		found_it=0
+	STR_VAR
+		match=~DEFA~
+	RET
+		numcols
+		matched
+BEGIN
+		COUNT_2DA_ROWS numcolumns numrows
+		FOR (i = starting_row; i < numrows; ++i) BEGIN
+			READ_2DA_ENTRY i match_column numcolumns string_to_match
+			PATCH_IF (~%string_to_match%~ STRING_EQUAL_CASE ~%match%~) BEGIN
+				matched = i
+				found_it = 1
+				i = numrows
+
+			END
+		END
+		numcols = numcolumns
+		PATCH_IF (found_it = 0) BEGIN
+			PATCH_FAIL ~GET_2DA_ROW: Could not find a row that contains %match% in column %match_column%.~
+		END
+END
+
 DEFINE_ACTION_FUNCTION ADD_ANIMATION
 	INT_VAR
 		minSlot=0
@@ -1455,6 +1474,19 @@ BEGIN
 
 END
 */
+
+END
+
+LANGUAGE
+"English"
+ENGLISH
+ ~BetterHOF/tra/english/english.tra~
+
+BEGIN ~Improved Heart of Fury Mode~
+
+PRINT ~Copying new files into override; this could take some time...~
+
+COPY ~BetterHOF/Allfiles~ ~override~
 
 ADD_PROJECTILE ~override/megaze.pro~ //AoE cone gaze
 ADD_PROJECTILE ~override/mesunfbl.pro~ //Blue Sunfire 60 foot radius
@@ -1945,7 +1977,40 @@ COPY_EXISTING ~ar1105.bcs~ ~override~
 	DECOMPILE_BCS_TO_BAF
 	REPLACE_TEXTUALLY CASE_INSENSITIVE ~ActionOverride(\"CORNUGON_1\",DestroySelf())~ ~~
 	REPLACE_TEXTUALLY CASE_INSENSITIVE ~ActionOverride(\"CORNUGON_2\",DestroySelf())~ ~~
+	REPLACE_TEXTUALLY CASE_INSENSITIVE ~[^t]Global(\"IWD_COMPLETE\",\"MYAREA\",0)~ ~
+Global("IWD_COMPLETE","MYAREA",0)
+Global("SPRITE_IS_DEADGEM","GLOBAL",1)~
 	COMPILE_BAF_TO_BCS
+
+<<<<<<<< .../script.baf
+IF
+	Global("IWD_COMPLETE","MYAREA",0)
+	Global("SPRITE_IS_DEADGEM","GLOBAL",0)
+	!Global("SPRITE_IS_DEADEEBELHI1","GLOBAL",0)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		SetGlobal("IWD_COMPLETE","MYAREA",1)
+		StartCutScene("MEBELKIL")
+END
+
+IF
+	Global("IWD_COMPLETE","MYAREA",0)
+	Global("SPRITE_IS_DEADGEM","GLOBAL",0)
+	Exists("EEBELHI1")  // Belhifet
+	HPLT("EEBELHI1",10)  // Belhifet
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		SetGlobal("IWD_COMPLETE","MYAREA",1)
+		SetGlobal("SPRITE_IS_DEADEEBELHI1","GLOBAL",1)
+		ClearAllActions()
+		MultiPlayerSync()
+		StartCutScene("MEBELDTH")
+END
+>>>>>>>>
+
+EXTEND_TOP ~ar1105.bcs~ ~.../script.baf~ EVAL
 
 COPY_EXISTING ~ar2100.bcs~ ~override~
 	DECOMPILE_BCS_TO_BAF
@@ -2098,6 +2163,42 @@ END
 
 EXTEND_TOP ~ar8010.bcs~ ~.../script.baf~ EVAL
 
+<<<<<<<< .../script.baf
+IF
+	!Global("HOW_COMPLETED","GLOBAL",0)
+	!Global("SPRITE_IS_DEADLUREMASTER","GLOBAL",0)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		StartCutSceneMode()
+		FadeToColor([15.0],0)
+		SetGlobal("GAME_OVER","MYAREA",1)
+		MultiPlayerSync()
+		Wait(1)
+		StartMovie("ECREDIT")
+		SmallWait(5)
+		FadeFromColor([0.0],0)
+		EndCutSceneMode()
+		GoToStartScreen()
+END
+
+>>>>>>>>
+
+EXTEND_BOTTOM ~ar9100.bcs~ ~.../script.baf~ EVAL
+
+<<<<<<<< .../script.baf
+IF
+	!Global("HOW_COMPLETED","GLOBAL",0)
+	PartyHasItem("CDSCALES")
+THEN
+	RESPONSE #100
+		TakePartyItemAll("CDSCALES")
+		GiveItemCreate("CDSCALE",Player1,0,0,0)
+END
+>>>>>>>>
+
+EXTEND_BOTTOM ~ar9101.bcs~ ~.../script.baf~ EVAL
+
 COPY_EXISTING ~ar9400.bcs~ ~override~
 	DECOMPILE_BCS_TO_BAF
 	REPLACE_TEXTUALLY CASE_INSENSITIVE ~CreateCreature(\"wvirginn\",\[660.1840\],S)~ ~CreateCreature("mewyrmsp",[435.1784],SE)~
@@ -2112,6 +2213,34 @@ COPY_EXISTING ~ar9400.bcs~ ~override~
 	REPLACE_TEXTUALLY CASE_INSENSITIVE ~CreateCreature(\"wvirgin6\",\[2720.1880\],E)~ ~~
 	REPLACE_TEXTUALLY CASE_INSENSITIVE ~CreateCreature(\"wvirgin6\",\[2630.1980\],N)~ ~~
 	COMPILE_BAF_TO_BCS
+
+COPY_EXISTING ~ar9603.bcs~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY CASE_INSENSITIVE ~!Global(\"HOW_COMPLETED\",\"GLOBAL\",0)~ ~!Global("HOW_COMPLETED","GLOBAL",0)
+!Global("SPRITE_IS_DEADLUREMASTER","GLOBAL",0)~
+	END
+
+<<<<<<<< .../script.baf
+IF
+	!Global("HOW_COMPLETED","GLOBAL",0)
+	!Global("SPRITE_IS_DEADLUREMASTER","GLOBAL",1)
+	!Global("DMWW_LEFT_9603","GLOBAL",1)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		StartCutSceneMode()
+		FadeToColor([15.0],0)
+		SetGlobal("DMWW_LEFT_9603","GLOBAL",1)
+		MultiPlayerSync()
+		StartMovie("HOWDRAG")
+		Wait(1)
+		SetMasterArea("ar9100")
+		StartCutScene("MEHOWLUR")
+END
+
+>>>>>>>>
+
+EXTEND_TOP ~ar9603.bcs~ ~.../script.baf~ EVAL
 
 <<<<<<<< .../script.baf
 IF
@@ -4113,6 +4242,7 @@ COPY_EXISTING ~cdharmor.itm~ ~override~
 	LPF ALTER_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifyac match_parameter2=setbaseac parameter1=2 END
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifycoldresistance parameter1=50 END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyfireresistance target=1 timing=2 parameter1=(0 - 20) END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=protectionfromspell target=1 timing=2 parameter1=spellineffective STR_VAR resource=~mems201~ END
 	WRITE_LONG price 3000
 	SAY NAME2 ~Yeti Hide Armor +4~
 	SAY IDENTIFIED_DESC ~Hide armor is made from the thick hide of a very large animal (yeti, in this case) or from many layers of normal leather from common animals, like cows. Hide armor is far too bulky, inflexible and heavy to be used much in advanced human cultures. However, among the barbaric humanoid masses throughout the dark forests and misty jungles of the world, hide armor is common. Even though it does offer more protection than leather armor, one must get by the offensive odor and shoddy appearance in order to wear it effectively. Even though Thieves can wear this armor, it has a negative effect on their abilities.
@@ -4122,6 +4252,7 @@ This particular set of armor was cured by Conlan and enchanted by Orrick. Orrick
 STATISTICS:
 
 Equipped abilities:
+- Protection from Chilling Gaze
 - Cold Resistance: +50%
 - Fire Resistance: -20%
 - Open Locks: -10%
@@ -4686,6 +4817,7 @@ COPY_EXISTING ~cynicis.itm~ ~override~
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=backstabhiteffect target=1 timing=2 STR_VAR resource=~meit029~ END
 	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell opcode=floattext parameter1=RESOLVE_STR_REF(~::What's the chance that there will actually be a trap here?::~) parameter2=0 STR_VAR match_resource=~sppr205~ END
 	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell opcode=floattext parameter1=RESOLVE_STR_REF(~::Are you so weak that you couldn't force that lock open?::~) parameter2=0 STR_VAR match_resource=~spwi207~ END
+	LPF ALTER_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=floattext match_parameter2=1 opcode=applyrepeatingeff parameter1=60 parameter2=3 STR_VAR resource=~mecynici~ END
 	WRITE_BYTE firstheadernumdice 1
 	WRITE_BYTE firstheaderdicesize 8
 	WRITE_SHORT firstheaderdamagetype 1
@@ -5091,6 +5223,16 @@ Equipped abilities:
 
 Weight: 30~
 
+COPY_EXISTING ~elfwine.itm~ ~override~
+	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=modifycurrenthp parameter1=0 dicenumber=12 dicesize=8 END
+	SAY IDENTIFIED_DESC ~This bottle of elven wine also has the properties of a healing potion. During one of the elven festivals, the priests of the Seldarine's Hand imbibed too much that day and accidentally added a barrel of elven wine to a mixture that was intended for healing potions.
+
+STATISTICS:
+
+Special: Heals 12d8 Hit Points but causes intoxication
+
+Weight: 1~
+
 COPY_EXISTING ~erevain.itm~ ~override~
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=setcolor parameter1=69 END
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifyacidresistance parameter1=50 END
@@ -5163,6 +5305,17 @@ Requires:
  5 Strength
 
 Weight: 3~
+
+COPY_EXISTING ~extheal.itm~ ~override~ ~potn52.itm~ ~override~
+	WRITE_LONG price 500
+	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=1 check_globals=1 match_opcode=modifycurrenthp parameter1=40 dicenumber=0 dicesize=0 END
+	SAY IDENTIFIED_DESC ~When wholly consumed, this potion restores 40 Hit Points to the person. The effect is instantaneous, and the potion is destroyed in the process.
+
+STATISTICS:
+
+Special: Restores 40 Hit Points
+
+Weight: 1~
 
 COPY_EXISTING ~fanggf.itm~ ~override~
 	LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=damage target=2 timing=1 parameter1=5 parameter2=colddamage END
@@ -7512,6 +7665,17 @@ Duration: 2 hours
 
 Weight: 1~
 
+COPY_EXISTING ~potn08.itm~ ~override~
+	WRITE_LONG price 200
+	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=1 check_globals=1 match_opcode=modifycurrenthp parameter1=20 dicenumber=0 dicesize=0 END
+	SAY IDENTIFIED_DESC ~When wholly consumed, this potion restores 20 Hit Points to the person. The effect is instantaneous, and the potion is destroyed in the process.
+
+STATISTICS:
+
+Special: Restores 20 Hit Points
+
+Weight: 1~
+
 COPY_EXISTING ~potn12.itm~ ~override~
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=modifystrength parameter1=22 parameter2=1 END
 	WRITE_LONG unusability 0 //Can be used by anybody
@@ -8585,12 +8749,12 @@ Requires:
 Weight: 1~
 
 COPY_EXISTING ~spirit.itm~ ~override~
-	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=modifycurrenthp parameter1=50 END
+	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=modifycurrenthp parameter1=120 END
 	SAY IDENTIFIED_DESC ~This valuable potion is made by capturing and distilling the spirits of trolls. Normally only attempted by powerful necromancers and enchanters, the process results in a powerful healing potion able to instantly regenerate even severe wounds.
 
 STATISTICS:
 
-Special: Heals 50 Hit Points
+Special: Heals 120 Hit Points
 
 Weight: 1~
 
@@ -11296,6 +11460,9 @@ Range: 20 ft.
 Area of Effect: 12-ft. radius
 
 Weight: 1~
+
+COPY_EXISTING ~yeti.itm~ ~override~
+	WRITE_LONG price 200
 
 COPY_EXISTING ~young.itm~ ~override~
 	LPF DELETE_ITEM_EFFECT INT_VAR opcode_to_delete=(0 - 1) END
@@ -15478,7 +15645,7 @@ COPY_EXISTING ~icasa.cre~ ~override~ //Icasaracht
 	LPF ADD_CRE_EFFECT INT_VAR opcode=modifymovementrate2 target=1 timing=1 parameter1=200 parameter2=2 END
 	LPF ADD_CRE_EFFECT INT_VAR opcode=invisibilitydetection target=1 timing=1 parameter2=1 END
 	LPF ADD_CRE_EFFECT INT_VAR opcode=protectionfromtimestop target=1 timing=9 parameter2=1 END
-	LPF ADD_CRE_EFFECT INT_VAR opcode=applyspellonmovement target=1 timing=1 STR_VAR resource=~mems312~ END
+	LPF ADD_CRE_EFFECT INT_VAR opcode=applyspellonmovement target=1 timing=9 STR_VAR resource=~mems312~ END
 
 COPY_EXISTING ~idol.cre~ ~override~ //The Idol
 	WRITE_LONG killxp 200000
@@ -17348,7 +17515,7 @@ COPY_EXISTING ~ogre.cre~ ~override~ ~ecogre.cre~ ~override~
 	WRITE_BYTE strength 22
 	WRITE_BYTE dexterity 16
 	WRITE_BYTE constitution 21
-	WRITE_BYTE thac0 7
+	WRITE_BYTE thac0 12
 	WRITE_BYTE levelfirstclass 9
 	WRITE_ASCII classscript ~meshout~ #8
 	WRITE_ASCII racescript ~meogre~ #8
@@ -17363,12 +17530,13 @@ COPY_EXISTING ~orcewaxe.cre~ ~override~
 	WRITE_BYTE strength 21
 	WRITE_BYTE dexterity 18
 	WRITE_BYTE constitution 20
-	WRITE_BYTE thac0 8
+	WRITE_BYTE thac0 15
 	WRITE_BYTE levelfirstclass 6
 	WRITE_ASCII classscript ~meshout~ #8
 	WRITE_ASCII racescript ~meorceli~ #8
 	WRITE_ASCII defaultscript ~meamelee~ #8
 	SET_BG2_PROFICIENCY PROFICIENCYAXE 4
+	SET_BG2_PROFICIENCY PROFICIENCYSINGLEWEAPON 2
 
 COPY_EXISTING ~orcewbow.cre~ ~override~
 	WRITE_LONG killxp 900
@@ -17377,7 +17545,7 @@ COPY_EXISTING ~orcewbow.cre~ ~override~
 	WRITE_BYTE strength 21
 	WRITE_BYTE dexterity 18
 	WRITE_BYTE constitution 20
-	WRITE_BYTE thac0 10
+	WRITE_BYTE thac0 15
 	WRITE_BYTE levelfirstclass 6
 	WRITE_ASCII classscript ~meshout~ #8
 	WRITE_ASCII racescript ~meorcela~ #8
@@ -17396,7 +17564,7 @@ COPY_EXISTING ~orcsham.cre~ ~override~
 	WRITE_BYTE dexterity 17
 	WRITE_BYTE constitution 16
 	WRITE_BYTE wisdom 18
-	WRITE_BYTE thac0 16
+	WRITE_BYTE thac0 19
 	WRITE_BYTE levelfirstclass 6
 	WRITE_ASCII classscript ~meshout~ #8
 	WRITE_ASCII racescript ~meorcsha~ #8
@@ -17411,11 +17579,13 @@ COPY_EXISTING ~orcwaxe.cre~ ~override~ ~orc2004.cre~ ~override~ ~rocorca.cre~ ~o
 	WRITE_SHORT maxhp 42
 	WRITE_BYTE strength 19
 	WRITE_BYTE dexterity 17
-	WRITE_BYTE thac0 12
+	WRITE_BYTE thac0 17
+	WRITE_BYTE levelfirstclass 4
 	WRITE_ASCII classscript ~meshout~ #8
 	WRITE_ASCII racescript ~meorc~ #8
 	WRITE_ASCII defaultscript ~meamelee~ #8
-	SET_BG2_PROFICIENCY PROFICIENCYAXE 2
+	SET_BG2_PROFICIENCY PROFICIENCYAXE 3
+	SET_BG2_PROFICIENCY PROFICIENCYSINGLEWEAPON 2
 
 COPY_EXISTING ~orcwbow.cre~ ~override~ ~orca2004.cre~ ~override~
 	WRITE_LONG killxp 650
@@ -17423,15 +17593,16 @@ COPY_EXISTING ~orcwbow.cre~ ~override~ ~orca2004.cre~ ~override~
 	WRITE_SHORT maxhp 30
 	WRITE_BYTE strength 19
 	WRITE_BYTE dexterity 17
-	WRITE_BYTE thac0 14
+	WRITE_BYTE thac0 17
+	WRITE_BYTE levelfirstclass 4
 	WRITE_ASCII classscript ~meshout~ #8
 	WRITE_ASCII racescript ~meorc~ #8
 	WRITE_ASCII defaultscript ~meamelra~ #8
 	REPLACE_CRE_ITEM ~bow03~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~ EQUIP
 	REPLACE_CRE_ITEM ~arow08~ #30 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~QUIVER1~ EQUIP
 	ADD_CRE_ITEM ~arow08~ #3 #0 #0 ~NONE~ ~INV4~
-	SET_BG2_PROFICIENCY PROFICIENCYSHORTSWORD 1
-	SET_BG2_PROFICIENCY PROFICIENCYLONGBOW 2
+	SET_BG2_PROFICIENCY PROFICIENCYSHORTSWORD 2
+	SET_BG2_PROFICIENCY PROFICIENCYLONGBOW 3
 
 COPY_EXISTING ~orrick.cre~ ~override~
 	REMOVE_CRE_ITEM ~RING09~
@@ -21027,11 +21198,26 @@ COPY_EXISTING_REGEXP ~.*\.cre~ ~override~
 	END
 	BUT_ONLY_IF_IT_CHANGES
 
-COPY_EXISTING_REGEXP ~smll.*.pro~ ~override~ ~inarea.*.pro~ ~override~
+COPY_EXISTING_REGEXP ~smll.*.pro~ ~override~ ~hold.pro~ ~override~ ~holdnecr.pro~ ~override~ ~inarea.*.pro~ ~override~ ~idpro24[0156789].pro~ ~override~ ~idpro25[024568].pro~ ~override~ ~idpro26[236].pro~ ~override~ ~idpro407.pro~ ~override~
 	WRITE_ASCII 0x10 ~~ #8
 	READ_LONG 0x2c ulgiash
 	ulgiash|=0x8
 	WRITE_LONG 0x2c ulgiash
+	READ_SHORT 0x8 typeofprojectile
+	PATCH_IF (typeofprojectile=3) BEGIN
+		WRITE_SHORT 0x21a 1
+	END
+
+COPY_EXISTING_REGEXP ~entangle.pro~ ~override~ ~idmold.pro~ ~override~ ~idpro67.pro~ ~override~ ~idpro9[28].pro~ ~override~ ~idpro187.pro~ ~override~ ~idpro21[15].pro~ ~override~ ~idpro23[6789].pro~ ~override~ ~idpro27[357].pro~ ~override~ ~idpro299.pro~ ~override~ ~idpro30[013679].pro~ ~override~ ~idpro318.pro~ ~override~ ~idpro33[69].pro~ ~override~ ~idpro34[01].pro~ ~override~ ~idshroud.pro~ ~override~ ~idstatic.pro~ ~override~ ~pfield.pro~ ~override~ ~pholyst.pro~ ~override~ ~punhlst.pro~ ~override~ ~rmagic.pro~ ~override~ ~strmveng.pro~ ~override~
+	READ_LONG 0x2c ulgiash
+	ulgiash|=0x8
+	WRITE_LONG 0x2c ulgiash
+	READ_SHORT 0x8 typeofprojectile
+	PATCH_IF (typeofprojectile=3) BEGIN
+		WRITE_SHORT 0x21a 1
+	END
+
+COPY_EXISTING_REGEXP ~bdspfire.pro~ ~override~ ~dfirebl.pro~ ~override~ ~fireball.pro~ ~override~ ~iceglyp.pro~ ~override~ ~idpro25.pro~ ~override~ ~idpro27[024].pro~ ~override~ ~idpro31[59].pro~ ~override~ ~idpro335.pro~ ~override~ ~spdrbrth.pro~ ~override~ ~writhing.pro~ ~override~
 	READ_SHORT 0x8 typeofprojectile
 	PATCH_IF (typeofprojectile=3) BEGIN
 		WRITE_SHORT 0x21a 1
@@ -22129,7 +22315,7 @@ COPY_EXISTING ~sppr614c.spl~ ~override~
 
 COPY_EXISTING ~sppr617.spl~ ~override~
 	LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=killtarget END
-	LPF ALTER_SPELL_EFFECT INT_VAR opcode=damage dicenumber=4 END
+	LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=damage dicenumber=4 END
 	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_savingthrow=vsbreath savebonus=(0 - 3) END
 	SAY UNIDENTIFIED_DESC @20617
 
@@ -22290,6 +22476,14 @@ COPY_EXISTING ~scrl76.itm~ ~override~
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell target=1 END
 	SAY NAME2 ~True Strike~
 	SAY IDENTIFIED_DESC @21111
+
+COPY_EXISTING ~spwi116.spl~ ~override~ //Sleep
+	LPF ALTER_SPELL_HEADER INT_VAR projectile=378 END
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_dicenumber=4 dicenumber=6 END
+	SAY UNIDENTIFIED_DESC @21116
+
+COPY_EXISTING ~scrl81.itm~ ~override~
+	SAY IDENTIFIED_DESC @21116
 
 COPY_EXISTING ~spwi117.spl~ ~override~ //Chill Touch
 	LPF ALTER_SPELL_HEADER INT_VAR target=livingactor END
@@ -22532,7 +22726,7 @@ COPY_EXISTING ~spwi317.spl~ ~override~ //Ghost Armor
 	SAY UNIDENTIFIED_DESC @21317
 
 COPY_EXISTING ~scrl1t.itm~ ~override~
-	SAY IDENTIFIED_DESC @21505
+	SAY IDENTIFIED_DESC @21317
 
 COPY_EXISTING ~spwi322.spl~ ~override~ //Detect Illusion
 	LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=removespellsbyschool parameter1=5 END
@@ -22886,7 +23080,7 @@ COPY_EXISTING ~spwi702.spl~ ~override~
 	LPF ALTER_SPELL_EFFECT INT_VAR duration_high=2400 END
 	SAY UNIDENTIFIED_DESC @21702
 
-COPY_EXISTING ~scrl87.itm~ ~override~
+COPY_EXISTING ~scrl8e.itm~ ~override~
 	SAY IDENTIFIED_DESC @21702
 
 COPY_EXISTING ~spwi709.spl~ ~override~ //Malavon's Rage
@@ -23054,7 +23248,7 @@ COPY_EXISTING ~spwi814.spl~ ~override~ //Iron Body
 	LPF DELETE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=setcolor match_parameter2=4 END
 	LPF DELETE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=setcolor match_parameter2=5 END
 	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=modifyfireresistance parameter1=100 END
-	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=modifymovementrate1 new_opcode=modifymovementrate2 END
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=modifymovementrate1 opcode=modifymovementrate2 END
 	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=modifycrushingresistance opcode=modifyslashingresistance END
 	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=modifycrushingresistance opcode=modifypiercingresistance END
 	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=modifycrushingresistance opcode=modifymissileresistance END
@@ -23762,6 +23956,13 @@ COPY_EXISTING ~mewyvand.spl~ ~override~
 COPY_EXISTING ~mewyverd.spl~ ~override~
 	WRITE_SHORT 0x98 mewyverd
 
+COPY_EXISTING ~#bonecir.spl~ ~override~
+	WRITE_BYTE 0x3 0x20
+
+COPY_EXISTING_REGEXP ~.*\.spl~ ~override~ ~.*\.itm~ ~override~
+	LPF ALTER_EFFECT INT_VAR silent=1 multi_match=60 check_headers=1 check_globals=0 match_opcode=playsound STR_VAR match_resource=~EFF_E02~ resource=~#EFF_E02~ END
+	BUT_ONLY_IF_IT_CHANGES
+
 COPY_EXISTING ~mebalolo.cre~ ~override/mesubalo.cre~
 	WRITE_ASCII scriptname ~MESUBALO~ #32
 	WRITE_ASCII overridescript ~mesubalo~ #8
@@ -24097,9 +24298,16 @@ COPY_EXISTING ~kuoswald.sto~ ~override~ //Oswald Fiddlebender
 	ADD_STORE_ITEM ~potn29~ AFTER ~potn19~ #1 #0 #0 ~IDENTIFIED~ #3
 
 COPY_EXISTING ~kusmith.sto~ ~override~ //Conlan
+	WRITE_LONG 0x1c 0
 	ADD_STORE_ITEM ~quiver05~ #0 #0 #0 ~IDENTIFIED~ #1
 	ADD_STORE_ITEM ~quiver02~ #0 #0 #0 ~IDENTIFIED~ #1
 	ADD_STORE_ITEM ~quiver01~ #0 #0 #0 ~IDENTIFIED~ #1
+	ADD_STORE_ITEM ~arow02~ AFTER ~arow01~ #40 #0 #0 ~IDENTIFIED~ #10
+	ADD_STORE_ITEM ~arow11~ AFTER ~arow02~ #40 #0 #0 ~IDENTIFIED~ #5
+	ADD_STORE_ITEM ~bolt02~ AFTER ~bolt01~ #40 #0 #0 ~IDENTIFIED~ #10
+	ADD_STORE_ITEM ~bolt06~ AFTER ~bolt02~ #40 #0 #0 ~IDENTIFIED~ #5
+	ADD_STORE_ITEM ~bull02~ AFTER ~bull01~ #40 #0 #0 ~IDENTIFIED~ #10
+	ADD_STORE_ITEM ~bull03~ AFTER ~bull02~ #40 #0 #0 ~IDENTIFIED~ #5
 	ADD_STORE_ITEM ~ax1h05~ AFTER ~ax1h04~ #0 #0 #0 ~IDENTIFIED~ #1
 	ADD_STORE_ITEM ~uhxbw2a~ AFTER ~xbow01~ #0 #0 #0 ~IDENTIFIED~ #2
 	ADD_STORE_ITEM ~ohfullp~ AFTER ~plat01~ #0 #0 #0 ~IDENTIFIED~ #1
@@ -24255,6 +24463,8 @@ COPY_EXISTING ~ar1201.are~ ~override~
 	LPF ALTER_AREA_ACTOR INT_VAR x_coord=1181 y_coord=642 STR_VAR actor_name=~Orc 11~ END
 	LPF ALTER_AREA_ACTOR INT_VAR x_coord=1221 y_coord=556 STR_VAR actor_name=~Orc 12~ END
 	LPF ALTER_AREA_ACTOR INT_VAR x_coord=2402 y_coord=822 STR_VAR actor_name=~Orc Archer 1~ END
+	LPF ALTER_AREA_ACTOR STR_VAR actor_name=~Orc Archer 4~ cre_file=~orcwaxe~ END
+	LPF ALTER_AREA_ACTOR STR_VAR actor_name=~Orc Archer 5~ cre_file=~orcwaxe~ END
 	LPF ALTER_AREA_ACTOR INT_VAR x_coord=808 y_coord=1019 STR_VAR actor_name=~Orc Archer 10~ END
 	LPF DELETE_AREA_ITEM STR_VAR item_to_delete="RNDTRE16" END
 	LPF DELETE_AREA_ITEM STR_VAR item_to_delete="SCRL73" END
@@ -26083,14 +26293,14 @@ Disadvantages:
 
 
 
-BEGIN ~Remove it~
+BEGIN ~Remove it~ DESIGNATED 128
 SUBCOMPONENT ~Change the summoning limit~
 
 COPY_EXISTING ~summlimt.2da~ ~override~
   REPLACE_TEXTUALLY ~NORMAL[^0-9]*[0-9]*~ ~NORMAL 32767~
   BUT_ONLY_IF_IT_CHANGES
 
-BEGIN ~Set it to a value of your choice~
+BEGIN ~Set it to a value of your choice~ DESIGNATED 256
 SUBCOMPONENT ~Change the summoning limit~
 
 ACTION_READLN ~me_new_number~
@@ -26104,7 +26314,7 @@ COPY_EXISTING ~summlimt.2da~ ~override~
   REPLACE_TEXTUALLY ~NORMAL[^0-9]*[0-9]*~ ~NORMAL %me_new_number%~
   BUT_ONLY_IF_IT_CHANGES
 /*
-BEGIN ~Enable Throne of Bhaal-style High Level Abilities~
+BEGIN ~Enable Throne of Bhaal-style High Level Abilities~ DESIGNATED 384
 
 COPY_EXISTING ~ui.menu~ ~override~
 	me_ability_string = RESOLVE_STR_REF(~You may choose abilities for your character.~)
@@ -26142,3 +26352,87 @@ COPY_EXISTING ~ui.menu~ ~override~
 	BUT_ONLY_IF_IT_CHANGES
 
 */
+BEGIN ~Modify Fighting Styles~ DESIGNATED 512
+
+COPY_EXISTING ~mestyleb.2da~ ~override/stylbonu.2da~
+
+COPY_EXISTING ~weapprof.2da~ ~override~
+	COUNT_2DA_COLS me_num_columns
+	LPF GET_2DA_ROW INT_VAR numcolumns=me_num_columns STR_VAR match=~2HANDED~ RET therow=matched END
+	FOR (j = 4; j < me_num_columns; ++j) BEGIN
+		READ_2DA_ENTRY therow j me_num_columns theprofmax
+		PATCH_IF theprofmax = 2 BEGIN
+			SET_2DA_ENTRY therow j me_num_columns ~5~
+		END
+	END
+	LPF GET_2DA_ROW INT_VAR numcolumns=me_num_columns STR_VAR match=~SWORDANDSHIELD~ RET therow=matched END
+	FOR (j = 4; j < me_num_columns; ++j) BEGIN
+		READ_2DA_ENTRY therow j me_num_columns theprofmax
+		PATCH_IF theprofmax = 2 BEGIN
+			SET_2DA_ENTRY therow j me_num_columns ~5~
+		END
+	END
+	LPF GET_2DA_ROW INT_VAR numcolumns=me_num_columns STR_VAR match=~SINGLEWEAPON~ RET therow=matched END
+	FOR (j = 4; j < me_num_columns; ++j) BEGIN
+		READ_2DA_ENTRY therow j me_num_columns theprofmax
+		PATCH_IF theprofmax = 2 BEGIN
+			SET_2DA_ENTRY therow j me_num_columns ~5~
+		END
+	END
+	LPF GET_2DA_ROW INT_VAR numcolumns=me_num_columns STR_VAR match=~2WEAPON~ RET therow=matched END
+	FOR (j = 4; j < me_num_columns; ++j) BEGIN
+		READ_2DA_ENTRY therow j me_num_columns theprofmax
+		PATCH_IF theprofmax = 3 BEGIN
+			SET_2DA_ENTRY therow j me_num_columns ~5~
+		END
+	END
+
+STRING_SET_EVALUATE 37734 ~TWO-WEAPON: This fighting style allows the character to use two melee weapons at the same time with fewer penalties. A character wielding two weapons without a slot in this fighting style would incur a -4 penalty to attack rolls with the main weapon and a -8 penalty with the off-hand weapon.
+
+Proficient (1 slot): The wielder's penalties are reduced to -2 with the main weapon and -6 with the off-hand weapon.
+
+Specialized (2 slots): The wielder's penalties are reduced to 0 with the main weapon and -4 with the off-hand weapon.
+
+Master (3 slots): The wielder's penalties are reduced to 0 with the main weapon and -2 with the off-hand weapon.
+
+High Master (4 slots): The wielder gets no penalties from wielding two weapons.
+
+Grand Master (5 slots): The wielder gets no penalties from wielding two weapons and gets a +1 bonus to AC while doing so.~
+
+STRING_SET_EVALUATE 37728 ~TWO-HANDED: This fighting style allows the character to use a two-handed melee weapon and receive special bonuses.
+
+Proficient (1 slot): The wielder gets a +2 bonus to damage rolls and a -1 bonus to Speed Factor.
+
+Specialized (2 slots): The wielder gets a +3 bonus to damage rolls, a -2 bonus to Speed Factor, and the ability to score critical hits on a roll of 19 or 20 when using a two-handed weapon.
+
+Master (3 slots): The wielder gets a +5 bonus to damage rolls, a -3 bonus to Speed Factor, and the ability to score critical hits on a roll of 19 or 20 when using a two-handed weapon.
+
+High Master (4 slots): The wielder gets a +6 bonus to damage rolls, a -4 bonus to Speed Factor, and the ability to score critical hits on a roll of 18 to 20 when using a two-handed weapon.
+
+High Master (5 slots): The wielder gets a +8 bonus to damage rolls, a -5 bonus to Speed Factor, and the ability to score critical hits on a roll of 18 to 20 when using a two-handed weapon.~
+
+STRING_SET_EVALUATE 37730 ~SWORD AND SHIELD: Anyone can pick up a shield and get its basic protection bonuses, but by spending slots on this fighting style, an adventurer can maximize the benefits received.
+
+Proficient (1 slot): The wielder gets a +1 bonus to AC against all weapons, and an additional +2 bonus to AC against missile weapons.
+
+Specialized (2 slots): The wielder gets a +2 bonus to AC against all weapons, and an additional +4 bonus to AC against missile weapons.
+
+Master (3 slots): The wielder gets a +3 bonus to AC against all weapons, and an additional +6 bonus to AC against missile weapons.
+
+High Master (4 slots): The wielder gets a +4 bonus to AC against all weapons, and an additional +8 bonus to AC against missile weapons.
+
+Grand Master (5 slots): The wielder gets a +5 bonus to AC against all weapons, and an additional +10 bonus to AC against missile weapons.
+
+NOTE: Despite the name of this style, any one-handed melee weapon in combination with a shield will receive the aforementioned bonuses.~
+
+STRING_SET_EVALUATE 37732 ~SINGLE-WEAPON: This fighting style is for characters who do not wish to use a shield but want some bonus when using a one-handed melee weapon.
+
+Proficient (1 slot): The wielder gets a +1 bonus to THAC0, a -1 bonus to Speed Factor, and the ability to score critical hits on a roll of 19 or 20 when using a one-handed weapon.
+
+Specialized (2 slots): The wielder gets a +2 bonus to THAC0, a -2 bonus to Speed Factor, and the ability to score critical hits on a roll of 18 to 20 when using a one-handed weapon.
+
+Master (3 slots): The wielder gets a +3 bonus to THAC0, a -3 bonus to Speed Factor, and the ability to score critical hits on a roll of 17 to 20 when using a one-handed weapon.
+
+High Master (4 slots): The wielder gets a +4 bonus to THAC0, a -4 bonus to Speed Factor, and the ability to score critical hits on a roll of 16 to 20 when using a one-handed weapon.
+
+Grand Master (5 slots): The wielder gets a +5 bonus to THAC0, a -5 bonus to Speed Factor, and the ability to score critical hits on a roll of 15 to 20 when using a one-handed weapon.~
