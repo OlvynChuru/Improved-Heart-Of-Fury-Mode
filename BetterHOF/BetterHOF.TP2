@@ -1,5 +1,6 @@
 BACKUP ~BetterHOF/backup~
-AUTHOR ~ms98862n@pace.edu~
+AUTHOR ~OlvynChuru~
+VERSION ~3.5~
 
 ALWAYS
 
@@ -617,6 +618,10 @@ OUTER_PATCH alltheconstants BEGIN
 	blindness=74
 	feeblemind=76
 	feeblemindedness=76
+	curefeeblemind=77
+	removefeeblemind=77
+	curefeeblemindedness=77
+	removefeeblemindedness=77
 	disease=78
 	deafness=80
 	protectionfromprojectile=83
@@ -955,6 +960,7 @@ OUTER_PATCH alltheconstants BEGIN
 	visualeffectiwd=327
 	setstate=328
 	setspellstate=328
+	slowpoison=329
 	floattext=330
 	displaystringhead=330
 	damagetypebonus=332
@@ -1899,54 +1905,66 @@ END
 IF
 	Exists(Player1)
 	CheckStat(Player1,0,NO_PERMANENT_DEATH)
+	Global("ME_No_Perm_1","GLOBAL",0)
 THEN
 	RESPONSE #100
 		ReallyForceSpellRES("MENOPERM",Player1)
+		SetGlobal("ME_No_Perm_1","GLOBAL",1)
 		Continue()
 END
 
 IF
 	Exists(Player2)
 	CheckStat(Player2,0,NO_PERMANENT_DEATH)
+	Global("ME_No_Perm_2","GLOBAL",0)
 THEN
 	RESPONSE #100
 		ReallyForceSpellRES("MENOPERM",Player2)
+		SetGlobal("ME_No_Perm_2","GLOBAL",1)
 		Continue()
 END
 
 IF
 	Exists(Player3)
 	CheckStat(Player3,0,NO_PERMANENT_DEATH)
+	Global("ME_No_Perm_3","GLOBAL",0)
 THEN
 	RESPONSE #100
 		ReallyForceSpellRES("MENOPERM",Player3)
+		SetGlobal("ME_No_Perm_3","GLOBAL",1)
 		Continue()
 END
 
 IF
 	Exists(Player4)
 	CheckStat(Player4,0,NO_PERMANENT_DEATH)
+	Global("ME_No_Perm_4","GLOBAL",0)
 THEN
 	RESPONSE #100
 		ReallyForceSpellRES("MENOPERM",Player4)
+		SetGlobal("ME_No_Perm_4","GLOBAL",1)
 		Continue()
 END
 
 IF
 	Exists(Player5)
 	CheckStat(Player5,0,NO_PERMANENT_DEATH)
+	Global("ME_No_Perm_5","GLOBAL",0)
 THEN
 	RESPONSE #100
 		ReallyForceSpellRES("MENOPERM",Player5)
+		SetGlobal("ME_No_Perm_5","GLOBAL",1)
 		Continue()
 END
 
 IF
 	Exists(Player6)
 	CheckStat(Player6,0,NO_PERMANENT_DEATH)
+	Global("ME_No_Perm_6","GLOBAL",0)
 THEN
 	RESPONSE #100
 		ReallyForceSpellRES("MENOPERM",Player6)
+		SetGlobal("ME_No_Perm_6","GLOBAL",1)
 END
 
 >>>>>>>>
@@ -2532,7 +2550,7 @@ THEN
 END
 >>>>>>>>
 
-OUTER_SET who_calls_olhydra = RESOLVE_STR_REF(~Who calls Olhydra, Prince of Water!?~)
+OUTER_SET who_calls_olhydra = RESOLVE_STR_REF(~Who calls Olhydra, Princess of Water!?~)
 EXTEND_TOP ~meolhydr.bcs~ ~.../script.baf~ EVAL
 
 
@@ -3218,7 +3236,7 @@ COPY_EXISTING ~ax1h05.itm~ ~override~
 	WRITE_LONG price 12000
 	WRITE_LONG weight 2
 	SAY NAME2 ~Throwing Axe +4~
-	SAY IDENTIFIED_DESC ~This throwing axe has not only been finely balanced for use as a missile weapon but has also been the subject of significant magical enhancement. As a result, it is both more damaging and more accurate than any non-magical weapon of a similar style. 
+	SAY IDENTIFIED_DESC ~This throwing axe has not only been finely balanced for use as a missile weapon but has also been the subject of significant magical enhancement. As a result, it is both more damaging and more accurate than any non-magical weapon of a similar style.
 
 STATISTICS:
 
@@ -3617,7 +3635,7 @@ COPY_EXISTING ~blast.itm~ ~override~
 	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspellpoint parameter1=30 parameter2=1 probability2=0 STR_VAR match_resource=~spwi806~ END
 	WRITE_SHORT minstrength 22
 	WRITE_LONG price 47000
-	SAY IDENTIFIED_DESC ~Crafted by a powerful invoker, the Bracers of Blasting are dangerous tools for mages strong enough to use them. There are a number of sets of bracers floating around Faerûn, and they circulate very quickly, as the mages who put them on tend not to live much longer. The creator of these bronze armbands has been lost to history.
+	SAY IDENTIFIED_DESC ~Crafted by a powerful invoker, the Bracers of Blasting are dangerous tools for mages strong enough to use them. There are a number of these sets of bracers floating around Faerûn, and they circulate very quickly, as the mages who put them on tend not to live much longer. The creator of these bronze armbands has been lost to history.
 
 STATISTICS:
 
@@ -4191,7 +4209,7 @@ COPY_EXISTING ~cdgloom.itm~ ~override~
 	WRITE_LONG price 12000
 	SAY NAME1 #2893
 	SAY UNIDENTIFIED_DESC #6742
-	SAY IDENTIFIED_DESC ~In 834 DR, a wizard named Legedain the Wiser caught a renowned thief breaking into his tower. The thief was a cynical burglar named Ilfain Blackfeather. Legedain was growing old and becoming tired of his frail body. To remedy the situation, he cast Magic Jar and forced Ilfain's spirit into a host gem. Legedain then transferred his soul to the young elf's body and left the gem on a shelf nearby. One hundred years later, Legedain decided to do something with it. He created a sword for his arrogant bodyguard, Gundak, and transferred Ilfain's spirit from the host gem into the sword. Ilfain, always highly critical in life, started telepathically criticizing Gundak in combat. Gundak became annoyed with the sword after two weeks, and he threw it into the street. A series of warriors picked it up and discarded it after short periods of ownership. Over time, the weapon has simply come to be known by its current name.
+	SAY IDENTIFIED_DESC ~In 834 DR, a wizard named Legedain the Wiser caught a renowned thief breaking into his tower. The thief was a cynical burglar named Ilfain Blackfeather. Legedain was growing old and becoming tired of his frail body. To remedy the situation, he cast Magic Jar and forced Ilfain's spirit into a host gem. Legedain then transferred his soul to the young elf's body and left the gem on a shelf nearby. One hundred years later, Legedain decided to do something with it. He created a sword for his arrogant bodyguard, Gundak, and transferred Ilfain's spirit from the host gem into the sword. Ilfain, always highly critical in life, started telepathically criticizing Gundak in combat. Gundak became annoyed with the sword after two weeks, and he threw it into the street. A series of warriors picked it up and discarded it after short periods of ownership. Over time, the weapon came to be known by the name Cynicism.
 
 Kieran Nye has applied a permanent Hope spell to the sword. While the sword is still very gloomy, it no longer criticizes its wielder and its thieving abilities can be used more often.
 
@@ -4803,12 +4821,12 @@ Equipped abilities:
 - Critical Hit Chance: +20%
 
 Requires:
-- 21 Strength
-- 21 Dexterity
-- 21 Constitution
-- 21 Intelligence
-- 21 Wisdom
-- 21 Charisma
+ 21 Strength
+ 21 Dexterity
+ 21 Constitution
+ 21 Intelligence
+ 21 Wisdom
+ 21 Charisma
 
 Weight: 1~
 
@@ -4934,7 +4952,7 @@ COPY_EXISTING ~dart05.itm~ ~override~
 
 STATISTICS:
 
-Combat abilities: 
+Combat abilities:
 - On a successful hit, the dart turns into a snake under the control of the thrower. The snake vanishes after 2 rounds.
 
 THAC0: +1
@@ -5252,7 +5270,7 @@ COPY_EXISTING ~erevain.itm~ ~override~
 	WRITE_ASCII equippedappearance ~FS~ #2 //Flaming sword
 	WRITE_LONG weight 3
 	WRITE_LONG price 12000
-	SAY NAME2 ~Evevain's Broad Sword +4~
+	SAY NAME2 ~Erevain's Broad Sword +4~
 	SAY IDENTIFIED_DESC ~This broad sword used to belong to Erevain Blacksheaf, a wandering elf from Evereska. It was made in 1221 DR by Evereskan Greycloaks. Erevain's sword was unusual among his people, who normally favor lighter swords.
 
 STATISTICS:
@@ -5288,7 +5306,7 @@ COPY_EXISTING ~eron.itm~ ~override~
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=disablevisualeffects target=1 timing=2 parameter2=1 END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=useefffile target=1 timing=2 parameter1=classmage parameter2=idsclass STR_VAR resource=~methacer~ END
 	WRITE_LONG price 4400
-	SAY IDENTIFIED_DESC ~Eron the Dismayed was a pessimistic wizard with a propensity for magical dueling. He believed that the only way to become strong in the Art was to test his powers against other wizards. However, he also believed that thieves and assassins were constantly looking to steal his wealth. To make himself appear mundane, he wore the clothes of a pilgrim and carried a simple elm walking staff. In reality, the staff was magically enchanted to be more potent in combat, but Eron didn't want to risk advertising that fact. 
+	SAY IDENTIFIED_DESC ~Eron the Dismayed was a pessimistic wizard with a propensity for magical dueling. He believed that the only way to become strong in the Art was to test his powers against other wizards. However, he also believed that thieves and assassins were constantly looking to steal his wealth. To make himself appear mundane, he wore the clothes of a pilgrim and carried a simple elm walking staff. In reality, the staff was magically enchanted to be more potent in combat, but Eron didn't want to risk advertising that fact.
 
 STATISTICS:
 
@@ -5393,7 +5411,7 @@ Requires:
 Weight: 12~
 
 COPY_EXISTING ~firekis.itm~ ~override~
-	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell probability1=24 END
+	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell probability1=49 END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=setstate target=1 timing=2 parameter2=7 END
 	WRITE_ASCII equippedappearance ~F2~ #2 //Flaming short sword
 	WRITE_BYTE firstheaderspeedfactor 0
@@ -5407,7 +5425,7 @@ COPY_EXISTING ~firekis.itm~ ~override~
 STATISTICS:
 
 Combat abilities:
-- 25% chance hit target is affected by Shroud of Flame
+- 50% chance target is affected by Shroud of Flame per hit
 
 Equipped abilities:
 - Wielder has protection from the spell Shroud of Flame, and Shrouds of Flame cannot spread to the wielder
@@ -14934,7 +14952,7 @@ COPY_EXISTING ~ettin.cre~ ~override~ ~wtettin.cre~ ~override~
 	WRITE_BYTE thac0 244 //-12
 	WRITE_BYTE attacksperround 4
 	WRITE_BYTE levelfirstclass 24
-	WRITE_ASCII classscript ~meshout~ #8
+	WRITE_ASCII classscript ~meshoutq~ #8
 	WRITE_ASCII generalscript ~mebrute~ #8
 	WRITE_ASCII defaultscript ~meamelra~ #8
 	ADD_MEMORIZED_SPELL ~spcl321~ #0 ~innate~ (6)
@@ -17267,7 +17285,7 @@ COPY_EXISTING ~myconidb.cre~ ~override~
 	WRITE_BYTE thac0 1
 	WRITE_BYTE attacksperround 3
 	WRITE_BYTE levelfirstclass 18
-	WRITE_ASCII classscript ~meshout~ #8
+	WRITE_ASCII classscript ~meshoutq~ #8
 	WRITE_ASCII racescript ~memycon1~ #8
 	WRITE_ASCII generalscript ~~ #8
 	WRITE_ASCII defaultscript ~meamelee~ #8
@@ -19744,7 +19762,7 @@ COPY_EXISTING ~trshelh.cre~ ~override~
 	LPF ADD_CRE_EFFECT INT_VAR opcode=protectionfromturnundead target=1 timing=9 resist_dispel=2 parameter2=1 END
 	LPF ADD_CRE_EFFECT INT_VAR opcode=protectionfromopcode target=1 timing=9 resist_dispel=2 parameter2=imprisonment END
 
-COPY_EXISTING ~troll.cre~ ~override~ ~trollt.cre~ ~override~ ~trolly.cre~ ~override~ ~shtroll.cre~ ~override~
+COPY_EXISTING ~troll.cre~ ~override~ ~trolly.cre~ ~override~ ~shtroll.cre~ ~override~
 	WRITE_LONG killxp 3000
 	WRITE_SHORT currenthp 80
 	WRITE_SHORT maxhp 80
@@ -19872,6 +19890,30 @@ COPY_EXISTING ~dlscrag.cre~ ~override~
 	ADD_CRE_ITEM ~metrolwa~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~ EQUIP
 	LPF ADD_CRE_EFFECT INT_VAR opcode=modifyallsaves target=1 timing=9 parameter1=9 END
 	LPF ADD_CRE_EFFECT INT_VAR opcode=modifymovementrate2 target=1 timing=1 parameter1=150 parameter2=2 END
+
+COPY_EXISTING ~trollt.cre~ ~override~
+	SAY NAME1 ~Poison Troll~
+	SAY NAME2 ~Poison Troll~
+	WRITE_LONG killxp 4000
+	WRITE_SHORT currenthp 80
+	WRITE_SHORT maxhp 80
+	WRITE_SHORT naturalac 3
+	WRITE_SHORT effectiveac 3
+	WRITE_BYTE strength 20
+	WRITE_BYTE dexterity 18
+	WRITE_BYTE constitution 24
+	WRITE_BYTE fireresistance 156 //-100%
+	WRITE_BYTE acidresistance 206 //-50%
+	WRITE_BYTE thac0 6
+	WRITE_BYTE levelfirstclass 15
+	WRITE_ASCII classscript ~meshout~ #8
+	WRITE_ASCII racescript ~~ #8
+	WRITE_ASCII generalscript ~~ #8
+	WRITE_ASCII defaultscript ~meamelee~ #8
+	REMOVE_CRE_ITEM ~reg1hp2~
+	ADD_CRE_ITEM ~metalona~ #0 #0 #0 ~IDENTIFIED~ ~CLOAK~
+	ADD_CRE_ITEM ~metrolpo~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~ EQUIP
+	LPF ADD_CRE_EFFECT INT_VAR opcode=modifyallsaves target=1 timing=9 parameter1=6 END
 
 COPY_EXISTING ~uligar.cre~ ~override~
 	WRITE_LONG killxp 2000
@@ -21932,6 +21974,14 @@ COPY_EXISTING_REGEXP ~shamme[123].itm~ ~override~ //Spiritual Hammer
 	ulgiash|=0x1
 	WRITE_LONG firstheaderflags ulgiash
 
+COPY_EXISTING ~sppr212.spl~ ~override~
+	LPF ALTER_EFFECT INT_VAR match_opcode=slowpoison opcode=curepoison END
+	LPF ALTER_SPELL_HEADER INT_VAR speed=0 END
+	SAY UNIDENTIFIED_DESC @20212
+
+COPY_EXISTING ~sppr212c.itm~ ~override~
+	SAY IDENTIFIED_DESC @20212
+
 COPY_EXISTING ~sppr217.spl~ ~override~
 	LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=modifycurrenthp parameter1=15 END
 	LPF ALTER_SPELL_HEADER INT_VAR speed=1 END
@@ -21939,6 +21989,16 @@ COPY_EXISTING ~sppr217.spl~ ~override~
 
 COPY_EXISTING ~sppr214c.itm~ ~override~
 	SAY IDENTIFIED_DESC @20217
+
+COPY_EXISTING ~sppr216.spl~ ~override~
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=modifyfireresistance opcode=modifymagicfireresistance parameter1=25 END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=modifycoldresistance opcode=modifymagiccoldresistance parameter1=25 END
+	SAY UNIDENTIFIED_DESC @20216
+
+COPY_EXISTING ~sppr217.spl~ ~override~
+	LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=modifycurrenthp parameter1=15 END
+	LPF ALTER_SPELL_HEADER INT_VAR speed=1 END
+	SAY UNIDENTIFIED_DESC @20217
 
 COPY_EXISTING ~sppr218.spl~ ~override~
 	LPF ALTER_SPELL_EFFECT INT_VAR savingthrow=nosave resist_dispel=2 END
@@ -21970,6 +22030,21 @@ COPY_EXISTING ~sppr250.spl~ ~override~
 	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=immunitytospellandmessage match_parameter2=25 parameter2=splprot_immunetomagiccold END
 	SAY UNIDENTIFIED_DESC @20250
 
+COPY_EXISTING ~sppr306.spl~ ~override~
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=modifyfireresistance match_parameter2=1 parameter2=0 END
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=modifyfireresistance opcode=modifymagicfireresistance parameter1=40 parameter2=0 END
+	SAY UNIDENTIFIED_DESC @20306
+
+COPY_EXISTING ~sppr306c.itm~ ~override~
+	SAY IDENTIFIED_DESC @20306
+
+COPY_EXISTING ~sppr308.spl~ ~override~
+	LPF ALTER_SPELL_HEADER INT_VAR speed=1 END
+	SAY UNIDENTIFIED_DESC @20308
+
+COPY_EXISTING ~sppr308c.itm~ ~override~
+	SAY IDENTIFIED_DESC @20308
+
 COPY_EXISTING ~sppr311.spl~ ~override~
 	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_savingthrow=vsspell savebonus=(0 - 2) END
 	SAY UNIDENTIFIED_DESC @20311
@@ -21979,10 +22054,37 @@ COPY_EXISTING ~sppr312.spl~ ~override~
 	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell2 target=2 timing=0 duration=1 parameter1=21 parameter2=124 insert_point=0 STR_VAR resource=~sppr312~ END
 	SAY UNIDENTIFIED_DESC @20312
 
+COPY_EXISTING ~sppr314.spl~ ~override~
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_savingthrow=vsspell savingthrow=nosave END
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=immunitytospellandmessage match_parameter2=34 parameter2=37 END
+	SAY UNIDENTIFIED_DESC @20314
+
 COPY_EXISTING ~sppr315.spl~ ~override~
 	LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=modifycurrenthp parameter1=20 END
 	LPF ALTER_SPELL_HEADER INT_VAR speed=2 END
 	SAY UNIDENTIFIED_DESC @20315
+
+COPY_EXISTING ~sppr317.spl~ ~override~
+	LPF ALTER_SPELL_HEADER INT_VAR speed=1 END
+	LPF ADD_SPELL_EFFECT INT_VAR power=3 opcode=curefeeblemind target=2 timing=1 resist_dispel=3 END
+	LPF ADD_SPELL_EFFECT INT_VAR power=3 opcode=protectionfromopcode target=2 timing=0 duration=12 parameter2=disease resist_dispel=3 END
+	LPF ADD_SPELL_EFFECT INT_VAR power=3 opcode=protectionfromopcode target=2 timing=0 duration=12 parameter2=blindness resist_dispel=3 END
+	LPF ADD_SPELL_EFFECT INT_VAR power=3 opcode=protectionfromopcode target=2 timing=0 duration=12 parameter2=deafness resist_dispel=3 END
+	LPF ADD_SPELL_EFFECT INT_VAR power=3 opcode=protectionfromopcode target=2 timing=0 duration=12 parameter2=feeblemind resist_dispel=3 END
+	LPF ADD_SPELL_EFFECT INT_VAR power=3 opcode=protectionfromportraiticon target=2 timing=0 duration=12 parameter2=7 resist_dispel=3 END
+	LPF ADD_SPELL_EFFECT INT_VAR power=3 opcode=protectionfromportraiticon target=2 timing=0 duration=12 parameter2=8 resist_dispel=3 END
+	LPF ADD_SPELL_EFFECT INT_VAR power=3 opcode=protectionfromportraiticon target=2 timing=0 duration=12 parameter2=48 resist_dispel=3 END
+	LPF ADD_SPELL_EFFECT INT_VAR power=3 opcode=protectionfromportraiticon target=2 timing=0 duration=12 parameter2=112 resist_dispel=3 END
+	LPF ADD_SPELL_EFFECT INT_VAR power=3 opcode=protectionfromstring target=2 timing=0 duration=12 parameter1=39752 resist_dispel=3 END
+	LPF ADD_SPELL_EFFECT INT_VAR power=3 opcode=protectionfromstring target=2 timing=0 duration=12 parameter1=17398 resist_dispel=3 END
+	LPF ADD_SPELL_EFFECT INT_VAR power=3 opcode=protectionfromstring target=2 timing=0 duration=12 parameter1=37800 resist_dispel=3 END
+	LPF ADD_SPELL_EFFECT INT_VAR power=3 opcode=protectionfromstring target=2 timing=0 duration=12 parameter1=14073 resist_dispel=3 END
+	LPF ADD_SPELL_EFFECT INT_VAR power=3 opcode=protectionfromstring target=2 timing=0 duration=12 parameter1=14407 resist_dispel=3 END
+	LPF ADD_SPELL_EFFECT INT_VAR power=3 opcode=protectionfromanimation target=2 timing=0 duration=12 resist_dispel=3 STR_VAR resource=~CDISEAH~ END
+	SAY UNIDENTIFIED_DESC @20317
+
+COPY_EXISTING ~sppr314c.itm~ ~override~
+	SAY IDENTIFIED_DESC @20317
 
 COPY_EXISTING ~sppr321.spl~ ~override~
 	LPF DELETE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=immunitytospellandmessage match_parameter2=43 END
@@ -22051,6 +22153,19 @@ COPY_EXISTING ~sppr401.spl~ ~override~
 COPY_EXISTING ~scrl56.itm~ ~override~
 	SAY IDENTIFIED_DESC @20401
 
+COPY_EXISTING ~sppr404.spl~ ~override~
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=protectionfromopcode target=2 timing=0 duration=18 parameter2=poison resist_dispel=3 END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=modifypoisonresistance target=2 timing=0 duration=18 parameter1=100 resist_dispel=3 END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=protectionfromportraiticon target=2 timing=0 duration=18 parameter2=6 resist_dispel=3 END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=protectionfromstring target=2 timing=0 duration=18 parameter1=37607 resist_dispel=3 END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=protectionfromanimation target=2 timing=0 duration=18 resist_dispel=3 STR_VAR resource=~POISONH~ END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=protectionfromanimation target=2 timing=0 duration=18 resist_dispel=3 STR_VAR resource=~POISON~ END
+	LPF ALTER_SPELL_HEADER INT_VAR speed=0 END
+	SAY UNIDENTIFIED_DESC @20404
+
+COPY_EXISTING ~sppr404c.itm~ ~override~
+	SAY IDENTIFIED_DESC @20404
+
 COPY_EXISTING ~sppr411.spl~ ~override~
 	LPF ALTER_SPELL_HEADER INT_VAR speed=3 END
 	LPF ALTER_SPELL_EFFECT INT_VAR duration_high=60 savebonus=(0 - 3) END
@@ -22058,32 +22173,32 @@ COPY_EXISTING ~sppr411.spl~ ~override~
 
 COPY_EXISTING ~sppr413.spl~ ~override~
 	LPF ALTER_SPELL_EFFECT INT_VAR duration_high=90 END
-	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell STR_VAR match_resource=~SPWI119~ resource=~spwi221~ END
-	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell STR_VAR match_resource=~SPWI119~ resource=~spwi630~ END
-	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell STR_VAR match_resource=~SPWI119~ resource=~spwi631~ END
-	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell STR_VAR match_resource=~SPWI119~ resource=~spwi914~ END
-	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell STR_VAR match_resource=~SPWI119~ resource=~sppr114~ END
-	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell STR_VAR match_resource=~SPWI119~ resource=~sppr220~ END
-	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell STR_VAR match_resource=~SPWI119~ resource=~sppr314~ END
-	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell STR_VAR match_resource=~SPWI119~ resource=~sppr330~ END
-	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell STR_VAR match_resource=~SPWI119~ resource=~sppr414~ END
-	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell STR_VAR match_resource=~SPWI119~ resource=~sppr423~ END
-	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell STR_VAR match_resource=~SPWI119~ resource=~sppr510~ END
-	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell STR_VAR match_resource=~SPWI119~ resource=~sppr608~ END
-	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell STR_VAR match_resource=~SPWI119~ resource=~sppr739~ END
-	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell STR_VAR match_resource=~SPWI119~ resource=~sppr740~ END
-	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell STR_VAR match_resource=~SPWI119~ resource=~sppr751~ END
-	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell STR_VAR match_resource=~SPWI119~ resource=~spcl102~ END
-	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell STR_VAR match_resource=~SPWI119~ resource=~mems202~ END
-	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell STR_VAR match_resource=~SPWI119~ resource=~mems206~ END
-	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell STR_VAR match_resource=~SPWI119~ resource=~mems218~ END
-	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell STR_VAR match_resource=~SPWI119~ resource=~mems224~ END
-	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell STR_VAR match_resource=~SPWI119~ resource=~mems225~ END
-	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell STR_VAR match_resource=~SPWI119~ resource=~mems226~ END
-	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell STR_VAR match_resource=~SPWI119~ resource=~mems230~ END
-	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell STR_VAR match_resource=~SPWI119~ resource=~mems268d~ END
-	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell STR_VAR match_resource=~SPWI119~ resource=~mems270~ END
-	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell STR_VAR match_resource=~SPWI119~ resource=~memyrsen~ END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~spwi221~ END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~dobone~ END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~spwi631~ END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~spwi914~ END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~sppr114~ END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~sppr220~ END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~sppr314~ END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~sppr330~ END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~sppr414~ END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~sppr423~ END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~sppr510~ END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~sppr608~ END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~sppr739~ END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~sppr740~ END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~sppr751~ END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~spcl102~ END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~mems202~ END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~mems206~ END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~mems218~ END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~mems224~ END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~mems225~ END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~mems226~ END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~mems230~ END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~mems268d~ END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~mems270~ END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~memyrsen~ END
 	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromanimation STR_VAR match_resource=~SPWI119~ resource=~meedrain~ END
 	LPF CLONE_EFFECT INT_VAR multi_match=1 check_headers=1 check_globals=0 match_opcode=protectionfromstring parameter1=RESOLVE_STR_REF(~Six Levels Drained~) END
 	LPF CLONE_EFFECT INT_VAR multi_match=1 check_headers=1 check_globals=0 match_opcode=protectionfromstring parameter1=RESOLVE_STR_REF(~Seven Levels Drained~) END
@@ -22111,6 +22226,25 @@ COPY_EXISTING ~sppr416.spl~ ~override~
 COPY_EXISTING ~#cofear.spl~ ~override~
 	LPF ALTER_SPELL_EFFECT INT_VAR savebonus=(0 - 2) END
 
+COPY_EXISTING ~sppr417.spl~ ~override~
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=removeeffectsbyresource target=2 timing=1 STR_VAR resource=~ghast1~ END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=removeeffectsbyresource target=2 timing=1 STR_VAR resource=~ltouch~ END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=removeeffectsbyresource target=2 timing=1 STR_VAR resource=~dobone~ END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=removeeffectsbyresource target=2 timing=1 STR_VAR resource=~ghast1~ END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=removeeffectsbyresource target=2 timing=1 STR_VAR resource=~shadless~ END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=removeeffectsbyresource target=2 timing=1 STR_VAR resource=~shadow1~ END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=removeeffectsbyresource target=2 timing=1 STR_VAR resource=~spwi221~ END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=removeeffectsbyresource target=2 timing=1 STR_VAR resource=~sppr314~ END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=removeeffectsbyresource target=2 timing=1 STR_VAR resource=~sppr423~ END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=removeeffectsbyresource target=2 timing=1 STR_VAR resource=~sppr740~ END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=removeeffectsbyresource target=2 timing=1 STR_VAR resource=~sppr751~ END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=removeeffectsbyresource target=2 timing=1 STR_VAR resource=~sppr423~ END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=removeeffectsbyresource target=2 timing=1 STR_VAR resource=~mems202~ END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=removeeffectsbyresource target=2 timing=1 STR_VAR resource=~mems230~ END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=removeeffectsbyresource target=2 timing=1 STR_VAR resource=~mems268d~ END
+	LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=modifyfatigue END
+	SAY UNIDENTIFIED_DESC @20417
+
 COPY_EXISTING ~sppr419.spl~ ~override~
 	READ_SHORT 0x68 me_numheaders
 	FOR (i = 1; i <= me_numheaders; ++i) BEGIN
@@ -22129,6 +22263,14 @@ COPY_EXISTING ~sppr422.spl~ ~override~
 
 COPY_EXISTING ~sppr423.spl~ ~override~
 	LPF DELETE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=removeeffectsbyresource STR_VAR match_resource=~sppr423~ END
+	LPF DELETE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=damage END
+	LPF DELETE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=blindness END
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=displayportraiticon match_parameter2=8 parameter2=7 END
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=displaystring match_parameter1=37800 parameter1=17398 END
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=modifystrength opcode=disease parameter1=3 parameter2=4 END
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=modifydexterity opcode=disease parameter1=3 parameter2=4 END
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 savebonus=(0 - 2) END
+	SAY UNIDENTIFIED_DESC @20423
 
 COPY_EXISTING ~sppr424.spl~ ~override~
 	LPF ALTER_SPELL_HEADER INT_VAR target=4 range=100 projectile=158 END
@@ -22337,6 +22479,7 @@ COPY_EXISTING ~sppr704.spl~ ~override~
 	SAY UNIDENTIFIED_DESC @20704
 
 COPY_EXISTING ~sppr705.spl~ ~override~
+	LPF ALTER_SPELL_EFFECT INT_VAR savingthrow=bypassmirrorimage END
 	SAY UNIDENTIFIED_DESC @20705
 
 COPY_EXISTING ~idpro92.pro~ ~override~
@@ -22356,6 +22499,25 @@ COPY_EXISTING ~sppr708.spl~ ~override~ //Finger of Death
 	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_savingthrow=vsspell savingthrow=vsdeath savebonus=(0 - 2) END
 	LPF ADD_SPELL_EFFECT INT_VAR opcode=immunitytospellandmessage target=2 timing=0 duration=1 parameter2=55 insert_point=0 STR_VAR resource=~sppr708~ END
 	SAY UNIDENTIFIED_DESC @20708
+
+COPY_EXISTING ~sppr713.spl~ ~override~
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=removeeffectsbyresource target=2 timing=1 STR_VAR resource=~ghast1~ END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=removeeffectsbyresource target=2 timing=1 STR_VAR resource=~ltouch~ END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=removeeffectsbyresource target=2 timing=1 STR_VAR resource=~dobone~ END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=removeeffectsbyresource target=2 timing=1 STR_VAR resource=~ghast1~ END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=removeeffectsbyresource target=2 timing=1 STR_VAR resource=~shadless~ END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=removeeffectsbyresource target=2 timing=1 STR_VAR resource=~shadow1~ END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=removeeffectsbyresource target=2 timing=1 STR_VAR resource=~spwi221~ END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=removeeffectsbyresource target=2 timing=1 STR_VAR resource=~sppr314~ END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=removeeffectsbyresource target=2 timing=1 STR_VAR resource=~sppr423~ END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=removeeffectsbyresource target=2 timing=1 STR_VAR resource=~sppr740~ END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=removeeffectsbyresource target=2 timing=1 STR_VAR resource=~sppr751~ END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=removeeffectsbyresource target=2 timing=1 STR_VAR resource=~sppr423~ END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=removeeffectsbyresource target=2 timing=1 STR_VAR resource=~mems202~ END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=removeeffectsbyresource target=2 timing=1 STR_VAR resource=~mems230~ END
+	LPF ADD_SPELL_EFFECT INT_VAR power=4 opcode=removeeffectsbyresource target=2 timing=1 STR_VAR resource=~mems268d~ END
+	LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=modifyfatigue END
+	SAY UNIDENTIFIED_DESC @20713
 
 COPY_EXISTING ~sppr714.spl~ ~override~ //Symbol of Pain
 	LPF ALTER_SPELL_EFFECT INT_VAR check_headers=1 check_globals=0 savingthrow=0 END
@@ -22401,9 +22563,15 @@ COPY_EXISTING ~sppr730.spl~ ~override~
 	SAY UNIDENTIFIED_DESC @20730
 
 COPY_EXISTING ~sppr736.spl~ ~override~
-	LPF ALTER_SPELL_HEADER INT_VAR speed=2 END
-	LPF ALTER_SPELL_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=modifycurrenthp parameter1=50 END
+	LPF ALTER_SPELL_HEADER INT_VAR speed=9 END
+	LPF ALTER_SPELL_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=modifycurrenthp parameter1=5 END
 	SAY UNIDENTIFIED_DESC @20736
+
+COPY_EXISTING ~idpro307.pro~ ~override~
+	WRITE_SHORT 0x204 256
+	WRITE_SHORT 0x206 256
+	WRITE_SHORT 0x210 20
+	WRITE_BYTE 0x216 100
 
 COPY_EXISTING ~sppr739.spl~ ~override~
 	LPF ALTER_SPELL_HEADER INT_VAR range=100 END
@@ -24669,33 +24837,47 @@ COPY_EXISTING ~ar4001.are~ ~override~
 	LPF ADD_AREA_ITEM INT_VAR container_to_add_to=4 charges1=35 STR_VAR item_to_add=~arow08~ END
 	LPF ALTER_AREA_ACTOR INT_VAR x_coord=577 y_coord=973 STR_VAR actor_name=~Lizard Man 3~ END
 	LPF ALTER_AREA_ACTOR INT_VAR x_coord=585 y_coord=1257 STR_VAR actor_name=~Lizard Man 4~ END
-	LPF ALTER_AREA_ACTOR INT_VAR x_coord=2444 y_coord=1461 STR_VAR actor_name=~Lizard Man 21~ END
+	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~mebeettr~ actor_name=~Lizard Man 5~ END
+	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~mebeettr~ actor_name=~Lizard Man 6~ END
+	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~spidwr~ actor_name=~Lizard Man 7~ END
+	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~mebeettr~ actor_name=~Lizard Man 8~ END
 	LPF ALTER_AREA_ACTOR INT_VAR x_coord=1875 y_coord=1306 STR_VAR cre_file=~lmsham3~ actor_name=~Lizard Man 11~ END
 	LPF ALTER_AREA_ACTOR INT_VAR x_coord=1973 y_coord=1226 STR_VAR cre_file=~lmsham3~ actor_name=~Lizard Man 12~ END
-	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~lm2hwna~ actor_name=~Lizard Man 20~ END
-	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~lm2hwna~ actor_name=~Lizard Man 21~ END
-	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~lmsham3~ actor_name=~Lizard Man 24~ END
-	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~lmsham3~ actor_name=~Lizard Man 25~ END
-	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~lmsham3~ actor_name=~Lizard Man 26~ END
+	LPF ALTER_AREA_ACTOR INT_VAR x_coord=2444 y_coord=1461 STR_VAR actor_name=~Lizard Man 21~ END
+	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~lm2hwna~ actor_name=~Lizard Man 22~ END
+	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~lm2hwna~ actor_name=~Lizard Man 23~ END
+	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~spidph~ actor_name=~Lizard Man 24~ END
+	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~mebeettr~ actor_name=~Lizard Man 25~ END
+	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~spidph~ actor_name=~Lizard Man 26~ END
+	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~lm2hwna~ actor_name=~Lizard Man 27~ END
+	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~lm2hwna~ actor_name=~Lizard Man 30~ END
+	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~mebeettr~ actor_name=~Lizard Man Shaman~ END
+	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~mebeettr~ actor_name=~Lizard Man Shaman G3~ END
 	LPF ALTER_AREA_ACTOR INT_VAR x_coord=1865 y_coord=1240 STR_VAR actor_name=~Lizard Man Shaman G4~ END
-	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~lm1hwax~ actor_name=~Lizard Man Shaman G6~ END
+	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~mebeettr~ actor_name=~Lizard Man Shaman G6~ END
 	LPF ALTER_AREA_ACTOR INT_VAR x_coord=513 y_coord=899 STR_VAR actor_name=~NEW Lizard Man Shaman 3~ END
-	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~lm1hwax~ actor_name=~Tough Lizard Man 4~ END
-	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~lm1hwax~ actor_name=~Tough Lizard Man 5~ END
+	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~lm1hwax~ actor_name=~Tough Lizard Man 1~ END
+	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~mebeettr~ actor_name=~Tough Lizard Man 4~ END
+	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~mebeettr~ actor_name=~Tough Lizard Man 5~ END
 	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~lm1hwax~ actor_name=~Tough Lizard Man 6~ END
 	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~lm1hwax~ actor_name=~Tough Lizard Man 7~ END
-	LPF ALTER_AREA_ACTOR INT_VAR x_coord=2430 y_coord=1533 STR_VAR actor_name=~Tough Lizard Man 8~ END
-	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~lm1hwax~ actor_name=~Tough Lizard Man 9~ END
-	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~lmsham3~ actor_name=~Tough Lizard Man 10~ END
+	LPF ALTER_AREA_ACTOR INT_VAR x_coord=2430 y_coord=1533 STR_VAR cre_file=~lm1hwax~ actor_name=~Tough Lizard Man 8~ END
+	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~mebeettr~ actor_name=~Tough Lizard Man 9~ END
+	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~mebeettr~ actor_name=~Tough Lizard Man 10~ END
 	LPF ALTER_AREA_ACTOR INT_VAR x_coord=681 y_coord=1093 STR_VAR cre_file=~lm1hwax~ actor_name=~NEW Tough Lizard Man 1~ END
 	LPF ALTER_AREA_ACTOR INT_VAR x_coord=709 y_coord=1145 STR_VAR cre_file=~lm1hwax~ actor_name=~NEW Tough Lizard Man 2~ END
 	LPF ALTER_AREA_ACTOR INT_VAR x_coord=687 y_coord=1301 STR_VAR cre_file=~lm1hwax~ actor_name=~NEW Tough Lizard Man 3~ END
+	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~menocre~ actor_name=~NEW Tough Lizard Man 4~ END
+	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~menocre~ actor_name=~NEW Tough Lizard Man 5~ END
+	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~meankheg~ actor_name=~NEW Tough Lizard Man 6~ END
 	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~lm1hwax~ actor_name=~NEW Tough Lizard Man 7~ END
+	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~mebeettr~ actor_name=~NEW Tough Lizard Man 8~ END
+	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~mebeettr~ actor_name=~NEW Tough Lizard Man 9~ END
 	LPF ALTER_AREA_ACTOR INT_VAR x_coord=1484 y_coord=918 STR_VAR cre_file=~lm1hwax~ actor_name=~NEW Tough Lizard Man 10~ END
 	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~spidph~ actor_name=~NEW Sword Spider 1~ END
 	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~spidph~ actor_name=~NEW Sword Spider 2~ END
 	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~spidph~ actor_name=~NEW Sword Spider 3~ END
-	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~spidph~ actor_name=~NEW Sword Spider 4~ END
+	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~meankheg~ actor_name=~NEW Sword Spider 4~ END
 	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~spidph~ actor_name=~NEW Sword Spider 5~ END
 	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~spidph~ actor_name=~Sword Spider 12~ END
 	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~spidph~ actor_name=~Wraith Spider 8~ END
@@ -24716,17 +24898,38 @@ COPY_EXISTING ~ar4002.are~ ~override~
 	LPF DELETE_AREA_ITEM STR_VAR item_to_delete="U1HAX3B" END
 	LPF DELETE_AREA_ITEM STR_VAR item_to_delete="ULSWD3B" END
 	LPF ADD_AREA_ITEM INT_VAR container_to_add_to=1 STR_VAR item_to_add=~merndt18~ END
-	LPF ALTER_AREA_ACTOR INT_VAR x_coord=2560 y_coord=536 STR_VAR actor_name=~Tough Lizard Man 104~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~meankheg~ actor_name=~Bombadier Beetle 5~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~meankheg~ actor_name=~Bombadier Beetle 15~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~mebeetfg~ script_class=~meshout~ actor_name=~Bombadier Beetle 18~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~beetbor~ actor_name=~Bombadier Beetle 21~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~beetbor~ actor_name=~Bombadier Beetle 23~ END
+	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~spidsw~ actor_name=~Tough Lizard Man 100~ END
+	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~spidsw~ actor_name=~Tough Lizard Man 103~ END
+	LPF ALTER_AREA_ACTOR STR_VAR cre_file=~menocre~ actor_name=~Tough Lizard Man 104~ END
 	LPF ALTER_AREA_ACTOR INT_VAR x_coord=1532 y_coord=368 STR_VAR cre_file=~spidsw~ actor_name=~Tough Lizard Man 105~ END
-	LPF ALTER_AREA_ACTOR INT_VAR x_coord=1558 y_coord=472 STR_VAR cre_file=~spidwr~actor_name=~Tough Lizard Man 106~ END
+	LPF ALTER_AREA_ACTOR INT_VAR x_coord=1558 y_coord=472 STR_VAR cre_file=~menocre~actor_name=~Tough Lizard Man 106~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~trollt~ actor_name=~Troll 8~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~trollt~ actor_name=~Troll 9~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~trollt~ actor_name=~Troll 10~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~mebeettr~ actor_name=~Troll 26~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~menocre~ actor_name=~Troll 33~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~lmsham3~ actor_name=~NEW Troll 6~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~mebeettr~ actor_name=~NEW Troll 8~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~spidwr~ actor_name=~NEW Troll 9~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~spidwr~ actor_name=~NEW Troll 10~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~lmsham3~ actor_name=~NEW Troll 11~ END
 	LPF ALTER_AREA_ACTOR INT_VAR x_coord=3329 y_coord=530 STR_VAR actor_name=~Phase Spider 107~ END
-	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~spidsw~ actor_name=~Wraith Spider 103~ END
-	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~spidsw~ actor_name=~Wraith Spider 104~ END
-	LPF fj_are_structure INT_VAR fj_loc_x=1714 fj_loc_y=424 fj_orientation=east STR_VAR fj_structure_type=~actor~ fj_name=~ME_Wraith_Spider_1~ fj_cre_resref=~spidwr~ END
-	LPF fj_are_structure INT_VAR fj_loc_x=1751 fj_loc_y=1002 fj_orientation=east STR_VAR fj_structure_type=~actor~ fj_name=~ME_Sword_Spider_1~ fj_cre_resref=~spidsw~ END
-	LPF fj_are_structure INT_VAR fj_loc_x=1439 fj_loc_y=446 fj_orientation=east STR_VAR fj_structure_type=~actor~ fj_name=~ME_Trained_Fire_Beetle_1~ fj_cre_resref=~mebeettr~ END
-	LPF fj_are_structure INT_VAR fj_loc_x=1489 fj_loc_y=496 fj_orientation=east STR_VAR fj_structure_type=~actor~ fj_name=~ME_Trained_Fire_Beetle_2~ fj_cre_resref=~mebeettr~ END
-	LPF fj_are_structure INT_VAR fj_loc_x=1573 fj_loc_y=536 fj_orientation=east STR_VAR fj_structure_type=~actor~ fj_name=~ME_Trained_Fire_Beetle_3~ fj_cre_resref=~mebeettr~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~meankheg~ actor_name=~Sword Spider 108~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~spidph~ actor_name=~Sword Spider 109~ END
+	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~menocre~ actor_name=~Sword Spider 112~ END
+//	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~spidsw~ actor_name=~Wraith Spider 103~ END
+//	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~spidsw~ actor_name=~Wraith Spider 104~ END
+//	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~menocre~ actor_name=~Wraith Spider 105~ END
+//	LPF fj_are_structure INT_VAR fj_loc_x=1714 fj_loc_y=424 fj_orientation=east STR_VAR fj_structure_type=~actor~ fj_name=~ME_Wraith_Spider_1~ fj_cre_resref=~spidwr~ END
+//	LPF fj_are_structure INT_VAR fj_loc_x=1751 fj_loc_y=1002 fj_orientation=east STR_VAR fj_structure_type=~actor~ fj_name=~ME_Sword_Spider_1~ fj_cre_resref=~spidsw~ END
+//	LPF fj_are_structure INT_VAR fj_loc_x=1439 fj_loc_y=446 fj_orientation=east STR_VAR fj_structure_type=~actor~ fj_name=~ME_Trained_Fire_Beetle_1~ fj_cre_resref=~mebeettr~ END
+//	LPF fj_are_structure INT_VAR fj_loc_x=1489 fj_loc_y=496 fj_orientation=east STR_VAR fj_structure_type=~actor~ fj_name=~ME_Trained_Fire_Beetle_2~ fj_cre_resref=~mebeettr~ END
+//	LPF fj_are_structure INT_VAR fj_loc_x=1573 fj_loc_y=536 fj_orientation=east STR_VAR fj_structure_type=~actor~ fj_name=~ME_Trained_Fire_Beetle_3~ fj_cre_resref=~mebeettr~ END
 	LPF fj_are_structure INT_VAR fj_loc_x=2045 fj_loc_y=1145 fj_orientation=west STR_VAR fj_structure_type=~actor~ fj_name=~ME_Trained_Fire_Beetle_4~ fj_cre_resref=~mebeettr~ END
 	LPF fj_are_structure INT_VAR fj_loc_x=2033 fj_loc_y=1181 fj_orientation=west STR_VAR fj_structure_type=~actor~ fj_name=~ME_Trained_Fire_Beetle_5~ fj_cre_resref=~mebeettr~ END
 	LPF fj_are_structure INT_VAR fj_loc_x=2013 fj_loc_y=1222 fj_orientation=west STR_VAR fj_structure_type=~actor~ fj_name=~ME_Trained_Fire_Beetle_6~ fj_cre_resref=~mebeettr~ END
@@ -24777,10 +24980,10 @@ COPY_EXISTING ~ar4003.are~ ~override~
 	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~meskeldb~ actor_name=~Cold Wight 37~ END
 	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~meskeldb~ actor_name=~Cold Wight 38~ END
 	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~meskeldb~ actor_name=~Cold Wight 39~ END
-	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~ktwgti1~ actor_name=~Cold Wight 44~ END
-	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~ktwgti1~ actor_name=~Cold Wight 45~ END
-	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~ktwgti1~ actor_name=~Cold Wight 46~ END
-	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~ktwgti1~ actor_name=~Cold Wight 47~ END
+//	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~ktwgti1~ actor_name=~Cold Wight 44~ END
+//	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~ktwgti1~ actor_name=~Cold Wight 45~ END
+//	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~ktwgti1~ actor_name=~Cold Wight 46~ END
+//	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~ktwgti1~ actor_name=~Cold Wight 47~ END
 	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~ktwgti1~ actor_name=~Cold Wight 53~ END
 	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~ktwgti1~ actor_name=~Cold Wight 54~ END
 	LPF ALTER_AREA_ACTOR INT_VAR STR_VAR cre_file=~ktwgti1~ actor_name=~Cold Wight 55~ END
@@ -24841,6 +25044,7 @@ COPY_EXISTING ~ar4005.are~ ~override~
 	LPF ADD_AREA_ITEM INT_VAR container_to_add_to=2 charges1=1122 STR_VAR flags=~IDENTIFIED~ item_to_add=~misc07~ END
 	LPF ADD_AREA_ITEM INT_VAR container_to_add_to=3 charges1=1 STR_VAR flags=~IDENTIFIED~ item_to_add=~scstf~ END
 	LPF ADD_AREA_ITEM INT_VAR container_to_add_to=3 charges1=1 STR_VAR flags=~IDENTIFIED~ item_to_add=~scfts~ END
+	LPF ADD_AREA_ITEM INT_VAR container_to_add_to=4 charges1=1 STR_VAR flags=~IDENTIFIED~ item_to_add=~spirit~ END
 	LPF ADD_AREA_ITEM INT_VAR container_to_add_to=5 charges1=1 STR_VAR item_to_add=~merndt22~ END
 	LPF ADD_AREA_ITEM INT_VAR container_to_add_to=8 charges1=1 STR_VAR flags=~IDENTIFIED~ item_to_add=~scrla4~ END
 	LPF ADD_AREA_ITEM INT_VAR container_to_add_to=8 charges1=1 STR_VAR item_to_add=~mernbook~ END
@@ -24887,6 +25091,11 @@ COPY_EXISTING ~ar4005.are~ ~override~
 	LPF ALTER_AREA_ACTOR STR_VAR script_override="GNTEAM5M" script_specifics="D5YXNATK" actor_name=~Yuan-ti Elite Archer Guard 4~ END
 	LPF ALTER_AREA_ACTOR STR_VAR script_override="GNTEAM5M" script_specifics="D5YXNATK" actor_name=~Yuan-ti Priest 8~ END
 	LPF ALTER_AREA_ACTOR STR_VAR script_override="GNTEAM5M" script_specifics="D5YXNATK" actor_name=~Yuan-ti Priest 9~ END
+	LPF ALTER_AREA_ACTOR STR_VAR actor_name=~Yuan-ti 20~ cre_file=~mesnakgf~ END
+	LPF ALTER_AREA_ACTOR STR_VAR actor_name=~Yuan-ti 21~ cre_file=~mesnakgf~ END
+	LPF ALTER_AREA_ACTOR STR_VAR actor_name=~Yuan-ti Elite 10~ cre_file=~mesnakgf~ END
+	LPF ALTER_AREA_ACTOR STR_VAR actor_name=~Yuan-ti Elite 11~ cre_file=~mesnakgf~ END
+	LPF ALTER_AREA_ACTOR STR_VAR actor_name=~Yuan-ti Elite Archer 5~ cre_file=~mesnakgf~ END
 	LPF ALTER_AREA_ACTOR STR_VAR actor_name=~Yuan-Ti Champion 1~ cre_file=~yuchamp~ END
 	LPF fj_are_structure INT_VAR fj_loc_x=2532 fj_loc_y=764 fj_orientation=west STR_VAR fj_structure_type=~actor~ fj_name=~ME_Yuan-ti Champion 1~ fj_cre_resref=~yuchamp~ END
 	LPF fj_are_structure INT_VAR fj_loc_x=275 fj_loc_y=1867 STR_VAR fj_structure_type=~actor~ fj_name=~ME_Fiendish_Snake 1~ fj_cre_resref=~mesnakgf~ END

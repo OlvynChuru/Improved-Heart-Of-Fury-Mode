@@ -117,6 +117,34 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 An Identify Creature spell enables the caster to learn useful information about a creature. The information will include the creature's level, class, Hit Points, Armor Class, base THAC0 (excluding THAC0 bonuses), attacks per round, attributes, resistances, saving throws, and various other effects.~
+@20212=~Slow Poison
+(Necromancy)
+
+Level: 2
+Sphere: Healing
+Range: Touch 
+Duration: Instant
+Casting Time: 0
+Area of Effect: 1 creature 
+Saving Throw: None 
+
+When this spell is placed upon a poisoned individual, it greatly slows the effects of venom, actually neutralizing all but the most deadly poisons.
+
+This spell also cures intoxication.~
+@20216=~Resist Fire/Cold
+(Alteration)
+
+Level: 2
+Sphere: Protection
+Range: Touch
+Duration: 1 round/level
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: None
+
+When this spell is placed upon a creature, it gains +50% resistance to fire and cold, as well as +25% resistance to magical fire and magical cold. The resistances stack with other effects granting resistances, but not with other instances of the same spell.
+
+Not all fire or cold spells deal magical fire or magical cold damage. These two damage types represent damage from necrotic, divine, or hellish fire or cold.~
 @20217=~Cure Moderate Wounds
 (Necromancy)
 
@@ -189,6 +217,30 @@ Area of Effect: 15-ft. radius
 Saving Throw: None
 
 Dispel Magic removes magical effects upon anyone within the area of effect, including deafness and feeblemindedness. This includes magically created items and the effects of spells and potions. It does not, however, affect magical items themselves.~
+@20306=~Protection From Fire
+(Abjuration)
+
+Level: 3
+Sphere: Protection, Elemental Fire
+Range: Touch
+Duration: 1 turn/level
+Casting Time: 6
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell grants the target +80% Fire Resistance, as well as +40% Magical Fire Resistance. The resistances stack with other effects granting fire resistance, but not with other instances of the same spell.~
+@20308=~Remove Paralysis
+(Abjuration)
+
+Level: 3
+Sphere: Protection
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 1
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+By the use of this spell, the priest can free allied creatures from the effects of any paralysis or stun, such as a Ghoul Touch or Hold Person spell.~
 @20311=~Rigid Thinking
 (Enchantment/Charm)
 
@@ -213,6 +265,18 @@ Area of Effect: 15-ft. radius
 Saving Throw: None
 
 When this spell is cast, party members within the area of effect are given a Strength score of 20. If a party member has a Strength higher than this (either naturally or through a magical item), their Strength remains unchanged. The spell lasts for 7 rounds, whereupon everyone's Strength returns to normal.~
+@20314=~Unholy Blight
+(Necromancy)
+
+Level: 3
+Sphere: Combat
+Range: Visual range of the caster
+Duration: Special
+Casting Time: 3
+Area of Effect: 15-ft. radius
+Saving Throw: Special
+
+This spell calls upon energy from the Negative Material Plane and opens a channel between it and the targets. Any creatures of non-evil alignment within the area of effect take 1d6 magic damage for every 2 levels of the caster, up to a maximum of 5d6 at level 10; a successful Save vs. Spell halves the damage. In addition, the victims suffer a -2 penalty to hit, damage, and Saving Throws for 3 rounds, even if they made the save. This spell cannot be cast by good-aligned characters.~
 @20315=~Cure Medium Wounds
 (Necromancy)
 
@@ -225,6 +289,18 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest heals 20 Hit Points to the creature's body. This spell has no effect on undead, constructs, or extraplanar creatures.~
+@20317=~Cure Disease
+(Abjuration)
+
+Level: 3
+Range: Touch
+Sphere: Necromantic
+Duration: 2 rounds
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: None
+
+When this spell is placed on a diseased individual, it immediately cures them and restores 5 lost Hit Points. Blindness and deafness are also cured with this spell. The recipient is then made immune to all diseases for 2 rounds. This spell has no effect on undead, constructs, or extraplanar creatures.~
 @20321=~Exaltation
 (Abjuration)
 
@@ -313,6 +389,18 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest heals 30 Hit Points and cures intoxication. This spell has no effect on undead, constructs, or extraplanar creatures.~
+@20404=~Neutralize Poison
+(Necromancy)
+
+Level: 4
+Sphere: Healing 
+Range: Touch 
+Duration: 3 rounds
+Casting Time: 0
+Area of Effect: 1 creature 
+Saving Throw: None 
+
+This spell removes all toxins from the body, both natural and magical in nature. When this spell is cast upon a poisoned individual, it immediately neutralizes any poison and restores 10 lost Hit Points. The recipient also gains immunity to poison for 3 rounds.~
 @20411=~Poison
 (Necromancy)
 
@@ -374,6 +462,18 @@ Area of Effect: The caster
 Saving Throw: Neg.
 
 Cloak of Fear bestows the caster with an aura of fear in a 5-ft. radius for 1 turn. All creatures that enter the cloak's area of effect must make a Save vs. Spell at -2 or flee in panic for 3 rounds. The aura does not affect undead creatures.~
+@20417=~Lesser Restoration
+(Necromancy)
+
+Level: 4
+Sphere: Necromantic
+Range: Touch
+Duration: Instant
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: None
+
+When this spell is cast, the life energy level of the recipient is raised. This reverses effects that drain levels or ability scores, and removes various other abilities of undead. This spell has no effect on undead, constructs, or extraplanar creatures.~
 @20419=~Produce Fire
 (Alteration)
 
@@ -397,7 +497,19 @@ Casting Time: 7
 Area of Effect: 1 creature
 Saving Throw: None
 
-This spell works only on player characters or allied creatures. When cast, the target of this spell goes berserk, attacking the nearest creature until that creature is dead, then moving on to the next target. While under Blood Rage, the target is immune to charm, sleep, fear, hold, stunning, confusion, emotion, symbol spells, and related effects. In addition, the target's movement rate is doubled and <PRO_HESHE> gains +5 to hit, +7 to damage, and +5 to Strength. The spell has several disadvantages, however: The Hit Points of the target are masked for the duration of the spell, and the target cannot benefit from any effect that heals Hit Points. At the end of the spell's duration, the target becomes fatigued and <PRO_HISHER> Strength drops to 3 for 1 turn. Blood Rage cannot affect—and cannot be cast by—creatures of lawful alignment.~
+This spell works only on player characters or allied creatures. When cast, the target of this spell goes berserk, attacking the nearest creature until that creature is dead, then moving on to the next target. While under Blood Rage, the target is immune to charm, sleep, fear, hold, stunning, confusion, emotion, symbol spells, and related effects. In addition, the target's movement rate is doubled and <PRO_HESHE> gains +5 to hit, +7 to damage, and +5 to Strength. The spell has several disadvantages, however: The Hit Points of the target are masked for the duration of the spell, and the target cannot benefit from any effect that heals Hit Points. At the end of the spell's duration, the target becomes fatigued and <PRO_HISHER> Strength drops to 3 for 1 turn. Blood Rage cannot affect-and cannot be cast by-creatures of lawful alignment.~
+@20423=~Cloud of Pestilence
+(Alteration)
+
+Level: 4
+Sphere: Combat, Elemental Air
+Range: Visual range of the caster
+Duration: 4 rounds
+Casting Time: 7
+Area of Effect: 12-ft. radius
+Saving Throw: Neg.
+
+This spell transforms the air in a 12-ft. radius into sickening, grayish mists. The caster and non-living creatures are immune to the effects of the cloud. For every round of exposure to the disease-ridden air, a creature must save vs. Breath at -2 or lose 3 points of Strength and Dexterity. The ability score penalties last 1 turn or until the disease is cured. Cloud of Pestilence can only be cast by evil-aligned characters.~
 @20424=~Unfailing Endurance
 (Necromancy)
 
@@ -680,9 +792,9 @@ Range: Visual range of the caster
 Duration: 4 rounds
 Casting Time: 9
 Area of Effect: 14-ft. radius
-Saving Throw: 1/2
+Saving Throw: None
 
-This spell causes the area of effect to be covered in roaring flames, dealing 2d8 points of damage plus 1 per level of the caster to anything within the area of effect each round. Creatures are allowed a Save vs. Spell to take half damage from the blast.~
+This spell causes the area of effect to be covered in roaring flames, dealing 2d8 points of damage plus 1 per level of the caster to anything within the area of effect each round.~
 @20707=~Sunray
 (Evocation, Alteration)
 
@@ -706,7 +818,19 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: Special
 
-The caster utters the Finger of Death incantation, points <PRO_HISHER> index finger at the creature to be slain, and unless the victim makes a Save vs. Death at -2, the victim dies instantly. Even if the save is successful, however, the brush with death still inflicts 2d8+1 points of magic damage. Characters slain by Finger of Death cannot be resurrected—they are gone forever.~
+The caster utters the Finger of Death incantation, points <PRO_HISHER> index finger at the creature to be slain, and unless the victim makes a Save vs. Death at -2, the victim dies instantly. Even if the save is successful, however, the brush with death still inflicts 2d8+1 points of magic damage. Characters slain by Finger of Death cannot be resurrected-they are gone forever.~
+@20713=~Greater Restoration
+(Necromancy)
+
+Level: 7
+Sphere: Necromantic
+Range: Touch
+Duration: Instant
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell reverses any level or ability score drain from the creature. It will also restore the Intelligence score of a creature affected by the Feeblemind spell and negate any form of insanity, such as confusion or berserk. It fully heals the target and cures any diseases or poisons. This spell has no effect on undead, constructs, or extraplanar creatures. It cannot be cast by evil-aligned characters.~
 @20714=~Symbol, Pain
 (Conjuration/Summoning)
 
@@ -836,12 +960,12 @@ This spell causes the caster to be enveloped by an aura of intense flame that bo
 Level: 7
 Sphere: Elemental
 Range: Visual range of the caster
-Duration: Instant
-Casting Time: 2
-Area of Effect: 7-ft. radius
+Duration: 1 turn
+Casting Time: 9
+Area of Effect: 15-ft. radius
 Saving Throw: None
 
-This spell blankets the area of effect with a silver-blue mist—any creature within the mist will be cured of disease and poison and healed 50 Hit Points.~
+This spell blankets the area of effect with a silver-blue mist for 1 turn. Any creature within the mist will be cured of disease and poison and healed 25 Hit Points per round.~
 @20739=~Energy Drain
 (Necromancy)
 

@@ -62,6 +62,38 @@ TR
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
 TR
 TR
+16399 0 0 0 0 "GLOBALME_Lysan_Dialog_Switch" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+30OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+1 0 0 0 0"GLOBALME_Lysan_Dialog_Switch" "" AC
+AC
+138OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+0 0 0 0 0"DLYSANPR" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16510 0 0 0 0 "AR3001" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
 16441 0 0 0 0 "" "" OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
 TR
@@ -77,18 +109,14 @@ TR
 16439 4032 1 0 0 "" "" OB
 0 0 0 0 0 0 0 1 0 0 0 0 ""OB
 TR
+TR
+16399 1 0 0 0 "GLOBALME_Lysan_Dialog_Switch" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
 CO
 RS
 RE
 100AC
-138OB
-0 0 0 0 0 0 0 0 0 0 0 0 ""OB
-OB
-0 0 0 0 0 0 0 0 0 0 0 0 ""OB
-OB
-0 0 0 0 0 0 0 0 0 0 0 0 ""OB
-0 0 0 0 0"DLYSANPR" "" AC
-AC
 121OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
 OB
