@@ -1,3 +1,788 @@
+@500=~FIGHTER: The Fighter is a champion, swords<PRO_MANWOMAN>, soldier, and brawler who lives or dies by <PRO_HISHER> knowledge of weapons and tactics. Fighters can be found at the front of any battle, contesting toe-to-toe with monsters and villains. A good Fighter needs to be strong and healthy if <PRO_HESHE> hopes to survive.
+
+CLASS FEATURES:
+
+- May wear helmets.
+- May wear any armor and use any weapon.
+- May achieve Grand Mastery (five slots) with any weapon class.
+- May achieve Grand Mastery (five slots) in any fighting style.
+- Hit Die: d10
+- 20th level: Can critically hit on a roll of 19-20.
+- 25th level: Can critically hit on a roll of 18-20.
+- 30th level: Can critically hit on a roll of 17-20.
+- 35th level: Can critically hit on a roll of 16-20.
+- 40th level: Can critically hit on a roll of 15-20.
+- 45th level: Can critically hit on a roll of 14-20.
+- 50th level: Can critically hit on a roll of 13-20.
+
+Prime Requisites For Dual-Classing: Strength~
+@501=~BERSERKER: This is a warrior who is in tune with <PRO_HISHER> animalistic side and, during combat, can achieve an ecstatic state of mind that will enable <PRO_HIMHER> to fight longer, harder, and more savagely than any person has a right to. Berserkers tend to be barbarian-like in nature, but not always. Sometimes it is a conscious choice that a warrior in training makes. Regardless, opponents on the battlefield will be unsettled when they see the savage and inhuman elements of the Berserker's personality. This class is common amongst dwarves, known to them as the Battlerager.
+
+Advantages:
+- May use Rage ability once per day. Gains one use at level 1 and an additional use every 4 levels thereafter.
+
+RAGE: The character becomes enraged for 1 turn. While enraged, all slashing, piercing, and crushing damage dealt by the character is increased by 50%, but all physical damage taken by the character is also increased by 50%. The character also becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.
+
+Disadvantages:
+- May only become Proficient (one slot) with ranged weapons.~
+@502=~WIZARD SLAYER: This warrior has been specially trained by <PRO_HISHER> sect to excel in hunting and combating spellcasters of all kinds.
+
+Advantages:
+- Each successful hit bestows a 25% cumulative chance of spell failure on the target.
+- +5% Magic Resistance per level.
+
+Disadvantages:
+- May not use any magic items apart from weapons, armor, helmets, shields, healing potions, and magic items whose purpose is largely to protect against magic.~
+@503=~KENSAI: This class's name, which means "sword saint" in the common tongue, refers to a warrior who has been specially trained to be one with <PRO_HISHER> weapon. The kensai is deadly, fast, and trained to fight without the protection of armor. (Note: Despite its common name, a Kensai may use any melee weapon with which <PRO_HESHE> is proficient.)
+
+Advantages:
+- +2 bonus to Armor Class.
+- +1 to hit and damage rolls every 3 levels.
+- -1 bonus to Speed Factor every 4 levels.
+- May use the Kai ability once per day. Gains one use at level 1 and an additional use every 4 levels thereafter.
+
+KAI: All successful attacks for the duration deal maximum damage. The ability lasts a number of seconds equal to the character's Wisdom.
+
+Disadvantages:
+- May not wear any armor.
+- May not use ranged weapons (both missile and thrown).~
+@504=~BARBARIAN: A Barbarian can be an excellent warrior. While not as disciplined or as skilled as a Fighter, the Barbarian can willingly throw <PRO_HIMHER>self into a berserker rage, becoming a tougher and stronger opponent.
+
+CLASS FEATURES:
+
+- May not wear armor heavier than splint mail.
+- May not exceed Specialization (two slots) with any weapon class.
+- May achieve Grand Mastery (five slots) in any fighting style.
+- Moves 2 points faster than other characters.
+- Immune to backstab.
+- May use the Rage ability once per day. Gains one use at level 1 and an additional use every 4 levels thereafter.
+
+RAGE: The enraged status lasts for 5 rounds and provides a +4 bonus to Strength and Constitution, a -2 penalty to Armor Class and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
+- 10th level: The barbarian continues to roll a full d12 for HP each level.
+- 11th level: Gains 10% resistance to crushing, slashing, piercing, and missile damage. An additional 5% is gained at levels 15 and 19.
+- 31st level: The barbarian's Hit Die is now a d20. Hit Points are not gained retroactively.
+- Hit Die: d12~
+@505=~DWARVEN DEFENDER: The Dwarven Defender is a formidable warrior that is reputed to be worth two soldiers of any other race. Trained extensively in the art of dwarven warfare, a handful of these stout fighters can render a defensive line all but unbreakable.
+
+Advantages:
+- May use Defensive Stance once per day. Gains one use at level 1, one use at level 4, and an additional use every 4 levels thereafter.
+
+DEFENSIVE STANCE: For 4 rounds, the Dwarven Defender gains +50% resistance to all forms of physical damage and a +2 bonus to Saving Throws, and an 80% movement rate penalty.
+
+- Gains 5% resistance to crushing, slashing, piercing, and missile damage every 5 levels to a maximum of 20% at level 20.
+- Hit Die: d12
+
+Disadvantages:
+- Race restricted to dwarf.
+- May not exceed High Mastery (four slots) in axes and war hammers.
+- May not exceed Specialization (two slots) in any other weapon.~
+@506=~RANGER: The Ranger is a warrior and a woods<PRO_MANWOMAN> who is skilled with weapons and is knowledgeable in the ways of the forest. The Ranger often protects and guides lost travelers and honest peasant-folk. A Ranger needs to be strong and wise to the ways of nature to live a full life.
+
+CLASS FEATURES:
+
+- May wear helmets.
+- May wear any armor and use any weapon.
+- May not exceed Specialization (two slots) in any weapon class.
+- May achieve Grand Mastery (five slots) in any fighting style.
+- Begins Specialized (two slots) in Two-Weapon Style and may place up to five slots into it.
+- May select a racial enemy, which grants a +4 bonus to hit and damage rolls against the selected enemy race.
+- May use the Tracking ability at will (once per round).
+
+TRACKING: The ranger can attempt to look for tracks and gain information on what type of creatures, if any, have passed through the area. Potential information that can be gained from tracking includes the number of creatures, the direction they were traveling in, and how long ago the tracks were made.
+
+- May use the Animal Empathy ability once per day. Gains one use at level 1 and an additional use every 2 levels thereafter.
+
+ANIMAL EMPATHY: This ability allows a Ranger to charm an animal and manipulate its behavior. If the animal fails a Save vs. Breath at -5, it regards the Ranger as a trusted friend and ally to be heeded and protected for 24 hours. The Ranger may give it orders, and the charmed animal will carry them out to the best of its ability. Every 5 levels, the saving throw penalty is increased by -1.
+
+If the Ranger is 15th level or higher, Animal Empathy can also charm some of the more beastlike monsters, such as ankhegs, carrion crawlers, and lycanthropes. If the Ranger is 40th level or higher, Animal Empathy can charm any living creature with an Intelligence score of 9 or less.
+- May Hide in Shadows, even while wearing heavy armor.
+- May cast druidic spells starting at level 2.
+- Alignment restricted to good.
+- Hit Die: d10
+
+Prime Requisites For Dual-Classing: Strength, Dexterity, Wisdom~
+@507=~ARCHER: The Archer is the epitome of skill with the bow-the ultimate marks<PRO_MANWOMAN>, able to make almost any shot, no matter how difficult. To become so skilled with the bow, the Archer has had to sacrifice some of <PRO_HISHER> proficiency with melee weapons and armor.
+
+Advantages:
+- +1 to hit and damage rolls with any missile weapon every 3 levels.
+- May achieve Grand Mastery (5 slots) in longbows, shortbows, and crossbows.
+- May use the Called Shot ability once per day. Gains one use at level 4 and an additional use every 4 levels thereafter.
+
+CALLED SHOT: All successful ranged attacks within the next 10 seconds have the following cumulative effects besides normal damage, according to the level of the Archer:
+ 4th level: -1 penalty to target's THAC0.
+ 8th level: -1 penalty to target's Saving Throws vs. Spell.
+ 12th level: -1 penalty to the target's Strength score.
+ 16th level: +2 bonus to damage roll.
+ 20th level: Will critically hit on a roll of 18-20.
+ 30th level: Will critically hit on a roll of 16-20.
+ 40th level: Will critically hit on a roll of 14-20.
+ 50th level: Target must Save vs. Death or die instantly.
+
+Disadvantages:
+- May not wear any metal armor.
+- May not cast priest spells.
+- May only become Proficient (one slot) with melee weapons.
+- May not use the Charm Animal ability.~
+@508=~STALKER: Stalkers serve as covert intelligence-gatherers, comfortable in both wilderness and urban settings. They are spies, informants, and interrogators, and their mastery of stealth makes them deadly opponents.
+
+Advantages:
+- +20% to Move Silently and Hide In Shadows.
+- May backstab, although for a lower damage multiplier than Thieves:
+  Level 1-8: x2
+  Level 9-16: x3
+  Level 17-26: x4
+  Level 27+: x5
+- If 3E Sneak Attack is enabled, may sneak attack instead of backstab for increased damage. Attacking a creature from behind deals +1d6 damage, and an additional +1d6 for every 3 ranger levels after level 1.
+- If 3E Sneak Attack is enabled, may deal crippling strikes upon successful sneak attacks. Crippling strikes last for 1 turn and have the following effects:
+  Level 6-11: -1 to target's hit and damage rolls
+  Level 12-17: -2 to target's hit and damage rolls
+  Level 18-23: -3 to target's hit and damage rolls
+  Level 24-29: -4 to target's hit and damage rolls
+  Level 30-35: -5 to target's hit and damage rolls
+  Level 36-41: -6 to target's hit and damage rolls
+  Level 42-47: -7 to target's hit and damage rolls
+  Level 48+: -8 to target's hit and damage rolls
+- 5th level: May cast the spell Invisibility as a 2nd-level spell.
+- 11th level: May cast the spell Improved Invisibility as a 4th-level spell.
+- 17th level: May cast the spell Mislead as a 6th-level spell.
+
+Disadvantages:
+- May not wear armor heavier than studded leather.~
+@509=~BEAST MASTER: This Ranger is a wanderer and is not comfortable in civilized lands. Therefore, <PRO_HESHE> maintains a natural affinity for animals; they are <PRO_HISHER> friends and comrades-in-arms, and the Beast Master has a limited form of telepathic communication with them.
+
+Advantages:
+- May use Find Familiar ability to summon a pseudo dragon (if lawful or neutral good) or fairy dragon (if chaotic good) companion.
+- Allied animals within 30 feet of the Beastmaster gain +2 to hit and damage. These bonuses increase by 1 every 3 levels.
+- The Beastmaster's familiar gains +4 to hit and damage while within 30 feet of the Beastmaster. These bonuses increase by 2 every 3 levels.
+- 2th level: May cast Animal Summoning I as a 1st-level spell.
+- 5th level: May cast Animal Summoning II as a 2nd-level spell.
+- 8th level: May cast Animal Summoning III as a 3rd-level spell.
+- 20th level: Allied animals and familiars within 30 feet of the Beastmaster also gain an additional attack per round.
+- 40th level: Allied animals and familiars within 30 feet of the Beastmaster now gain two additional attacks per round.
+
+
+Disadvantages:
+- May not wear any metal armor.
+- May not use any metal weapons (for example: swords, halberds, war hammers, or morning stars).~
+@510=~PALADIN: A Paladin is a warrior bold and pure, the exemplar of everything good and true. Like the Fighter, the Paladin is a person of action and combat. However, the Paladin lives for the ideals of righteousness, justice, honesty, piety, and chivalry and strives to be a living example of these virtues so that others may learn from <PRO_HIMHER> as well as gain by <PRO_HISHER> actions.
+
+CLASS FEATURES:
+
+- May wear helmets.
+- May wear any armor and use any weapon.
+- May not exceed Specialization (two slots) in any weapon class.
+- May achieve Grand Mastery (five slots) in any fighting style.
+- May use Lay On Hands ability once per day to heal a target for 2 Hit Points per level of the Paladin. This ability has no effect on undead, constructs, or extraplanar creatures. Gains an additional use every 5 levels.
+- May use the Cure Disease ability once per day.
+- May use the Detect Evil ability at will (once per round).
+- May cast a special version of Protection From Evil once per day. This ability only affects the Paladin and lasts for 24 turns.
+- May use the Smite Evil ability once per day to deal 1d8 points of damage per level to a single, evil-aligned opponent.
+- May Turn Undead as a Cleric two levels lower, starting at level 3.
+- May cast priest spells starting at level 2.
+- 3rd level: Gains the Divine Courage ability becoming immune to fear.
+- Receives a +2 bonus to all Saving Throws, plus an additional +1 every 5 levels.
+- Paladins are completely immune to all forms of disease, magical or mundane.
+- Alignment restricted to lawful good.
+- Hit Die: d10~
+@511=~CAVALIER: This class represents the most common picture of the knight: the chivalrous warrior who epitomizes honor, courage, and loyalty. The cavalier is specialized in battling "classical" evil monsters such as demons and dragons.
+
+Advantages:
+- +6 bonus to hit and damage rolls against demons, devils, dragons and wyverns.
+- May cast Remove Fear 1 time per day per level.
+- Immune to charm, fear, poison, and morale failure.
+- 20% resistance to fire and acid.
+
+Disadvantages:
+- May not use ranged weapons (both missile and thrown).~
+@512=~INQUISITOR: The Inquisitor has dedicated <PRO_HISHER> life to finding and eliminating practitioners of evil magic and defeating the forces of darkness, and <PRO_HISHER> god has provided <PRO_HIMHER> with special abilities toward that end.
+
+Advantages:
+- Immune to hold and charm.
+- May cast Dispel Magic once per day. Gains one use at level 1 and an additional use every 4 levels thereafter.
+- May cast True Sight once per day. Gains one use at level 1 and an additional use every 4 levels thereafter.
+- 10th level: May cast Breach once per day. Gains an additional use every 10 levels thereafter.
+
+Disadvantages:
+- May not turn undead.
+- May not use the Lay On Hands ability. 
+- May not use the Cure Disease ability.
+- May not cast priest spells.~
+@513=~UNDEAD HUNTER: This holy avenger has honed <PRO_HISHER> abilities toward the destruction of the undead and other unnatural creatures and is immune to many of their most devastating abilities.
+
+Advantages:
+- +3 bonus to hit and damage rolls against undead creatures.
+- Immune to hold and level drain.
+- Whenever the Undead Hunter hits an undead creature with a melee or ranged attack, there is a 2% per level chance that the undead will be turned as if the Undead Hunter had used Turn Undead on it.
+
+Disadvantages:
+- Does not gain the additional saving throw bonuses every 5 levels like normal paladins.
+- May not use Lay On Hands ability.
+- May not use Cure Disease ability.~
+@514=~BLACKGUARD: The Blackguard epitomizes evil and is nothing short of a mortal fiend. The quintessential black knight, this villain carries a reputation of the foulest sort that is very well deserved. Consorting with demons and devils and serving dark deities, the Blackguard is hated and feared by all. Some people call these villains "anti-paladins" due to their completely evil nature.
+
+Advantages:
+- Immune to level drain and fear.
+- May turn undead as a Paladin of the same level.
+- May use the Absorb Health ability once per day.
+
+ABSORB HEALTH: Deals 2 points of damage per level (maximum of 100 damage at level 50) to an enemy, healing the Blackguard the same number of Hit Points. This ability has no effect on undead, constructs, or extraplanar creatures.
+
+- May use the Poison Weapon ability once per day. Gains one use at level 1, one use at level 5, and an additional use every 5 levels thereafter.
+
+POISON WEAPON: Each successful hit within the next 5 rounds will inject poison into the target, dealing an extra 2 points of damage per second with no Saving Throw (up to a maximum of 12 points of damage per hit). Moreover, if the target fails a Saving Throw vs. Poison, he will suffer 1 additional point of damage per round for 4 rounds.
+
+- 3rd level: May use the Aura of Despair ability once per day, with effects that improve based on level:
+  3rd level: Enemies within 15 ft. receive a -1 penalty to hit and damage rolls and a -2 penalty to Armor Class for 1 turn.
+  6th level: Enemies within 15 ft. receive a -2 penalty to hit and damage rolls and a -2 penalty to Armor Class for 1 turn.
+  15th level: Enemies within 15 ft. receive a -4 penalty to hit and damage rolls and a -4 penalty to Armor Class for 1 turn, and must Save vs. Breath or run away for the duration.
+  20th Level: Enemies within 15 ft. receive a -4 penalty to hit and damage rolls and a -4 penalty to Armor Class for 1 turn, and must Save vs. Breath at -1 or run away for the duration.
+  30th Level: Enemies within 15 ft. receive a -4 penalty to hit and damage rolls and a -4 penalty to Armor Class for 1 turn, and must Save vs. Breath at -3 or run away for the duration.
+  40th Level: Enemies within 15 ft. receive a -6 penalty to hit and damage rolls and a -6 penalty to Armor Class for 1 turn, and must Save vs. Breath at -5 or run away for the duration.
+  50th Level: Enemies within 15 ft. receive a -6 penalty to hit and damage rolls and a -6 penalty to Armor Class for 1 turn, and must Save vs. Breath at -7 or run away for the duration.
+
+Disadvantages:
+- Alignment restricted to evil.
+- May not cast Detect Evil.
+- May not cast Smite Evil.
+- May not cast Protection From Evil as an innate ability.
+- May not use the Lay on Hands ability.
+- May not use the Cure Disease ability.
+- Does not gain immunity to disease.
+- Does not gain the additional saving throw bonuses every 5 levels like paladins.~
+@515=~CLERIC: The Cleric is a generic priest (of any mythos) who tends to the spiritual needs of a community. Though <PRO_HESHE> is both protector and healer, <PRO_HESHE> is not purely defensive-when evil threatens, the Cleric is well suited to seek it out on its own ground and destroy it. The opposite is true of evil Clerics as well, and there are also many variations in between.
+
+CLASS FEATURES:
+
+- May wear helmets.
+- May wear any armor.
+- May only use non-bladed, non-piercing weapons (war hammer, club, flail, mace, quarterstaff, sling).
+- May only become Proficient (one slot) in any weapon class.
+- May only become Proficient (one slot) in any fighting style.
+- May Turn Undead.
+- May cast priest spells.
+- Hit Die: d8
+
+Prime Requisites For Dual-Classing: Wisdom~
+@516=~PRIEST OF TALOS: Talos is the evil god of storms, destruction, and rebellion. Clerics of the Stormlord warn that Talos must be appeased or he will rain destruction upon the land.
+
+Advantages:
+- May cast Talos Bolt once per day. Gains one use at level 1 and an additional use every 5 levels thereafter.
+
+TALOS BOLT: This spell fires a bolt of lightning at the target, similar to the Lightning Bolt spell, except that the damage is not capped at 10d6, dealing as much as 50d6 damage from a 50th level caster.
+
+- May cast Storm Shield once per day. Gains one use at level 1 and an additional use every 10 levels thereafter.
+
+STORM SHIELD: This spell lasts 1 round per level of the caster. It protects the caster from lightning, fire, cold, and normal missiles.
+
+Disadvantages:
+- Alignment restricted to neutral evil, chaotic evil, and chaotic neutral.~
+@517=~PRIEST OF HELM: Followers of the neutral god of watchers and protectors are warriors in their own right and are often seen as defenders of the innocent.
+
+Advantages:
+- May cast True Sight once per day. Gains one use at level 1 and an additional use every 5 levels thereafter.
+- May cast Seeking Sword once per day. Gains one use at level 1 and an additional use every 10 levels thereafter.
+
+SEEKING SWORD: This spell creates a sword in the Cleric's hand that cannot be dropped or unequipped. The sword is enchanted as a +4 weapon, provides a +100 THAC0 bonus, and will not critically miss. It deals 2d4+4 damage to any target it hits and dispels Mirror Image, Invisibility, and Improved Invisibility effects on the target. The weapon sets the Cleric's number of attacks per round to 3 and lasts for 1 round per level.
+
+Disadvantages:
+- Alignment restricted to lawful good, lawful neutral, lawful evil, and true neutral.~
+@518=~PRIEST OF LATHANDER: Lathander is the good god of renewal, creativity, and youth, and is celebrated nearly everywhere. His followers are very popular throughout the realms, and there are numerous wealthy temples devoted to him.
+
+Advantages:
+- May cast Hold Undead once per day. Gains one use at level 1 and an additional use every 5 levels thereafter.
+- May cast Boon of Lathander once per day. Gains one use at level 1 and an additional use every 10 levels thereafter.
+
+BOON OF LATHANDER: This spell lasts 1 hour. It protects all creatures within 15 feet of the caster from level drain and many other effects of undead creatures' attacks, such as shadows' Strength drain.
+
+Disadvantages:
+- Alignment restricted to lawful good, neutral good, chaotic good, and true neutral.~
+@519=~PRIEST OF TYR: Tyr is the deity of law and justice and is primarily concerned with the punishment of wrongdoers and the general furthering of law and good in the world. The belief in justice through (benevolent) force, or at least armed vigilance, is the reason for Tyr's existence. Tyr holds great prominence in the pantheon due to his position as leader of the Triad, a trio of lawful good gods that are collectively devoted to the concepts of courage, justice, perseverance, relief of suffering, duty, obedience, honor, and to some extent, righteous martyrdom.
+
+Advantages:
+- May cast Exaltation once per day. Gains one use at level 1 and an additional use every 5 levels thereafter.
+
+EXALTATION: This spell enables a priest to aid and protect any one being other than themselves. By touch, the caster removes the effects of fear, sleep, feeblemindedness, unconsciousness, and intoxication, as well as berserk and confused states of mind. In addition, the recipient is protected against spells and other attacks that cause these effects for 1 turn.
+
+- May cast Divine Favor once per day. Gains one use at level 1 and an additional use every 10 levels thereafter.
+
+DIVINE FAVOR: This spell grants the caster a +1 bonus to hit and damage rolls every 3 levels of the caster, to a maximum of +16 at 48th level. The spell lasts for 1 turn.
+
+Disadvantages:
+- Alignment restricted to lawful good, neutral good, or lawful neutral.~
+@520=~PRIEST OF TEMPUS: Tempus, also known as the Lord of Battles or the Foehammer, is random in his favors, yet his chaotic nature favors all sides equally. Lord Tempus may be on an army's side one day and against them the next; such is the nature of war. Tempuran clergy can be found on both sides of a conflict, as none can ever truly know whom the war god will favor.
+
+Advantages:
+- May cast Holy Power once per day. Gains one use at level 1 and an additional use every 5 levels thereafter.
+- May cast Chaos of Battle once per day. Gains one use at level 1 and an additional use every 10 levels thereafter.
+
+CHAOS OF BATTLE: Chaos of Battle applies bonuses to all allies and penalties to all enemies within a 30-ft. radius of the caster. The spell lasts 1 turn and will randomly affect the targets' Armor Class, Hit Points, THAC0, saves, or luck. The magnitude of the effect starts at 1 (5 for Hit Points) at level 1 and will improve by 1 (5 for Hit Points) every 6 levels of the caster, to a maximum of 9 for a 48th level caster.
+
+Disadvantages:
+- Alignment restricted to chaotic good, chaotic neutral, chaotic evil, or true neutral.~
+@521=~DRUID: The Druid serves the cause of nature and neutrality; the wilderness is <PRO_HISHER> community, and <PRO_HESHE> uses <PRO_HISHER> special powers to protect it and to preserve balance in the world.
+
+CLASS FEATURES:
+
+- May only wear non-metallic armor.
+- May only equip bucklers and non-metallic shields.
+- May only use the following weapons: scimitar, dagger, club, spear, quarterstaff, dart, sling.
+- May only become Proficient (one slot) in any weapon class that <PRO_HESHE> can use.
+- May only become Proficient (one slot) in any fighting style.
+- May cast druidic spells.
+- 5th level: May Shapeshift into a winter wolf once per day.
+- 7th level: May Shapeshift into a boring beetle once per day.
+- 9th level: Becomes immune to poison. May Shapeshift into a polar bear once per day.
+- 11th level: May Shapeshift into a fire elemental once per day.
+- 13th level: May Shapeshift into an earth elemental once per day.
+- 15th level: Gains the Timeless Body ability, becoming immune to fatigue. May Shapeshift into a water elemental once per day.
+- Alignment restricted to true neutral.
+- Hit Die: d8
+
+Prime Requisites For Dual-Classing: Wisdom, Charisma~
+@522=~TOTEMIC DRUID: This Druid closely identifies with a particular animal, an animal that <PRO_HESHE> feels represents <PRO_HISHER> spirit. This grants <PRO_HIMHER> a special connection to the animal kingdom, and <PRO_HESHE> is able to call upon their spirits to aid <PRO_HIMHER>.
+
+Advantages:
+- May use the Summon Spirit Animal ability once per day. Gains one use at level 1 and an additional use every 5 levels thereafter.
+
+SUMMON SPIRIT ANIMAL: The Totemic Druid summons a special spirit animal (spirit bear, spirit wolf, spirit lion, or spirit snake) to aid <PRO_HIMHER> for 6 turns. The spirit animal has 1 HD at level 1, 3 HD at level 3, 5 HD at level 5, 7 HD at level 7, 10 HD at level 10, 15 HD at level 20, 20 HD at level 30, 25 HD at level 40, and 30 HD at level 50.
+
+Disadvantages:
+- Cannot use shapeshift.~
+@523=~SHAPESHIFTER: This Druid is not called Shapeshifter because <PRO_HESHE> has access to a great variety of forms, but rather because of <PRO_HISHER> complete dedication to a single alternate form. This Druid has willingly allowed <PRO_HIMHER>self to become infected with lycanthropy, but due to intense study and training <PRO_HESHE> has the ability to control <PRO_HISHER> affliction. The creature <PRO_HESHE> becomes is that of the werewolf, the most famous of the lycanthrope shape changers.
+
+Advantages:
+- May shapeshift into the form of a werewolf once per day. Gains one use at level 1 and an additional use every 2 levels thereafter.
+- 13th level: May shapeshift into a greater werewolf once per day.
+
+Disadvantages:
+- May not wear any armor.
+- No other shapeshifting abilities due to the effort required in maintaining balance in <PRO_HISHER> primary forms.~
+@524=~AVENGER: A member of a special sect within the druidic order, a Druid of this type is dedicated to fighting those who would defile nature. Avengers have powers the average Druid does not-additional abilities that have been earned through extensive rituals, a process that is very physically draining.
+
+Advantages:
+- Seven mage spells are added to <PRO_HISHER> repertoire, all the way up to the 7th level. These are listed below:
+ 1st level: Chromatic Orb.
+ 2nd level: Web.
+ 3rd level: Lightning Bolt.
+ 4th level: Improved Invisibility.
+ 5th level: Chaos.
+ 6th level: Chain Lightning.
+ 7th level: Delayed Blast Fireball.
+- 7th level: May shapeshift into a sword spider, baby wyvern, or lesser fire salamander once per day.
+- 19th level: May shapeshift into a sword spider, baby wyvern, or lesser fire salamander twice per day.
+
+Disadvantages:
+- May not wear armor heavier than leather.
+- Incurs a -2 penalty to Strength and Constitution.~
+@525=~MAGE: The wizard strives to be a master of magical energies, shaping them and casting them as spells. To do so, <PRO_HESHE> studies strange tongues and obscure facts and devotes much of <PRO_HISHER> time to magical research. A wizard must rely on knowledge and wit to survive. Wizards are rarely seen adventuring without a retinue of fighters and men-at-arms. Because there are different types (or schools) of magic, there are different types of wizards. The Mage studies all types of magic and learns a wide variety of spells; <PRO_HISHER> broad range makes <PRO_HIMHER> well suited to the demands of adventuring.
+
+CLASS FEATURES:
+
+- May not wear any armor.
+- May only use the following weapons: dagger, quarterstaff, dart, sling.
+- May only become Proficient (one slot) in any weapon class.
+- May not place any slots in any fighting style.
+- May cast arcane spells.
+- Hit Die: d4
+
+Prime Requisites For Dual-Classing: Intelligence~
+@526=~WILD MAGE: Wild magic is a new type of magic that is characterized by powerful and dangerous surges of unpredictable magic. It has recently begun to attract the attention of many a curious or scholarly wizard.
+
+Wild Mages are wizards who specialize in the study of wild magic. They have access to spells to protect themselves from wild magic and bend it to their wills. Wild magic is extremely unpredictable and should be used with caution.
+
+CLASS FEATURES:
+
+- May memorize one additional spell per level.
+- May cast the 1st-level spell Nahal's Reckless Dweomer.
+- May cast the 2nd-level spell Chaos Shield (included in spellbook for free).
+- May cast the 7th-level spell Improved Chaos Shield (included in spellbook for free).
+- Upon casting a spell, there is a 5% chance of incurring a wild surge.
+
+WILD SURGE: A wild surge generates a completely random magical effect from the spell being cast. Its effects may be either beneficial or detrimental to the Wild Mage and <PRO_HISHER> allies.
+
+- Casting level varies slightly whenever <PRO_HESHE> casts a spell-anywhere between five levels lower and five levels higher than the Wild Mage's true level.~
+@527=~THIEF: To accomplish <PRO_HISHER> goals, for good or ill, the Thief is a skilled pilferer. Cunning, nimbleness, and stealth are <PRO_HISHER> hallmarks. Whether <PRO_HESHE> turns <PRO_HISHER> talent against innocent passersby and wealthy merchants or oppressors and monsters is a choice for the Thief to make.
+
+CLASS FEATURES:
+
+- May not wear armor heavier than studded leather.
+- May not equip shields larger than bucklers.
+- May only use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling.
+- May only become Proficient (one slot) in any weapon class.
+- May only become Proficient (one slot) in any fighting style.
+- May distribute 25 points per level (40 at level 1) in thieving abilities: Open Locks, Pick Pockets, Find Traps, Move Silently, Hide In Shadows, Detect Illusion, Set Traps.
+- Starts with base scores of 10% in Open Locks, 5% in Find Traps, 15% in Pick Pockets, 10% in Move Silently, and 5% in Hide in Shadows.
+- May backstab for increased damage:
+  Level 1-4: x2
+  Level 5-8: x3
+  Level 9-12: x4
+  Level 13-32: x5
+  Level 33+: x6
+- If 3E Sneak Attack is enabled, may sneak attack instead of backstab. Attacking a creature from behind deals +1d6 damage, and an additional +1d6 for every 2 thief levels after level 1.
+- If 3E Sneak Attack is enabled, may deal crippling strikes upon successful sneak attacks. Crippling strikes last for 1 turn and have the following effects:
+  Level 4-7: -1 to target's hit and damage rolls
+  Level 8-11: -2 to target's hit and damage rolls
+  Level 12-15: -3 to target's hit and damage rolls
+  Improves by -1 every 4 levels, up to -12 at level 48
+- May use the Set Snare ability once per day. Gains one use at level 1 and an additional use every 5 levels thereafter.
+
+SET SNARE: Set a trap in the chosen location when no hostile creatures are in sight. Traps grow more powerful with the Thief's level and can only be triggered by enemies.
+  1st level: Deals 2d8+5 missile damage.
+  11th level: Deals 2d8+5 missile damage and additionally deals 2d6 poison damage per round for the next 3 rounds.
+  16th level: Deals 3d8+5 missile damage and 4d8+2 fire damage.
+  21st level: Deals 3d8+5 missile damage and 20 poison damage with no save; slays target if a Save vs. Death with a +4 bonus is failed.
+
+- 7th level: Gains the Evasion ability.
+
+EVASION: When a Thief is hit by a spell that can be evaded (Fireball, Lightning Bolt, etc.), the Thief is allowed a Save vs. Breath to completely avoid the effects. If the Saving Throw is failed, the spell works normally, including a save for half damage if the spell allows for it. A helpless Thief (e.g. held, stunned, or asleep) cannot use Evasion.
+
+- 28th level: Can use any item.
+
+- Alignment restricted to any except lawful good.
+- Hit Die: d6
+
+Prime Requisites For Dual-Classing: Dexterity~
+@528=~ASSASSIN: This is a killer trained in discreet and efficient murder, relying on anonymity and surprise to perform <PRO_HISHER> task.
+
+Advantages:
+- +1 bonus to hit and damage rolls.
+- Backstab ability reaches x8 multiplier instead of capping at x6.
+  Level 17-20: x6
+  Level 21-32: x7
+  Level 33+: x8
+- Sneak attacks (if 3E Sneak Attack is enabled) progress at a faster rate. Attacking a creature from behind deals +1d6 damage, and an additional +2d6 for every 3 thief levels after level 1.
+- Crippling strikes (if 3E Sneak Attack is enabled) progress at a faster rate:
+  Level 3-5: -1 to target's hit and damage rolls
+  Level 6-8: -2 to target's hit and damage rolls
+  Level 9-11: -3 to target's hit and damage rolls
+  Improves by -1 every 3 levels, up to -16 at level 48
+- May use the Poison Weapon ability. Gains one use at level 1 and an additional use every 4 levels thereafter.
+
+POISON WEAPON: Each successful hit within the next 5 rounds will inject poison into the target, dealing an extra 2 points of damage per second with no Saving Throw (up to a maximum of 12 points of damage per hit). Moreover, if the target fails a Saving Throw vs. Poison, he will suffer 1 additional point of damage per round for 4 rounds.
+
+Disadvantages:
+- May only distribute 15 skill points per level among thieving skills.~
+@529=~BOUNTY HUNTER: This is a hunter of men, skilled in tracking quarry and bringing them back alive-whether for lawful authorities or underworld masters. Bounty Hunters are specially trained at their task and make fearsome opponents. They have honed their trap-making abilities well beyond that of the average Thief.
+
+Advantages:
+- +15% bonus to Set Traps.
+- May use the Set Special Snare ability once per day in addition to the normal Thief's Set Snare. Gains one use at level 1 and an additional use every 5 levels thereafter.
+
+SET SPECIAL SNARE: Set a trap in the chosen location when no hostile creatures are in sight. Traps grow more powerful with the Bounty Hunter's level and can only be triggered by enemies.
+  1st level: Deals 3d8+5 missile damage and slows target for 5 rounds if a Save vs. Spell with a -4 penalty is failed.
+  11th level: Deals 4d8+5 missile damage and holds target for 5 rounds if a Save vs. Spell with a -1 penalty is failed.
+  16th level: Erects an Otiluke's Resilient Sphere around the target for 7 rounds if a Save vs. Spell is failed.
+  21st level: Mazes the target.
+
+Disadvantages:
+- May only distribute 20 skill points per level among thieving skills.~
+@530=~SWASHBUCKLER: This rogue is part acrobat, part swords<PRO_MANWOMAN>, and part wit: the epitome of charm and grace.
+
+Advantages:
+- +1 bonus to Armor Class at 1st level, plus an additional +1 bonus every 5 levels.
+- +1 bonus to hit and damage rolls every 5 levels.
+- May Specialize (two slots) in any melee weapon available to Thieves.
+- May place 3 slots into Two-Weapon Style.
+
+Disadvantages:
+- May not backstab.
+- May not perform sneak attacks or crippling strikes.~
+@531=~SHADOWDANCER: Shadowdancers can harness the power of magic to increase their stealth abilities. Enigmatic and dangerous, these uniquely skilled Thieves are able to blend seamlessly into the shadows in ways that a normal Thief cannot, striking without warning-sometimes with supernatural speed.
+
+Advantages:
+- +10% bonus to Hide In Shadows and Move Silently.
+- Hide In Plain Sight: A Shadowdancer may hide in shadows even while being observed.
+- May cast Shadowstep once per day. Gains one use at level 5 and an additional use every 5 levels thereafter.
+
+SHADOWSTEP: Step into the Shadow Plane and move for 7 seconds while others are frozen in time. The Shadowdancer cannot attack or cast spells while in the Shadow Plane.
+
+- Slippery Mind: +1 bonus to Saving Throws.
+
+Disadvantages:
+- Alignment restricted to any non-lawful.
+- -1 to backstab multiplier compared to an unkitted Thief:
+  Level 1-4: x1 (no multiplier)
+  Level 5-8: x2
+  Level 9-12: x3
+  Level 13-32: x4
+  Level 33+: x5
+- Sneak attacks (if 3E Sneak Attack is enabled) progress at a slower rate. Attacking a creature from behind deals +1d6 damage, and an additional +1d6 for every 3 thief levels after level 1.
+- Crippling strikes (if 3E Sneak Attack is enabled) progress at a slower rate:
+  Level 6-11: -1 to target's hit and damage rolls
+  Level 12-17: -2 to target's hit and damage rolls
+  Level 18-23: -3 to target's hit and damage rolls
+  Level 24-29: -4 to target's hit and damage rolls
+  Level 30-35: -5 to target's hit and damage rolls
+  Level 36-41: -6 to target's hit and damage rolls
+  Level 42-47: -7 to target's hit and damage rolls
+  Level 48+: -8 to target's hit and damage rolls
+- May only distribute 20 skill points per level (30 at level 1) among thieving skills.
+- May not use the Set Snare ability.
+
+Prime Requisites For Dual-Classing: Strength, Dexterity, Charisma~
+@532=~BARD: The Bard is a rogue, but <PRO_HESHE> is very different from the Thief. The Bard's strength is <PRO_HISHER> pleasant and charming personality. With it and <PRO_HISHER> wits, <PRO_HESHE> makes <PRO_HISHER> way through the world. A Bard is a talented musician and a walking storehouse of gossip, tall tales, and lore; <PRO_HESHE> learns a little bit about everything that crosses <PRO_HISHER> path and is a jack-of-all-trades but master of none. While many Bards are scoundrels, their stories and songs are welcome almost everywhere.
+
+CLASS FEATURES:
+
+- May not wear armor heavier than chain mail. (Spells cannot be cast while wearing armor.)
+- May not equip shields larger than bucklers.
+- May only become Proficient (one slot) in any weapon class.
+- May only become Proficient (one slot) in any fighting style.
+- Thieving abilities: Pick Pockets.
+- Increased Lore score.
+- May cast arcane spells starting at 2nd level.
+- May use Bard Song ability to play any song from <PRO_HISHER> repertoire:
+  1st level: Can play "The Ballad of Three Heroes." All allies within 30 ft. gain +1 to hit, +1 to damage, and +1 to all their Saving Throws. These bonuses increase to +2 at 20th level, +3 at 30th level, +4 at 40th level, and +5 at 50th level.
+  3rd level: Can play "The Tale of Curran Strongheart." All allies within 30 ft. gain immunity to fear and hopelessness effects for as long as the song lasts, and any fear or hopelessness effects currently on them are removed.
+  5th level: Can play "Tymora's Melody." All allies within 30 ft. gain +1 to luck, +3 to Saving Throws, +10 to lore, and a +10% bonus to all of their thieving skills. The bonuses increase to +2 luck and +4 Saving Throws at level 25, +3 luck and +5 Saving Throws at level 35, and +4 luck and +6 Saving Throws at level 45.
+  7th level: Can play "The Song of Kaudies." All allies within 30 ft. move at triple their normal movement rate.
+  9th level: Can play "The Siren's Yearning." All enemies within 30 ft. must save vs. Spell or become enthralled, unable to take action until 1 round passes or they take damage. The penalty on the saving throw increases to -1 at level 17, -2 at level 25, -3 at level 33, -4 at level 41, and -5 at level 49.
+  11th level: Can play "War Chant of Sith." All allies within 30 ft. gain a +4 bonus to Armor Class and the ability to regenerate 2 Hit Points per round. These bonuses increase to +6 Armor Class and 4 Hit Points per round at level 22, +8 Armor Class and 6 Hit Points per round at level 33, and +10 Armor Class and 8 Hit Points per round at level 44.
+
+- 19th level: Can use any item.
+- Alignment restricted to any neutral.
+- Hit Die: d6~
+@533=~BLADE: The Blade is an expert fighter and adventurer whose bardic acting abilities make <PRO_HIMHER> appear more intimidating and fearsome. This Bard's fighting style is flashy and entertaining, but is also lethally dangerous.
+
+Advantages:
+- May place 3 slots in Two-Weapon Style.
+- May use the Offensive Spin and Defensive Spin abilities once per day. Gains one use each at level 1 and an additional use each every 4 levels thereafter.
+
+OFFENSIVE SPIN: During the next 4 rounds, the Blade's movement rate doubles and <PRO_HESHE> gains a +2 bonus to hit and damage rolls as well as an extra attack per round. All attacks deal maximum damage for the duration. Offensive Spin can be used in conjunction with the Haste and Improved Haste spells.
+
+DEFENSIVE SPIN: During the next 4 rounds, the Blade is rooted to the spot and gains a +1 bonus to Armor Class per level, up to a maximum of +10.
+
+- Can play "The Ballad of Three Heroes."
+
+Disadvantages:
+- Only has one half the normal Lore value.
+- Only has one half the normal Pick Pockets skill.
+- Cannot play "The Tale of Curran Strongheart," "Tymora's Melody," "The Song of Kaudies," "The Siren's Yearning," and "War Chant of Sith."~
+@534=~JESTER: This Bard is well versed in the arts of ridicule and hilarity, and uses <PRO_HISHER> abilities to distract and confuse <PRO_HISHER> enemies, cavorting madly during combat. Do not mistake <PRO_HIMHER> for a true fool, however, as <PRO_HESHE> can also be quite deadly.
+
+Advantages:
+- When the Jester plays <PRO_HISHER> song, every opponent within 30 feet must save once per round to avoid falling under its effects:
+  1st level: Enemies must save vs. Spell with a +1 bonus or be confused.
+  10th level: Enemies must save vs. Spell or be confused, and must save vs. Polymorph with a -2 penalty or be slowed.
+  20th level: Enemies must save vs. Spell with a -1 penalty or be confused, must save vs. Polymorph with a -3 penalty or be slowed, and must save vs. Wands with a -3 penalty or receive 50% spell failure.
+  30th level: Enemies must save vs. Spell with a -2 penalty or be confused, must save vs. Polymorph with a -4 penalty or be slowed, must save vs. Wands with a -4 penalty or receive 50% spell failure, and must save vs. Breath with a -2 penalty or be knocked unconscious.
+  40th level: Enemies must save vs. Spell with a -3 penalty or be confused, must save vs. Polymorph with a -5 penalty or be slowed, must save vs. Wands with a -5 penalty or receive 50% spell failure, and must save vs. Breath with a -3 penalty or be knocked unconscious.
+  50th level: Enemies must save vs. Spell with a -4 penalty or be confused, must save vs. Polymorph with a -6 penalty or be slowed, must save vs. Wands with a -6 penalty or receive 50% spell failure, must save vs. Breath with a -4 penalty or be knocked unconscious, and must Save vs. Death with a +2 bonus or literally die laughing.
+
+Disadvantages:
+- Cannot play "The Ballad of Three Heroes," "The Tale of Curran Strongheart," "Tymora's Melody," "The Song of Kaudies," "The Siren's Yearning," and "War Chant of Sith."~
+@535=~SKALD: This nordic Bard is also a warrior of great strength, skill, and virtue; <PRO_HISHER> songs are inspiring sagas of battle and valor, and the Skald devotes <PRO_HISHER> life to those pursuits.
+
+Advantages:
+- +1 bonus to hit and damage rolls.
+- The Skald's song has the following effects:
+ 1st level: Grants allies a +2 bonus to hit and damage rolls, and a +2 bonus to AC.
+ 15th level: Grants allies a +4 bonus to hit and damage rolls, a +4 bonus to AC, and immunity to fear.
+ 20th level: Grants allies a +4 bonus to hit and damage rolls, a +4 bonus to AC, and immunity to fear, stun, and confusion.
+ 30th level: Grants allies a +6 bonus to hit and damage rolls, a +6 bonus to AC, a +10% chance to critically hit, and immunity to fear, stun, and confusion.
+ 40th level: Grants allies a +8 bonus to hit and damage rolls, a +8 bonus to AC, a +20% chance to critically hit, and immunity to fear, stun, and confusion.
+ 50th level: Grants allies a +10 bonus to hit and damage rolls, a +10 bonus to AC, a +30% chance to critically hit, and immunity to fear, stun, and confusion.
+
+Disadvantages:
+- Only has one quarter the normal Pick Pockets score.
+- Cannot play "The Ballad of Three Heroes," "The Tale of Curran Strongheart," "Tymora's Melody," "The Song of Kaudies," "The Siren's Yearning," and "War Chant of Sith."~
+@536=~SORCERER: Sorcerers are practitioners of magic who were born with the innate ability to cast spells. It is thought that the blood of some powerful creature flows through their veins; perhaps they are the spawn of the gods themselves, or even dragons walking in humanoid form. Regardless, the Sorcerer's magic is intuitive rather than logical. They know fewer spells than Mages, and acquire spells more slowly, but they can cast spells more often and have no need to select and prepare spells ahead of time. Sorcerers cannot specialize in magic the way Mages do. Other than these differences, a Sorcerer is very similar to a Mage.
+
+CLASS FEATURES:
+
+- May not wear any armor.
+- May only use the following weapons: dagger, quarterstaff, dart, sling.
+- May only become Proficient (one slot) in any weapon class.
+- May not place any slots in any fighting style.
+- May cast arcane spells.
+- May not scribe spells into their spellbooks as Mages do. Instead, Sorcerers learn a small number of spells at each level, which they can cast daily without memorization.
+- Hit Die: d4~
+@537=~DRAGON DISCIPLE: Dragon Disciples are powerful Sorcerers with dragons' blood somewhere in their lineage. Their natural magical talents bring out their draconic heritage, allowing them to cast powerful magical spells and exhibit dragon-like abilities.
+
+Advantages:
+- 1st level: Starts with a base AC of 1. The character's base AC decreases by 1 every 3 levels, down to a base AC of -15 at level 48.
+- 3rd level: May use Breath Weapon once per day.
+
+BREATH WEAPON: The Dragon Disciple breathes a gout of flame up to 30 ft. long, inflicting 10d6 points of fire damage (Save vs. Breath for half) on all creatures caught within the 140-degree cone.
+
+- 4th level: Gains 25% innate Fire Resistance.
+- 5th level: +1 bonus to Constitution.
+- 6th level: Breath Weapon damage increases to 12d6 (Save vs. Breath at -1 for half).
+- 8th level: Innate Fire Resistance rises to 50%.
+- 9th level: Breath Weapon damage increases to 14d6 (Save vs. Breath at -2 for half).
+- 12th level: Breath Weapon damage increases to 16d6 (Save vs. Breath at -3 for half).
+- 12th level: Innate Fire Resistance rises to 75%.
+- 15th level: Breath Weapon damage increases to 20d6 (Save vs. Breath at -4 for half).
+- 15th level: +1 bonus to Constitution.
+- 16th level: Innate Fire Resistance rises to 100%.
+- 18th level: Breath Weapon damage increases to 24d6 (Save vs. Breath at -5 for half).
+- 24th level: Breath Weapon damage increases to 28d6 (Save vs. Breath at -6 for half).
+- 30th level: Breath Weapon damage increases to 32d6 (Save vs. Breath at -7 for half).
+- 40th level: Gains the ability to shapeshift into a red dragon once per day.
+- 40th level: Breath Weapon damage increases to 36d6 (Save vs. Breath at -8 for half).
+- 50th level: Breath Weapon damage increases to 40d6 (Save vs. Breath at -9 for half).
+- Hit Die: d6
+
+Disadvantages:
+- May cast one fewer spell per level per day.~
+@538=~MONK: Monks are warriors who pursue perfection through contemplation as well as action. They are versatile fighters, especially skilled in combat without weapons or armor. Though Monks cannot cast spells, they have a unique magic of their own: they channel a subtle energy, called ki, which allows them to perform amazing feats. The Monk's best known feat is their ability to stun an opponent with an unarmed blow.
+
+CLASS FEATURES:
+
+- May not wear any armor.
+- May only use weapons available to the Thief class (except two-handed).
+- May only become Proficient (one slot) in any weapon class.
+- May only become Proficient (one slot) in Single-Weapon Style and may not put slots into any other style.
+- Moves 2 points faster than other characters. Movement rate further improves by 1 every 5 levels.
+- May make 1 unarmed attack per round. An additional 1/2 attack per round is gained every 3 levels. Damage dealt by unarmed attacks increases with level as follows:
+  Level 1-2: 1d6
+  Level 3-5: 1d8
+  Level 6-8: 1d10
+  Level 9-14: 1d12
+  Level 15+: 1d20
+- At level 9, unarmed attacks are treated as a +1 magical weapon and gain a +1 bonus to hit and damage rolls. This enchantment improves to +2 at level 12, +3 at level 15, +4 at level 20, +5 at level 25, +6 at level 30, +7 at level 35, +8 at level 40, +9 at level 45, and +10 at level 50.
+- Receives a +2 bonus to Saving Throws vs. Spell.
+- Deflect Missiles: The monk can deflect the first missile that would hit them each round. Deflected missiles will deal no missile damage to the monk, though any other damage that would be dealt by the missile will still hurt the monk.
+- Starts with an Armor Class of 9 at 1st level and gains an additional +1 bonus every 2 levels.
+- May use the Stunning Blow ability once per day. Gains one use at level 1 and an additional use every 4 levels thereafter.
+
+STUNNING BLOW: All successful attacks within the next round force the victim to save vs. Paralysis or be stunned. The character's Wisdom score determines the difficulty of the saving throw:
+
+Wisdom           Saving Throw Bonus/Penalty
+1-11                0
+12-13              -1
+14-15              -2
+16-17              -3
+18-19              -4
+20-21              -5
+22-24              -6
+25                 -7
+
+- 5th level: Becomes immune to all diseases and cannot be slowed.
+- 7th level: May use the Lay On Hands ability on <PRO_HIMHER>self to heal 2 Hit Points per level.
+- 8th level: Gains a -1 bonus to Speed Factor.
+- 9th level: Gains a +1 bonus to all Saving Throws and becomes immune to charm.
+- 11th level: Becomes immune to poison.
+- 12th level: Gains another -1 bonus to Speed Factor.
+- 13th level: May use the Quivering Palm ability once per day. Gains an additional use at levels 25, 35 and 45.
+
+QUIVERING PALM: The next successful attack forces the target to save vs. Death or die. The character's Wisdom score determines the difficulty of the saving throw as with Stunning Blow.
+
+- 14th level: Gains 3% Magic Resistance per level (starting with 42% at 14th level).
+- 20th level: Becomes immune to non-magical weapons.
+- 25th level: Becomes permanently under the effect of Improved Haste while unarmed.
+- Alignment restricted to lawful.
+- Hit Die: d8~
+@539=~DARK MOON MONK: The Order of the Dark Moon is a secretive monastic order that follows the teachings of the dark goddess Shar. Monks of the Dark Moon use physical prowess, dark magic, and many different forms of deception to mask their activities and strike with deadly precision.
+
+Advantages:
+- +10% to Detect Illusion.
+- May invest points into the Detect Illusion skill.
+- 1st level: May cast Blindness once per day.
+- 3rd level: May cast Blur once per day.
+- 5th level: May use the Frozen Fists ability once per day.
+
+FROZEN FISTS: When this ability is activated, the Dark Moon Monk's fists are wreathed in a shell of necrotic chill. For 1 round, the Dark Moon Monk's unarmed attacks deal an additional 2d6 points of magic cold damage on each hit. The duration increases to 2 rounds at level 9, 3 rounds at level 12, 4 rounds at level 15, and 5 rounds at level 25.
+
+- 7th level: May cast Mirror Image once per day.
+- 9th level: Gains an additional use of Blindness, and the saving throw against the blindness is made at a -1 penalty.
+- 14th level: Gains an additional use of Mirror Image.
+- 17th level: Gains an additional use of Blindness, and the saving throw is made at a -2 penalty.
+- 20th level: Gains an additional use of Frozen Fists.
+- 21st level: Gains an additional use of Mirror Image.
+- 23rd level: Gains an additional use of Blur.
+- 25th level: Gains an additional use of Blindness, and the saving throw is made at a -3 penalty.
+- 28th level: Gains an additional use of Mirror Image.
+- 33rd level: Gains an additional use of Blindness, and the saving throw is made at a -4 penalty.
+- 35th level: Gains an additional use of Mirror Image.
+- 36th level: Gains an additional use of Frozen Fists.
+- 41st level: Gains an additional use of Blindness, and the saving throw is made at a -5 penalty.
+- 42nd level: Gains an additional use of Mirror Image.
+- 43rd level: Gains an additional use of Blur.
+- 49th level: Gains an additional use of Blindness, and the saving throw is made at a -6 penalty.
+- 50th level: Gains an additional use of Mirror Image.
+
+Disadvantages:
+- Alignment restricted to lawful evil.
+- May not use the Lay On Hands ability.
+- May not use the Stunning Blow ability.~
+@540=~SUN SOUL MONK: Sun Soul Monks were once worshippers of Amaunator in the time of the Netheril, but today their worship is divided between Lathander, Selune, and Sune. Sun Soul Monks adhere strictly to the law, using their martial arts and magical abilities to drive out darkness and corruption wherever they find it.
+
+Advantages:
+- 2nd level: May cast Sun Soulray once per day.
+
+SUN SOULRAY: The character projects a blast of light from <PRO_HISHER> open palm, dealing 1d8 magic fire damage for every 2 caster levels (up to a maximum of 25d8 damage). Undead creatures take an additional 5d8 points of damage. There is no Saving Throw against this ability.
+
+- 5th level: May cast Flaming Fists once per day.
+
+FLAMING FISTS: The character channels <PRO_HISHER> inner light into <PRO_HISHER> unarmed attacks, turning <PRO_HISHER> fists into flaming weapons that deal an additional 2d6 magic fire damage per hit for the next round. The duration increases to 2 rounds at level 9, 3 rounds at level 12, 4 rounds at level 15, and 5 rounds at level 25. This special ability automatically modifies normal attacks; no weapon-switching needs to be done.
+
+- 6th level: Gains an additional use of Sun Soulray.
+- 8th level: May cast Greater Sun once per day.
+
+GREATER SUN: The character wreathes <PRO_HIMHER>self in flames similar to a Fireshield (Red), granting the character 50% resistance to fire and magic fire and protecting <PRO_HIMHER> from attacks made within a 5-ft. radius. An opponent that hits the character with any weapons or spells within this radius suffers 1d8+2 points of magic fire damage.
+
+- 10th level: Gains an additional use of Sun Soulray.
+- 13th level: May cast Sun Soulbeam once per day.
+
+SUN SOULBEAM: The character emits a dazzling burst of light that strikes at all other creatures within a 15-ft. radius. Struck creatures suffer 10d8 points of magic fire damage, unless they save vs. Breath at -3 for half. Undead creatures take an additional 10d8 damage, and this damage is not halved on a successful save. In addition, all creatures that fail the save are blinded for 5 rounds.
+
+- 15th level: Gains an additional use of Sun Soulray.
+- 16th level: Gains an additional use of Greater Sun.
+- 20th level: Gains an additional use of Flaming Fists.
+- 21st level: Gains an additional use of Sun Soulray.
+- 24th level: Gains an additional use of Greater Sun.
+- 25th level: Gains an additional use of Sun Soulbeam.
+- 27th level: Gains an additional use of Sun Soulray.
+- 32nd level: Gains an additional use of Greater Sun.
+- 33rd level: Gains an additional use of Sun Soulray.
+- 35th level: Gains an additional use of Sun Soulbeam.
+- 36th level: Gains an additional use of Flaming Fists.
+- 39th level: Gains an additional use of Sun Soulray.
+- 40th level: Gains an additional use of Greater Sun.
+- 45th level: Gains an additional use of Sun Soulbeam.
+
+Disadvantages:
+- Alignment restricted to lawful good.
+- May not use Stunning Blow ability.
+- May not use Quivering Palm ability.~
+@541=~SHAMAN: Shamans forge a divine connection with the natural world, similar to the way Druids commune with nature, but Shamans are more spiritual than primal. They directly tap into the energies that flow through the earth and air, through plants and animals, and even through the dead, and shape these energies to obey their will. Nowhere is this more evident than in their ability to summon powerful spirits as guardians and defenders. A being of two worlds, Shamans value balance over dominance.
+
+CLASS FEATURES:
+
+- May only wear leather, studded leather, and hide armor.
+- May not equip shields larger than bucklers.
+- May only use the following weapons: dagger, club, spear, axe, quarterstaff, dart, sling, and shortbow.
+- May only become Proficient (one slot) in any weapon class.
+- May only become Proficient (one slot) in any fighting style.
+- May cast druidic spells.
+- Does not automatically learn all spells of a given level as Druids do. Instead, Shamans select new spells to learn at each level, which they can cast daily without memorization.
+- Gains access to a number of Shaman-specific spells, which can be cast like any other: Spirit Ward, Writhing Fog, Spiritual Clarity, Spirit Fire, Recall Spirit, Spiritual Lock, Ether Gate, and Ethereal Retribution.
+- Gains use of the Detect Illusion skill with 20% points as a base and an 4 points per level, up to a maximum of 220% at level 50.
+- May use Shamanic Dance at will.
+
+SHAMANIC DANCE: Shamans can summon spirit allies by performing a ritualistic dance. While dancing, the Shaman cannot perform any action other than moving. Each round while the Shaman dances, there is a 50% base chance plus 2% for each level of the Shaman that a spirit will answer the call, up to a maximum of 100% at level 25. Any summoned spirits will disappear if the Shaman moves, stops dancing, or if the spirits leave visual range. The spirits grow in power as the Shaman gains additional levels:
+  Level 1: Minor animal spirits (snake, fox, hound), up to 2 spirits at the same time.
+  Level 6: Major animal spirits (bear, panther, boar), up to 3 spirits at the same time.
+  Level 12: Minor nature spirits (lesser air spirit, lesser earth spirit, lesser fire spirit), up to 4 spirits at the same time.
+  Level 18: Major nature spirits (air spirit, earth spirit, fire spirit), up to 5 spirits at the same time.
+The type of the summoned spirit is randomly determined from all the spirits available at the Shaman's level. For example, a level 12 Shaman will summon either a minor nature spirit, a major animal spirit, or a minor animal spirit, but cannot choose which one appears. Spirits will do their best to protect the Shaman but are not controlled directly.
+- 21st level: May cast Spirit Form once per day. Gains an additional use at levels 32 and 43.
+
+SPIRIT FORM: The shaman slips into a space between the spirit world and the material plane, rendering them partially incorporeal. For the next 5 rounds, all physical attacks directed against the shaman deal 50% of their normal damage. During this time, the shaman is also under the effects of Improved Invisibility and cannot be directly targeted by spells.
+
+- 24th level: May cast Favored of the Spirits once per day. Gains an additional use at levels 36 and 48.
+
+FAVORED OF THE SPIRITS: This powerful rite shields the Shaman from death for 1 hour or until discharged. While under the protection of this rite, the Shaman is immune to all forms of death magic. In addition, if the Shaman is reduced below 10% Hit Points and the rite is active, the Shaman instantly receives the benefit of a Heal spell. The rite's protection (including the immunity to death) is completely discharged once the Heal spell is triggered.
+
+- 25th level: The Shaman now always summons the most powerful spirits <PRO_HESHE> can call.
+- 30th level: The Shaman can now summon any number of spirits at a time, and the spirits ignore the summoning limit.
+- 40th level: The Shaman now summons two spirits each round while dancing.
+
+- Does not gain bonus spells per day from high Wisdom.
+- Alignment restricted to neutral good, true neutral, and neutral evil.
+- Hit Die: d8~
+
 @19001=~Identify Creature~
 @19002=~Eye of the Mind: This orb protects the caster against mental attacks such as charm, emotion, and fear. The eye can be expended as the 5th-level wizard spell Domination, bringing a creature under the caster's control for 15 rounds (Save vs. Spell at -2 negates).~
 @19003=~Eye of the Sword: This eye deflects the first physical damaging attack that strikes the caster. The eye may be expended as the 4th-level wizard spell Mordenkainen's Force Missiles, creating up to 7 missiles that strike the target.~
@@ -7,6 +792,18 @@
 @19007=~Eye of Fortitude: This eye blocks one stunning, deafness, blindness, or silence effect. It may alternatively be expended as the 4th-level wizard spell Shout, dealing 10d6 magic damage and deafening and knocking back creatures within a 35-ft. cone (Save vs. Spell halves damage and negates deafness).~
 @19008=~Eye of Stone: This eye shields the caster from a single petrification attack. It can also be used as the 6th-level wizard spell Flesh to Stone, petrifying the target (Save vs. Petrification negates).~
 
+@20101=~Bless
+(Conjuration/Summoning)
+
+Level: 1
+Sphere: All
+Range: 40 ft.
+Duration: 6 rounds
+Casting Time: 3
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+Upon uttering the Bless spell, the caster grants allied creatures in the area of effect +1 to hit, damage, and saving throws. These bonuses are increased by +1 every ten levels, to a maximum of +6 from a level 50 caster.~
 @20103=~Cure Light Wounds
 (Necromancy)
 
@@ -31,6 +828,30 @@ Area of Effect: The caster
 Saving Throw: None
 
 This spell enables the caster to create a magical club that grants a +5 bonus to attack rolls and inflicts 2d4+5 points of damage. The club's enchantment level is +5 for determining which creatures it can hit. Strength, proficiency, and specialization bonuses and penalties apply normally.~
+@20111=~Armor of Faith
+(Abjuration)
+
+Level: 1
+Sphere: Protection
+Range: 0
+Duration: 3 rounds + 1 round/level
+Casting Time: 1
+Area of Effect: The caster
+Saving Throw: None
+
+The caster of Armor of Faith receives significant protection against melee, ranged, and magical attacks. This magical armor is a force of energy that absorbs a portion of the damage intended for the caster. At 1st level, the damage resistance is increased by 10%, and it improves by 5% every 10 levels of the caster: For example, a 20th-level priest would have +20% damage resistance if protected by this spell.~
+@20112=~Curse
+(Conjuration/Summoning)
+
+Level: 1
+Sphere: All
+Range: Visual range of the caster
+Duration: 6 rounds
+Casting Time: 3
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+Upon uttering the Curse spell, the caster curses enemies in the area of effect with -1 to hit, damage, and saving throws. These penalties are increased by -1 every ten levels, to a maximum of -6 from a level 50 caster.~
 @20113=~Doom
 (Alteration)
 
@@ -66,7 +887,31 @@ Casting Time: 4
 Area of Effect: 1 creature
 Saving Throw: Special
 
-When this spell is cast, a brilliant ray of scorching heat slants down from the sky and strikes one target of the caster's choice. Any creature struck by the ray takes 1d6 points of magical fire damage, plus 1 point per level of the caster; however, if the target is an undead creature or a monster vulnerable to bright light, the damage is 1d6, plus 2 points per level of the caster. In addition to sustaining damage, victims are also blinded for 3 rounds. The victim is allowed a Save vs. Spell for half damage and to avoid the blindness.~
+When this spell is cast, a brilliant ray of scorching heat slants down from the sky and strikes one target of the caster's choice. Any creature struck by the ray takes 1d6 points of magical fire damage, plus 1 point per level of the caster (max 1d6+50); however, if the target is an undead creature or a monster vulnerable to bright light, the damage is 1d6, plus 2 points per level of the caster (max 1d6+100). In addition to sustaining damage, victims are also blinded for 3 rounds. The victim is allowed a Save vs. Spell for half damage and to avoid the blindness.~
+@20201=~Aid
+(Necromancy, Conjuration)
+
+Level: 2
+Sphere: Necromantic
+Range: Touch
+Duration: 1 round + 1 round/level
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: None
+
+The recipient of this spell gains the benefits of a Bless spell (+1 to attack rolls and Saving Throws) and 1d8 bonus Hit Points for the duration of the spell. These bonus Hit Points can exceed a character's maximum Hit Points, but they are lost when the recipient takes damage and cannot be regained by curative magic. The bonuses increase to +2 and 2d8 at level 10, +3 and 3d8 at level 20, +4 and 4d8 at level 30, +5 and 5d8 at level 40, and +6 and 6d8 at level 50.~
+@20202=~Barkskin
+(Alteration)
+
+Level: 2
+Sphere: Protection, Plant
+Range: Touch
+Duration: 4 rounds + 1 round/level
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: None
+
+Barkskin causes a creature's skin to become as tough as bark, setting its base Armor Class to 6 and improving by 1 for every 4 levels of the caster: Armor Class 5 at 4th level, Armor Class 4 at 8th level, and so on up to a maximum of Armor Class of -6 at 48th level. In addition, the recipient's Saving Throws vs. Breath Weapon, Death, Polymorph, and Wand gain a bonus of +1.~
 @20203=~Chant
 (Conjuration/Summoning)
 
@@ -92,19 +937,7 @@ Casting Time: 4
 Area of Effect: The caster
 Saving Throw: None
 
-With this spell, the caster causes a blazing ray of red-hot fire to spring forth from <PRO_HISHER> hand. The blade uses the scimitar proficiency, but it will make the caster proficient with scimitars if <PRO_HESHE> is not already proficient with them. The blade deals no physical damage, but it deals 4d8 fire damage with each hit and will deal double damage on a critical hit just like a normal weapon would. It counts as a +1 weapon for determining what it can hit, but it does not get an enchantment bonus to hit or damage. It does not get any bonus to damage from Strength, but it will get a THAC0 bonus when wielded by a strong character. Effects that cause a character to deal maximum damage will not cause this weapon to deal maximum damage.~
-@20207=~Goodberry
-(Alteration, Evocation)
-
-Level: 2
-Sphere: Plant
-Range: Touch
-Duration: Permanent
-Casting Time: 9
-Area of Effect: Special
-Saving Throw: None
-
-Casting a Goodberry spell creates 3 magical berries that the caster can carry with <PRO_HIMHER>. Each berry restores 4 Hit Points when eaten.~
+With this spell, the caster causes a blazing ray of red-hot fire to spring forth from <PRO_HISHER> hand. The blade uses the scimitar proficiency, but it will make the caster proficient with scimitars if <PRO_HESHE> is not already proficient with them. The blade deals no physical damage, but it deals 4d8 fire damage with each hit and will deal double damage on a critical hit just like a normal weapon would. It counts as a +3 weapon for determining what it can hit, but it does not get an enchantment bonus to hit or damage. It does not get any bonus to damage from Strength, but it will get a THAC0 bonus when wielded by a strong character. Effects that cause a character to deal maximum damage will not cause this weapon to deal maximum damage.~
 @20209=~Identify Creature
 (Divination)
 
@@ -117,6 +950,18 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 An Identify Creature spell enables the caster to learn useful information about a creature. The information will include the creature's level, class, Hit Points, Armor Class, base THAC0 (excluding THAC0 bonuses), attacks per round, attributes, resistances, saving throws, and various other effects.~
+@20211=~Silence, 15' Radius
+(Alteration)
+
+Level: 2
+Sphere: Guardian
+Range: Visual range of the caster
+Duration: 2 rounds/level
+Casting Time: 5
+Area of Effect: 15-ft. radius
+Saving Throw: Neg.
+
+Upon casting this spell, complete silence prevails in the affected area. All sound is stopped: Conversation is impossible and spells cannot be cast. Each creature in the area must make a Save vs. Spell at -5; if the save is failed, they are silenced for the duration of the spell. Affected creatures leaving the area are still subject to the spell's effect; those entering the area after the casting is completed are not.~
 @20212=~Slow Poison
 (Necromancy)
 
@@ -131,20 +976,32 @@ Saving Throw: None
 When this spell is placed upon a poisoned individual, it greatly slows the effects of venom, actually neutralizing all but the most deadly poisons.
 
 This spell also cures intoxication.~
+@20215=~Goodberry
+(Alteration, Evocation)
+
+Level: 2
+Sphere: Plant
+Range: 0
+Duration: 1 day/level
+Casting Time: 9
+Area of Effect: 5 berries
+Saving Throw: None
+
+Casting a Goodberry spell creates a clump of magical berries that the caster can carry with <PRO_HIMHER>. These berries cure 10 points of damage when eaten. The berries will only last one day per level of the caster, so it's not advisable to carry them around for too long.~
 @20216=~Resist Fire/Cold
 (Alteration)
 
 Level: 2
 Sphere: Protection
 Range: Touch
-Duration: 1 round/level
+Duration: 5 rounds + 1 round/level
 Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: None
 
 When this spell is placed upon a creature, it gains +50% resistance to fire and cold, as well as +25% resistance to magical fire and magical cold. The resistances stack with other effects granting resistances, but not with other instances of the same spell.
 
-Not all fire or cold spells deal magical fire or magical cold damage. These two damage types represent damage from necrotic, divine, or hellish fire or cold.~
+Note: Not all fire or cold spells deal magical fire or magical cold damage. These two damage types represent damage from necrotic, divine, or hellish fire or cold.~
 @20217=~Cure Moderate Wounds
 (Necromancy)
 
@@ -228,7 +1085,9 @@ Casting Time: 6
 Area of Effect: 1 creature
 Saving Throw: None
 
-This spell grants the target +80% Fire Resistance, as well as +40% Magical Fire Resistance. The resistances stack with other effects granting fire resistance, but not with other instances of the same spell.~
+This spell grants the target +80% Fire Resistance, as well as +40% Magic Fire Resistance. The resistances stack with other effects granting fire or magic fire resistance, but not with other instances of the same spell.
+
+Note: Not all fire spells deal magic fire damage. This damage type represents damage from necrotic, divine, or hellish fire.~
 @20308=~Remove Paralysis
 (Abjuration)
 
@@ -301,6 +1160,18 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 When this spell is placed on a diseased individual, it immediately cures them and restores 5 lost Hit Points. Blindness and deafness are also cured with this spell. The recipient is then made immune to all diseases for 2 rounds. This spell has no effect on undead, constructs, or extraplanar creatures.~
+@20320=~Cause Disease
+(Necromancy)
+
+Level: 3
+Sphere: Healing
+Range: Touch
+Duration: 8 hours
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+This spell afflicts one creature the priest touches with a disease that saps the target of 5d4 points of Strength. A successful Save vs. Spell at -2 negates the effects. This spell has no effect on undead, constructs, or extraplanar creatures. It cannot be cast by good-aligned characters.~
 @20321=~Exaltation
 (Abjuration)
 
@@ -324,9 +1195,9 @@ Casting Time: 6
 Area of Effect: The caster
 Saving Throw: None
 
-This spell summons forth a silent, weightless sword-like construct made of moonlight that extends four feet from the caster's hand. The moonblade is considered a +4 weapon for determining what creatures it can hit, though the bonus does not apply to attack rolls made with it. In addition, due to the insubstantial nature of the moonblade, damage bonuses from Strength do not apply, though to hit bonuses do. The moonblade uses the scimitar proficiency, but it gives the wielder proficiency in scimitars unless <PRO_HESHE> already has it.
+This spell summons forth a silent, weightless sword-like construct made of moonlight that extends four feet from the caster's hand. The moonblade is considered a +4 weapon for determining what creatures it can hit, and it gets a +4 bonus to attack rolls. In addition, due to the insubstantial nature of the moonblade, damage bonuses from Strength do not apply, though to hit bonuses do. The moonblade uses the scimitar proficiency, but it gives the wielder proficiency in scimitars unless <PRO_HESHE> already has it.
 
-The strike of a moonblade drains a target's vitality, inflicting 1d12+4 points of magic damage, plus an additional 2d12 points to undead, who are particularly susceptible. A successful strike also temporarily scrambles magic, causing any spells the target casts in the next round to fail.~
+The strike of a moonblade drains a target's vitality, inflicting 1d12+4 points of magic damage, plus an additional 2d12 points to undead and lycanthropes, who are particularly susceptible. It counts as a silver weapon. A successful strike also temporarily scrambles magic, causing any spells the target casts in the next round to fail.~
 @20323=~Circle of Bones
 (Necromancy)
 
@@ -351,6 +1222,31 @@ Area of Effect: 17-ft. radius
 Saving Throw: None
 
 This spell brings forth a magical rain that saturates the area of effect. All creatures in the rain gain +50% fire resistance and +25% magical fire resistance. In addition, all electricity damage dealt by creatures in the rain is increased by 50%. Fire elementals, fire salamanders, and efreet in the rain take 2d3 magical cold damage every second. Flame Blade, Shroud of Flame, and salamander auras are extinguished by Cloudburst.~
+@20326=~Mold Touch
+(Alteration)
+
+Level: 3
+Sphere: Plant
+Range: Touch
+Duration: Special
+Casting Time: 1
+Area of Effect: 10-ft. radius
+Saving Throw: Special
+
+This spell infects the creature the caster touches with a rapidly spreading brown mold. If the infected creature fails a Save vs. Spell at -4, the infection is severe and the creature takes magic damage as follows:
+
+1st round: 4d6 damage
+2nd round: 3d6 damage
+3rd round: 2d6 damage
+4th round: 1d6 damage
+
+If the Saving Throw is successful, the damage is reduced as follows:
+
+1st round: 2d6 damage
+2nd round: 1d6 damage
+3rd round: 1d6 damage
+
+Each round after the first, the nearest creature within 10 ft. of the victim must make a Save vs. Spell at -4 or be infected by the mold at full strength. This process continues until the mold fails to infect a suitable host in time. Creatures already under the effects of the mold cannot contract it again. The brown mold quickly dies once the spell expires.~
 @20330=~Cause Medium Wounds
 (Necromancy)
 
@@ -389,11 +1285,23 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest heals 30 Hit Points and cures intoxication. This spell has no effect on undead, constructs, or extraplanar creatures.~
+@20403=~Free Action
+(Abjuration)
+
+Level: 4
+Sphere: Charm
+Range: Touch
+Duration: 1 turn + 1 round/level
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell gives the affected creature an immunity to magic that impedes movement (such as the Grease, Web, or Slow spells) and negates the effects of paralysis, hold, and stun spells. The recipient of the spell can still be hasted and receive beneficial movement effects such as those granted by the boots of speed.~
 @20404=~Neutralize Poison
 (Necromancy)
 
 Level: 4
-Sphere: Healing 
+Sphere: Healing
 Range: Touch 
 Duration: 3 rounds
 Casting Time: 0
@@ -401,6 +1309,18 @@ Area of Effect: 1 creature
 Saving Throw: None 
 
 This spell removes all toxins from the body, both natural and magical in nature. When this spell is cast upon a poisoned individual, it immediately neutralizes any poison and restores 10 lost Hit Points. The recipient also gains immunity to poison for 3 rounds.~
+@20409=~Death Ward
+(Necromancy)
+
+Level: 4
+Sphere: Protection, Necromantic
+Range: Visual range of the caster
+Duration: 1 turn/level
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell protects the target from all forms of death magic for the duration of the spell. This includes, but is not limited to, Disintegrate; Power Word, Kill; Death Spell; and Finger of Death.~
 @20411=~Poison
 (Necromancy)
 
@@ -419,7 +1339,7 @@ This spell grants the caster the ability to touch a creature and instantly poiso
 Level: 4
 Sphere: Protection, Necromantic
 Range: Touch
-Duration: 15 rounds
+Duration: 8 hours
 Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: None
@@ -481,7 +1401,7 @@ Level: 4
 Sphere: Elemental Fire
 Range: Visual range of the caster
 Duration: 1 round
-Casting Time: 7
+Casting Time: 4
 Area of Effect: 4-ft. radius
 Saving Throw: None
 
@@ -497,7 +1417,7 @@ Casting Time: 7
 Area of Effect: 1 creature
 Saving Throw: None
 
-This spell works only on player characters or allied creatures. When cast, the target of this spell goes berserk, attacking the nearest creature until that creature is dead, then moving on to the next target. While under Blood Rage, the target is immune to charm, sleep, fear, hold, stunning, confusion, emotion, symbol spells, and related effects. In addition, the target's movement rate is doubled and <PRO_HESHE> gains +5 to hit, +7 to damage, and +5 to Strength. The spell has several disadvantages, however: The Hit Points of the target are masked for the duration of the spell, and the target cannot benefit from any effect that heals Hit Points. At the end of the spell's duration, the target becomes fatigued and <PRO_HISHER> Strength drops to 3 for 1 turn. Blood Rage cannot affect-and cannot be cast by-creatures of lawful alignment.~
+This spell works only on player characters or allied creatures. When cast, the target of this spell goes berserk, attacking the nearest creature until that creature is dead, then moving on to the next target. While under Blood Rage, the target is immune to charm, sleep, fear, hold, stunning, confusion, emotion, symbol spells, and related effects. In addition, the target's movement rate is doubled and <PRO_HESHE> gains +5 to hit, +7 to damage, and +5 to Strength. The spell has several disadvantages, however: The Hit Points of the target are masked for the duration of the spell, and the target cannot benefit from any effect that heals Hit Points. At the end of the spell's duration, the target becomes fatigued and <PRO_HISHER> Strength drops to 3 for 1 turn. Blood Rage cannot be cast by creatures of lawful alignment.~
 @20423=~Cloud of Pestilence
 (Alteration)
 
@@ -517,7 +1437,7 @@ Level: 4
 Sphere: Necromantic
 Range: 100 feet
 Duration: Instant
-Casting Time: 9
+Casting Time: 1
 Area of Effect: 15-ft. radius
 Saving Throw: None
 
@@ -606,6 +1526,18 @@ Area of Effect: 5-ft. radius
 Saving Throw: 1/2
 
 When the priest casts Flame Strike, a vertical column of fire roars downward onto a victim chosen by the caster. The spell deals 1d6 points of damage per level (to a maximum of 15d6) to the target and any nearby victims. Half of the damage, rounded down, is fire damage, and the other half is magic fire damage. The targets only take the regular fire damage on a successful Save vs. Spell.~
+@20504=~Raise Dead
+(Necromancy)
+
+Level: 5
+Sphere: Necromantic
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 9
+Area of Effect: 1 creature
+Saving Throw: None
+
+When the priest casts a Raise Dead spell, <PRO_HESHE> can restore life to one of <PRO_HISHER> companions. The person has but 1 Hit Point when raised and must regain the rest by natural healing or curative magic. Raise Dead will not work on someone killed by Death Spell, Finger of Death, Destruction, or Disintegrate. It cannot be cast by evil-aligned characters.~
 @20507=~Champion's Strength
 (Alteration)
 
@@ -618,6 +1550,18 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 When this spell is cast, the priest effectively draws on the strength of <PRO_HISHER> deity and lends it to the target creature, in effect creating a champion. The target's Strength is set to 25 for 1 turn. As soon as the spell is cast, the caster becomes fatigued, suffering a penalty to all <PRO_HISHER> rolls. The drawback to this spell is that the priest must concentrate on the connection between the target and <PRO_HISHER> deity for the duration of the spell, hence losing the ability to cast any additional spells during this time. The effect lasts for one turn or until dispelled.~
+@20509=~Magic Resistance
+(Alteration)
+
+Level: 5
+Sphere: Protection
+Range: Touch
+Duration: 3 rounds + 1 round/level
+Casting Time: 9
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell grants the recipient a Magic Resistance bonus of +10% plus 1% per level of the caster, up to a maximum of +60% from a level 50 caster. This effect will last for the duration of the spell or, ironically enough, until dispelled.~
 @20510=~Cause Critical Wounds
 (Necromancy)
 
@@ -673,11 +1617,11 @@ Level: 6
 Sphere: Guardian/Creation
 Range: 0
 Duration: 4 rounds
-Casting Time: 9
+Casting Time: 7
 Area of Effect: 5-ft. radius
 Saving Throw: 1/2
 
-This spell conjures forth a wall of circling, razor-sharp blades that whirl and flash around the caster, creating an immobile barrier. Any creature attempting to pass through the blade barrier suffers 8d8 points of damage, with a Save vs. Spell for half damage. The caster is immobile for the duration of the spell.~
+This spell conjures forth a wall of circling, razor-sharp blades that whirl and flash around the caster, creating a barrier. Any creature attempting to pass through the blade barrier suffers 8d8 points of damage, with a Save vs. Wands at -3 for half damage. The caster can move, and the blade barrier will stay around them.~
 @20606=~Fire Seeds
 (Conjuration)
 
@@ -685,11 +1629,23 @@ Level: 6
 Sphere: Elemental Fire
 Range: 0
 Duration: 1 turn/level
-Casting Time: 9
+Casting Time: 3
 Area of Effect: The caster
 Saving Throw: None
 
 This spell creates 20 grenade-like missiles in the priest's inventory that can be hurled at any target in sight. (These missiles last only for the spell's duration, so don't hoard them.) When they land, the seeds explode, doing 4d8 points of fire damage to everything within an 10-ft. radius. A creature struck by the explosion is allowed to make a Save vs. Spell for half damage.~
+@20607=~Heal
+(Necromancy)
+
+Level: 6
+Sphere: Healing
+Range: Touch
+Duration: Instant
+Casting Time: 9
+Area of Effect: 1 creature
+Saving Throw: None
+
+Heal wipes away disease and injury from a target creature. It cures bleeding and Flaying effects, blindness, disease, poison, intoxication, and feeblemind, and restores the target to maximum Hit Points if <PRO_HESHE> has been injured. This spell has no effect on undead, constructs, or extraplanar creatures. It cannot be cast by evil-aligned characters.~
 @20608=~Harm
 (Necromancy)
 
@@ -709,11 +1665,23 @@ Level: 6
 Sphere: Sun
 Range: 0
 Duration: Instant
-Casting Time: 9
+Casting Time: 3
 Area of Effect: 15-ft. radius
 Saving Throw: None
 
 False Dawn calls into existence a bright reddish light, as if a sunrise were occurring, within the area of effect. All undead creatures within the area suffer 12d6 points of magical fire damage and are blinded for two rounds after the false dawn appears. There is no Saving Throw.~
+@20610=~Dolorous Decay
+(Alteration, Necromancy)
+
+Level: 6
+Sphere: Combat, Necromantic
+Range: 20 ft.
+Duration: Special
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: Special
+
+This spell affects a single living creature. Dolorous Decay is a rotting and withering of the body that quickly spreads throughout the afflicted creature. The target will automatically be slowed for 2 rounds. Furthermore, if <PRO_HESHE> fails a Save vs. Poison with a -6 penalty, <PRO_HESHE> will suffer 1 point of damage per second until a total of 50 points of damage are inflicted.~
 @20612=~Bolt of Glory
 (Invocation/Evocation)
 
@@ -795,6 +1763,18 @@ Area of Effect: 14-ft. radius
 Saving Throw: None
 
 This spell causes the area of effect to be covered in roaring flames, dealing 2d8 points of damage plus 1 per level of the caster to anything within the area of effect each round.~
+@20706=~Symbol, Fear
+(Conjuration/Summoning)
+
+Level: 7
+Sphere: Guardian
+Range: Visual range of the caster
+Duration: Special
+Casting Time: 6
+Area of Effect: 15-ft. radius
+Saving Throw: Neg.
+
+Symbol, Fear is a powerful enchantment that allows the priest to inscribe a symbol on the ground or any other surface. The symbol will remain there until an opponent comes too close, at which point it will explode causing all enemies within the area to make a Save vs. Spell with a -6 penalty or be affected by fear for 2 rounds + 1 round every 3 levels of the caster.~
 @20707=~Sunray
 (Evocation, Alteration)
 
@@ -814,11 +1794,23 @@ Level: 7
 Sphere: War
 Range: Visual range of the caster
 Duration: Instant
-Casting Time: 5
+Casting Time: 2
 Area of Effect: 1 creature
 Saving Throw: Special
 
-The caster utters the Finger of Death incantation, points <PRO_HISHER> index finger at the creature to be slain, and unless the victim makes a Save vs. Death at -2, the victim dies instantly. Even if the save is successful, however, the brush with death still inflicts 2d8+1 points of magic damage. Characters slain by Finger of Death cannot be resurrected-they are gone forever.~
+The caster utters the Finger of Death incantation, points <PRO_HISHER> index finger at the creature to be slain, and unless the victim makes a Save vs. Death at -2, the victim dies instantly. Even if the save is successful, however, the brush with death still inflicts 2d8+30 points of magic damage. Characters slain by Finger of Death cannot be resurrected-they are gone forever.~
+@20712=~Resurrection
+(Necromancy)
+
+Level: 7
+Sphere: Necromantic
+Range: Touch
+Duration: Instant
+Casting Time: 6
+Area of Effect: 1 creature
+Saving Throw: None
+
+Restoring life to the dead is one of the priest's most powerful abilities. With Resurrection, <PRO_HESHE> can restore a character to life with full Hit Points. The deceased character must be in the party for this spell to work. This spell can only be cast by good-aligned characters.~
 @20713=~Greater Restoration
 (Necromancy)
 
@@ -830,7 +1822,7 @@ Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: None
 
-This spell reverses any level or ability score drain from the creature. It will also restore the Intelligence score of a creature affected by the Feeblemind spell and negate any form of insanity, such as confusion or berserk. It fully heals the target and cures any diseases or poisons. This spell has no effect on undead, constructs, or extraplanar creatures. It cannot be cast by evil-aligned characters.~
+This spell reverses any level or ability score drain from the creature. It will also restore the Intelligence score of a creature affected by the Feeblemind spell and negate any form of insanity, such as confusion or berserk. It fully heals the target and cures any diseases or poisons. It restores a petrified creature to normal. This spell has no effect on undead, constructs, or extraplanar creatures. It cannot be cast by evil-aligned characters.~
 @20714=~Symbol, Pain
 (Conjuration/Summoning)
 
@@ -838,11 +1830,47 @@ Level: 7
 Sphere: Guardian
 Range: Visual range of the caster
 Duration: 11 turns
-Casting Time: 3
+Casting Time: 6
 Area of Effect: 15-ft. radius
 Saving Throw: None
 
 All enemies within 15 ft. of the symbol of pain at the moment it is invoked are overwhelmed by pain, suffering a -4 penalty to their attack rolls, a -2 penalty to their Dexterity scores, and a -2 penalty to their Armor Class.~
+@20716=~Symbol, Hopelessness
+(Conjuration/Summoning)
+
+Level: 7
+Sphere: Guardian
+Range: Visual range of the caster
+Duration: 2 turns
+Casting Time: 6
+Area of Effect: 15-ft. radius
+Saving Throw: Neg.
+
+Symbol, Hopelessness is a powerful enchantment that allows the priest to inscribe a symbol on the ground or any other surface. The symbol will remain there until an opponent comes too close, at which point it will explode, causing all enemies within the area of effect to make a Save vs. Spell with a -2 penalty or stand in place, overwhelmed by dejection and surrender. They will make no move to defend themselves from attack. This spell nullifies Emotion, Hope within the area of effect at the time of casting.~
+@20718=~Symbol, Stun
+(Conjuration/Summoning)
+
+Level: 7
+Sphere: Guardian
+Range: Visual range of the caster
+Duration: Special
+Casting Time: 6
+Area of Effect: 15-ft. radius
+Saving Throw: Neg.
+
+Symbol, Stun is a powerful enchantment that allows the priest to inscribe a symbol on the ground or any other surface. The symbol will remain there until an opponent comes too close, at which point it will explode, causing all enemies within the area of effect to make a Save vs. Spell with a -4 penalty or be stunned for 2 rounds + 1 round every 3 levels of the caster.~
+@20719=~Symbol, Death
+(Conjuration/Summoning)
+
+Level: 7
+Sphere: Guardian
+Range: Visual range of the caster
+Duration: Special
+Casting Time: 6
+Area of Effect: 15-ft. radius
+Saving Throw: Neg.
+
+Symbol, Death is a powerful enchantment that allows the priest to inscribe a symbol on the ground or any other surface. The symbol will remain there until an opponent comes too close, at which point it will explode, causing all enemies within the area of effect to make a Save vs. Death or die.~
 @20720=~Earthquake
 (Alteration)
 
@@ -854,7 +1882,7 @@ Casting Time: 9
 Area of Effect: Visual range of the caster
 Saving Throw: Special
 
-This spell causes a local tremor to rip through the ground. Enemies within sight of the caster suffer 4d10+2 points of crushing damage and must make a Save vs. Death or be knocked prone for 3 rounds. Huge creatures and airborne creatures are unaffected by this spell.~
+This spell causes a local tremor to rip through the ground. Enemies within sight of the caster suffer 4d10+2 points of crushing damage and must make a Save vs. Paralysis at -4 or be knocked prone for 3 rounds. Huge creatures and airborne creatures are unaffected by this spell.~
 @20721=~Energy Blades
 (Any School)
 
@@ -954,6 +1982,18 @@ Area of Effect: The caster
 Saving Throw: None
 
 This spell causes the caster to be enveloped by an aura of intense flame that both injures opponents and protects the caster from damage. This shield not only grants the user 90% Fire Resistance and an AC bonus of 4, but also protects <PRO_HIMHER> from attacks made within a 5-ft. radius. An opponent that hits the caster with any weapons or spells within this radius suffers 2d10+2 fire damage. In addition, the intense heat protects the caster from all non-magical weapons, melee or missile.~
+@20734=~Destruction
+(Necromancy)
+
+Level: 7
+Sphere: Healing
+Range: Touch
+Duration: Instant
+Casting Time: 6
+Area of Effect: The caster
+Saving Throw: Special
+
+This spell instantly destroys a target, blasting it into small chunks. The victim is allowed a Save vs. Death at a penalty of -4; if successful, the target takes 8d6 points of magic damage instead of being destroyed. Destruction can only be cast by evil characters. Unlike the 5th-level spell Slay Living, Destruction destroys the target with divine force rather than with negative energy. As a result, it can destroy undead, constructs, and extraplanar creatures.~
 @20736=~Mist of Eldath
 (Invocation)
 
@@ -977,7 +2017,7 @@ Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: None
 
-Casting this spell opens a channel between the caster's plane and the Negative Energy Plane. The caster acts as a conduit between the two planes, sucking life from a victim and transferring it to the Negative Energy Plane, draining <PRO_HIMHER> of 1 level of experience per 3 caster levels. The target of this spell loses levels, Hit Dice, Hit Points, and abilities permanently. These levels can only be restored by a priest's Restoration spell. This spell has no effect on undead, constructs, or extraplanar creatures. It can only be cast by evil-aligned characters.~
+Casting this spell opens a channel between the caster's plane and the Negative Energy Plane. The caster acts as a conduit between the two planes, sucking life from a victim and transferring it to the Negative Energy Plane, draining <PRO_HIMHER> of 1 level of experience per 3 caster levels (max 16 levels drained by a level 48 caster). The target of this spell loses levels, Hit Dice, Hit Points, and abilities permanently. These levels can only be restored by a priest's Restoration spell. This spell has no effect on undead, constructs, or extraplanar creatures. It can only be cast by evil-aligned characters.~
 @20740=~Wither
 (Necromancy)
 
@@ -987,9 +2027,9 @@ Range: Touch
 Duration: 1 round/2 levels
 Casting Time: 7
 Area of Effect: 1 creature
-Saving Throw: Neg.
+Saving Throw: None
 
-This powerful spell causes the organs of the touched creature to cease functioning and wither away unless a Save vs. Death at a penalty of -7 is made. The creature affected will lose 3 Hit Points per second. The effect lasts for 1 round per 2 levels of the caster or until dispelled. For example, a 14th-level priest would cause the targeted creature to lose 18 Hit Points per round for 7 rounds. This spell has no effect on undead, constructs, or extraplanar creatures. It can only be cast by evil-aligned characters.~
+This powerful spell causes the organs of the touched creature to cease functioning and wither away. The creature affected will lose 3 Hit Points per second. The effect lasts for 1 round per 2 levels of the caster or until dispelled. For example, a 14th-level priest would cause the targeted creature to lose 18 Hit Points per round for 7 rounds. This spell has no effect on undead, constructs, or extraplanar creatures. It can only be cast by evil-aligned characters.~
 @20751=~Ethereal Retribution
 (Conjuration)
 
@@ -1034,7 +2074,7 @@ Casting Time: 1
 Area of Effect: 15-ft. radius
 Saving Throw: None
 
-Sleep causes a comatose slumber to come upon enemies within 15 feet of the target point. Monsters with 7 or more Hit Dice are unaffected, but any number of enemies with 6 Hit Dice or less can be put to sleep, regardless of their total Hit Dice. There is no Saving Throw. Though it's not the stuff of which legends are made, attacks against magically sleeping opponents never miss�although they will awaken after the first hit.~
+Sleep causes a comatose slumber to come upon enemies within 15 feet of the target point. Monsters with 7 or more Hit Dice are unaffected, but any number of enemies with 6 Hit Dice or less can be put to sleep, regardless of their total Hit Dice. There is no Saving Throw. Though it's not the stuff of which legends are made, attacks against magically sleeping opponents never miss-although they will awaken after the first hit.~
 @21117=~Chill Touch
 (Necromancy)
 
@@ -1059,6 +2099,183 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 With this spell, the wizard drains the life force from a target and adds it to <PRO_HISHER> own. The target creature suffers 12 magic damage, while the wizard gains 12 Hit Points. If the wizard goes over <PRO_HISHER> maximum Hit Point total with this spell, <PRO_HESHE> loses them after 1 hour. This spell has no effect on constructs or undead.~
+@21123=~Find Familiar
+(Conjuration/Summoning)
+
+Level: 1
+Range: n/a
+Duration: Special
+Casting Time: 9
+Area of Effect: 1 familiar
+Saving Throw: None
+
+This spell enables the caster to attempt to summon a familiar to act as <PRO_HISHER> aide and companion. Familiars are typically small creatures. A creature acting as a familiar can benefit a wizard, conveying its sensory powers to its master, conversing with <PRO_HIMHER>, and serving as a guard/scout/spy as well. A wizard can have only one familiar at a time, and <PRO_HESHE> has no control over what sort of creature answers the summoning, if any come at all.
+
+(Note: This spell may only be cast by the protagonist.)
+
+The creature is always more intelligent than others of its type (typically by 2 or 3 Intelligence points), and its bond with the wizard confers upon it an exceptionally long life. The wizard has an empathic link with the familiar and can issue it mental commands. The caster receives half the familiar's total Hit Points (rounded down) as bonus Hit Points. However, the caster must take care to treat <PRO_HISHER> familiar well, for if the familiar should die, the caster loses the bonus Hit Points and half the familiar's Hit Points again as damage. Also when a familiar dies, the caster loses 1 point of Constitution PERMANENTLY.
+
+Example: A Mage has 24 Hit Points and casts Find Familiar. The imp summoned has 36 Hit Points, so the caster gets a bonus of 18 Hit Points. The caster now has 42 Hit Points. If the familiar dies, the caster loses those 18 Hit Points (putting <PRO_HIMHER> back at 24), loses 1 point of Constitution permanently (which may cause additional Hit Point loss), and takes 18 damage.
+
+Here is a list of the familiars that the player receives according to alignment:
+
+LAWFUL GOOD, NEUTRAL GOOD: Pseudo Dragon
+- Hit Points: 36
+- Armor Class: -5
+- Save vs. Breath: 0
+- Save vs. Death: 0
+- Save vs. Wands: 0
+- Save vs. Spell: 0
+- Save vs. Polymorph: 0
+- Slashing Resistance: 75%
+- Piercing Resistance: 75%
+- Crushing Resistance: 75%
+- Missile Resistance: 75%
+- Magic Resistance: 20%
+- Combat: 1 attack per round at THAC0 -1 for 1d6+1 piercing damage, target must Save vs. Spell with a +2 bonus or fall unconscious for 2 rounds
+- Regenerates 1 HP/round
+- Immune to level drain, sleep, petrification, and ground-based spells (Entangle, Grease, Web, Spike Growth, Spike Stones, Earthquake)
+
+LAWFUL NEUTRAL: Ferret
+- Hit Points: 36
+- Armor Class: 3
+- Save vs. Breath: 7
+- Save vs. Death: 12
+- Save vs. Wands: 7
+- Save vs. Spell: 14
+- Save vs. Polymorph: 9
+- Slashing Resistance: 75%
+- Piercing Resistance: 75%
+- Crushing Resistance: 75%
+- Missile Resistance: 75%
+- Combat: 3 attacks per round at THAC0 0 for 1d2 slashing damage
+- Visual range increased by 10
+- 80% Find Traps
+- 60% Detect Illusion
+- 20% Move Silently/Hide In Shadows
+- Immune to level drain, sleep, and petrification
+
+LAWFUL EVIL: Imp
+- Hit Points: 36
+- Armor Class: -2
+- Save vs. Breath: 5
+- Save vs. Death: 7
+- Save vs. Wands: 11
+- Save vs. Spell: 10
+- Save vs. Polymorph: 19
+- Slashing Resistance: 75%
+- Piercing Resistance: 75%
+- Crushing Resistance: 75%
+- Missile Resistance: 75%
+- Fire Resistance: 100%
+- Magic Fire Resistance: 50%
+- Cold Resistance: 100%
+- Magic Cold Resistance: 50%
+- Electricity Resistance: 100%
+- Magic Resistance: 30%
+- Combat: 2 attacks per round at THAC0 -1 for 1d4+1 slashing damage, attack counts as a +1 weapon, target must Save vs. Poison or suffer 12 poison damage over 1 round
+- Can cast Polymorph Self once per day
+- Regenerates 1 HP/round
+- Immune to level drain, sleep, petrification, and ground-based spells (Entangle, Grease, Web, Spike Growth, Spike Stones, Earthquake)
+
+NEUTRAL: Rabbit
+- Hit Points: 24
+- Armor Class: 2
+- Save vs. Breath: 13
+- Save vs. Death: 6
+- Save vs. Wands: 14
+- Save vs. Spell: 12
+- Save vs. Polymorph: 3
+- Slashing Resistance: 75%
+- Piercing Resistance: 75%
+- Crushing Resistance: 75%
+- Missile Resistance: 75%
+- Combat: 1 attack per round at THAC0 0 for 12 piercing damage
+- Luck: +20
+- Backstab multiplier: x2
+- 200% Move Silently/Hide In Shadows
+- Can cast Critical Strike once per day
+
+NEUTRAL EVIL: Dust Mephit
+- Hit Points: 48
+- Armor Class: -1
+- Save vs. Breath: 12
+- Save vs. Death: 10
+- Save vs. Wands: 6
+- Save vs. Spell: 16
+- Save vs. Polymorph: 7
+- Slashing Resistance: 85%
+- Piercing Resistance: 85%
+- Crushing Resistance: 85%
+- Missile Resistance: 85%
+- Fire Resistance: 100%
+- Magic Resistance: 10%
+- Combat: 1 attack per round at THAC0 -1 for 1d4+1 slashing damage
+- Can cast Glass Dust twice per day (all enemies in a 30-ft. radius have their AC penalized by 4 and their THAC0 by 2 for 30 seconds) and Glitterdust once per day
+- Regenerates 1 HP/round
+- Immune to level drain, sleep, petrification, and ground-based spells (Entangle, Grease, Web, Spike Growth, Spike Stones, Earthquake)
+
+CHAOTIC GOOD: Fairy Dragon
+- Hit Points: 24
+- Armor Class: -5
+- Save vs. Breath: 10
+- Save vs. Death: 14
+- Save vs. Wands: 8
+- Save vs. Spell: 5
+- Save vs. Polymorph: 18
+- Slashing Resistance: 75%
+- Piercing Resistance: 75%
+- Crushing Resistance: 75%
+- Missile Resistance: 75%
+- Fire Resistance: 100%
+- Electricity Resistance: 110%
+- Magic Resistance: 40%
+- Combat: 2 attacks per round at 16 THAC0 for 1d2+1 slashing damage
+- Can cast Blindness three times per day, and can cast Mirror Image, Improved Invisibility and Pixie Dust once per day each
+- Immune to level drain, sleep, petrification, and ground-based spells (Entangle, Grease, Web, Spike Growth, Spike Stones, Earthquake)
+
+CHAOTIC NEUTRAL: Cat
+- Hit Points: 24
+- Armor Class: 2
+- Save vs. Breath: 9
+- Save vs. Death: 3
+- Save vs. Wands: 15
+- Save vs. Spell: 15
+- Save vs. Polymorph: 15
+- Slashing Resistance: 75%
+- Piercing Resistance: 75%
+- Crushing Resistance: 75%
+- Missile Resistance: 75%
+- Combat: 6 attacks per round at 18 THAC0 for 1d4 slashing damage
+- 80% Pick Pockets
+- 80% Open Locks
+- 20% Move Silently/Hide In Shadows
+- Immune to level drain, sleep, and petrification
+- Can cast True Strike once per day
+- Moves extremely fast
+
+CHAOTIC EVIL: Quasit
+- Hit Points: 36
+- Armor Class: -2
+- Save vs. Breath: 10
+- Save vs. Death: 6
+- Save vs. Wands: 6
+- Save vs. Spell: 16
+- Save vs. Polymorph: 10
+- Slashing Resistance: 75%
+- Piercing Resistance: 75%
+- Crushing Resistance: 75%
+- Missile Resistance: 75%
+- Fire Resistance: 100%
+- Magic Fire Resistance: 50%
+- Cold Resistance: 100%
+- Magic Cold Resistance: 50%
+- Electricity Resistance: 100%
+- Magic Resistance: 25%
+- Combat: 3 attacks per round at THAC0 -1 for 1d8+2 piercing damage, attack counts as a +1 weapon, target must Save vs. Breath with a -2 penalty or gain 20 points of intoxication
+- Can cast Blood Rage once per day
+- Regenerates 1 HP/round
+- Immune to level drain, sleep, petrification, and ground-based spells (Entangle, Grease, Web, Spike Growth, Spike Stones, Earthquake)~
 @21126=~Expeditious Retreat
 (Alteration)
 
@@ -1103,6 +2320,17 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 The recipient of this spell gains extraordinary luck for the next 2 turns, receiving a +1 bonus to <PRO_HISHER> Saving Throws, attack rolls, and minimum damage/healing rolls as well as +5% to all thieving skills. Furthermore, damage dice for all effects outside a weapon's base damage is reduced by 1. For example, a 6d6 fireball will do 6d5 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d2 fire damage instead.~
+@21213=~Stinking Cloud
+(Evocation)
+
+Level: 2
+Range: 40 ft.
+Duration: 1 turn
+Casting Time: 2
+Area of Effect: 15-ft. radius
+Saving Throw: Special
+
+Stinking Cloud creates a billowing mass of nauseous vapors up to 40 ft. away from the wizard. Any creature caught within the cloud must roll a successful Save vs. Poison at -3 or be reeling and fall unconscious for the next round; unconscious creatures do not awaken when struck. Those who make successful Saving Throws can leave the cloud without suffering any ill effects, although those remaining in the cloud must continue to save every round. Whether or not a creature makes the save, they cannot be affected by a Stinking Cloud spell again until the end of the round.~
 @21214=~Strength
 (Alteration)
 
@@ -1114,17 +2342,28 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 Upon application of this spell, the target's Strength is magically set to 20. If the target had over 20 Strength previously, its Strength will be lowered to 20. The spell has such a long duration that at high levels it will continue even after one wakes up from a rest.~
+@21215=~Web
+(Evocation)
+
+Level: 2
+Range: Visual range of the caster
+Duration: 1 turn
+Casting Time: 2
+Area of Effect: 8-ft. radius
+Saving Throw: Neg.
+
+Web creates a many-layered mass of strong, sticky strands, similar to spider webs but much larger and tougher. Anyone in the area when the spell is cast must roll a Save vs. Spell at -2 every round. If failed, the creature is paralyzed for one round. If the Saving Throw is successful, then the creature can move normally. Whether or not the creature makes the save, they cannot be affected by a Web spell again until the end of the round.~
 @21216=~Decastave
 (Evocation)
 
 Level: 2
 Range: 0
-Duration: 3 rounds + 1 round/level
-Casting Time: 2
+Duration: 10 rounds
+Casting Time: 10
 Area of Effect: The caster
 Saving Throw: None
 
-This spell creates a staff of force in the caster's hand. It is treated as a magical weapon, doing 1d6+2 Hit Points of damage per hit with a +2 bonus to hit, and it can hit creatures that require +2 weapons to hit. It is a staff, however, so if the caster does not have a proficiency in staff weapons, then the Decastave is used at a penalty. The staff also has the power to drain a target of 5 Hit Points on every strike. These Hit Points are added to the caster's, but they can only heal damage the caster has taken; they will not raise <PRO_HISHER> Hit Points beyond <PRO_HISHER> normal maximum.~
+This spell creates a staff of force in the caster's hand. It is treated as a magical weapon, doing 1d1+9 crushing damage per hit, and it can hit creatures that require +10 weapons to hit, though it has no bonus to hit. The Decastave uses the quarterstaff proficiency, though it gives the wielder proficiency in quarterstaves if <PRO_HESHE> is not already proficient. The staff also drains 10 Hit Points from the target with each hit, restoring 10 Hit Points to the wielder.~
 @21218=~Ghoul Touch
 (Necromancy)
 
@@ -1157,7 +2396,7 @@ Casting Time: 2
 Area of Effect: 1 creature
 Saving Throw: Neg.
 
-By means of a Ray of Enfeeblement, a wizard weakens an opponent, reducing its Strength and thereby the attacks that rely upon it. The victim is reduced to a Strength of 5 for the duration of the spell unless a Save vs. Spell is made at -3. This spell does not affect combat bonuses due to magical items, and those conferring increased Strength function normally. However, the target receives all the penalties for 5 Strength, such as attack and damage penalties as well as lower weight allowance. This spell has no effect on undead or constructs.~
+By means of a Ray of Enfeeblement, a wizard weakens an opponent, reducing its Strength and thereby the attacks that rely upon it. The victim is reduced to a Strength of 5 for the duration of the spell unless a Save vs. Spell is made at -6. This spell does not affect combat bonuses due to magical items, and those conferring increased Strength function normally. However, the target receives all the penalties for 5 Strength, such as attack and damage penalties as well as lower weight allowance. This spell has no effect on undead or constructs.~
 @21223=~Deafness
 (Illusion/Phantasm)
 
@@ -1168,7 +2407,7 @@ Casting Time: 2
 Area of Effect: 1 creature
 Saving Throw: Neg.
 
-The Deafness spell causes the recipient to become totally unable to hear any sounds. Deafened creatures are unaffected by spells and abilities that rely on hearing, and deafened spellcasters have a 50% chance to miscast any spells. The victim is allowed a Save vs. Spell at -1 to negate the effect. Deafness can be done away with by means of Dispel Magic, Cure Disease, and similar treatments.~
+The Deafness spell causes the recipient to become totally unable to hear any sounds. Deafened creatures are unaffected by spells and abilities that rely on hearing, and deafened spellcasters have a 50% chance to miscast any spells. The victim is allowed a Save vs. Spell at -4 to negate the effect. Deafness can be done away with by means of Dispel Magic, Cure Disease, and similar treatments.~
 @21225=~Cat's Grace
 (Alteration)
 
@@ -1272,6 +2511,32 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 This spell creates a magical field of force with the strength of full plate armor (AC 1). It is cumulative with Dexterity effects and, in the case of Fighter/Mages, with the shield bonus. The Ghost Armor spell does not hinder movement, adds no weight or encumbrance, and does not prevent spellcasting. It lasts until dispelled or until the duration runs out.~
+@21319=~Protection From Fire
+(Abjuration)
+
+Level: 3
+Range: Touch
+Duration: 1 turn/level
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell confers +100% resistance to fire and +50% resistance to magic fire.
+
+Note: Not all fire spells deal magic fire damage. This damage type represents damage from necrotic, divine, or hellish fire.~
+@21320=~Protection From Cold
+(Abjuration)
+
+Level: 3
+Range: Touch
+Duration: 1 turn/level
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell confers +100% resistance to cold and +50% resistance to magic cold.
+
+Note: Not all cold spells deal magic cold damage. This damage type represents damage from necrotic, divine, or hellish cold.~
 @21322=~Detect Illusion
 (Divination)
 
@@ -1296,6 +2561,28 @@ Saving Throw: None
 Dispel Magic removes magical effects upon anyone within the area. This includes effects given from spells, potions and certain magical items such as wands. It does not, however, affect enchanted magical items or spell protections such as Spell Turning and Spell Deflection.
 
 Note: While this spell dispels the individual effects of Grease, Web, Stinking Cloud, and other such spells, it does not dispel the area of effect.~
+@21402=~Dimension Door
+(Alteration)
+
+Level: 4
+Range: 0
+Duration: Instant
+Casting Time: 0
+Area of Effect: The caster
+Saving Throw: None
+
+This spell transports the caster to any place within the visual range of the caster. When the spell is cast, a dimensional portal opens up in front of the caster, which <PRO_HESHE> immediately steps through.~
+@21403=~Fireshield (Blue)
+(Evocation, Alteration)
+
+Level: 4
+Range: 0
+Duration: 3 rounds + 1 round/level
+Casting Time: 4
+Area of Effect: The caster
+Saving Throw: None
+
+The blue fireshield protects the user from cold damage by surrounding the caster with a shield of ice flame. This shield not only grants the user +50% Cold Resistance and +25% Magic Cold Resistance, it also protects the caster from attacks made within a 5-ft. radius around <PRO_HIMHER>. An opponent that damages the caster within this radius suffers 1d8+2 cold damage.~
 @21404=~Ice Storm
 (Evocation)
 
@@ -1306,7 +2593,18 @@ Casting Time: 4
 Area of Effect: 15-ft. radius
 Saving Throw: None
 
-When this spell is cast, shards of ice smash down on all creatures in the area of effect, doing 4d10 points of cold damage.~
+When this spell is cast, shards of ice smash down on all creatures in the area of effect, doing 10d6 points of cold damage.~
+@21406=~Minor Globe Of Invulnerability
+(Abjuration)
+
+Level: 4
+Range: 0
+Duration: 3 turns
+Casting Time: 4
+Area of Effect: The caster
+Saving Throw: None
+
+This spell creates an immobile, faintly shimmering magical sphere around the caster that prevents any 1st-, 2nd-, or 3rd-level spell effects from penetrating (i.e. the area of effect of any such spell does not include the area of the Minor Globe Of Invulnerability). This includes innate abilities and effects from devices. However, any type of spell can be cast out of the magical sphere with no penalty. The globe can be brought down by a successful Dispel Magic spell.~
 @21409=~Contagion
 (Necromancy)
 
@@ -1377,6 +2675,17 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 When this spell is cast on a creature, it enchants any weapons that it currently wields. For the duration of the spell, those weapons are treated as having a +5 enchantment for the purposes of determining what they can hit.~
+@21418=~Fireshield (Red)
+(Evocation, Alteration)
+
+Level: 4
+Range: 0
+Duration: 3 rounds + 1 round/level
+Casting Time: 4
+Area of Effect: The caster
+Saving Throw: None
+
+The red fireshield protects the user from fire damage by surrounding the caster with a shield of flame. This shield does not only grant the user +50% Fire Resistance and +25% Magic Fire Resistances, it also protects <PRO_HIMHER> from attacks made from within a 5-ft. radius around <PRO_HIMHER>. An opponent that damages the caster within this radius suffers 1d8+2 points of fire damage.~
 @21422=~Beltyn's Burning Blood
 (Necromancy)
 
@@ -1401,6 +2710,17 @@ Saving Throw: None
 When Farsight is cast, the caster is able to view an area of an unexplored map. After casting the spell, simply click on a section of the map that you want to view. For the duration of the spell, the caster can spy on that area, noting creatures and fortifications.
 
 Farsight has no casting time, can be cast immediately after another spell, and can be cast while the game is paused.~
+@21425=~Wizard Eye
+(Divination, Alteration)
+
+Level: 4
+Range: 30 ft.
+Duration: 1 hour
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: None
+
+When this spell is employed, the wizard creates an invisible sensory organ that sends <PRO_HIMHER> visual information. The wizard eye can see with normal vision up to standard visual range and can travel in any direction as long as the spell lasts. It has substance and a form that can be detected (by a Detect Invisibility spell, for instance). Solid barriers prevent the passage of a wizard eye. The powers of the eye cannot be enhanced by other spells or items. A successful Dispel Magic spell cast on the wizard or the eye ends the spell.~
 @21427=~Emotion, Courage
 (Enchantment/Charm)
 
@@ -1445,6 +2765,17 @@ Area of Effect: 17-ft. cone with 15-deg. arc
 Saving Throw: Special
 
 Shout grants the wizard tremendous vocal powers, allowing <PRO_HIMHER> to emit an earsplitting roar from <PRO_HISHER> mouth in a cone-shaped area of effect. Any creature within this area is deafened for 9 rounds and suffers 10d6 points of magic damage. A successful Save vs. Spell negates the deafness and reduces the damage by half. The targets are also knocked back, whether they make the save or not.~
+@21503=~Cone of Cold
+(Evocation)
+
+Level: 5
+Range: 0
+Duration: Instant
+Casting Time: 5
+Area of Effect: 20-ft. cone with 60-deg. arc
+Saving Throw: 1/2
+
+This spell releases a cone-shaped blast of extreme cold from the caster, doing 1d4+1 points of cold damage per level of the caster (max 30d4+30). Creatures caught in the area of effect are allowed a Save vs. Spell for half damage.~
 @21505=~Shadow Door
 (Illusion/Phantasm)
 
@@ -1469,6 +2800,17 @@ Saving Throw: Neg.
 This spell holds 1d4 enemies of any type (except for undead) rigidly immobile. Specifically, it affects the targeted enemy and up to 3 hostile creatures within 10 ft. of it. A successful Save vs. Spell at -2 negates the effect.
 
 Paralyzed creatures are helpless and cannot dodge or defend themselves from attacks. Being held does not prevent the worsening of the subject's condition due to wounds, disease, or poison.~
+@21510=~Spell Immunity
+(Abjuration)
+
+Level: 5
+Range: 0
+Duration: 1 round/level
+Casting Time: 5
+Area of Effect: The caster
+Saving Throw: None
+
+Casting this spell grants the wizard protection from one spell school of <PRO_HISHER> choice. After the spell is cast, the wizard must choose the school <PRO_HESHE> wishes to be protected from. All spells of this school will not be able to harm or aid the caster for the duration of this spell. Spell Immunity cannot grant protection from Abjuration spells, as it would be paradoxical for Spell Immunity to prevent itself from applying.~
 @21515=~Oracle
 (Divination)
 
@@ -1510,11 +2852,22 @@ This spell forms a shield around the caster that protects <PRO_HIMHER> from disp
 Level: 5
 Range: Visual range of the caster
 Duration: 1 round/2 levels (special)
-Casting Time: 5
+Casting Time: 2
 Area of Effect: 5-ft. radius
 Saving Throw: None
 
-This spell causes a creature to burst into flames. The creature will burn for 2d6 points of fire damage every round, and gouts of flame erupt from the burning target, causing any creatures within 5 ft. to take 1d4 points of fire damage from the flames. Anyone hit by the victim's flames will contract the shroud themselves. The shroud of flame dissipates if the caster and target are no longer in the same area. This spell is particularly useful in dispersing packs of trolls and frost salamanders.~
+This spell causes a creature to burst into flames. The creature will burn for 2d6 points of fire damage every round, and gouts of flame erupt from the burning target, causing any creatures within 5 ft. to take 2d6 points of fire damage from the flames. Shroud of Flame can be cast even on a creature that is immune to fire; the creature will not be harmed, but they will still radiate flames outward, damaging nearby creatures.~
+@21602=~Globe of Invulnerability
+(Abjuration)
+
+Level: 6
+Range: 0
+Duration: 1 round/level
+Casting Time: 9
+Area of Effect: The caster
+Saving Throw: None
+
+This spell is similar to the 4th-level wizard spell Minor Globe Of Invulnerability, except that it protects the caster from 4th and 5th-level spells as well.~
 @21604=~Flesh to Stone
 (Alteration)
 
@@ -1537,6 +2890,17 @@ Area of Effect: 18-ft. radius
 Saving Throw: None
 
 This spell snuffs out the lives of weaker creatures in the area of effect. Any hostile creature of 15 HD or less will die, as will any hostile summoned creature of 29 HD or less. There is no Saving Throw, though Magic Resistance can prevent the effects. This spell does not affect undead creatures or constructs, nor does it affect allies.~
+@21611=~Protection From Magical Weapons
+(Abjuration)
+
+Level: 6
+Range: 0
+Duration: 3 rounds
+Casting Time: 1
+Area of Effect: The caster
+Saving Throw: None
+
+When the spell is cast, it confers complete invulnerability to all magical weapons. This spell cannot be cast on anyone who is protected from normal weapons or anyone who is protected by Mantle, Improved Mantle, or Absolute Immunity. Due to the short casting time and duration, this spell is mainly used to buy the wizard a few rounds in the thick of combat. This effect lasts for 3 rounds or until dispelled.~
 @21612=~Power Word, Silence
 (Conjuration/Summoning)
 
@@ -1593,7 +2957,7 @@ Casting Time: 6
 Area of Effect: 1 creature
 Saving Throw: Neg.
 
-This spell fires an orb of cold at a creature that inflicts 1d4+2 points of cold damage per level of the caster. The target may make a Save vs. Spell at -2 for half damage.~
+This spell fires an orb of cold at a creature that inflicts 1d4+2 points of cold damage per level of the caster (max 40d4+80). The target may make a Save vs. Spell at -2 for half damage.~
 @21630=~Darts of Bone
 (Necromancy)
 
@@ -1615,7 +2979,7 @@ Casting Time: 5
 Area of Effect: 7-ft. radius
 Saving Throw: None
 
-This spell deals 6d8 magic damage to all hostile living creatures within a 14-ft. radius. Any creatures that die as a result of this damage are obliterated, and their essence is transformed into a 3-Hit-Dice skeleton under control of the caster. Also, for each creature that dies in this manner, the caster gains 10 temporary hit points for 8 hours. Soul Eater has no effect on undead, constructs, and elemental creatures.~
+This spell deals 12d8 magic damage to all hostile living creatures within a 14-ft. radius. Any creatures that die as a result of this damage are obliterated, and their essence is transformed into a 3-Hit-Dice skeleton under control of the caster. Also, for each creature that dies in this manner, the caster gains 10 temporary hit points for 8 hours. Soul Eater has no effect on undead, constructs, and elemental creatures.~
 @21702=~Protection From The Elements
 (Abjuration)
 
@@ -1644,11 +3008,11 @@ This spell creates a fireball that hovers at a point determined by the caster. T
 Level: 7
 Range: Visual range of the caster
 Duration: Instant
-Casting Time: 5
+Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: Special
 
-The caster utters the Finger of Death incantation, points <PRO_HISHER> index finger at the creature to be slain, and unless the victim makes a Save vs. Death at -2, the victim dies instantly. Even if the save is successful, however, the brush with death still inflicts 2d8+1 points of magic damage. Characters slain by Finger of Death cannot be resurrected—they are gone forever.~
+The caster utters the Finger of Death incantation, points <PRO_HISHER> index finger at the creature to be slain, and unless the victim makes a Save vs. Death at -2, the victim dies instantly. Even if the save is successful, however, the brush with death still inflicts 2d8+30 points of magic damage. Characters slain by Finger of Death cannot be resurrected—they are gone forever.~
 @21714=~Prismatic Spray
 (Conjuration/Summoning)
 
@@ -1661,12 +3025,23 @@ Saving Throw: Special
 
 This spell causes shimmering rays of light to flash from the wizard's hand in a 23-ft. cone. Any creature touched by the rays may be inflicted with a random effect depending on the color (see below), but any creature with fewer than 8 Hit Dice is blinded for 5 rounds regardless of any additional effect. The colors of the prismatic spray do the following:
 
-– Red: 20 magic damage (save vs. Spell at -2 for half)
-– Orange: 40 magic damage (save vs. Spell at -2 for half)
-– Yellow: 80 magic damage (save vs. Spell at -2 for half)
-– Green: Save vs. Poison at -2 or die—survivors still take 20 poison damage
-– Blue: Save vs. Petrification at -2 or turn to stone
-– Indigo: Save vs. Wand at -2 or go insane~
+- Red: 20 magic damage (save vs. Spell at -2 for half)
+- Orange: 40 magic damage (save vs. Spell at -2 for half)
+- Yellow: 80 magic damage (save vs. Spell at -2 for half)
+- Green: Save vs. Poison at -2 or take 1000 poison damage - survivors still take 20 poison damage
+- Blue: Save vs. Petrification at -2 or turn to stone
+- Indigo: Save vs. Wand at -2 or go insane~
+@21720=~Control Undead
+(Necromancy)
+
+Level: 7
+Range: 40 ft.
+Duration: 6 rounds + 1 round/level
+Casting Time: 3
+Area of Effect: 1d4 creatures
+Saving Throw: Special
+
+The Control Undead spell allows the caster to take control of undead creatures within the area of effect. This creates a telepathic link between the caster and the undead, allowing complete control. If the undead have 3 or fewer Hit Dice, then there is no Saving Throw allowed; however, if they have 4 or more Hit Dice, a Save vs. Spell at -3 is allowed to negate the effect. The undead remain under the control of the caster for the duration of the spell or until they are affected by Dispel Magic.~
 @21725=~Seven Eyes
 (Abjuration)
 
@@ -1725,6 +3100,17 @@ Area of Effect: 30-ft. cone with 45-deg. arc
 Saving Throw: 1/2
 
 Upon uttering the Great Shout, the caster releases a stunning force from <PRO_HISHER> mouth in a 30-ft. cone. The Great Shout is extremely taxing and dangerous to the user, who must Save vs. Spell or fall unconscious for 3 rounds. Creatures 15 Hit Dice and under caught within the Great Shout instantly die. All other creatures within the area of effect must save vs. Breath at -4. Those who fail the save are stunned for 2 rounds, deafened for 4 rounds, knocked back, and suffer 12d12 points of magic damage. Those who make the save are stunned for 1 round, deafened for 2 rounds, knocked back, and suffer 6d12 points of magic damage.~
+@21811=~Symbol, Fear
+(Conjuration/Summoning)
+
+Level: 8
+Range: Visual range of the caster
+Duration: Permanent until triggered
+Casting Time: 6
+Area of Effect: 15-ft. radius
+Saving Throw: Neg.
+
+Symbol, Fear is a powerful enchantment that allows the wizard to inscribe a symbol on the ground or any other surface. The symbol will remain there until an opponent comes too close, at which point it will explode, causing all enemies within the area to make a Save vs. Spell at a -6 penalty or be affected by fear for 2 rounds + 1 round for every 3 levels of the caster.~
 @21812=~Abi-Dalzim's Horrid Wilting
 (Necromancy)
 
@@ -1749,6 +3135,28 @@ Saving Throw: None
 This spell transforms the caster's body into living iron, granting <PRO_HIMHER> several powerful resistances and abilities. While the spell is in effect, the caster is 100% resistant to fire and poison, and 25% resistant to all physical damage. Spells that affect respiration or the physiology of the caster, such as Abi-Dalzim's Horrid Wilting, Flaying, or Drown, are ignored. In addition, the caster's Strength is raised to 25.
 
 Unfortunately, the caster's movement becomes slow and awkward, setting <PRO_HISHER> movement rate to 25% of <PRO_HISHER> normal.~
+@21816=~Symbol, Stun
+(Conjuration/Summoning)
+
+Level: 8
+Range: Visual range of the caster
+Duration: Special
+Casting Time: 6
+Area of Effect: 15-ft. radius
+Saving Throw: Neg.
+
+Symbol, Stun is a powerful enchantment that allows the wizard to inscribe a symbol on the ground or any other surface. The symbol will remain there until an opponent comes too close, at which point it will explode, causing all enemies within the area to make a Save vs. Spell at a -4 penalty or be stunned for 2 rounds + 1 round for every 3 levels of the caster.~
+@21817=~Symbol, Death
+(Conjuration/Summoning)
+
+Level: 8
+Range: Visual range of the caster
+Duration: Special
+Casting Time: 6
+Area of Effect: 15-ft. radius
+Saving Throw: Neg.
+
+Symbol, Death is a powerful enchantment that allows the wizard to inscribe a symbol on the ground or any other surface. The symbol will remain there until an opponent comes too close, at which point it will explode, causing all enemies within the area to make a Save vs. Death or die.~
 @21903=~Spellstrike
 (Abjuration, Alteration)
 
@@ -1760,6 +3168,17 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 When this spell is cast at a target creature, it will dispel all of the magical protections that surround that creature. This includes Minor Spell Turning, Minor Globe Of Invulnerability, Spell Immunity, Globe Of Invulnerability, Minor Spell Deflection, Spell Turning, Spell Shield, Spell Deflection, and Spell Trap. The target's Magic Resistance, if any, does not affect this spell. Spellstrike will also remove the effects of an antimagic shell, such as one created by a scroll of Protection from Magic or the 6th level spell Antimagic Shell.~
+@21907=~Absolute Immunity
+(Abjuration)
+
+Level: 9
+Range: 0
+Duration: 5 rounds
+Casting Time: 1
+Area of Effect: The caster
+Saving Throw: None
+
+When the spell is cast, it confers complete invulnerability to all weapons except for those of greater than +5 enchantment. This spell is incredibly powerful, hence the short duration. However, the casting time is also very short, making this spell incredibly useful in the thick of combat, where buying a few seconds can mean the difference between life or death. It is important to note that this spell does not work in combination with Protection From Magical Weapons. This spell lasts for the duration or until dispelled.~
 @21911=~Meteor Swarm
 (Evocation)
 
@@ -1803,7 +3222,7 @@ Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: None
 
-Casting this spell opens a channel between the caster's plane and the Negative Energy Plane. The caster acts as a conduit between the two planes, sucking life from a victim and transferring it to the Negative Energy Plane, draining <PRO_HIMHER> of 1 level of experience per 3 caster levels. The target of this spell loses levels, Hit Dice, Hit Points, and abilities permanently. These levels can only be restored by a priest's Restoration spell. This spell has no effect on undead, constructs, or extraplanar creatures.~
+Casting this spell opens a channel between the caster's plane and the Negative Energy Plane. The caster acts as a conduit between the two planes, sucking life from a victim and transferring it to the Negative Energy Plane, draining <PRO_HIMHER> of 1 level of experience per 3 caster levels (max 16 levels drained by a level 48 caster). The target of this spell loses levels, Hit Dice, Hit Points, and abilities permanently. These levels can only be restored by a priest's Restoration spell. This spell has no effect on undead, constructs, or extraplanar creatures.~
 @21918=~Bigby's Crushing Hand
 (Evocation)
 
