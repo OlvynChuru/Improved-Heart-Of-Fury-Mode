@@ -1,6 +1,6 @@
 BACKUP ~BetterHOF/backup~
 AUTHOR ~OlvynChuru~
-VERSION ~4.0~
+VERSION ~4.0.1~
 
 ALWAYS
 
@@ -12293,7 +12293,7 @@ COPY_EXISTING ~zzd5woh.itm~ ~override~
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=protectionfromspell2 target=1 timing=2 STR_VAR resource=~mems281~ END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=protectionfromspell2 target=1 timing=2 STR_VAR resource=~mems285~ END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=damagetypebonus target=1 timing=2 parameter1=50 parameter2=bonuselectricity END
-	LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=damage target=1 timing=2 parameter2=electricitydamage dicenumber=1 dicesize=8 END
+	LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=damage target=2 timing=1 parameter2=electricitydamage dicenumber=1 dicesize=8 END
 	WRITE_BYTE firstheaderspeedfactor 0
 	WRITE_SHORT firstheaderdamage 6
 	WRITE_SHORT firstheaderthac0 6
@@ -29474,6 +29474,27 @@ COPY_EXISTING ~spcl321.spl~ ~override~
 
 The character becomes enraged for 1 turn. While enraged, all slashing, piercing, and crushing damage dealt by the character is increased by 50%, but all physical damage taken by the character is also increased by 50%. The character also becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.~
 
+COPY_EXISTING ~spcl521.spl~ ~override~
+	LPF DELETE_EFFECT INT_VAR silent=1 check_headers=1 check_globals=1 match_opcode=protectionfromopcode match_parameter2=haste1 END
+	LPF DELETE_EFFECT INT_VAR silent=1 check_headers=1 check_globals=1 match_opcode=protectionfromopcode match_parameter2=haste2 END
+	LPF DELETE_EFFECT INT_VAR silent=1 check_headers=1 check_globals=1 match_opcode=protectionfromstring match_parameter1=14023 END
+	LPF DELETE_EFFECT INT_VAR silent=1 check_headers=1 check_globals=1 match_opcode=protectionfromportraiticon match_parameter2=38 END
+	LPF DELETE_EFFECT INT_VAR silent=1 check_headers=1 check_globals=1 match_opcode=protectionfromspell STR_VAR match_resource=~spwish40~ END
+	LPF DELETE_EFFECT INT_VAR silent=1 check_headers=1 check_globals=1 match_opcode=protectionfromspell STR_VAR match_resource=~spwish37~ END
+	LPF DELETE_EFFECT INT_VAR silent=1 check_headers=1 check_globals=1 match_opcode=protectionfromspell STR_VAR match_resource=~spwish36~ END
+	LPF DELETE_EFFECT INT_VAR silent=1 check_headers=1 check_globals=1 match_opcode=protectionfromspell STR_VAR match_resource=~spwi613~ END
+	LPF DELETE_EFFECT INT_VAR silent=1 check_headers=1 check_globals=1 match_opcode=protectionfromspell STR_VAR match_resource=~spwi305~ END
+	LPF DELETE_EFFECT INT_VAR silent=1 check_headers=1 check_globals=1 match_opcode=protectionfromspell STR_VAR match_resource=~spra301~ END
+	LPF DELETE_EFFECT INT_VAR silent=1 check_headers=1 check_globals=1 match_opcode=removeeffectsbyresource STR_VAR match_resource=~spwish40~ END
+	LPF DELETE_EFFECT INT_VAR silent=1 check_headers=1 check_globals=1 match_opcode=removeeffectsbyresource STR_VAR match_resource=~spwish37~ END
+	LPF DELETE_EFFECT INT_VAR silent=1 check_headers=1 check_globals=1 match_opcode=removeeffectsbyresource STR_VAR match_resource=~spwish36~ END
+	LPF DELETE_EFFECT INT_VAR silent=1 check_headers=1 check_globals=1 match_opcode=removeeffectsbyresource STR_VAR match_resource=~spwi613~ END
+	LPF DELETE_EFFECT INT_VAR silent=1 check_headers=1 check_globals=1 match_opcode=removeeffectsbyresource STR_VAR match_resource=~spwi305~ END
+	LPF DELETE_EFFECT INT_VAR silent=1 check_headers=1 check_globals=1 match_opcode=removeeffectsbyresource STR_VAR match_resource=~spra301~ END
+	SAY UNIDENTIFIED_DESC ~Offensive Spin
+
+During the next 4 rounds, the character's movement rate doubles and <PRO_HESHE> gains a +2 bonus to hit and damage rolls as well as an extra attack per round. All attacks deal maximum damage for the duration. Offensive Spin may be used in conjunction with the Haste or Improved Haste spells.~
+
 COPY_EXISTING ~spcl621.spl~ ~override~
 	LPF ALTER_SPELL_HEADER INT_VAR target=7 END
 	SAY UNIDENTIFIED_DESC ~Summon Spirit Animal
@@ -30006,6 +30027,9 @@ COPY_EXISTING_REGEXP ~.*\.itm~ ~override~
 	END
 	BUT_ONLY_IF_IT_CHANGES
 
+COPY_EXISTING ~mfist4.itm~ ~override~
+	LPF ALTER_ITEM_HEADER INT_VAR dicesize=10 END
+
 COPY_EXISTING ~mfist7.itm~ ~override~
 	SAY NAME1 ~Fist +4~
 	SAY NAME2 ~Fist +4~
@@ -30183,7 +30207,15 @@ COPY_EXISTING ~kitlist.2da~ ~override~
 						COUNT_2DA_COLS numcolumns_2
 						COUNT_2DA_ROWS numcolumns_2 numrows_2
 						INSERT_2DA_ROW numrows_2 numcolumns_2 ~MEDEFMIS   AP_MECL851  ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****       ~
+						IF_EXISTS
 						UNLESS ~AP_MECL851~
+
+					COPY_EXISTING ~%abilities_of_kit%.2da~ ~override~
+						COUNT_2DA_COLS numcolumns_2
+						COUNT_2DA_ROWS numcolumns_2 numrows_2
+						INSERT_2DA_ROW numrows_2 numcolumns_2 ~MEEVASIO   ****        ****        ****        ****        ****        AP_#EVASION ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****       ~
+						IF_EXISTS
+						UNLESS ~AP_#EVASION~
 			END
 
 		END
@@ -30310,6 +30342,12 @@ COPY_EXISTING ~clabmo01.2da~ ~override~
 	COUNT_2DA_ROWS numcolumns numrows
 	INSERT_2DA_ROW numrows numcolumns ~MEDEFMIS   AP_MECL851  ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****       ~
 	UNLESS ~AP_MECL851~
+
+COPY_EXISTING ~clabmo01.2da~ ~override~
+	COUNT_2DA_COLS numcolumns
+	COUNT_2DA_ROWS numcolumns numrows
+	INSERT_2DA_ROW numrows numcolumns ~MEEVASIO   ****        ****        ****        ****        ****        AP_#EVASION ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****       ~
+	UNLESS ~AP_#EVASION~
 
 COPY_EXISTING ~clabmo02.2da~ ~override~
 	REPLACE_TEXTUALLY CASE_INSENSITIVE ~GA_SPDM10[12568]~ ~****      ~

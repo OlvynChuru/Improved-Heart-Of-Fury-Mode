@@ -19,9 +19,9 @@ Prime Requisites For Dual-Classing: Strength~
 @501=~BERSERKER: This is a warrior who is in tune with <PRO_HISHER> animalistic side and, during combat, can achieve an ecstatic state of mind that will enable <PRO_HIMHER> to fight longer, harder, and more savagely than any person has a right to. Berserkers tend to be barbarian-like in nature, but not always. Sometimes it is a conscious choice that a warrior in training makes. Regardless, opponents on the battlefield will be unsettled when they see the savage and inhuman elements of the Berserker's personality. This class is common amongst dwarves, known to them as the Battlerager.
 
 Advantages:
-- May use Rage ability once per day. Gains one use at level 1 and an additional use every 4 levels thereafter.
+- May use Enrage ability once per day. Gains one use at level 1 and an additional use every 4 levels thereafter.
 
-RAGE: The character becomes enraged for 1 turn. While enraged, all slashing, piercing, and crushing damage dealt by the character is increased by 50%, but all physical damage taken by the character is also increased by 50%. The character also becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.
+ENRAGE: The character becomes enraged for 1 turn. While enraged, all slashing, piercing, and crushing damage dealt by the character is increased by 50%, but all physical damage taken by the character is also increased by 50%. The character also becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.
 
 Disadvantages:
 - May only become Proficient (one slot) with ranged weapons.~
@@ -204,7 +204,7 @@ Advantages:
 
 Disadvantages:
 - May not turn undead.
-- May not use the Lay On Hands ability. 
+- May not use the Lay On Hands ability.
 - May not use the Cure Disease ability.
 - May not cast priest spells.~
 @513=~UNDEAD HUNTER: This holy avenger has honed <PRO_HISHER> abilities toward the destruction of the undead and other unnatural creatures and is immune to many of their most devastating abilities.
@@ -482,7 +482,7 @@ Advantages:
 - +1 bonus to Armor Class at 1st level, plus an additional +1 bonus every 5 levels.
 - +1 bonus to hit and damage rolls every 5 levels.
 - May Specialize (two slots) in any melee weapon available to Thieves.
-- May place 3 slots into Two-Weapon Style.
+- May place 5 slots into Two-Weapon Style.
 
 Disadvantages:
 - May not backstab.
@@ -545,7 +545,7 @@ CLASS FEATURES:
 @533=~BLADE: The Blade is an expert fighter and adventurer whose bardic acting abilities make <PRO_HIMHER> appear more intimidating and fearsome. This Bard's fighting style is flashy and entertaining, but is also lethally dangerous.
 
 Advantages:
-- May place 3 slots in Two-Weapon Style.
+- May place 5 slots in Two-Weapon Style.
 - May use the Offensive Spin and Defensive Spin abilities once per day. Gains one use each at level 1 and an additional use each every 4 levels thereafter.
 
 OFFENSIVE SPIN: During the next 4 rounds, the Blade's movement rate doubles and <PRO_HESHE> gains a +2 bonus to hit and damage rolls as well as an extra attack per round. All attacks deal maximum damage for the duration. Offensive Spin can be used in conjunction with the Haste and Improved Haste spells.
@@ -635,12 +635,11 @@ CLASS FEATURES:
 - May only become Proficient (one slot) in Single-Weapon Style and may not put slots into any other style.
 - Moves 2 points faster than other characters. Movement rate further improves by 1 every 5 levels.
 - May make 1 unarmed attack per round. An additional 1/2 attack per round is gained every 3 levels. Damage dealt by unarmed attacks increases with level as follows:
-  Level 1-2: 1d6
-  Level 3-5: 1d8
-  Level 6-8: 1d10
-  Level 9-14: 1d12
+  Level 1-4: 1d8
+  Level 5-9: 1d10
+  Level 10-14: 1d12
   Level 15+: 1d20
-- At level 9, unarmed attacks are treated as a +1 magical weapon and gain a +1 bonus to hit and damage rolls. This enchantment improves to +2 at level 12, +3 at level 15, +4 at level 20, +5 at level 25, +6 at level 30, +7 at level 35, +8 at level 40, +9 at level 45, and +10 at level 50.
+- At level 5, unarmed attacks are treated as a +1 magical weapon and gain a +1 bonus to hit and damage rolls. This enchantment improves by another +1 every 5 levels thereafter, up to +10 at level 50.
 - Receives a +2 bonus to Saving Throws vs. Spell.
 - Deflect Missiles: The monk can deflect the first missile that would hit them each round. Deflected missiles will deal no missile damage to the monk, though any other damage that would be dealt by the missile will still hurt the monk.
 - Starts with an Armor Class of 9 at 1st level and gains an additional +1 bonus every 2 levels.
@@ -659,6 +658,10 @@ Wisdom           Saving Throw Bonus/Penalty
 25                 -7
 
 - 5th level: Becomes immune to all diseases and cannot be slowed.
+- 6th level: Gains the Evasion ability.
+
+EVASION: When a Monk is hit by a spell that can be evaded (Fireball, Lightning Bolt, etc.), the Monk is allowed a Save vs. Breath to completely avoid the effects. If the Saving Throw is failed, the spell works normally, including a save for half damage if the spell allows for it. A helpless Monk (e.g. held, stunned, or asleep) cannot use Evasion.
+
 - 7th level: May use the Lay On Hands ability on <PRO_HIMHER>self to heal 2 Hit Points per level.
 - 8th level: Gains a -1 bonus to Speed Factor.
 - 9th level: Gains a +1 bonus to all Saving Throws and becomes immune to charm.
