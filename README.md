@@ -1,5 +1,5 @@
 # Improved-Heart-Of-Fury-Mode
-Version 4.0.1
+Version 4.1.0
 
 This is a mod for the game Icewind Dale: Enhanced Edition. It will not work on the original version of Icewind Dale.
 

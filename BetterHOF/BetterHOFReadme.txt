@@ -86,11 +86,11 @@ Wizard Slayers now gain +5% magic resistance per level and can use certain magic
 
 The Kensai Kai ability now lasts a number of seconds equal to the character's Wisdom. Also, Kensai can now wear bracers and gauntlets. Their bonuses to hit and damage rolls keep increasing up to level 48.
 
-Barbarians now keep rolls their full d12 for HP each level even after level 9. Starting at level 31, their Hit Die changes to a d20, though they don't gain Hit Points retroactively from this.
+Barbarians now keep rolling their full d12 for HP each level even after level 9. Starting at level 31, their Hit Die changes to a d20, though they don't gain Hit Points retroactively from this.
 
 The Dwarven Defender Defensive Stance ability now only lasts 4 rounds and reduces movement speed by 80%. It still gives +50% physical damage resistance, so it should still be useful.
 
-Rangers and Paladins now learn spells faster. They get their first 1st-level spell slot at level 2, and they gain access a higher spell level every 3 levels thereafter (2nd-level spells at level 5, 3rd-level spells at level 8, 4th-level spells at level 11, 5th-level spells at level 4, and 6th-level spells at level 17).
+Rangers and Paladins now learn spells faster. They get their first 1st-level spell slot at level 2, and they gain access to a higher spell level every 3 levels thereafter (2nd-level spells at level 5, 3rd-level spells at level 8, 4th-level spells at level 11, 5th-level spells at level 4, and 6th-level spells at level 17).
 
 All spellcasters (Mages, Sorcerers, Bards, Clerics, Druids, Rangers, Paladins) now continue to gain spell slots each level all the way up to level 50.
 
@@ -208,6 +208,10 @@ Unkitted Thieves and Bounty Hunters:
 
 Assassins:
 - Backstab ability reaches x8 multiplier instead of capping at x6.
+  Level 1-4: x2
+  Level 5-8: x3
+  Level 9-12: x4
+  Level 13-16: x5
   Level 17-20: x6
   Level 21-32: x7
   Level 33+: x8
@@ -462,3 +466,22 @@ FAVORED OF THE SPIRITS: This powerful rite shields the Shaman from death for 1 h
 - Does not gain bonus spells per day from high Wisdom.
 - Alignment restricted to neutral good, true neutral, and neutral evil.
 - Hit Die: d8
+
+
+
+
+- Turn Undead Synergy
+
+With this component installed, having more than one character turn undead at once increases the level of undead they can turn. This component requires EEex to be installed, and you must start a new game for it to work.
+
+
+- Allow high-level spellcasters to cast multiple low-level spells per round
+
+This component aims to make low-level spells more useful later on in the game. With this component installed, if a mage, sorcerer, cleric, druid or shaman who is at least level 10 would cast a 1st-level spell, they may immediately start casting another spell without waiting for the round to be over. For every 10 additional caster levels, an additional spell level may be quickened this way: 2nd-level spells at level 20, 3rd-level spells at level 30, 4th-level spells at level 40, and 5th-level spells at level 50.
+
+Both party members and enemies can quicken their spells. You must start a new game for this component to affect your party members.
+
+
+- Allow druids to cast spells while shapeshifted
+
+This component allows druids to cast spells while shapeshifted.

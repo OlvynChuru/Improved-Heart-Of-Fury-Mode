@@ -6,6 +6,14 @@ TR
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
 TR
 TR
+16399 0 0 0 0 "GLOBALAR1006_visited" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16399 0 0 0 0 "GLOBALAR1101_visited" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
 16399 0 0 0 0 "GLOBALME_Starting_XP" "" OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
 TR
@@ -70,6 +78,14 @@ TR
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
 TR
 TR
+16399 0 0 0 0 "GLOBALAR1006_visited" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16399 0 0 0 0 "GLOBALAR1101_visited" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
 16399 0 0 0 0 "GLOBALME_Starting_XP" "" OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
 TR
@@ -126,6 +142,14 @@ TR
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
 TR
 TR
+16399 0 0 0 0 "GLOBALAR1006_visited" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16399 0 0 0 0 "GLOBALAR1101_visited" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
 16399 0 0 0 0 "GLOBALME_Starting_XP" "" OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
 TR
@@ -174,6 +198,14 @@ TR
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
 TR
 TR
+16399 0 0 0 0 "GLOBALAR1006_visited" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16399 0 0 0 0 "GLOBALAR1101_visited" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
 16399 0 0 0 0 "GLOBALME_Starting_XP" "" OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
 TR
@@ -214,6 +246,14 @@ TR
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
 TR
 TR
+16399 0 0 0 0 "GLOBALAR1006_visited" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16399 0 0 0 0 "GLOBALAR1101_visited" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
 16399 0 0 0 0 "GLOBALME_Starting_XP" "" OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
 TR
@@ -241,6 +281,14 @@ RS
 CR
 CR
 CO
+TR
+16399 0 0 0 0 "GLOBALAR1006_visited" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16399 0 0 0 0 "GLOBALAR1101_visited" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
 TR
 16399 0 0 0 0 "GLOBALME_Starting_Gold" "" OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB

@@ -172,7 +172,7 @@ CLASS FEATURES:
 - May wear any armor and use any weapon.
 - May not exceed Specialization (two slots) in any weapon class.
 - May achieve Grand Mastery (five slots) in any fighting style.
-- May use Lay On Hands ability once per day to heal a target for 2 Hit Points per level of the Paladin. This ability has no effect on undead, constructs, or extraplanar creatures. Gains an additional use every 5 levels.
+- May use Lay On Hands ability once per day to heal a target for 5 Hit Points per level of the Paladin. This ability has no effect on undead, constructs, or extraplanar creatures. Gains an additional use every 5 levels.
 - May use the Cure Disease ability once per day.
 - May use the Detect Evil ability at will (once per round).
 - May cast a special version of Protection From Evil once per day. This ability only affects the Paladin and lasts for 24 turns.
@@ -272,7 +272,7 @@ TALOS BOLT: This spell fires a bolt of lightning at the target, similar to the L
 
 - May cast Storm Shield once per day. Gains one use at level 1 and an additional use every 10 levels thereafter.
 
-STORM SHIELD: This spell lasts 1 round per level of the caster. It protects the caster from lightning, fire, cold, and normal missiles.
+STORM SHIELD: This spell lasts 1 round per level of the caster. It protects the caster from lightning, fire, cold, and normal missiles. In addition, the caster is protected from harmful storm and cloud spells and abilities. Beneficial spells of those types like Cloudburst and Mist of Eldath still affect the caster. Chain Lightning will not jump to the caster unless the caster was the original target.
 
 Disadvantages:
 - Alignment restricted to neutral evil, chaotic evil, and chaotic neutral.~
@@ -447,6 +447,10 @@ Prime Requisites For Dual-Classing: Dexterity~
 Advantages:
 - +1 bonus to hit and damage rolls.
 - Backstab ability reaches x8 multiplier instead of capping at x6.
+  Level 1-4: x2
+  Level 5-8: x3
+  Level 9-12: x4
+  Level 13-16: x5
   Level 17-20: x6
   Level 21-32: x7
   Level 33+: x8
@@ -1250,6 +1254,18 @@ If the Saving Throw is successful, the damage is reduced as follows:
 3rd round: 1d6 damage
 
 Each round after the first, the nearest creature within 10 ft. of the victim must make a Save vs. Spell at -4 or be infected by the mold at full strength. This process continues until the mold fails to infect a suitable host in time. Creatures already under the effects of the mold cannot contract it again. The brown mold quickly dies once the spell expires.~
+@20327=~Storm Shell
+(Abjuration)
+
+Level: 3
+Sphere: Protection, Weather
+Range: 0
+Duration: 5 rounds + 1 round/level
+Casting Time: 6
+Area of Effect: The caster
+Saving Throw: None
+
+This spell surrounds the caster with a bright sphere of disruptive energy that moves with <PRO_HIMHER>. The storm shell increases the caster's resistance to fire, cold, and electrical damage by 50% In addition, the caster is protected from harmful storm and cloud spells and abilities, including Stinking Cloud, Writhing Fog, Ice Storm, Auril's Blizzard, Cloud of Pestilence, Cloudkill, Death Fog, Whirlwind, Acid Storm, Fire Storm, Stygian Ice Storm, Storm of Vengeance, Incendiary Cloud, Malavon's Corrosive Fog, Great Tornado, Greater Ghast Stench, Hell Cloud, Festering Drowned Dead auras. Beneficial spells of those types like Cloudburst and Mist of Eldath still affect the caster. Chain Lightning will not jump to the caster unless the caster was the original target.~
 @20330=~Cause Medium Wounds
 (Necromancy)
 
@@ -1330,12 +1346,23 @@ This spell protects the target from all forms of death magic for the duration of
 Level: 4
 Sphere: Healing
 Range: Touch
-Duration: 60 seconds
+Duration: 1 round/level
 Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: Neg.
 
-This spell grants the caster the ability to touch a creature and instantly poison it unless it makes a successful Save vs. Poison at -3. The poison deals 60 points of damage over 60 seconds and then dissipates from the target's body. Poison can only be cast by evil-aligned characters.~
+This spell grants the caster the ability to touch a creature and instantly poison it unless it makes a successful Save vs. Poison at -3. The poison deals 6 points of damage per round for 1 round per level and then dissipates from the target's body. Poison can only be cast by evil-aligned characters.~
+@20412=~Holy Power
+(Evocation)
+
+Level: 4
+Range: 0
+Duration: 1 round/level
+Casting Time: 6
+Area of Effect: The caster
+Saving Throw: None
+
+Through this spell, the caster imbues <PRO_HIMHER>self with the strength and skill of a Fighter of the same level. The priest's Strength is set to 21 unless it is normally higher, <PRO_HISHER> THAC0 becomes that of a Fighter of the same level, and <PRO_HESHE> gains 1 temporary Hit Point per level. This will last for the duration of the spell or until dispelled.~
 @20413=~Negative Plane Protection
 (Abjuration)
 
@@ -1740,6 +1767,22 @@ Area of Effect: Special
 Saving Throw: 1/2
 
 Upon completion of this spell, the priest becomes a focus of spiritual energy, which then shoots out from the caster in four directions, like lightning bolts. All creatures in the bolts' paths take 7d10 points of magic damage (save vs. Spell at -4 for half). Creatures of the same moral alignment (good, neutral, evil) as the caster are unaffected by the spell.~
+@20701=~Shield of the Archons
+(Abjuration)
+
+Level: 7
+Sphere: Protection
+Range: Touch
+Duration: 1 round/level
+Casting Time: 9
+Area of Effect: The caster
+Saving Throw: None
+
+This powerful abjuration spell causes the spells cast against the priest to be absorbed and consumed. This affects a total number of spell levels equal to half the level of the caster. It includes spells cast from scrolls and innate spell-like abilities, but excludes area effects that are not centered directly upon the priest and area effects that are stationary, such as Cloudkill and Stinking Cloud.
+
+As long as there are levels remaining, the spell will be absorbed. For example, if there is only 1 level left and a 3rd-level spell is cast at the priest, the spell will be absorbed while canceling the shield.
+
+In addition, Shield of the Archons protects the priest from Dispel Magic, Remove Magic, and other dispelling effects.~
 @20704=~Nature's Beauty
 (Illusion/Phantasm)
 
@@ -2485,11 +2528,11 @@ Upon casting this spell, a skull is thrown by the caster at the target area. The
 Level: 3
 Range: Touch
 Duration: Instant
-Casting Time: 3
+Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: None
 
-When this spell is cast, the target loses 1d6 Hit Points for every 2 caster levels, to a maximum drain of 6d6 for a 12th-level caster. These Hit Points are added to the caster's current Hit Points, with any Hit Points over the caster's normal maximum treated as temporary additional Hit Points. The temporary Hit Points last for 1 hour. Casting Vampiric Touch again will allow the caster to gain even more Hit Points.~
+When this spell is cast, the target loses 3 Hit Points per caster level, to a maximum drain of 30 for a 10th-level caster. These Hit Points are added to the caster's current Hit Points, with any Hit Points over the caster's normal maximum treated as temporary additional Hit Points. The temporary Hit Points last for 2 hours. Casting Vampiric Touch again will allow the caster to gain even more Hit Points.~
 @21316=~Dire Charm
 (Enchantment/Charm)
 
@@ -2734,7 +2777,7 @@ Casting Time: 4
 Area of Effect: 7-ft. radius
 Saving Throw: None
 
-This spell creates the emotion of courage within the area of effect. All creatures affected by the spell gain +2 to hit, as well as +10 temporary Hit Points (which can put them above their maximum Hit Points). This spell nullifies all fear effects within the area of effect at the time of casting.~
+This spell creates the emotion of courage within the area of effect. All creatures affected by the spell gain +1 to hit, +3 to their damage rolls, and +5 temporary Hit Points (which can put them above their maximum Hit Points). This spell nullifies all fear effects within the area of effect at the time of casting. Emotion, Courage may only be learned by Bards.~
 @21428=~Emotion, Fear
 (Enchantment/Charm)
 
@@ -2756,7 +2799,7 @@ Casting Time: 4
 Area of Effect: 7-ft. radius
 Saving Throw: None
 
-This spell creates the emotion of hope within the area of effect. All creatures affected by the spell gain a morale boost and +2 on their Saving Throws and attack rolls. This spell nullifies all hopelessness effects within the area of effect at the time of casting.~
+This spell creates the emotion of hope within the area of effect. All creatures affected by the spell gain a morale boost and +2 on their Saving Throws, attack rolls, and damage rolls. This spell nullifies all hopelessness effects within the area of effect at the time of casting. Emotion, Hope may only be learned by Bards.~
 @21431=~Shout
 (Invocation)
 

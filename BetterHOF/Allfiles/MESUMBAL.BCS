@@ -59,7 +59,7 @@ OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
 OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
-150 0 0 0 0"LOCALSME_Summon_Balor" "" AC
+300 0 0 0 0"LOCALSME_Summon_Balor" "" AC
 AC
 115OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
@@ -67,7 +67,7 @@ OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
 OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
-30 0 0 0 0"AR9800ME_Summon_Balor_Sync" "" AC
+60 0 0 0 0"AR9800ME_Summon_Balor_Sync" "" AC
 AC
 30OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
@@ -89,10 +89,22 @@ TR
 16399 1 0 0 0 "AR9800ME_Summon_Balor_Start" "" OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
 TR
+TR
+16449 0 1 0 0 "ME_Summon_Balor_Fix" "LOCALS" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
 CO
 RS
 RE
 100AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+24 0 0 0 0"LOCALSME_Summon_Balor_Fix" "" AC
+AC
 114OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
 OB

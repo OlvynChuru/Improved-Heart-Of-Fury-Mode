@@ -600,6 +600,7 @@ OUTER_PATCH alltheconstants BEGIN
 	modifywisdom=49
 	colorpulse=50
 	tintsolid=51
+	modifyanimation=53
 	modifybasethac0=54
 	slay=55
 	dispel=58
@@ -1487,6 +1488,109 @@ BEGIN
 END
 */
 
+DEFINE_ACTION_FUNCTION ADD_CLASS_SPELL
+	INT_VAR
+		level=~-1~ //Level of the spell.
+		type=~-1~ //1 = wizard spell, 2 = priest spell.
+		name=~-1~ //Strref of the spell's name.
+		description=~-1~ //Strref of the spell's description.
+	STR_VAR
+		resref=~~ //Resref of the spell.
+		scroll=~~ //Resref of the scroll for the spell (optional, if you want to restrict who can learn the spell from the scroll
+		icon=~~
+		groundicon=~~
+		class_include=~{}~ //A character with one of these classes (from CLASS.IDS) can learn the spell.
+		kit_include=~{}~ //A character with one of these kits can learn the spell, even if their class is not in the "class_include" list.
+		kit_exclude=~{}~ //A character with one of these kits cannot learn the spell, even if their class is in the "class_include" list.
+		remove_by_default=~false~
+BEGIN
+
+	OUTER_PATCH_SAVE class_include ~%class_include%~ BEGIN
+		REPLACE_TEXTUALLY CASE_INSENSITIVE ~[%WNL%%MNL%%LNL%]~ ~ ~
+		REPLACE_TEXTUALLY CASE_INSENSITIVE ~\([0-9a-fA-F]\)[ %TAB%]*}~ ~\1, }~
+		REPLACE_TEXTUALLY CASE_INSENSITIVE ~[{}]~ ~~
+	END
+	OUTER_PATCH_SAVE kit_include ~%kit_include%~ BEGIN
+		REPLACE_TEXTUALLY CASE_INSENSITIVE ~[%WNL%%MNL%%LNL%]~ ~ ~
+		REPLACE_TEXTUALLY CASE_INSENSITIVE ~\([0-9a-fA-F]\)[ %TAB%]*}~ ~\1, }~
+		REPLACE_TEXTUALLY CASE_INSENSITIVE ~[{}]~ ~~
+	END
+	OUTER_PATCH_SAVE kit_exclude ~%kit_exclude%~ BEGIN
+		REPLACE_TEXTUALLY CASE_INSENSITIVE ~[%WNL%%MNL%%LNL%]~ ~ ~
+		REPLACE_TEXTUALLY CASE_INSENSITIVE ~\([0-9a-fA-F]\)[ %TAB%]*}~ ~\1, }~
+		REPLACE_TEXTUALLY CASE_INSENSITIVE ~[{}]~ ~~
+	END
+
+	COPY_EXISTING ~%resref%.spl~ ~override~
+		PATCH_IF level = ~-1~ BEGIN
+			READ_LONG spelllevel level
+		END
+		PATCH_IF type = ~-1~ BEGIN
+			READ_SHORT spelltype type
+		END
+		PATCH_IF name = ~-1~ BEGIN
+			READ_LONG NAME1 name
+		END
+		PATCH_IF description = ~-1~ BEGIN
+			READ_LONG UNIDENTIFIED_DESC description
+		END
+		PATCH_IF (~%icon%~ STRING_EQUAL_CASE ~~) BEGIN
+			READ_ASCII 0x3A icon
+		END
+		PATCH_IF (~%groundicon%~ STRING_EQUAL_CASE ~~) BEGIN
+			READ_ASCII 0x76 groundicon
+		END
+
+		IF_EXISTS
+		BUT_ONLY_IF_IT_CHANGES
+
+	COPY_EXISTING ~m_meexsp.lua~ ~override~
+		PATCH_IF FILE_CONTAINS_EVALUATED (~m_meexsp.lua~ ~\[\"resref\"\][ %TAB%]+=[ %TAB%]+\"%resref%\"~) BEGIN
+
+			PATCH_IF !(~%scroll%~ STRING_EQUAL_CASE ~~) AND FILE_CONTAINS_EVALUATED (~m_meexsp.lua~ ~\[\"resref\"\] = \"%resref%\",[^\[]*\[\"scroll\"\] = \"\"~) BEGIN
+				REPLACE_TEXTUALLY CASE_SENSITIVE ~\[\"resref\"\] = \"%resref%\"[^\[]*\[\"scroll\"\] = \"\"~ ~["resref"] = "%resref%",
+		["scroll"] = "%scroll%"~
+			END
+			REPLACE_EVALUATE
+~\[\"resref\"\] = \"%resref%\",[^\[]*\[\"scroll\"\] = \"\([^\"]*\)\",[^{]*{\([^}]*\)}[^{]*{\([^}]*\)}[^{]*{\([^}]*\)}~
+BEGIN
+	SPRINT class_include ~%class_include%~ ^ ~%MATCH2%~
+	SPRINT kit_include ~%kit_include%~ ^ ~%MATCH3%~
+	SPRINT kit_exclude ~%kit_exclude%~ ^ ~%MATCH4%~
+END
+~["resref"] = "%resref%",
+		["scroll"] = "%MATCH1%",
+		["icon"] = "%icon%",
+		["groundicon"] = "%groundicon%",
+		["level"] = %level%,
+		["type"] = %type%,
+		["name"] = %name%,
+		["description"] = %description%,
+		["class_include"] = {%class_include%},
+		["kit_include"] = {%kit_include%},
+		["kit_exclude"] = {%kit_exclude%}~
+
+		END ELSE BEGIN
+			REPLACE_TEXTUALLY CASE_SENSITIVE ~me_addSpellChoice = {~ ~me_addSpellChoice = {
+	{
+		["resref"] = "%resref%",
+		["scroll"] = "%scroll%",
+		["icon"] = "%icon%",
+		["groundicon"] = "%groundicon%",
+		["level"] = %level%,
+		["type"] = %type%,
+		["name"] = %name%,
+		["description"] = %description%,
+		["class_include"] = {%class_include%},
+		["kit_include"] = {%kit_include%},
+		["kit_exclude"] = {%kit_exclude%},
+		["remove_by_default"] = %remove_by_default%,
+	},~
+		END
+		IF_EXISTS
+
+END
+
 END
 
 LANGUAGE
@@ -1793,9 +1897,184 @@ COPY_EXISTING ~tooltip.2da~ ~override~
 		END
 	END
 
+ACTION_IF (MOD_IS_INSTALLED ~EEex.tp2~ ~0~) BEGIN
+	COPY ~MESpells/lua/M__MEFUN.lua~ ~override~
+END
+
 COPY_EXISTING ~eeex_ini.lua~ ~override~
 	REPLACE_TEXTUALLY ~\[\"B3_Invis\"\] = false~ ~["B3_Invis"] = true~
 	IF_EXISTS
+
+ACTION_IF !(FILE_EXISTS_IN_GAME ~M_MEEXSP.lua~) BEGIN
+	COPY ~BetterHOF/lua/M_MEEXSP.lua~ ~override~
+
+
+ACTION_IF !(MOD_IS_INSTALLED ~EEex.tp2~ ~0~) BEGIN
+
+OUTER_TEXT_SPRINT get_class_from_inventory ~~~~~local me_realClass = -1
+	local me_realKit = -1
+	if me_classTextID[characters[id].class] ~= nil then
+		me_realClass = me_classTextID[characters[id].class][1]
+		me_realKit = me_classTextID[characters[id].class][2]
+	end~~~~~
+
+OUTER_TEXT_SPRINT get_class_from_record ~~~~~local me_realClass = -1
+	local me_realKit = -1
+	if me_classTextID[characters[currentID].class] ~= nil then
+		me_realClass = me_classTextID[characters[currentID].class][1]
+		me_realKit = me_classTextID[characters[currentID].class][2]
+	end~~~~~
+
+END ELSE BEGIN
+
+OUTER_TEXT_SPRINT get_class_from_inventory ~local me_realClass = EEex_GetActorClass(id)
+	local me_realKit = EEex_GetActorKit(id)~
+
+OUTER_TEXT_SPRINT get_class_from_record ~local me_realClass = EEex_GetActorClass(currentID)
+	local me_realKit = EEex_GetActorKit(currentID)~
+
+END
+
+COPY_EXISTING ~ui.menu~ ~override~
+	REPLACE_TEXTUALLY CASE_INSENSITIVE ~--reload language~ ~--reload language
+function me_canLearnSpell()
+	if id <= 0 then return end
+	%get_class_from_inventory%
+	local foundSpell = false
+	local canLearnSpell = false
+	for k, v in ipairs(me_addSpellChoice) do
+		if v.scroll == itemDesc.item.res then
+			foundSpell = true
+			for k2, v2 in ipairs(v.class_include) do
+				if v2 == me_realClass then
+					canLearnSpell = true
+				end
+			end
+			for k2, v2 in ipairs(v.kit_include) do
+				if v2 == me_realKit then
+					canLearnSpell = true
+				end
+			end
+			for k2, v2 in ipairs(v.kit_exclude) do
+				if v2 == me_realKit then
+					canLearnSpell = false
+				end
+			end
+		end
+	end
+	if foundSpell then
+		return canLearnSpell
+	else
+		return itemDescRightButtonEnabled()
+	end
+end
+
+~
+
+ACTION_IF !(MOD_IS_INSTALLED ~EEex.tp2~ ~0~) BEGIN
+
+OUTER_SPRINT stringfighter @2400
+OUTER_SPRINT stringmage @2401
+SILENT
+
+COPY_EXISTING ~ui.menu~ ~override~
+	REPLACE_TEXTUALLY CASE_INSENSITIVE ~--reload language~ ~--reload language
+
+me_classTextID = {}
+
+~
+
+	COPY_EXISTING ~clastext.2da~ ~override~
+		COUNT_2DA_COLS numcolumns
+		COUNT_2DA_ROWS numcolumns numrows
+		FOR (i = 0; i < numrows; ++i) BEGIN
+			READ_2DA_ENTRY i 1 numcolumns class_id
+			READ_2DA_ENTRY i 2 numcolumns kit_id
+			READ_2DA_ENTRY i 5 numcolumns kit_name_ref
+			GET_STRREF kit_name_ref kit_name
+			INNER_ACTION BEGIN
+				COPY_EXISTING ~ui.menu~ ~override~
+					REPLACE_TEXTUALLY CASE_INSENSITIVE ~me_classTextID = {~ ~me_classTextID = {["%kit_name%"] = {%class_id%, %kit_id%}, ~
+					REPLACE_TEXTUALLY CASE_INSENSITIVE ~<FIGHTERTYPE>~ ~%stringfighter%~
+					REPLACE_TEXTUALLY CASE_INSENSITIVE ~<MAGESCHOOL>~ ~%stringmage%~
+			END
+		END
+
+VERBOSE
+
+END
+
+COPY_EXISTING ~ui.menu~ ~override~
+	REPLACE_TEXTUALLY CASE_INSENSITIVE ~enabled[ %TAB%]*\"\([^\"]*\)itemDescRightButtonEnabled()\([\"]*\)\"~ ~enabled "\1me_canLearnSpell()\2"~
+	REPLACE_TEXTUALLY CASE_INSENSITIVE ~table.sort(chargen.choose_spell, sortBySpellName)~ ~~~~~		local me_spellChoiceType = 1
+		if string.sub(chargen.choose_spell[1]['key'], 3, 4) == 'PR' then
+			me_spellChoiceType = 2
+		end
+		%get_class_from_record%
+		local doAddSpell = false
+		local me_isAlreadyAvailable = false
+		local me_isKnown = false
+		for k, v in ipairs(me_addSpellChoice) do
+			doAddSpell = false
+			me_isAlreadyAvailable = false
+			if v.level == chargen.currentSpellLevelChoice and v.type == me_spellChoiceType and v.resref ~= '' then
+				for k2, v2 in ipairs(v.class_include) do
+					if v2 == me_realClass then
+						doAddSpell = true
+					end
+				end
+				for k2, v2 in ipairs(v.kit_include) do
+					if v2 == me_realKit then
+						doAddSpell = true
+					end
+				end
+				for k2, v2 in ipairs(v.kit_exclude) do
+					if v2 == me_realKit then
+						doAddSpell = false
+					end
+				end
+				if not doAddSpell then
+					for k2, v2 in ipairs(chargen.choose_spell) do
+						if v2.key == v.resref then
+							table.remove(chargen.choose_spell, k2)
+						end
+					end
+				end
+			end
+			if doAddSpell then
+				me_isKnown = false
+				if me_spellChoiceType == 1 then
+					for k2, v2 in ipairs(characters[currentID]['mageSpells'][v.level]) do
+						if v2.resref == v.resref then
+							me_isKnown = true
+						end
+					end
+				elseif me_spellChoiceType == 2 then
+					for k2, v2 in ipairs(characters[currentID]['priestSpells'][v.level]) do
+						if v2.resref == v.resref then
+							me_isKnown = true
+						end
+					end
+				end
+				if spellBook[v.level][v.resref] == nil then
+					spellBook[v.level][v.resref] = {['name'] = v.name, ['desc'] = v.description, ['hidden'] = false, ['autopick'] = false, ['known'] = me_isKnown, ['specialist'] = false, ['resref'] = v.resref, ['icon'] = v.icon, ['groundicon'] = v.groundicon}
+				elseif me_isKnown then
+					spellBook[v.level][v.resref].known = true
+				end
+				for k2, v2 in ipairs(chargen.choose_spell) do
+					if v2.key == v.resref then
+						me_isAlreadyAvailable = true
+					end
+				end
+				if not me_isAlreadyAvailable then
+					table.insert(chargen.choose_spell, {['known'] = me_isKnown, ['enabled'] = false, ['key'] = v.resref})
+				end
+			end
+		end
+
+table.sort(chargen.choose_spell, sortBySpellName)~~~~~
+
+END
 
 LAF ADD_ANIMATION INT_VAR minSlot=0x1000 STR_VAR ini=~meaniwyv~ RET slotwyvernreallybigdecimal=slotDecimal END
 
@@ -2891,8 +3170,8 @@ STRING_SET_EVALUATE 37680 ~Intelligence Drained~
 
 COPY_EXISTING ~amaunat.itm~ ~override~
 	LPF ALTER_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=setcolor match_parameter2=21 parameter1=224 END
-	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=20 probability1=19 STR_VAR match_resource=~spwi422~ resource=~sppr115~ END
-	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspellpoint parameter1=30 STR_VAR match_resource=~sppr707~ END
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=20 parameter2=2 probability1=19 STR_VAR match_resource=~spwi422~ resource=~sppr115~ END
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspellpoint parameter1=30 parameter2=2 STR_VAR match_resource=~sppr707~ END
 	WRITE_BYTE minwisdom 22
 	WRITE_BYTE mincharisma 22
 	WRITE_BYTE firstheaderspeedfactor 0
@@ -2965,17 +3244,17 @@ Equipped abilities:
 Weight: 1~
 
 COPY_EXISTING ~amul15.itm~ ~override~
-	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=10 STR_VAR match_resource=~SPWI114~ resource=~SPWI406~ END
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=30 parameter2=2 STR_VAR match_resource=~SPWI114~ resource=~SPWI602~ END
 	WRITE_LONG price 7500
 	SAY NAME2 ~Invulnerability Amulet~
-	SAY IDENTIFIED_DESC ~This amulet can be activated by a simple command word and a touch, with each use acting as one charge. The effect is a duplication of the 4th-level wizard spell Minor Globe of Invulnerability. For the duration of the spell, the wearer will be protected from spells of 3rd level or lower.
+	SAY IDENTIFIED_DESC ~This amulet can be activated by a simple command word and a touch, with each use acting as one charge. The effect is a duplication of the 6th-level wizard spell Globe of Invulnerability. For the duration of the spell, the wearer will be protected from spells of 5th level or lower.
 
 STATISTICS:
 
 Charge abilities:
-- Minor Globe of Invulnerability
-  Immune to all spells of 3rd level or lower
-  Duration: 1 turn
+- Globe of Invulnerability
+  Immune to all spells of 5th level or lower
+  Duration: 3 turns
   Area of Effect: The wearer
 
 Weight: 1~
@@ -3689,8 +3968,8 @@ COPY_EXISTING ~blast.itm~ ~override~
 	LPF ALTER_ITEM_HEADER INT_VAR header=1 STR_VAR icon=~spwi430b~ END
 	LPF ALTER_ITEM_HEADER INT_VAR header=2 STR_VAR icon=~spwi806b~ END
 	LPF ALTER_ITEM_HEADER INT_VAR header_type=3 charges=0 drained=itemremains flag_recharge=0 END
-	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspellpoint opcode=castspell target=2 parameter1=30 parameter2=1 STR_VAR match_resource=~spwi431~ resource=~spwi430~ END
-	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspellpoint parameter1=30 parameter2=1 probability2=0 STR_VAR match_resource=~spwi806~ END
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspellpoint opcode=castspell target=2 parameter1=30 parameter2=2 STR_VAR match_resource=~spwi431~ resource=~spwi430~ END
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspellpoint parameter1=30 parameter2=2 probability2=0 STR_VAR match_resource=~spwi806~ END
 	WRITE_SHORT minstrength 22
 	WRITE_LONG price 47000
 	SAY IDENTIFIED_DESC ~Crafted by a powerful invoker, the Bracers of Blasting are dangerous tools for mages strong enough to use them. There are a number of these sets of bracers floating around Faerûn, and they circulate very quickly, as the mages who put them on tend not to live much longer. The creator of these bronze armbands has been lost to history.
@@ -3777,7 +4056,7 @@ COPY_EXISTING ~bloodgf.itm~ ~override~
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifymagicfireresistance parameter1=50 END
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifymagiccoldresistance parameter1=50 END
 	LPF ALTER_ITEM_HEADER INT_VAR header=2 STR_VAR icon=~mems274b~ END
-	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=30 parameter2=1 STR_VAR match_resource=~sppr327~ resource=~mems274~ END
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=30 parameter2=2 STR_VAR match_resource=~sppr327~ resource=~mems274~ END
 	WRITE_BYTE firstheaderspeedfactor 0
 	WRITE_BYTE firstheadernumdice 2
 	WRITE_SHORT firstheaderdamage 5
@@ -3815,18 +4094,18 @@ Weight: 3~
 
 COPY_EXISTING ~blrdeck.itm~ ~override~
 	LPF DELETE_ITEM_EFFECT INT_VAR opcode_to_delete=castspell END
-	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=19 parameter2=1 probability1=7 probability2=0 STR_VAR resource=~spwi201~ END
-	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=20 parameter2=1 probability1=16 probability2=8 STR_VAR resource=~spwi201~ END
-	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=21 parameter2=1 probability1=24 probability2=17 STR_VAR resource=~spwi201~ END
-	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=22 parameter2=1 probability1=32 probability2=25 STR_VAR resource=~spwi201~ END
-	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=23 parameter2=1 probability1=41 probability2=33 STR_VAR resource=~spwi201~ END
-	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=24 parameter2=1 probability1=49 probability2=42 STR_VAR resource=~spwi201~ END
-	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=25 parameter2=1 probability1=57 probability2=50 STR_VAR resource=~spwi201~ END
-	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=26 parameter2=1 probability1=66 probability2=58 STR_VAR resource=~spwi201~ END
-	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=27 parameter2=1 probability1=74 probability2=67 STR_VAR resource=~spwi201~ END
-	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=28 parameter2=1 probability1=82 probability2=75 STR_VAR resource=~spwi201~ END
-	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=29 parameter2=1 probability1=91 probability2=83 STR_VAR resource=~spwi201~ END
-	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=30 parameter2=1 probability1=100 probability2=92 STR_VAR resource=~spwi201~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=19 parameter2=2 probability1=7 probability2=0 STR_VAR resource=~spwi201~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=20 parameter2=2 probability1=16 probability2=8 STR_VAR resource=~spwi201~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=21 parameter2=2 probability1=24 probability2=17 STR_VAR resource=~spwi201~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=22 parameter2=2 probability1=32 probability2=25 STR_VAR resource=~spwi201~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=23 parameter2=2 probability1=41 probability2=33 STR_VAR resource=~spwi201~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=24 parameter2=2 probability1=49 probability2=42 STR_VAR resource=~spwi201~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=25 parameter2=2 probability1=57 probability2=50 STR_VAR resource=~spwi201~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=26 parameter2=2 probability1=66 probability2=58 STR_VAR resource=~spwi201~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=27 parameter2=2 probability1=74 probability2=67 STR_VAR resource=~spwi201~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=28 parameter2=2 probability1=82 probability2=75 STR_VAR resource=~spwi201~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=29 parameter2=2 probability1=91 probability2=83 STR_VAR resource=~spwi201~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=30 parameter2=2 probability1=100 probability2=92 STR_VAR resource=~spwi201~ END
 	SAY IDENTIFIED_DESC ~The secret procedure for manufacturing these cards was only recently recovered by the sorceress Haelia. Blur Decks are thin ivory cards that are typically kept in a strong metal case. When the owner of the cards wishes to use them, he or she simply needs to shuffle the cards and throw one up in the air. The value of the card (unknown to the user) determines the duration of the effect. These cards used to be employed by the warrior minions of Porg the Stout. Porg's reliance on the cards proved to be his downfall when a group of adventurers, using his cards, killed him in his tower in 833 DR.
 
 STATISTICS:
@@ -3872,7 +4151,7 @@ Weight: 0~
 
 COPY_EXISTING ~boneam.itm~ ~override~
 	LPF DELETE_ITEM_EFFECT INT_VAR opcode_to_delete=(0 - 1) END
-	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=2 timing=9 parameter1=1 parameter2=1 STR_VAR resource=~meboneaa~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=2 timing=9 parameter1=1 parameter2=2 STR_VAR resource=~meboneaa~ END
 	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=protectionfromspell2 target=2 timing=0 duration=2 parameter2=55 insert_point=0 STR_VAR resource=~meboneaa~ END
 	WRITE_LONG price 9000
 	SAY IDENTIFIED_DESC ~Bone talismans are highly coveted among practitioners of necromancy. The charm is created from a piece of bone taken from the remains of a slain vampire. Usually fashioned into a necklace or ring, the fey magic contained within the talisman enables the wearer to drain the life force from any living creature he or she touches.
@@ -3880,7 +4159,7 @@ COPY_EXISTING ~boneam.itm~ ~override~
 STATISTICS:
 
 Charge abilities:
-- Once per day, can cast a stronger version of Vampiric Touch, which deals 50 magic damage and gives the user 50 temporary hit points.
+- Once per day, can cast a stronger version of Vampiric Touch, which deals 100 magic damage and gives the user 100 temporary hit points.
 
 Weight: 3~
 
@@ -5166,11 +5445,11 @@ Weight: 1~
 
 COPY_EXISTING ~dntshd2.itm~ ~override~
 	LPF ALTER_ITEM_HEADER INT_VAR header=2 target=5 charges=3 drained=itemrecharges flag_recharge=1 STR_VAR icon=~sppr406b~ END
-	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=20 parameter2=1 STR_VAR match_resource=~sppr424~ resource=~sppr406~ END
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=20 parameter2=2 STR_VAR match_resource=~sppr424~ resource=~sppr406~ END
 	LPF ALTER_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifyac match_parameter2=0 parameter1=5 END
 	WRITE_BYTE minconstitution 24
 	SAY NAME2 ~Shield of Tiernon +4~
-	SAY IDENTIFIED_DESC ~Tiernon has apparently "awoken" the enchantment that was hibernating within this shield (most likely due to the giant's fist that struck it). He has retraced the runes along the edges and redrawn the Denthelm symbol in its center. The shield seems brighter than it did before, lighter, and there is a slight vibration when it is held, as if it is humming to itself. 
+	SAY IDENTIFIED_DESC ~Tiernon has apparently "awoken" the enchantment that was hibernating within this shield (most likely due to the giant's fist that struck it). He has retraced the runes along the edges and redrawn the Denthelm symbol in its center. The shield seems brighter than it did before, lighter, and there is a slight vibration when it is held, as if it is humming to itself.
 
 STATISTICS:
 
@@ -5400,7 +5679,7 @@ COPY_EXISTING ~fanggf.itm~ ~override~
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifymagicfireresistance parameter1=50 END
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifymagiccoldresistance parameter1=50 END
 	LPF ALTER_ITEM_HEADER INT_VAR header=2 STR_VAR icon=~mems274b~ END
-	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=30 parameter2=1 STR_VAR match_resource=~sppr327~ resource=~mems274~ END
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=30 parameter2=2 STR_VAR match_resource=~sppr327~ resource=~mems274~ END
 	WRITE_BYTE firstheaderspeedfactor 0
 	WRITE_SHORT firstheaderdamage 5
 	WRITE_SHORT firstheaderthac0 5
@@ -5501,7 +5780,7 @@ Weight: 1~
 
 COPY_EXISTING ~fistgf.itm~ ~override~
 	LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=damage target=2 timing=1 parameter1=5 parameter2=colddamage END
-	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_probability1=5 opcode=castspell parameter1=30 parameter2=1 dicenumber=0 dicesize=0 probability1=9 STR_VAR resource=~spwi918~ END
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_probability1=5 opcode=castspell parameter1=30 parameter2=2 dicenumber=0 dicesize=0 probability1=9 STR_VAR resource=~spwi918~ END
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifyfireresistance parameter1=25 END
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifycoldresistance parameter1=25 END
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifymagicfireresistance parameter1=50 END
@@ -5682,7 +5961,7 @@ Weight: 2~
 
 COPY_EXISTING ~giving.itm~ ~override~
 	LPF DELETE_ITEM_EFFECT INT_VAR opcode_to_delete=(0 - 1) END
-	LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=castspell target=1 timing=1 parameter1=10 parameter2=1 probability1=29 STR_VAR resource=~sppr103~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=castspell target=1 timing=1 parameter1=10 parameter2=2 probability1=29 STR_VAR resource=~sppr103~ END
 	LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=modifystrength target=1 timing=0 duration=30 parameter1=1 probability1=29 resist_dispel=3 END
 	LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=displayportraiticon target=1 timing=0 duration=30 parameter2=21 probability1=29 resist_dispel=3 END
 	READ_LONG unusability ulgiash
@@ -5867,13 +6146,13 @@ Weight: 5~
 
 COPY_EXISTING ~handgf.itm~ ~override~
 	LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=damage target=2 timing=1 parameter1=5 parameter2=colddamage END
-	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=30 parameter2=1 probability1=24 STR_VAR match_resource=~handgf~ END
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=30 parameter2=2 probability1=24 STR_VAR match_resource=~handgf~ END
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifyfireresistance parameter1=25 END
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifycoldresistance parameter1=25 END
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifymagicfireresistance parameter1=50 END
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifymagiccoldresistance parameter1=50 END
 	LPF ALTER_ITEM_HEADER INT_VAR header=2 STR_VAR icon=~mems274b~ END
-	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=30 parameter2=1 STR_VAR match_resource=~sppr327~ resource=~mems274~ END
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=30 parameter2=2 STR_VAR match_resource=~sppr327~ resource=~mems274~ END
 	WRITE_BYTE firstheaderspeedfactor 5
 	WRITE_SHORT firstheaderdamage 5
 	WRITE_SHORT firstheaderthac0 5
@@ -6005,7 +6284,7 @@ COPY_EXISTING ~helmla.itm~ ~override~
 	LPF DELETE_ITEM_HEADER INT_VAR header_type=3 END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=attackrollpenalty target=1 timing=2 parameter1=generalundead parameter2=idsgeneral END
 	LPF ADD_ITEM_HEADER INT_VAR type=3 required_id=1 location=1 target=1 range=1 speed=0 charges=1 depletion=itemrecharges flags=rechargeafterresting insert_point=0 STR_VAR icon=~sppr520b~ END
-	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=2 timing=1 parameter1=20 parameter2=1 STR_VAR resource=~sppr520~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=2 timing=1 parameter1=20 parameter2=2 STR_VAR resource=~sppr520~ END
 	SAY IDENTIFIED_DESC ~This well-crafted helmet has a short history. A priestess of Lathander named Iraeni of Suzail had it constructed for the champion of her church, a warrior named Beldan Miller. Beldan employed the helm frequently, as Iraeni was often attacked by agents of Myrkul. After twenty years of serving Lathander, Iraeni decided to step down from her office, as did Beldan. They were married shortly after. Beldan gave the helm to an errant paladin of Lathander, who is believed to have died fighting a lich near the Battle of the Bones.
 
 STATISTICS:
@@ -6103,18 +6382,18 @@ Weight: 85~
 COPY_EXISTING ~hlydeck.itm~ ~override~
 	LPF DELETE_ITEM_EFFECT INT_VAR opcode_to_delete=castspell END
 	LPF DELETE_ITEM_EFFECT INT_VAR opcode_to_delete=castspellpoint END
-	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspellpoint target=1 timing=1 parameter1=20 parameter2=1 probability1=7 probability2=0 STR_VAR resource=~spwi412~ END
-	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspellpoint target=1 timing=1 parameter1=20 parameter2=1 probability1=16 probability2=8 STR_VAR resource=~spwi508~ END
-	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspellpoint target=1 timing=1 parameter1=20 parameter2=1 probability1=24 probability2=17 STR_VAR resource=~spwi711~ END
-	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspellpoint target=1 timing=1 parameter1=20 parameter2=1 probability1=32 probability2=25 STR_VAR resource=~spwi421~ END
-	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=20 parameter2=1 probability1=41 probability2=33 STR_VAR resource=~sppr518~ END
-	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=20 parameter2=1 probability1=49 probability2=42 STR_VAR resource=~sppr421~ END
-	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=20 parameter2=1 probability1=57 probability2=50 STR_VAR resource=~sppr736~ END
-	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=20 parameter2=1 probability1=66 probability2=58 STR_VAR resource=~sppr516~ END
-	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=20 parameter2=1 probability1=74 probability2=67 STR_VAR resource=~sppr408~ END
-	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=20 parameter2=1 probability1=82 probability2=75 STR_VAR resource=~sppr722~ END
-	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=20 parameter2=1 probability1=91 probability2=83 STR_VAR resource=~sppr514~ END
-	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=20 parameter2=1 probability1=100 probability2=92 STR_VAR resource=~sppr406~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspellpoint target=1 timing=1 parameter1=20 parameter2=2 probability1=7 probability2=0 STR_VAR resource=~spwi412~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspellpoint target=1 timing=1 parameter1=20 parameter2=2 probability1=16 probability2=8 STR_VAR resource=~spwi508~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspellpoint target=1 timing=1 parameter1=20 parameter2=2 probability1=24 probability2=17 STR_VAR resource=~spwi711~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspellpoint target=1 timing=1 parameter1=20 parameter2=2 probability1=32 probability2=25 STR_VAR resource=~spwi421~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=20 parameter2=2 probability1=41 probability2=33 STR_VAR resource=~sppr518~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=20 parameter2=2 probability1=49 probability2=42 STR_VAR resource=~sppr421~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=20 parameter2=2 probability1=57 probability2=50 STR_VAR resource=~sppr736~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=20 parameter2=2 probability1=66 probability2=58 STR_VAR resource=~sppr516~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=20 parameter2=2 probability1=74 probability2=67 STR_VAR resource=~sppr408~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=20 parameter2=2 probability1=82 probability2=75 STR_VAR resource=~sppr722~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=20 parameter2=2 probability1=91 probability2=83 STR_VAR resource=~sppr514~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=20 parameter2=2 probability1=100 probability2=92 STR_VAR resource=~sppr406~ END
 	SAY IDENTIFIED_DESC ~"Holy Chaos!" is a little-known card game played between priests of chaotic gods. Priests of Tymora and Umberlee are particularly fond of it. The game features four suits: Smiling Ladies, Black Bessies, Storm Queens, and Joy Bringers. The "rules" of the game are incredibly complex and are revised every year in an edict by the church of Beshaba. Winners of annual tournaments receive magical versions of the deck, such as this one. The decks are despised by the churches of Tyr and Helm.
 
 STATISTICS:
@@ -6214,7 +6493,7 @@ Requires:
 Weight: 0~
 
 COPY_EXISTING ~jasper.itm~ ~override~
-	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=30 STR_VAR match_resource=~SPWI115~ END
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=30 parameter2=2 STR_VAR match_resource=~SPWI115~ END
 	WRITE_LONG price 35000
 	SAY IDENTIFIED_DESC ~A thick steel band set with quartz, this tough-looking ring was created and worn by the Cormyrean battle-mage Jasper Silverblood. Jasper was a stocky, gruff man who appeared more like a common laborer than a wizard, and he liked it that way. He used this particular weapon on rowdy, cocky soldiers when he was confident it wouldn't kill them. He went down in history as one of the strictest disciplinarians ever to have command over the Purple Dragons.
 
@@ -6512,7 +6791,7 @@ COPY_EXISTING ~kissgf.itm~ ~override~
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifymagicfireresistance parameter1=50 END
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifymagiccoldresistance parameter1=50 END
 	LPF ALTER_ITEM_HEADER INT_VAR header=2 STR_VAR icon=~mems274b~ END
-	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=30 parameter2=1 STR_VAR match_resource=~sppr327~ resource=~mems274~ END
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=30 parameter2=2 STR_VAR match_resource=~sppr327~ resource=~mems274~ END
 	WRITE_ASCII equippedappearance ~F2~ #2 //Flaming short sword
 	WRITE_ASCII groundicon ~GSW1H07~ #8 //Short sword ground icon
 	WRITE_SHORT itemcategory 19
@@ -7008,8 +7287,8 @@ COPY_EXISTING ~mirror2.itm~ ~override~
 	LPF ALTER_ITEM_HEADER INT_VAR header=1 charges=1 drained=itemrecharges flag_recharge=1 STR_VAR icon=~spwi703b~ END
 	LPF ALTER_ITEM_HEADER INT_VAR header=3 charges=3 drained=itemrecharges flag_recharge=1 STR_VAR icon=~sppr212b~ END
 	LPF CLONE_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifyac match_parameter2=modifyacvsslashing parameter2=modifyacvscrushing END
-	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=20 parameter2=1 STR_VAR match_resource=~spwi201~ resource=~spwi703~ END
-	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=20 parameter2=1 STR_VAR match_resource=~spwi212~ END
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=20 parameter2=2 STR_VAR match_resource=~spwi201~ resource=~spwi703~ END
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=20 parameter2=2 STR_VAR match_resource=~spwi212~ END
 	WRITE_BYTE minintelligence 21
 	WRITE_BYTE mincharisma 21
 	SAY IDENTIFIED_DESC ~Wrapped with serpentine twine around its corners and tapped in place by Tiernon's hands, this mirror of black ice may now be worn around the neck. It still serves the same function as the original black ice mirror, but it feels much lighter now, and the reflections within the mirror seem both sharper and duller at the same time. 
@@ -7074,7 +7353,7 @@ Weight: 2~
 COPY_EXISTING ~moonbow.itm~ ~override~
 	LPF DELETE_ITEM_HEADER INT_VAR header_type=3 END
 	LPF ADD_ITEM_HEADER INT_VAR type=3 required_id=1 location=3 range=1 speed=0 charges=1 depletion=itemrecharges flags=rechargeafterresting insert_point=0 STR_VAR icon=~spwi609c~ END
-	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=20 parameter2=1 insert_point=0 STR_VAR resource=~sppr505~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=1 parameter1=20 parameter2=2 insert_point=0 STR_VAR resource=~sppr505~ END
 	SAY IDENTIFIED_DESC ~This magical symbol of the elven goddess Sehanine Moonbow was given to those elves of the Hand of the Seldarine who explored various nearby areas. The wearer has the ability to cast divine magic that dispels all illusions in a large area.
 
 STATISTICS:
@@ -8204,6 +8483,7 @@ COPY_EXISTING ~presrob.itm~ ~override~
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifymagicresistance parameter1=10 END
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifysavevsdeath parameter1=5 END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifysavevsschool target=1 timing=2 parameter1=5 special=7 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=applyrepeatingeff target=1 timing=2 parameter1=1 parameter2=2 STR_VAR resource=~MEIT041~ END
 	WRITE_LONG price 19400
 	SAY IDENTIFIED_DESC ~This robe's plain nature hides the power that the item imparts to its wearer. The Necromancer's Robe was previously owned by a wizard from Luskan who was a member of the Host Tower of the Arcane. He created the item to protect him as he went in search of exotic items for his research. Its power did not save him when he got into an argument with a high-ranking member of the Plague Rats, an organization of vile thieves and assassins in service of Talona. Presio bought the robe from the murderer several years later.
 
@@ -8214,6 +8494,7 @@ Equipped abilities:
 - Magic Resistance: +10%
 - Save vs. Death: +5
 - Save vs. Necromancy Spells: +5
+- Allied undead within 30 feet gain +5 to hit and damage
 
 Weight: 6~
 
@@ -8947,7 +9228,7 @@ COPY_EXISTING ~shplate.itm~ ~override~
 	LPF DELETE_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifyac match_parameter2=setbaseac END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyac target=1 timing=2 parameter1=(0 - 1) parameter2=setbaseac END
 	LPF ADD_ITEM_HEADER INT_VAR type=3 target=5 required_id=1 location=3 range=1 speed=0 charges=1 depletion=itemrecharges flags=rechargeafterresting projectile=409 insert_point=0 STR_VAR icon=~spwi307b~ END
-	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=9 parameter1=15 parameter2=1 STR_VAR resource=~spwi307~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=3 opcode=castspell target=1 timing=9 parameter1=15 parameter2=2 STR_VAR resource=~spwi307~ END
 	WRITE_LONG weight 15
 	WRITE_LONG price 24000
 	SAY IDENTIFIED_DESC ~Upon a closer look at this suit of plate mail, its metal seems to be in an incorporeal state, hence its shadowed look. Upon being worn, it will make the wearer appear as shadowed as the armor is. It will also provide extra protection against missile weapons while the wearer is in its shadowed state.
@@ -9221,8 +9502,8 @@ Weight: 0~
 COPY_EXISTING ~stafbes.itm~ ~override~
 	LPF ALTER_ITEM_HEADER INT_VAR header=2 charges=0 drained=itemremains flag_recharge=0 STR_VAR icon=~spwi326b~ END
 	LPF ALTER_ITEM_HEADER INT_VAR header=3 STR_VAR icon=~spwi903b~ END
-	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspellpoint parameter1=20 parameter2=0 STR_VAR match_resource=~spwi323~ resource=~spwi302~ END
-	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=30 parameter2=0 STR_VAR match_resource=~spwi514~ resource=~spwi903~ END
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspellpoint parameter1=20 parameter2=2 STR_VAR match_resource=~spwi323~ resource=~spwi302~ END
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=30 parameter2=2 STR_VAR match_resource=~spwi514~ resource=~spwi903~ END
 	WRITE_BYTE firstheaderspeedfactor 1
 	WRITE_SHORT firstheaderdamage 3
 	WRITE_SHORT firstheaderthac0 3
@@ -9631,7 +9912,7 @@ COPY_EXISTING ~talongf.itm~ ~override~
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifymagicfireresistance parameter1=50 END
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifymagiccoldresistance parameter1=50 END
 	LPF ALTER_ITEM_HEADER INT_VAR header=2 STR_VAR icon=~mems274b~ END
-	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=30 parameter2=1 STR_VAR match_resource=~sppr327~ resource=~mems274~ END
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=30 parameter2=2 STR_VAR match_resource=~sppr327~ resource=~mems274~ END
 	WRITE_BYTE firstheaderspeedfactor 0
 	WRITE_SHORT firstheaderdamage 5
 	WRITE_SHORT firstheaderthac0 5
@@ -9700,14 +9981,14 @@ Requires:
 Weight: 1~
 
 COPY_EXISTING ~tomb.itm~ ~override~
-	LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=castspell target=1 timing=1 parameter1=1 parameter2=1 STR_VAR resource=~meit021~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=castspell target=2 timing=9 parameter1=1 parameter2=1 STR_VAR resource=~meit021~ END
 	WRITE_LONG price 14200
 	SAY IDENTIFIED_DESC ~The quick-witted warrior Seldon Mirai was known for his cool demeanor and his lighthearted comments in the midst of trying circumstances. He was especially well known for his lack of fear of the undead. He considered undead to be, in his words, "unoriginal, tired old jokes." "After the hundredth skeleton," he would say, "what's to be afraid of? They all march at you like horses to water, and you just hack them down one at a time. I'm supposed to be scared of that?" He would wade into tombs with his trusted flail and smash apart any undead that he found, joking all the way. Eventually, Seldon's lack of respect for the necromantic arts earned him an enemy in the form of Tiron, a lich of no small power. Tiron captured Seldon and paralyzed him, letting a group of skeletons beat him to death. Seldon's friends later recovered his body and had him raised from the dead. He was not as lighthearted about the walking dead after that.
 
 STATISTICS:
 
 Combat abilities:
-- Upon hitting a target, the flail also attacks each undead creature within 5 feet of the wielder, dealing 1d6+4 crushing damage to each creature.
+- Upon hitting a target, the flail also attacks each undead creature within 5 feet of the target, dealing 1d6+4 crushing damage to each creature.
 
 THAC0: +3
 Damage: 1d6+4 (crushing)
@@ -9721,13 +10002,13 @@ Weight: 5~
 
 COPY_EXISTING ~tonggf.itm~ ~override~
 	LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=damage target=2 timing=1 parameter1=5 parameter2=colddamage END
-	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=30 parameter2=1 STR_VAR match_resource=~spwi503~ END
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=30 parameter2=2 STR_VAR match_resource=~spwi503~ END
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifyfireresistance parameter1=25 END
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifycoldresistance parameter1=25 END
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifymagicfireresistance parameter1=50 END
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifymagiccoldresistance parameter1=50 END
 	LPF ALTER_ITEM_HEADER INT_VAR header=2 STR_VAR icon=~mems274b~ END
-	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=30 parameter2=1 STR_VAR match_resource=~sppr327~ resource=~mems274~ END
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=30 parameter2=2 STR_VAR match_resource=~sppr327~ resource=~mems274~ END
 	WRITE_BYTE firstheaderspeedfactor 4
 	WRITE_SHORT firstheaderdamage 5
 	WRITE_SHORT firstheaderthac0 5
@@ -10405,18 +10686,18 @@ Weight: 1~
 COPY_EXISTING ~udagg3c.itm~ ~override~
 	LPF DELETE_ITEM_EQEFFECT INT_VAR opcode_to_delete=modifymaxhp END
 	LPF DELETE_ITEM_EFFECT INT_VAR opcode_to_delete=(0 - 1) END
-	LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=castspell target=2 timing=1 parameter1=12 parameter2=1 STR_VAR resource=~spwi314~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=castspell target=2 timing=1 parameter1=5 parameter2=2 probability1=19 STR_VAR resource=~spwi314~ END
 	WRITE_BYTE firstheaderspeedfactor 0
 	WRITE_SHORT firstheaderdamage 3
 	WRITE_SHORT firstheaderthac0 3
 	WRITE_LONG weaponenchantment 3
 	SAY NAME2 ~Vampiric Dagger +3~
-	SAY IDENTIFIED_DESC ~Like most typical daggers, this dagger has a pointed, double-edged blade. It has also been imbued with magical abilities which have increased its usefulness. 
+	SAY IDENTIFIED_DESC ~Like most typical daggers, this dagger has a pointed, double-edged blade. It has also been imbued with magical abilities which have increased its usefulness.
 
 STATISTICS:
 
 Combat abilities:
-- 15% chance to cast Vampiric Touch (at level 12) on target
+- 20% chance to cast Vampiric Touch (at level 5) on target
 
 THAC0: +3
 Damage: 1d4+3 (piercing)
@@ -10812,12 +11093,15 @@ Requires:
 Weight: 3~
 
 COPY_EXISTING ~ulring.itm~ ~override~
-	LPF ALTER_ITEM_HEADER INT_VAR header=1 range=100 STR_VAR icon=~spwi713b~ END
-	LPF ALTER_ITEM_HEADER INT_VAR header=2 target=5 range=1 flag_recharge=1 STR_VAR icon=~spwi632b~ END
-	LPF ALTER_ITEM_HEADER INT_VAR header=3 range=100 drained=itemrecharges flag_recharge=1 STR_VAR icon=~spwi914b~ END
-	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=20 parameter2=1 STR_VAR match_resource=~spwi119~ resource=~spwi713~ END
-	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspellpoint opcode=castspell parameter1=20 parameter2=1 STR_VAR match_resource=~spwi205~ resource=~spwi632~ END
-	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=20 parameter2=1 STR_VAR match_resource=~spwi314~ resource=~spwi914~ END
+//	LPF ALTER_ITEM_HEADER INT_VAR header=1 range=100 STR_VAR icon=~spwi713b~ END
+//	LPF ALTER_ITEM_HEADER INT_VAR header=2 target=5 range=1 flag_recharge=1 STR_VAR icon=~spwi632b~ END
+//	LPF ALTER_ITEM_HEADER INT_VAR header=3 range=100 drained=itemrecharges flag_recharge=1 STR_VAR icon=~spwi914b~ END
+//	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=20 parameter2=2 STR_VAR match_resource=~spwi119~ resource=~spwi713~ END
+//	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspellpoint opcode=castspell parameter1=20 parameter2=2 STR_VAR match_resource=~spwi205~ resource=~spwi632~ END
+//	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell parameter1=20 parameter2=2 STR_VAR match_resource=~spwi314~ resource=~spwi914~ END
+	LPF DELETE_ITEM_HEADER INT_VAR header_type=3 END
+	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifysavevsspell new_opcode=modifysavevsschool parameter1=6 special=7 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=applyrepeatingeff target=1 timing=2 parameter1=1 parameter2=2 STR_VAR resource=~MEIT040~ END
 	WRITE_SHORT minintelligence 24
 	SAY IDENTIFIED_DESC ~A stout gold ring set with a black opal, this Ulcaster Academy ring bears the Netherese phrase "GOTHA E ETAN MEDR-ETACC," or "LIFE AND DEATH ETERNAL-NECROMANCY." A date on the side of the ring reads "1072 DR."
 
@@ -10826,14 +11110,8 @@ The Ulcaster Academy was a school of wizards who practiced, learned, and taught 
 STATISTICS:
 
 Equipped abilities:
-- Save vs. Spell: +2
-
-Charge abilities:
-- Finger of Death (at level 20) three times per day
-
-- Trollish Fortitude (at level 20) three times per day
-
-- Energy Drain (at level 20) three times per day
+- Save vs. Necromancy Spells: +6
+- All enemies within 30 feet gain an additional -2 penalty to saves against necromancy spells
 
 Requires:
  24 Intelligence
@@ -10889,7 +11167,7 @@ Weight: 4~
 
 COPY_EXISTING ~ulswd3c.itm~ ~override~
 	LPF DELETE_ITEM_EFFECT INT_VAR opcode_to_delete=(0 - 1) END
-	LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=castspell target=1 timing=1 parameter1=15 parameter2=1 probability1=6 STR_VAR resource=~sppr607~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=castspell target=1 timing=1 parameter1=15 parameter2=2 probability1=6 STR_VAR resource=~sppr607~ END
 	WRITE_BYTE firstheaderspeedfactor 3
 	WRITE_LONG price 5000
 	SAY IDENTIFIED_DESC ~These swords are usually referred to as double-edged swords, war swords, or military swords. In many cases, the long sword has a single-edged blade. There is no single version of the long sword; the design and length vary from culture to culture and may vary within the same culture depending on the era. Among the most common characteristics of all long swords is their length, which ranges from thirty-five inches to forty-seven inches. In the latter case, the blade is known to take up forty inches of the total length. Most long swords have a double-edged blade and a sharp point at the tip. Despite the tip, the long sword is designed for slashing, not thrusting. The blade of this sword is covered with all sorts of arcane symbols.
@@ -10997,7 +11275,7 @@ Weight: 4~
 COPY_EXISTING ~ulswd5b.itm~ ~override~
 	LPF DELETE_ITEM_EFFECT INT_VAR opcode_to_delete=(0 - 1) END
 	LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=damage target=2 timing=9 parameter2=magicfiredamage dicenumber=1 dicesize=8 END
-	LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=castspell target=2 timing=9 parameter1=1 parameter2=1 STR_VAR resource=~meit024~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=castspell target=2 timing=9 parameter1=1 parameter2=2 STR_VAR resource=~meit024~ END
 	WRITE_BYTE firstheaderspeedfactor 0
 	WRITE_SHORT firstheaderdamage 5
 	WRITE_SHORT firstheaderthac0 5
@@ -11268,6 +11546,7 @@ COPY_EXISTING ~uring4c.itm~ ~override~
 	LPF DELETE_ITEM_EQEFFECT INT_VAR opcode_to_delete=modifysavevsspell END
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=regeneration parameter1=2 parameter2=3 END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifysavevsspell target=1 timing=2 parameter1=(0 - 4) END
+	WRITE_LONG unusabilityflags 0
 	WRITE_LONG price 3000
 	SAY IDENTIFIED_DESC ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession. For no apparent reason, this ring feels warm to the touch.
 
@@ -11443,7 +11722,7 @@ Requires:
 Weight: 3~
 
 COPY_EXISTING ~usswd4b.itm~ ~override~
-	LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=castspell target=2 timing=1 probability1=1 parameter1=10 parameter2=1 STR_VAR resource=~sppr420~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=castspell target=2 timing=1 probability1=1 parameter1=10 parameter2=2 STR_VAR resource=~sppr420~ END
 	WRITE_BYTE firstheaderspeedfactor 0
 	WRITE_SHORT firstheaderdamage 4
 	WRITE_SHORT firstheaderthac0 4
@@ -11569,7 +11848,7 @@ Weight: 12~
 COPY_EXISTING ~utswd5a.itm~ ~override~
 	LPF DELETE_ITEM_EFFECT INT_VAR opcode_to_delete=(0 - 1) END
 	LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=damage target=2 timing=1 parameter2=elecdamage dicenumber=1 dicesize=6 END
-	LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=castspell target=2 timing=1 probability1=4 parameter1=30 parameter2=1 STR_VAR resource=~sppr420~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=castspell target=2 timing=1 probability1=4 parameter1=30 parameter2=2 STR_VAR resource=~sppr420~ END
 	WRITE_BYTE firstheaderspeedfactor 5
 	WRITE_SHORT firstheaderdamage 5
 	WRITE_SHORT firstheaderthac0 5
@@ -11744,7 +12023,7 @@ Weight: 45~
 
 COPY_EXISTING ~violin.itm~ ~override~
 	LPF ALTER_ITEM_HEADER INT_VAR header_type=3 target=1 charges=0 drained=itemremains flag_recharge=0 END
-	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspellpoint new_opcode=castspell target=2 parameter1=14 parameter2=1 STR_VAR resource=~spwi720~ END
+	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspellpoint new_opcode=castspell target=2 parameter1=14 parameter2=2 STR_VAR resource=~spwi720~ END
 	WRITE_LONG price 52000
 	SAY IDENTIFIED_DESC ~This instrument is also known as "Tallow's Violin," but that moniker is rarely spoken among musicians, as mentioning the name of Nikolai Tallow is considered bad luck. Nikolai was born in the Vast, near High Haspur, the son of a chandler. Because of the intermittent traffic through the region, Nikolai was introduced to many different cultures. One of the travelers he met was an elven musician named Relev Thinriver. Relev introduced Nikolai to the violin and taught him for several years as he wandered through the area. Relev knew that Nikolai was an incredibly gifted child, with quick fingers, a keen mind, and a passion for all things in the world. Relev also recognized that Nikolai was exceedingly proud and arrogant. In spite of Nikolai's shortcomings, Relev taught him everything he knew.
 
@@ -11818,8 +12097,8 @@ Weight: 1~
 
 COPY_EXISTING ~wandarm.itm~ ~override~
 	LPF ALTER_ITEM_HEADER INT_VAR header_type=3 charges=6 END
-	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=1 check_globals=0 header=1 match_opcode=castspell parameter1=12 STR_VAR resource=~spwi602~ END
-	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=1 check_globals=0 header=2 match_opcode=castspell parameter1=12 STR_VAR resource=~spwi611~ END
+	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=1 check_globals=0 header=1 match_opcode=castspell parameter1=12 parameter2=2 STR_VAR resource=~spwi602~ END
+	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=1 check_globals=0 header=2 match_opcode=castspell parameter1=12 parameter2=2 STR_VAR resource=~spwi611~ END
 	WRITE_BYTE minintelligence 23
 	WRITE_LONG price 12000
 	SAY IDENTIFIED_DESC ~Often confused with another wand of the same name, the Wand of Armory is used to cast protective spells on the user. Unfortunately for the creator of this Wand of Armory, trolls are persistent creatures.
@@ -11845,8 +12124,8 @@ Weight: 1~
 COPY_EXISTING ~wandfre.itm~ ~override~
 	LPF ALTER_ITEM_HEADER INT_VAR header=2 range=25 STR_VAR icon=~spwi503b~ END
 	LPF ALTER_ITEM_HEADER INT_VAR header=3 target=1 STR_VAR icon=~spwi628b~ END
-	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspellpoint parameter1=15 STR_VAR match_resource=~spwi204~ resource=~spwi503~ END
-	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspellpoint opcode=castspell target=2 parameter1=15 STR_VAR match_resource=~spwi404~ resource=~spwi628~ END
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspellpoint parameter1=15 parameter2=2 STR_VAR match_resource=~spwi204~ resource=~spwi503~ END
+	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspellpoint opcode=castspell target=2 parameter1=15 parameter2=2 STR_VAR match_resource=~spwi404~ resource=~spwi628~ END
 	WRITE_BYTE minintelligence 22
 	WRITE_LONG price 28000
 	SAY IDENTIFIED_DESC ~This deadly wand was crafted by the wizard Hegthen to protect him from his rival's fire-using minions. Hegthen made frequent use of the wand during his protracted war with his enemy. After ten years of hounding, Hegthen decided to take the battle to his rival, defeating him in one of the most spectacular magical duels ever seen in Suzail's history. As his terms of victory, Hethgen demanded that his enemy's name be magically snuffed out of the memory of all who knew him. His enemy accepted and later went on to become the Cloaked Flame, a dangerous terrorist killed by Cormyrean Purple Dragons and War Wizards in 1212 DR.
@@ -11982,7 +12261,7 @@ Weight: 0~
 
 COPY_EXISTING ~withery.itm~ ~override~
 	LPF DELETE_ITEM_EFFECT INT_VAR opcode_to_delete=(0 - 1) END
-	LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=castspell target=2 timing=1 parameter1=15 parameter2=1 probability1=49 STR_VAR resource=~spwi713~ END
+	LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=castspell target=2 timing=1 parameter1=15 parameter2=2 probability1=49 STR_VAR resource=~spwi713~ END
 	WRITE_BYTE firstheaderspeedfactor 0
 	WRITE_SHORT firstheaderdamage 3
 	WRITE_SHORT firstheaderthac0 3
@@ -12255,7 +12534,7 @@ COPY_EXISTING ~zzc8hb.itm~ ~override~
 	WRITE_LONG price 15000
 	SAY IDENTIFIED_DESC ~This fine broad sword is of unusual construction. The blade is crafted from an unknown dull black metal, but the edge appears to be of the finest silver. Fiery, red runes have been etched the entire length of the blade. When examined closely, the runes writhe with a life of their own. The hilt and guard of the sword have been carved from solid ruby.
 
-This weapon is the bane of all lower planes creatures. Against Baatezu and Tanar'ri the sword inflicts double damage and the user gains a +4 to both hit and damage. While held, the sword also grants some protection against fire.
+This weapon is the bane of all lower planar creatures. Against Baatezu, Yugoloths and Tanar'ri the sword inflicts double damage and the user gains a +4 to both hit and damage. While held, the sword also grants some protection against fire.
 
 STATISTICS:
 
@@ -12620,9 +12899,21 @@ COPY_EXISTING ~zzm5mhd.eff~ ~override~ ~zzm5mhh.eff~ ~override~
 
 COPY_EXISTING ~zzs6sc.itm~ ~override~ 
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=enchantmentvscreaturetype special=10 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=protectionfromopcode target=1 timing=2 parameter2=poison END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=protectionfromportraiticon target=1 timing=2 parameter2=6 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=protectionfromstring target=1 timing=2 parameter1=37607 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=protectionfromanimation target=1 timing=2 STR_VAR resource=~poisonh~ END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=protectionfromspell target=1 timing=2 STR_VAR resource=~spidwr~ END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=protectionfromspell target=1 timing=2 STR_VAR resource=~mespidwr~ END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=protectionfromspell target=1 timing=2 STR_VAR resource=~spin909~ END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=protectionfromspell target=1 timing=2 STR_VAR resource=~spin910~ END
 	SAY IDENTIFIED_DESC ~This weapon was made by a halfling priest of Brandobaris who was terribly afraid of spiders. The halfling's name was Caligope, and his greatest enemy was an evil elven wizard named Eil-Makar. The wizard's tower was surrounded by a hedge maze filled with giant spiders. The elf's tower was also filled with a variety of abnormal spiders. For over a year, Caligope refused to even look at the tower. Eventually, he decided to construct a club to deal with his fear. The resulting weapon was named the Evil Spider Crusher of Doom. Caligope succeeded in his quest to rob Eil-Makar blind, and he left dozens of dead spiders in his wake.
 
 STATISTICS:
+
+Equipped abilities:
+- Wielder is immune to poison
+- Wielder is immune to all on-hit effects of spider attacks, and to the psionic abilities of Astral Phase Spiders
 
 THAC0: +2, +10 vs. spiders
 Damage: 1d6+2, +10 vs. spiders
@@ -12825,6 +13116,17 @@ Requires:
  12 Dexterity
 
 Weight: 14~
+
+COPY_EXISTING ~mebrac84.itm~ ~override~
+	SAY NAME2 ~Gauntlets of Shapeshifting Mastery~
+	SAY IDENTIFIED_DESC ~These gauntlets enhance the wearer's skill with natural weapons while shapeshifted. The gauntlets do not meld into the shapeshifted form, but instead change size and shape to adapt to the new form. If the new form has claws, the gauntlets will become clawed.
+
+STATISTICS:
+
+Equipped abilities:
+- While shapeshifted, the wearer gains the benefits of weapon mastery (+3 to hit and damage, +1/2 attack per round). If the wearer is a Shapeshifter or a Fighter/Druid, they instead gain grandmastery (+3 to hit, +5 to damage, -3 speed factor, +3/2 attacks per round).
+
+Weight: 1~
 
 COPY_EXISTING ~mebrac90.itm~ ~override~
 	SAY NAME2 ~Force of Lightning~
@@ -13731,6 +14033,18 @@ Requires:
 
 Weight: 1~
 
+COPY_EXISTING ~meuring6.itm~ ~override~
+	SAY NAME2 ~Ring of Divine Extension~
+	SAY IDENTIFIED_DESC ~A ring is a small band of precious metal that is used as jewelry. Some rare rings have had enchantments placed upon them that confer various magical abilities. These rings are highly sought after, especially by those of the adventuring profession. For no apparent reason, this ring feels warm to the touch.
+
+STATISTICS:
+
+Equipped abilities:
+- Wearer's priest spells last 100% longer (single-classed Clerics only)
+- Wearer's priest spells last 25% longer (all other classes)
+
+Weight: 0~
+
 COPY_EXISTING ~meusbow1.itm~ ~override~
 	SAY NAME2 ~Fastbow +1~
 	SAY IDENTIFIED_DESC ~Shortbows were the first bows to be developed, although they were not called such. This is more of a default term that refers to anything which is not a longbow. Shortbow staves are about five feet long on the average. As the years passed, attempts were made to increase bow ranges. Bows were either given longer staves or flexibility was increased with no change to the length. The former resulted in what is now called the longbow.
@@ -14094,6 +14408,17 @@ Duration: Permanent
 
 Weight: 1~
 
+COPY_EXISTING ~meuspot6.itm~ ~override~
+	SAY NAME2 ~Potion of Unstoppable Casting~
+	SAY IDENTIFIED_DESC ~Potions are typically found in ceramic, crystal, glass, or metal flasks or vials. Flasks or other containers generally contain enough fluid to provide one person with one complete dose to achieve the effects of the potion. 
+
+STATISTICS:
+
+Imbiber gains the ability to cast wizard spells while wearing any armor or while under the effect of Tenser's Transformation
+Duration: Permanent
+
+Weight: 1~
+
 COPY_EXISTING ~meuspot8.itm~ ~override~
 	SAY NAME2 ~Haste Potion~
 	SAY IDENTIFIED_DESC ~Potions are typically found in ceramic, crystal, glass, or metal flasks or vials. Flasks or other containers generally contain enough fluid to provide one person with one complete dose to achieve the effects of the potion. 
@@ -14320,27 +14645,48 @@ COPY_EXISTING ~mewightc.itm~ ~override~
 COPY_EXISTING ~mewyrmsp.itm~ ~override~
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell2 parameter2=splprot_immunetomagiccold END
 
-COPY_EXISTING_REGEXP ~a7afaaq\.cre~ ~override~ ~a7afaaq2\.cre~ ~override~ ~a7afqyx\.cre~ ~override~ ~a7gasfrm\.cre~ ~override~ ~l#dusky\.cre~ ~override~ ~o#holvir\.cre~ ~override~ ~o#korin\.cre~ ~override~ ~o#nella\.cre~ ~override~ ~o#severn\.cre~ ~override~ ~o#teri\.cre~ ~override~ ~yitur\.cre~ ~override~ ~bdsha.*\.cre~ ~override~ ~spbear[1-5]\.cre~ ~override~ ~splion[1-5]\.cre~ ~override~ ~spsnak[1-5]\.cre~ ~override~ ~spwolf[1-5]\.cre~ ~override~
+COPY_EXISTING ~a7afaaq.cre~ ~override~ ~a7afaaq2.cre~ ~override~ ~a7afqyx.cre~ ~override~ ~a7gasfrm.cre~ ~override~ ~l#dusky.cre~ ~override~ ~o#holvir.cre~ ~override~ ~o#korin.cre~ ~override~ ~o#nella.cre~ ~override~ ~o#severn.cre~ ~override~ ~o#teri.cre~ ~override~ ~yitur.cre~ ~override~
 	READ_LONG xp ulgiash
 	ulgiash = ulgiash + 5000
 	WRITE_LONG xp ulgiash
+	IF_EXISTS
+
+COPY_EXISTING_REGEXP ~.*\.cre~ ~override~
 	READ_BYTE strength ulgiash
 	ulgiash = ulgiash + 2
+	PATCH_IF ulgiash > 25 BEGIN
+		ulgiash = 25
+	END
 	WRITE_BYTE strength ulgiash
 	READ_BYTE dexterity ulgiash
 	ulgiash = ulgiash + 2
+	PATCH_IF ulgiash > 25 BEGIN
+		ulgiash = 25
+	END
 	WRITE_BYTE dexterity ulgiash
 	READ_BYTE constitution ulgiash
 	ulgiash = ulgiash + 2
+	PATCH_IF ulgiash > 25 BEGIN
+		ulgiash = 25
+	END
 	WRITE_BYTE constitution ulgiash
 	READ_BYTE intelligence ulgiash
 	ulgiash = ulgiash + 2
+	PATCH_IF ulgiash > 25 BEGIN
+		ulgiash = 25
+	END
 	WRITE_BYTE intelligence ulgiash
 	READ_BYTE wisdom ulgiash
 	ulgiash = ulgiash + 2
+	PATCH_IF ulgiash > 25 BEGIN
+		ulgiash = 25
+	END
 	WRITE_BYTE wisdom ulgiash
 	READ_BYTE charisma ulgiash
 	ulgiash = ulgiash + 2
+	PATCH_IF ulgiash > 25 BEGIN
+		ulgiash = 25
+	END
 	WRITE_BYTE charisma ulgiash
 	IF_EXISTS
 
@@ -15751,7 +16097,8 @@ COPY_EXISTING ~frostbit.cre~ ~override~ //Frostbite
 	ADD_CRE_ITEM ~mernbook~ #1 #0 #0 ~UNSTEALABLE~ ~INV8~
 	ADD_CRE_ITEM ~meuspot1~ #1 #0 #0 ~UNSTEALABLE~ ~INV9~
 	ADD_CRE_ITEM ~meuspot1~ #1 #0 #0 ~UNSTEALABLE~ ~INV10~
-	ADD_CRE_ITEM ~misc07~ #1500 #0 #0 ~UNSTEALABLE~ ~INV11~
+	ADD_CRE_ITEM ~meuspot8~ #1 #0 #0 ~UNSTEALABLE~ ~INV11~
+	ADD_CRE_ITEM ~misc07~ #1500 #0 #0 ~UNSTEALABLE~ ~INV12~
 	LPF ADD_CRE_EFFECT INT_VAR opcode=modifyallsaves target=1 timing=9 parameter1=9 END
 	LPF ADD_CRE_EFFECT INT_VAR opcode=modifymovementrate2 target=1 timing=1 parameter1=200 parameter2=2 END
 	LPF ADD_CRE_EFFECT INT_VAR opcode=invisibilitydetection target=1 timing=1 parameter2=1 END
@@ -16708,6 +17055,9 @@ COPY_EXISTING ~jorn.cre~ ~override~
 	WRITE_ASCII overridescript ~mejorn~ #8
 	REMOVE_MEMORIZED_SPELLS
 	LPF ADD_CRE_EFFECT INT_VAR opcode=modifyallsaves target=1 timing=9 parameter1=6 END
+
+COPY_EXISTING ~kaarund.cre~ ~override~
+	REPLACE_CRE_ITEM ~nature~ #1 #1 #1 ~NONE~ ~QITEM1~
 
 COPY_EXISTING ~kaorog.cre~ ~override~
 	SAY NAME1 ~Lesser Neo-Orog Marauder~
@@ -18181,7 +18531,7 @@ COPY_EXISTING ~neoorogg.cre~ ~override~
 	LPF ADD_CRE_EFFECT INT_VAR opcode=modifyallsaves target=1 timing=9 parameter1=15 END
 
 COPY_EXISTING ~ogre.cre~ ~override~ ~ecogre.cre~ ~override~
-	WRITE_LONG killxp 1400
+	WRITE_LONG killxp 3000
 	WRITE_SHORT currenthp 95
 	WRITE_SHORT maxhp 95
 	WRITE_SHORT naturalac 15
@@ -18446,6 +18796,7 @@ COPY_EXISTING ~presio.cre~ ~override~ ~cdpresio.cre~ ~override~
 	ADD_MEMORIZED_SPELL ~sppr615~ #5 ~priest~ (1)
 	ADD_MEMORIZED_SPELL ~mems211~ #5 ~priest~ (1)
 	ADD_MEMORIZED_SPELL ~sppr716~ #6 ~priest~ (1)
+	ADD_MEMORIZED_SPELL ~sppr734~ #6 ~priest~ (1)
 	ADD_MEMORIZED_SPELL ~sppr740~ #6 ~priest~ (1)
 	ADD_MEMORIZED_SPELL ~spwi112~ #0 ~wizard~ (6)
 	ADD_MEMORIZED_SPELL ~spwi203~ #1 ~wizard~ (1)
@@ -21939,8 +22290,14 @@ COPY_EXISTING_REGEXP ~.*\.cre~ ~override~
 	END
 	BUT_ONLY_IF_IT_CHANGES
 
-COPY_EXISTING_REGEXP ~smll.*.pro~ ~override~ ~hold.pro~ ~override~ ~holdnecr.pro~ ~override~ ~inarea.*.pro~ ~override~ ~idpro24[0156789].pro~ ~override~ ~idpro25[024568].pro~ ~override~ ~idpro26[236].pro~ ~override~ ~idpro407.pro~ ~override~
+COPY_EXISTING ~#paldise.spl~ ~override~
+	LPF CLONE_EFFECT INT_VAR multi_match=1 check_headers=1 check_globals=0 match_opcode=protectionfromopcode opcode=protectionfromspell parameter2=0 STR_VAR resource=~spin190~ END
+
+COPY_EXISTING_REGEXP ~smll.*.pro~ ~override~ ~hold.pro~ ~override~ ~holdnecr.pro~ ~override~ ~inarea.*.pro~ ~override~ ~idpro24[0156789].pro~ ~override~ ~idpro25[024568].pro~ ~override~ ~idpro26[236].pro~ ~override~ ~idpro407.pro~ ~override~ ~ohvrnp.pro~ ~override~ ~ohvrpo.pro~ ~override~
 	WRITE_ASCII 0x10 ~~ #8
+	READ_LONG 0xc ulgiash
+	ulgiash|=0x40
+	WRITE_LONG 0xc ulgiash
 	READ_LONG 0x2c ulgiash
 	ulgiash|=0x8
 	WRITE_LONG 0x2c ulgiash
@@ -22044,14 +22401,12 @@ Constitution: 21
 
 Base Armor Class: 4
 Number of Attacks: 5
-Attack Damage: 1d12 slashing, strikes as a +3 weapon
+Attack Damage: 1d12 slashing, strikes as a +1 weapon
 
 Special Abilities:
 - Movement Rate doubled
 - Cold Resistance: 50%
-- Magic Cold Resistance: 50%
-- Fire Resistance: -25%
-- Magic Fire Resistance: -25%
+- Magic Cold Resistance: 25%
 
 The Druid is healed 12 Hit Points after using this ability.~
 
@@ -22068,7 +22423,17 @@ COPY_EXISTING ~druidpb.cre~ ~override~ //Druid Polar Bear Form
 
 COPY_EXISTING ~plypbear.itm~ ~override~ //Druid Polar Bear Attack
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifymovementrate2 target=1 timing=2 parameter1=200 parameter2=2 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyanimation target=1 timing=2 parameter1=29187 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyac target=1 timing=2 parameter1=4 parameter2=setbaseac END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyattacksperround target=1 timing=2 parameter1=5 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=useefffile target=1 timing=2 parameter1=eaanyone parameter2=idsea STR_VAR resource=~MEDISSHP~ END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=useefffile target=1 timing=2 parameter1=eaanyone parameter2=idsea STR_VAR resource=~MEDISSHW~ END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifycoldresistance target=1 timing=2 parameter1=50 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifymagiccoldresistance target=1 timing=2 parameter1=25 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifystrength target=1 timing=2 parameter1=21 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifydexterity target=1 timing=2 parameter1=16 parameter2=1 END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyconstitution target=1 timing=2 parameter1=21 parameter2=1 END
+	WRITE_LONG weaponenchantment 1
 
 
 
@@ -22081,12 +22446,12 @@ Constitution: 20
 
 Base Armor Class: 2
 Number of Attacks: 2
-Attack Damage: 6d4 cold (Save vs. Breath for half), strikes as a +1 weapon
+Attack Damage: 6d4 cold, -25% Cold Resistance for 3 rounds (Save vs. Breath to half damage and negate resistance loss), strikes as a +6 weapon
 
 Special Abilities:
 - Movement Rate doubled
 - Cold Resistance: 100%
-- Magic Cold Resistance: 100%
+- Magic Cold Resistance: 75%
 
 The Druid is healed 12 Hit Points after using this ability.~
 
@@ -22105,6 +22470,16 @@ COPY_EXISTING ~druidww.cre~ ~override~ //Druid Winter Wolf Form
 
 COPY_EXISTING ~wolfwi1.itm~ ~override/plywwolf.itm~ //Druid Winter Wolf Attack
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifymovementrate2 target=1 timing=2 parameter1=200 parameter2=2 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyanimation target=1 timing=2 parameter1=31489 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyac target=1 timing=2 parameter1=2 parameter2=setbaseac END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyattacksperround target=1 timing=2 parameter1=2 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=useefffile target=1 timing=2 parameter1=eaanyone parameter2=idsea STR_VAR resource=~MEDISSHP~ END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=useefffile target=1 timing=2 parameter1=eaanyone parameter2=idsea STR_VAR resource=~MEDISSHW~ END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifycoldresistance target=1 timing=2 parameter1=100 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifymagiccoldresistance target=1 timing=2 parameter1=75 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifystrength target=1 timing=2 parameter1=18 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyexceptionalstrength target=1 timing=2 parameter1=100 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifydexterity target=1 timing=2 parameter1=21 parameter2=1 END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyconstitution target=1 timing=2 parameter1=20 parameter2=1 END
 	WRITE_BYTE firstheaderspeedfactor 0
 	WRITE_SHORT firstheaderthac0 0
@@ -22137,6 +22512,17 @@ COPY_EXISTING ~druidbb.cre~ ~override~ //Druid Boring Beetle Form
 	WRITE_BYTE missileresistance 95
 
 COPY_EXISTING ~plybeetl.itm~ ~override~ //Druid Boring Beetle Attack
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyanimation target=1 timing=2 parameter1=57888 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyac target=1 timing=2 parameter1=(0 - 2) parameter2=setbaseac END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyattacksperround target=1 timing=2 parameter1=1 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=useefffile target=1 timing=2 parameter1=eaanyone parameter2=idsea STR_VAR resource=~MEDISSHP~ END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=useefffile target=1 timing=2 parameter1=eaanyone parameter2=idsea STR_VAR resource=~MEDISSHW~ END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyslashingresistance target=1 timing=2 parameter1=80 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifypiercingresistance target=1 timing=2 parameter1=80 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifycrushingresistance target=1 timing=2 parameter1=60 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifymissileresistance target=1 timing=2 parameter1=95 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifystrength target=1 timing=2 parameter1=20 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifydexterity target=1 timing=2 parameter1=7 parameter2=1 END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyconstitution target=1 timing=2 parameter1=22 parameter2=1 END
 	READ_LONG itemflags ulgiash
 	ulgiash&=0xFFFFFFBF //No longer magical
@@ -22184,6 +22570,17 @@ COPY_EXISTING ~druidfe.cre~ ~override~ //Druid Fire Elemental Form
 
 COPY_EXISTING ~felem.itm~ ~override~ //Druid Fire Elemental Attack
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=protectionfromweapons target=1 timing=2 parameter2=2 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyanimation target=1 timing=2 parameter1=57932 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyac target=1 timing=2 parameter1=0 parameter2=setbaseac END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyattacksperround target=1 timing=2 parameter1=2 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=useefffile target=1 timing=2 parameter1=eaanyone parameter2=idsea STR_VAR resource=~MEDISSHP~ END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=useefffile target=1 timing=2 parameter1=eaanyone parameter2=idsea STR_VAR resource=~MEDISSHW~ END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyfireresistance target=1 timing=2 parameter1=127 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifymagicfireresistance target=1 timing=2 parameter1=127 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifycoldresistance target=1 timing=2 parameter1=(0 - 100) parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifymagiccoldresistance target=1 timing=2 parameter1=(0 - 100) parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifystrength target=1 timing=2 parameter1=21 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifydexterity target=1 timing=2 parameter1=9 parameter2=1 END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyconstitution target=1 timing=2 parameter1=21 parameter2=1 END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifymovementrate2 target=1 timing=2 parameter1=150 parameter2=2 END
 	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=damage match_parameter2=firedamage parameter1=0 dicenumber=4 dicesize=6 END
@@ -22209,8 +22606,8 @@ Special Abilities:
 - Cold Resistance: 25%
 - Magic Cold Resistance: 25%
 - Slashing Resistance: 50%
-- Crushing Resistance: 25%
 - Piercing Resistance: 50%
+- Crushing Resistance: 25%
 - Missile Resistance: 50%
 - Protection from the spells Spike Stones and Earthquake
 
@@ -22229,6 +22626,21 @@ COPY_EXISTING ~druidee.cre~ ~override~ //Druid Earth Elemental Form
 
 COPY_EXISTING ~eelem.itm~ ~override~ //Druid Earth Elemental Attack
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=protectionfromweapons target=1 timing=2 parameter2=2 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyanimation target=1 timing=2 parameter1=57931 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyac target=1 timing=2 parameter1=0 parameter2=setbaseac END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyattacksperround target=1 timing=2 parameter1=2 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=useefffile target=1 timing=2 parameter1=eaanyone parameter2=idsea STR_VAR resource=~MEDISSHP~ END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=useefffile target=1 timing=2 parameter1=eaanyone parameter2=idsea STR_VAR resource=~MEDISSHW~ END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyfireresistance target=1 timing=2 parameter1=25 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifymagicfireresistance target=1 timing=2 parameter1=25 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifycoldresistance target=1 timing=2 parameter1=25 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifymagiccoldresistance target=1 timing=2 parameter1=25 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyslashingresistance target=1 timing=2 parameter1=50 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifypiercingresistance target=1 timing=2 parameter1=50 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifycrushingresistance target=1 timing=2 parameter1=25 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifymissileresistance target=1 timing=2 parameter1=50 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifystrength target=1 timing=2 parameter1=23 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifydexterity target=1 timing=2 parameter1=5 parameter2=1 END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyconstitution target=1 timing=2 parameter1=24 parameter2=1 END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifymovementrate2 target=1 timing=2 parameter1=150 parameter2=2 END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=protectionfromspell target=1 timing=2 STR_VAR resource=~sppr519~ END
@@ -22245,18 +22657,20 @@ Constitution: 20
 
 Base Armor Class: -2
 Number of Attacks: 2
-Attack Damage: 4d8 crushing
+Attack Damage: 4d8 crushing, strikes as a +4 weapon
 
 Special Abilities:
 - Movement Rate increased by 50%
 - Protection from normal weapons
+- Fire Resistance: 75%
+- Magic Fire Resistance: 75%
 - Cold Resistance: -25%
 - Magic Cold Resistance: -25%
 - Electricity Resistance: -75%
 - Acid Resistance: 75%
 - Slashing Resistance: 75%
-- Crushing Resistance: 75%
 - Piercing Resistance: 75%
+- Crushing Resistance: 75%
 - Missile Resistance: 75%
 - Protection from the spell Smashing Wave
 
@@ -22271,6 +22685,24 @@ COPY_EXISTING ~druidwe.cre~ ~override~ //Druid Water Elemental Form
 
 COPY_EXISTING ~welem.itm~ ~override~ //Druid Water Elemental Attack
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=protectionfromweapons target=1 timing=2 parameter2=2 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyanimation target=1 timing=2 parameter1=57933 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyac target=1 timing=2 parameter1=(0 - 2) parameter2=setbaseac END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyattacksperround target=1 timing=2 parameter1=2 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=useefffile target=1 timing=2 parameter1=eaanyone parameter2=idsea STR_VAR resource=~MEDISSHP~ END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=useefffile target=1 timing=2 parameter1=eaanyone parameter2=idsea STR_VAR resource=~MEDISSHW~ END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyfireresistance target=1 timing=2 parameter1=75 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifymagicfireresistance target=1 timing=2 parameter1=75 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifycoldresistance target=1 timing=2 parameter1=(0 - 25) parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifymagiccoldresistance target=1 timing=2 parameter1=(0 - 25) parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyelecresistance target=1 timing=2 parameter1=(0 - 75) parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyacidresistance target=1 timing=2 parameter1=75 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyslashingresistance target=1 timing=2 parameter1=75 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifypiercingresistance target=1 timing=2 parameter1=75 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifycrushingresistance target=1 timing=2 parameter1=75 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifymissileresistance target=1 timing=2 parameter1=75 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifystrength target=1 timing=2 parameter1=18 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyexceptionalstrength target=1 timing=2 parameter1=76 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifydexterity target=1 timing=2 parameter1=16 parameter2=1 END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyconstitution target=1 timing=2 parameter1=20 parameter2=1 END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifymovementrate2 target=1 timing=2 parameter1=150 parameter2=2 END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=protectionfromspell target=1 timing=2 STR_VAR resource=~sppr426~ END
@@ -22308,6 +22740,14 @@ COPY_EXISTING ~plyspid2.itm~ ~override~ //Avenger Sword Spider Attack
 	LPF DELETE_ITEM_EQEFFECT INT_VAR opcode_to_delete=haste1 END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=haste2 target=1 timing=2 parameter2=1 END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifymovementrate2 target=1 timing=2 parameter1=255 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyanimation target=1 timing=2 parameter1=31235 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyac target=1 timing=2 parameter1=4 parameter2=setbaseac END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyattacksperround target=1 timing=2 parameter1=5 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=useefffile target=1 timing=2 parameter1=eaanyone parameter2=idsea STR_VAR resource=~MEDISSHP~ END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=useefffile target=1 timing=2 parameter1=eaanyone parameter2=idsea STR_VAR resource=~MEDISSHW~ END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifystrength target=1 timing=2 parameter1=18 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyexceptionalstrength target=1 timing=2 parameter1=55 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifydexterity target=1 timing=2 parameter1=20 parameter2=1 END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyconstitution target=1 timing=2 parameter1=12 parameter2=1 END
 	WRITE_BYTE firstheaderspeedfactor 0
 	READ_LONG itemflags ulgiash
@@ -22346,6 +22786,13 @@ COPY_EXISTING ~plywyvrn.cre~ ~override~ //Avenger Wyvern Form
 COPY_EXISTING ~plywyvrn.itm~ ~override~ //Avenger Wyvern Attack
 	LPF DELETE_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=protectionfromopcode match_parameter2=leveldrain END
 	LPF DELETE_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=protectionfromopcode match_parameter2=petrification END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyanimation target=1 timing=2 parameter1=4096 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyac target=1 timing=2 parameter1=(0 - 10) parameter2=setbaseac END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyattacksperround target=1 timing=2 parameter1=2 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=useefffile target=1 timing=2 parameter1=eaanyone parameter2=idsea STR_VAR resource=~MEDISSHP~ END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=useefffile target=1 timing=2 parameter1=eaanyone parameter2=idsea STR_VAR resource=~MEDISSHW~ END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifystrength target=1 timing=2 parameter1=21 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifydexterity target=1 timing=2 parameter1=20 parameter2=1 END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyconstitution target=1 timing=2 parameter1=18 parameter2=1 END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=protectionfromspell target=1 timing=2 STR_VAR resource=~spwi101~ END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=protectionfromspell target=1 timing=2 STR_VAR resource=~mems236~ END
@@ -22409,6 +22856,17 @@ COPY_EXISTING ~plysala.itm~ ~override~ //Avenger Salamander Attack
 	LPF DELETE_ITEM_EQEFFECT INT_VAR opcode_to_delete=modifymovementrate2 END
 	LPF DELETE_ITEM_EQEFFECT INT_VAR opcode_to_delete=displayportraiticon END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=haste1 target=1 timing=2 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyanimation target=1 timing=2 parameter1=59648 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyac target=1 timing=2 parameter1=(0 - 6) parameter2=setbaseac END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyattacksperround target=1 timing=2 parameter1=3 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=useefffile target=1 timing=2 parameter1=eaanyone parameter2=idsea STR_VAR resource=~MEDISSHP~ END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=useefffile target=1 timing=2 parameter1=eaanyone parameter2=idsea STR_VAR resource=~MEDISSHW~ END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyfireresistance target=1 timing=2 parameter1=125 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifymagicfireresistance target=1 timing=2 parameter1=100 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifycoldresistance target=1 timing=2 parameter1=(0 - 50) parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifymagiccoldresistance target=1 timing=2 parameter1=(0 - 50) parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifystrength target=1 timing=2 parameter1=19 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifydexterity target=1 timing=2 parameter1=20 parameter2=1 END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyconstitution target=1 timing=2 parameter1=18 parameter2=1 END
 	LPF ALTER_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=castspelloncondition STR_VAR match_resource=~firau1d2~ resource=~firau1d6~ END
 	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=damage match_parameter2=firedamage parameter1=0 dicenumber=2 dicesize=8 END
@@ -22443,6 +22901,14 @@ COPY_EXISTING ~werewodr.cre~ ~override~ //Shapeshifter Werewolf Form
 
 COPY_EXISTING ~werewlf1.itm~ ~override~ //Shapeshifter Werewolf Attack
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=regeneration target=1 timing=2 parameter1=1 parameter2=2 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyanimation target=1 timing=2 parameter1=32256 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyac target=1 timing=2 parameter1=(0 - 2) parameter2=setbaseac END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyattacksperround target=1 timing=2 parameter1=5 parameter2=3 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=useefffile target=1 timing=2 parameter1=eaanyone parameter2=idsea STR_VAR resource=~MEDISSHP~ END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=useefffile target=1 timing=2 parameter1=eaanyone parameter2=idsea STR_VAR resource=~MEDISSHW~ END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifymagicresistance target=1 timing=2 parameter1=20 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifystrength target=1 timing=2 parameter1=21 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifydexterity target=1 timing=2 parameter1=21 parameter2=1 END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyconstitution target=1 timing=2 parameter1=21 parameter2=1 END
 	WRITE_BYTE firstheadernumdice 1
 	WRITE_BYTE firstheaderdicesize 10
@@ -22469,7 +22935,7 @@ Special Abilities:
 
 The Druid is healed 12 Hit Points after using this ability.~
 
-COPY_EXISTING ~weregrdr.cre~ ~override~ //Shapeshifter Werewolf Form
+COPY_EXISTING ~weregrdr.cre~ ~override~ //Shapeshifter Greater Werewolf Form
 	WRITE_SHORT naturalac 65527 //-9
 	WRITE_SHORT effectiveac 65527
 	WRITE_BYTE strength 25
@@ -22478,12 +22944,31 @@ COPY_EXISTING ~weregrdr.cre~ ~override~ //Shapeshifter Werewolf Form
 	WRITE_BYTE constitution 25
 	WRITE_BYTE attacksperround 5
 
-COPY_EXISTING ~werewlf2.itm~ ~override~ //Shapeshifter Werewolf Attack
+COPY_EXISTING ~werewlf2.itm~ ~override~ //Shapeshifter Greater Werewolf Attack
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=regeneration target=1 timing=2 parameter1=6 parameter2=2 END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=protectionfromweapons target=1 timing=2 parameter2=2 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyanimation target=1 timing=2 parameter1=32257 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyac target=1 timing=2 parameter1=(0 - 9) parameter2=setbaseac END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyattacksperround target=1 timing=2 parameter1=5 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=useefffile target=1 timing=2 parameter1=eaanyone parameter2=idsea STR_VAR resource=~MEDISSHP~ END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=useefffile target=1 timing=2 parameter1=eaanyone parameter2=idsea STR_VAR resource=~MEDISSHW~ END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyfireresistance target=1 timing=2 parameter1=50 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifycoldresistance target=1 timing=2 parameter1=50 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyelecresistance target=1 timing=2 parameter1=50 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyacidresistance target=1 timing=2 parameter1=50 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifymagicresistance target=1 timing=2 parameter1=40 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifystrength target=1 timing=2 parameter1=25 parameter2=1 END
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifydexterity target=1 timing=2 parameter1=25 parameter2=1 END
 	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=modifyconstitution target=1 timing=2 parameter1=25 parameter2=1 END
 	WRITE_BYTE firstheadernumdice 2
 	WRITE_BYTE firstheaderdicesize 8
+
+COPY_EXISTING ~plyflind.itm~ ~override~ ~plymstar.itm~ ~override~ ~plyspid.itm~ ~override~ ~plyjelly.itm~ ~override~ ~plybear1.itm~ ~override~ ~plywolf1.itm~ ~override~ ~cdpolybb.itm~ ~override~ ~cdpolypb.itm~ ~override~ ~cdpolyww.itm~ ~override~ ~mindflay.itm~ ~override~ ~goliro.itm~ ~override~ ~trollall.itm~ ~override~ ~wolfgr.itm~ ~override~ ~mindflay.itm~ ~override~ ~firern.itm~ ~override~ ~earthrn.itm~ ~override~ ~cdshwele.itm~ ~override~ ~plywwolf.itm~ ~override~ ~plybeetl.itm~ ~override~ ~felem.itm~ ~override~ ~eelem.itm~ ~override~ ~welem.itm~ ~override~ ~plyspid2.itm~ ~override~ ~plywyvrn.itm~ ~override~ ~plysala.itm~ ~override~ ~werewlf1.itm~ ~override~ ~werewlf2.itm~ ~override~ ~bclaw.itm~ ~override~
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=setspellstate target=1 timing=2 parameter2=75 special=1 END
+	IF_EXISTS
+
+COPY_EXISTING_REGEXP ~spcl10[178]\.spl~ ~override~ ~spcl11[234]\.spl~ ~override~ ~spcl63[234]\.spl~ ~override~ ~spcl64[34].spl~ ~override~
+	LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=polymorph END
 
 COPY_EXISTING ~spin115.spl~ ~override~ //Mournful Wail
 	LPF ALTER_EFFECT INT_VAR match_duration=18 duration=24 END
@@ -23081,6 +23566,41 @@ COPY_EXISTING ~sppr326.spl~ ~override~ //Mold Touch
 COPY_EXISTING ~sppr326b.spl~ ~override~
 	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 savebonus=(0 - 4) END
 
+COPY_EXISTING ~sppr327.spl~ ~override~ //Storm Shell
+	LPF ALTER_SPELL_HEADER INT_VAR speed=3 END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~sppr250~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~mepr325d~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~sppr423~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~sppr617~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~sppr705~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~sppr722~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~spwi004~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~spwi016~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~spwi213~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~spwi404~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~spwi502~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~spwi614~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~spwi724~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~spwi810~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~spwi904~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~mems049~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~mems210~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~mems265~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~mems272~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~mems281~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~mems285~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=setspellstate target=1 timing=0 duration=60 parameter2=251 power=3 resist_dispel=3 special=1 END
+	READ_SHORT 0x68 numheaders
+	FOR (i = numheaders; i < 50; ++i) BEGIN
+		LPF ADD_SPELL_HEADER INT_VAR copy_header=i insert_point=i END
+		numheaders = numheaders + 1
+	END
+	FOR (i = 1; i <= numheaders; ++i) BEGIN
+		LPF ALTER_SPELL_HEADER INT_VAR header=i min_level=i END
+		LPF ALTER_SPELL_EFFECT INT_VAR header=i duration_high=((i * 6) + 30) END
+	END
+	SAY UNIDENTIFIED_DESC @20327
+
 COPY_EXISTING ~sppr330.spl~ ~override~
 	LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=damage END
 	LPF ADD_SPELL_EFFECT INT_VAR opcode=damage target=2 timing=1 parameter1=20 parameter2=magicdamage power=3 resist_dispel=1 END
@@ -23167,8 +23687,18 @@ COPY_EXISTING ~sppr409.spl~ ~override~
 	SAY UNIDENTIFIED_DESC @20409
 
 COPY_EXISTING ~sppr411.spl~ ~override~
-	LPF ALTER_SPELL_HEADER INT_VAR speed=3 END
-	LPF ALTER_SPELL_EFFECT INT_VAR duration_high=60 savebonus=(0 - 3) END
+	LPF ALTER_SPELL_HEADER INT_VAR speed=2 END
+	LPF ALTER_SPELL_EFFECT INT_VAR savebonus=(0 - 3) END
+	READ_SHORT 0x68 numheaders
+	FOR (i = numheaders; i < 50; ++i) BEGIN
+		LPF ADD_SPELL_HEADER INT_VAR copy_header=i insert_point=i END
+		numheaders = numheaders + 1
+	END
+	FOR (i = 1; i <= numheaders; ++i) BEGIN
+		LPF ALTER_SPELL_HEADER INT_VAR header=i min_level=i END
+		LPF ALTER_SPELL_EFFECT INT_VAR header=i duration_high=(i * 6) END
+		LPF ALTER_SPELL_EFFECT INT_VAR header=i match_opcode=modifymaxhp parameter1=i END
+	END
 	SAY UNIDENTIFIED_DESC @20411
 
 COPY_EXISTING ~sppr412.spl~ ~override~ ~ohtmps1.spl~ ~override~
@@ -23193,20 +23723,11 @@ COPY_EXISTING ~sppr412.spl~ ~override~ ~ohtmps1.spl~ ~override~
 	END
 	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=modifymaxhp opcode=modifycurrenthp timing=1 STR_VAR insert=~below~ END
 	LPF ALTER_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=modifymaxhp parameter2=3 END
-	SAY UNIDENTIFIED_DESC ~Holy Power
-(Evocation)
-
-Level: 4
-Range: 0
-Duration: 1 round/level
-Casting Time: 6
-Area of Effect: The caster
-Saving Throw: None
-
-Through this spell, the caster imbues <PRO_HIMHER>self with the strength and skill of a Fighter of the same level. The priest's Strength is set to 21 unless it is normally higher, <PRO_HISHER> THAC0 becomes that of a Fighter of the same level, and <PRO_HESHE> gains 1 temporary Hit Point per level. This will last for the duration of the spell or until dispelled.~
+	SAY UNIDENTIFIED_DESC @20412
 
 COPY_EXISTING ~sppr413.spl~ ~override~
 	LPF ALTER_SPELL_EFFECT INT_VAR duration_high=2400 END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~spin190~ END
 	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~spwi221~ END
 	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~dobone~ END
 	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~spwi631~ END
@@ -23230,8 +23751,10 @@ COPY_EXISTING ~sppr413.spl~ ~override~
 	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~mems225~ END
 	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~mems226~ END
 	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~mems230~ END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~mems250~ END
 	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~mems268d~ END
 	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~mems270~ END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~mems281~ END
 	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromspell2 parameter2=0 STR_VAR match_resource=~SPWI119~ resource=~memyrsen~ END
 	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromspell opcode=protectionfromanimation STR_VAR match_resource=~SPWI119~ resource=~meedrain~ END
 	LPF CLONE_EFFECT INT_VAR multi_match=1 check_headers=1 check_globals=0 match_opcode=protectionfromstring parameter1=RESOLVE_STR_REF(~Six Levels Drained~) END
@@ -23643,6 +24166,25 @@ COPY_EXISTING ~sppr650.spl~ ~override~
 	END
 
 COPY_EXISTING ~sppr701.spl~ ~override~
+	LPF CLONE_EFFECT INT_VAR silent=1 multi_match=1 check_headers=1 check_globals=0 match_opcode=spelldeflection opcode=protectionfromopcode parameter2=dispel END
+	LPF CLONE_EFFECT INT_VAR silent=1 multi_match=1 check_headers=1 check_globals=0 match_opcode=spelldeflection opcode=visualeffectbg2 parameter2=1 STR_VAR resource=~mespshld~ END
+	LPF CLONE_EFFECT INT_VAR silent=1 multi_match=1 check_headers=1 check_globals=0 match_opcode=spelldeflection opcode=protectionfromspell parameter1=spellineffective STR_VAR resource=~spcl231~ END
+	LPF CLONE_EFFECT INT_VAR silent=1 multi_match=1 check_headers=1 check_globals=0 match_opcode=spelldeflection opcode=protectionfromspell parameter1=spellineffective STR_VAR resource=~sppr303~ END
+	LPF CLONE_EFFECT INT_VAR silent=1 multi_match=1 check_headers=1 check_globals=0 match_opcode=spelldeflection opcode=protectionfromspell parameter1=spellineffective STR_VAR resource=~spwi051~ END
+	LPF CLONE_EFFECT INT_VAR silent=1 multi_match=1 check_headers=1 check_globals=0 match_opcode=spelldeflection opcode=protectionfromspell parameter1=spellineffective STR_VAR resource=~spwi302~ END
+	LPF CLONE_EFFECT INT_VAR silent=1 multi_match=1 check_headers=1 check_globals=0 match_opcode=spelldeflection opcode=protectionfromspell parameter1=spellineffective STR_VAR resource=~spwi323~ END
+	LPF CLONE_EFFECT INT_VAR silent=1 multi_match=1 check_headers=1 check_globals=0 match_opcode=spelldeflection opcode=protectionfromspell parameter1=spellineffective STR_VAR resource=~spwi326~ END
+	LPF CLONE_EFFECT INT_VAR silent=1 multi_match=1 check_headers=1 check_globals=0 match_opcode=spelldeflection opcode=setspellstate parameter2=21 special=1 END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromopcode target=1 timing=0 duration=48 parameter2=dispel power=5 END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=visualeffectbg2 target=1 timing=1 parameter2=0 power=5 STR_VAR resource=~abjurh~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=visualeffectbg2 target=1 timing=0 duration=48 parameter2=1 power=5 STR_VAR resource=~mespshld~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=48 parameter1=spellineffective power=5 STR_VAR resource=~spcl231~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=48 parameter1=spellineffective power=5 STR_VAR resource=~sppr303~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=48 parameter1=spellineffective power=5 STR_VAR resource=~spwi051~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=48 parameter1=spellineffective power=5 STR_VAR resource=~spwi302~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=48 parameter1=spellineffective power=5 STR_VAR resource=~spwi323~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=48 parameter1=spellineffective power=5 STR_VAR resource=~spwi326~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=setspellstate target=1 timing=0 duration=48 parameter2=21 power=5 special=1 END
 	READ_SHORT 0x68 numheaders
 	FOR (i = numheaders; i < 50; ++i) BEGIN
 		LPF ADD_SPELL_HEADER INT_VAR copy_header=i insert_point=i END
@@ -23650,8 +24192,11 @@ COPY_EXISTING ~sppr701.spl~ ~override~
 	END
 	FOR (i = 1; i <= numheaders; ++i) BEGIN
 		LPF ALTER_SPELL_HEADER INT_VAR header=i min_level=i END
-		LPF ALTER_SPELL_EFFECT INT_VAR header=i duration_high=(i * 18) END
+		LPF ALTER_SPELL_EFFECT INT_VAR header=i duration_high=(i * 6) END
+		LPF ALTER_SPELL_EFFECT INT_VAR header=i match_opcode=spelldeflection parameter1=(i / 2) END
 	END
+	LPF ALTER_SPELL_EFFECT INT_VAR header=1 match_opcode=spelldeflection parameter1=1 END
+	SAY UNIDENTIFIED_DESC @20701
 
 COPY_EXISTING ~sppr704.spl~ ~override~
 	LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=(0 - 1) END
@@ -23932,6 +24477,7 @@ COPY_EXISTING ~spwi105.spl~ ~override~
 	END
 
 COPY_EXISTING ~spwi111.spl~ ~override~ //True Strike
+	LPF DELETE_EFFECT INT_VAR silent=1 check_headers=1 check_globals=0 match_opcode=displaystring match_parameter1=14060 END
 	LPF ALTER_SPELL_HEADER INT_VAR target=caster END
 	LPF ALTER_SPELL_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=infravision new_opcode=modifythac0 parameter1=20 parameter2=0 END
 	LPF ALTER_SPELL_EFFECT INT_VAR target=1 duration_high=9 END
@@ -24601,13 +25147,6 @@ COPY_EXISTING ~scrl87.itm~ ~override~
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=castspell target=2 END
 	SAY IDENTIFIED_DESC @21203
 
-COPY_EXISTING ~spwi208.spl~ ~override~
-	LPF ALTER_SPELL_EFFECT INT_VAR savingthrow=nosave END
-	SAY UNIDENTIFIED_DESC @21208
-
-COPY_EXISTING ~scrl92.itm~ ~override~
-	SAY IDENTIFIED_DESC @21208
-
 ACTION_IF MOD_IS_INSTALLED ~EEex.tp2~ ~0~ BEGIN
 
 COPY_EXISTING ~spwi208.spl~ ~override~
@@ -24641,18 +25180,18 @@ COPY_EXISTING ~spwi211.spl~ ~override~
 		numheaders = numheaders + 1
 	END
 
-COPY_EXISTING ~spwi213.spl~ ~override~
+COPY_EXISTING ~spwi213.spl~ ~override~ ~spwi004.spl~ ~override~
 	LPF ALTER_SPELL_EFFECT INT_VAR savebonus=(0 - 3) END
-	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=2 timing=0 duration=5 power=2 STR_VAR resource= EVAL ~%SOURCE_RES%~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=2 timing=0 duration=4 power=2 STR_VAR resource= EVAL ~%SOURCE_RES%~ END
 	SAY UNIDENTIFIED_DESC @21213
 
 COPY_EXISTING ~scrl97.itm~ ~override~
 	SAY IDENTIFIED_DESC @21213
-
+/*
 COPY_EXISTING ~idpro95.pro~ ~override~
 	WRITE_SHORT 0x210 8
 	WRITE_BYTE 0x216 125
-
+*/
 COPY_EXISTING ~spwi214.spl~ ~override~
 	LPF ALTER_SPELL_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=modifystrength parameter1=20 parameter2=1 END
 	READ_SHORT 0x68 numheaders
@@ -24671,13 +25210,13 @@ COPY_EXISTING ~scrl98.itm~ ~override~
 
 COPY_EXISTING ~spwi215.spl~ ~override~ ~spdr201.spl~ ~override~
 	LPF ALTER_SPELL_EFFECT INT_VAR savebonus=(0 - 2) END
-	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=2 timing=0 duration=5 power=2 STR_VAR resource= EVAL ~%SOURCE_RES%~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=2 timing=0 duration=4 power=2 STR_VAR resource= EVAL ~%SOURCE_RES%~ END
 	SAY UNIDENTIFIED_DESC @21215
-
+/*
 COPY_EXISTING ~web.pro~ ~override~
 	WRITE_SHORT 0x210 8
 	WRITE_BYTE 0x216 125
-
+*/
 COPY_EXISTING ~scrl99.itm~ ~override~
 	SAY IDENTIFIED_DESC @21215
 
@@ -24858,10 +25397,10 @@ COPY_EXISTING ~spwi314.spl~ ~override~
 
 COPY_EXISTING ~scrl1q.itm~ ~override~
 	SAY IDENTIFIED_DESC @21314
-
+/*
 COPY_EXISTING ~spwi314b.spl~ ~override~
 	LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=protectionfromspell END
-
+*/
 COPY_EXISTING ~spwi315.spl~ ~override~ //Wraithform
 	READ_SHORT 0x68 numheaders
 	FOR (i = numheaders; i < 50; ++i) BEGIN
@@ -25113,11 +25652,13 @@ COPY_EXISTING ~scrla1.itm~ ~override~
 	SAY IDENTIFIED_DESC @21425
 
 COPY_EXISTING ~spwi427.spl~ ~override~
-	LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=modifydamage END
+//	LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=modifydamage END
 	LPF ALTER_SPELL_EFFECT INT_VAR duration_high=90 END
-	LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=modifybasethac0 parameter1=2 END
-	LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=modifymaxhp parameter1=10 END
+//	LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=modifybasethac0 parameter1=2 END
+//	LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=modifymaxhp parameter1=10 END
 	SAY UNIDENTIFIED_DESC @21427
+
+LAF ADD_CLASS_SPELL STR_VAR resref=~SPWI427~ scroll=~SCCOUR~ class_include=~{5}~ END
 
 COPY_EXISTING ~sccour.itm~ ~override~
 	SAY IDENTIFIED_DESC @21427
@@ -25131,9 +25672,11 @@ COPY_EXISTING ~scfear.itm~ ~override~
 	SAY IDENTIFIED_DESC @21428
 
 COPY_EXISTING ~spwi429.spl~ ~override~
-	LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=modifydamage END
+//	LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=modifydamage END
 	LPF ALTER_SPELL_EFFECT INT_VAR duration_high=90 END
 	SAY UNIDENTIFIED_DESC @21429
+
+LAF ADD_CLASS_SPELL STR_VAR resref=~SPWI429~ scroll=~SCEMOT~ class_include=~{5}~ END
 
 COPY_EXISTING ~scemot.itm~ ~override~
 	SAY IDENTIFIED_DESC @21429
@@ -26032,6 +26575,9 @@ COPY_EXISTING ~blakblad.itm~ ~override~
 	LPF ALTER_EFFECT INT_VAR silent=1 check_headers=0 check_globals=1 match_opcode=setcolor parameter1=254 END
 	LPF DELETE_EFFECT INT_VAR silent=1 check_headers=0 check_globals=1 match_opcode=setcolorglowsolid END
 	LPF DELETE_EFFECT INT_VAR silent=1 check_headers=0 check_globals=1 match_opcode=modifyproficiencies END
+	LPF CLONE_EFFECT INT_VAR silent=1 check_headers=1 check_globals=0 match_opcode=disintegrate opcode=playsound STR_VAR resource=~#EFF_M43~ END
+	LPF CLONE_EFFECT INT_VAR silent=1 check_headers=1 check_globals=0 match_opcode=disintegrate opcode=translucency parameter1=6 parameter2=2 duration=1 END
+	LPF ALTER_EFFECT INT_VAR silent=1 check_headers=1 check_globals=0 match_opcode=disintegrate opcode=killtarget parameter1=0 parameter2=0x200 END
 
 COPY_EXISTING ~spwi918.spl~ ~override~
 	LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=(0 - 1) END
@@ -26045,7 +26591,7 @@ COPY_EXISTING ~spwi918.spl~ ~override~
 	SAY UNIDENTIFIED_DESC @21918
 
 COPY_EXISTING ~scrlb2.itm~ ~override~
-	SAY IDENTIFIED_DESC @21914
+	SAY IDENTIFIED_DESC @21918
 
 COPY_EXISTING ~spwi920.spl~ ~override~
 	SAY UNIDENTIFIED_DESC @21920
@@ -26203,7 +26749,7 @@ COPY_EXISTING ~mems230.spl~ ~override~
 	SAY NAME1 ~Mass Enfeeble~
 
 COPY_EXISTING ~mems231s.spl~ ~override~
-	LPF ADD_SPELL_EFFECT INT_VAR opcode=displaystring target=1 timing=1 parameter1=RESOLVE_STR_REF(~Rallying Worgs (+6 to hit, damage, AC, and saving throws; protection from turning)~) insert_point=0 END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=floattext target=1 timing=1 parameter1=RESOLVE_STR_REF(~Rallying Worgs (+6 to hit, damage, AC, and saving throws; protection from turning)~) insert_point=0 END
 
 COPY_EXISTING ~mems232.spl~ ~override~
 	SAY NAME1 ~Lower Fire Resistance~
@@ -26230,7 +26776,7 @@ COPY_EXISTING ~mems238.spl~ ~override~ ~mems294.spl~ ~override~
 	SAY NAME1 ~Fear~
 
 COPY_EXISTING ~mems239s.spl~ ~override~
-	LPF ADD_SPELL_EFFECT INT_VAR opcode=displaystring target=1 timing=1 parameter1=RESOLVE_STR_REF(~Rallying Orogs and Orcs (+10 to hit and damage; movement rate +25%; protection from fear)~) insert_point=0 END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=floattext target=1 timing=1 parameter1=RESOLVE_STR_REF(~Rallying Orogs and Orcs (+10 to hit and damage; movement rate +25%; protection from fear)~) insert_point=0 END
 
 COPY_EXISTING ~mems240.spl~ ~override~
 	SAY NAME1 ~Strength Spores~
@@ -26271,7 +26817,7 @@ COPY_EXISTING ~mems251.spl~ ~override~
 
 COPY_EXISTING ~mems252.spl~ ~override~
 	SAY NAME1 ~Hastened Doom~
-	LPF ADD_SPELL_EFFECT INT_VAR opcode=displaystring target=1 timing=1 parameter1=RESOLVE_STR_REF(~Spells and attacks quickened~) insert_point=0 END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=floattext target=1 timing=1 parameter1=RESOLVE_STR_REF(~Spells and attacks quickened~) insert_point=0 END
 
 COPY_EXISTING ~mems253.spl~ ~override~
 	WRITE_SHORT 0x98 mefbball
@@ -26282,7 +26828,7 @@ COPY_EXISTING ~mems254.spl~ ~override~
 	SAY NAME1 ~White Wyrm Cold Breath~
 
 COPY_EXISTING ~mems255s.spl~ ~override~
-	LPF ADD_SPELL_EFFECT INT_VAR opcode=displaystring target=1 timing=1 parameter1=RESOLVE_STR_REF(~Exuding aura of pestilence~) insert_point=0 END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=floattext target=1 timing=1 parameter1=RESOLVE_STR_REF(~Exuding aura of pestilence~) insert_point=0 END
 
 COPY_EXISTING ~mems256.spl~ ~override~
 	SAY NAME1 ~Hellish Snowball Swarm~
@@ -26292,7 +26838,7 @@ COPY_EXISTING ~mems258.spl~ ~override~
 	LPF ADD_SPELL_EFFECT INT_VAR opcode=displaystring target=2 timing=1 parameter1=RESOLVE_STR_REF(~Resistance to cold and magic cold lowered by 100%~) insert_point=0 END
 
 COPY_EXISTING ~mems259s.spl~ ~override~
-	LPF ADD_SPELL_EFFECT INT_VAR opcode=displaystring target=1 timing=1 parameter1=RESOLVE_STR_REF(~Rallying Frost Giants and Winter Wolves (+30 to damage; +5 to all saving throws; movement rate +30%; protection from fear)~) insert_point=0 END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=floattext target=1 timing=1 parameter1=RESOLVE_STR_REF(~Rallying Frost Giants and Winter Wolves (+30 to damage; +5 to all saving throws; movement rate +30%; protection from fear)~) insert_point=0 END
 
 COPY_EXISTING ~mems260.spl~ ~override~
 	SAY NAME1 ~Auril's Freezing Sphere~
@@ -26320,7 +26866,7 @@ COPY_EXISTING ~mems265.eff~ ~override~
 
 COPY_EXISTING ~mems266.spl~ ~override~
 	SAY NAME1 ~Invincibility~
-	LPF ADD_SPELL_EFFECT INT_VAR opcode=displaystring target=1 timing=1 parameter1=RESOLVE_STR_REF(~Immune to all damage for 5 rounds~) insert_point=0 END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=floattext target=1 timing=1 parameter1=RESOLVE_STR_REF(~Immune to all damage for 5 rounds~) insert_point=0 END
 
 COPY_EXISTING ~mems267.spl~ ~override~
 	SAY NAME1 ~Mass Flaying~
@@ -26632,7 +27178,7 @@ COPY_EXISTING ~mesunaba.spl~ ~override~
 	SAY NAME1 ~Summon Greater Nabassu~
 
 COPY_EXISTING ~meteleon.spl~ ~override~
-	LPF ADD_SPELL_CFEFFECT INT_VAR opcode=displaystring target=1 timing=1 parameter1=RESOLVE_STR_REF(~Twists onyx ring~) insert_point=0 END
+	LPF ADD_SPELL_CFEFFECT INT_VAR opcode=floattext target=1 timing=1 parameter1=RESOLVE_STR_REF(~Twists onyx ring~) insert_point=0 END
 
 COPY_EXISTING ~mewi543.spl~ ~override~
 	SAY NAME1 ~Ball Lightning~
@@ -26806,8 +27352,9 @@ COPY_EXISTING ~detemple.sto~ ~override~ //Mother Egenia
 	ADD_STORE_ITEM ~extheal~ #1 #0 #0 ~IDENTIFIED~ #1 ~UNLIMITED~
 	ADD_STORE_ITEM ~potn08~ #1 #0 #0 ~IDENTIFIED~ #20
 	ADD_STORE_ITEM ~zzc8hb~ #0 #0 #0 ~IDENTIFIED~ #1
+	ADD_STORE_ITEM ~meuring6~ #0 #0 #0 ~IDENTIFIED~ #1
 	ADD_STORE_ITEM ~uring2b~ #0 #0 #0 ~IDENTIFIED~ #1
-	ADD_STORE_ITEM ~meubull3~ #20 #0 #0 ~IDENTIFIED~ #8
+	ADD_STORE_ITEM ~meubull5~ #20 #0 #0 ~IDENTIFIED~ #8
 
 
 COPY_EXISTING ~edion.sto~ ~override~ //Edion the Necromancer
@@ -26913,6 +27460,7 @@ COPY_EXISTING ~hobart.sto~ ~override~ //Trials of the Luremaster store
 	ADD_STORE_ITEM ~usswd5a~ #0 #0 #0 ~IDENTIFIED~ #1
 	ADD_STORE_ITEM ~power~ #0 #6 #0 ~IDENTIFIED~ #1
 	ADD_STORE_ITEM ~scrl08~ #1 #0 #0 ~IDENTIFIED~ #1
+	ADD_STORE_ITEM ~meuspot6~ #1 #0 #0 ~IDENTIFIED~ #1
 	REMOVE_STORE_ITEM ~sbowebu~
 	REMOVE_STORE_ITEM ~flailsk~
 	REMOVE_STORE_ITEM ~braceip~
@@ -26941,6 +27489,7 @@ COPY_EXISTING ~kugerth.sto~ ~override~ //Gerth
 	ADD_STORE_ITEM ~bishop~ AFTER ~book44~ #1 #0 #0 ~IDENTIFIED~ #1
 	ADD_STORE_ITEM ~hlydeck~ AFTER ~book44~ #12 #0 #0 ~IDENTIFIED~ #1
 	ADD_STORE_ITEM ~blrdeck~ AFTER ~book44~ #12 #0 #0 ~IDENTIFIED~ #1
+	ADD_STORE_ITEM ~mebrac84~ AFTER ~bardic~ #0 #0 #0 ~IDENTIFIED~ #1
 	REMOVE_STORE_ITEM ~bardic~
 	REMOVE_STORE_ITEM ~lyre~
 
@@ -27026,7 +27575,7 @@ COPY_EXISTING ~kusmith.sto~ ~override~ //Conlan
 
 COPY_EXISTING ~kutemple.sto~ ~override~ //Kuldahar Temple of Ilmater
 	ADD_STORE_ITEM ~extheal~ AFTER ~potn08~ #1 #0 #0 ~IDENTIFIED~ #1 ~UNLIMITED~
-	ADD_STORE_ITEM ~meubull3~ #20 #0 #0 ~IDENTIFIED~ #6
+	ADD_STORE_ITEM ~meubull5~ #20 #0 #0 ~IDENTIFIED~ #6
 	ADD_STORE_ITEM ~harp~ #0 #0 #0 ~IDENTIFIED~ #1
 
 COPY_EXISTING ~ldd_beor.sto~ ~override~
@@ -27098,7 +27647,7 @@ COPY_EXISTING ~waukeen.sto~ ~override~ //Lonelywood Temple of Waukeen
 //	ADD_STORE_ITEM ~meuwaki9~ AFTER ~scimita~ #0 #0 #0 ~IDENTIFIED~ #1
 	ADD_STORE_ITEM ~sw1h03~ AFTER ~force~ #0 #0 #0 ~IDENTIFIED~ #1
 	ADD_STORE_ITEM ~quinn~ BEFORE ~force~ #0 #0 #0 ~IDENTIFIED~ #1
-	ADD_STORE_ITEM ~meubull3~ AFTER ~force~ #20 #0 #0 ~IDENTIFIED~ #10
+	ADD_STORE_ITEM ~meubull5~ AFTER ~force~ #20 #0 #0 ~IDENTIFIED~ #10
 	REMOVE_STORE_ITEM ~doves~
 	REMOVE_STORE_ITEM ~mae~
 	REMOVE_STORE_ITEM ~kinetic~
@@ -27312,7 +27861,7 @@ COPY_EXISTING ~ar3502.are~ ~override~
 	LPF ALTER_AREA_ACTOR INT_VAR x_coord=1902 y_coord=1206 STR_VAR script_specifics="GNTRPM1" actor_name=~Tattered Skeleton 3 Trap~ END
 	LPF ALTER_AREA_ACTOR INT_VAR x_coord=1530 y_coord=1284 STR_VAR script_specifics="GNTRPM1" actor_name=~Tattered Skeleton 5 Trap~ END
 	LPF ALTER_AREA_ACTOR INT_VAR x_coord=1850 y_coord=1288 STR_VAR script_specifics="GNTRPM1" actor_name=~Tattered Skeleton 6 Trap~ END
-	LPF ALTER_AREA_ACTOR STR_VAR actor_name=~Skeleton 21~ cre_file=~menocre~ END 
+	LPF ALTER_AREA_ACTOR STR_VAR actor_name=~Skeleton 21~ cre_file=~menocre~ END
 	LPF ALTER_AREA_ACTOR STR_VAR actor_name=~Skeleton 22~ cre_file=~menocre~ END 
 	LPF ALTER_AREA_ACTOR STR_VAR actor_name=~Skeleton 23~ cre_file=~menocre~ END 
 	LPF ALTER_AREA_ACTOR STR_VAR actor_name=~Skeleton 24~ cre_file=~menocre~ END 
@@ -27320,12 +27869,16 @@ COPY_EXISTING ~ar3502.are~ ~override~
 	LPF ALTER_AREA_ACTOR STR_VAR actor_name=~Skeleton 26~ cre_file=~menocre~ END 
 	LPF ALTER_AREA_ACTOR STR_VAR actor_name=~Skeleton 27~ cre_file=~menocre~ END 
 	LPF ALTER_AREA_ACTOR STR_VAR actor_name=~Skeleton 28~ cre_file=~menocre~ END
-	LPF ALTER_AREA_ACTOR STR_VAR actor_name=~Skeleton 29~ cre_file=~menocre~ END 
-	LPF ALTER_AREA_ACTOR STR_VAR actor_name=~Skeleton 30~ cre_file=~menocre~ END 
+	LPF ALTER_AREA_ACTOR STR_VAR actor_name=~Skeleton 29~ cre_file=~menocre~ END
+	LPF ALTER_AREA_ACTOR STR_VAR actor_name=~Skeleton 30~ cre_file=~menocre~ END
 	LPF ALTER_AREA_ACTOR INT_VAR x_coord=726 y_coord=906 STR_VAR actor_name=~Imbued Wight 1~ END
 	LPF ALTER_AREA_ACTOR INT_VAR x_coord=788 y_coord=821 STR_VAR actor_name=~Imbued Wight 2~ END
 	LPF ALTER_AREA_ACTOR INT_VAR x_coord=421 y_coord=515 orient=se STR_VAR actor_name=~Skeleton Archer 4~ END
 	LPF ALTER_AREA_ACTOR INT_VAR x_coord=224 y_coord=800 orient=se STR_VAR actor_name=~Skeleton Archer 5~ END
+	LPF ALTER_ACTOR_AT_POINT INT_VAR match_x_coord=292 match_y_coord=1367 STR_VAR cre_file=~menocre~ END
+	LPF ALTER_ACTOR_AT_POINT INT_VAR match_x_coord=246 match_y_coord=1432 STR_VAR cre_file=~menocre~ END
+	LPF ALTER_ACTOR_AT_POINT INT_VAR match_x_coord=415 match_y_coord=1398 STR_VAR cre_file=~menocre~ END
+	LPF ALTER_ACTOR_AT_POINT INT_VAR match_x_coord=334 match_y_coord=1483 STR_VAR cre_file=~menocre~ END
 	LPF ALTER_AREA_ACTOR INT_VAR x_coord=1068 y_coord=287 STR_VAR actor_name=~Tattered Skeleton 1~ END
 	LPF ALTER_AREA_ACTOR INT_VAR x_coord=1150 y_coord=312 orient=sw STR_VAR actor_name=~Tattered Skeleton 2~ END
 	LPF ALTER_AREA_ACTOR INT_VAR x_coord=341 y_coord=1318 STR_VAR actor_name=~Tattered Skeleton 3~ END
@@ -27655,6 +28208,7 @@ COPY_EXISTING ~ar4005.are~ ~override~
 	LPF ADD_AREA_ITEM INT_VAR container_to_add_to=15 STR_VAR item_to_add=~merndt24~ END
 	LPF ADD_AREA_ITEM INT_VAR container_to_add_to=16 charges1=3 STR_VAR flags=~IDENTIFIED~ item_to_add=~misc38~ END
 	LPF ADD_AREA_ITEM INT_VAR container_to_add_to=16 charges1=1 STR_VAR flags=~IDENTIFIED~ item_to_add=~misc45~ END
+	LPF ADD_AREA_ITEM INT_VAR container_to_add_to=16 charges1=1 STR_VAR item_to_add=~meuspot8~ END
 	LPF ADD_AREA_ITEM INT_VAR container_to_add_to=17 STR_VAR item_to_add=~merndt27~ END
 	LPF ADD_AREA_ITEM INT_VAR container_to_add_to=18 charges1=2 STR_VAR item_to_add=~mernamu3~ END
 	LPF ADD_AREA_ITEM INT_VAR container_to_add_to=20 charges1=10 STR_VAR item_to_add=~arow10~ END
@@ -29291,6 +29845,34 @@ BEGIN ~Class and Kit Enhancements~ DESIGNATED 768
 
 COPY ~BetterHOF/ClassEnhancements~ ~override~
 
+ACTION_IF !(FILE_EXISTS_IN_GAME ~CLABMA01.2DA~) BEGIN
+	COPY ~BetterHOF/no_overwrite/CLABMA01.2DA~ ~override~
+END
+ACTION_IF !(FILE_EXISTS_IN_GAME ~CLABMA02.2DA~) BEGIN
+	COPY ~BetterHOF/no_overwrite/CLABMA02.2DA~ ~override~
+END
+ACTION_IF !(FILE_EXISTS_IN_GAME ~CLABMA03.2DA~) BEGIN
+	COPY ~BetterHOF/no_overwrite/CLABMA03.2DA~ ~override~
+END
+ACTION_IF !(FILE_EXISTS_IN_GAME ~CLABMA04.2DA~) BEGIN
+	COPY ~BetterHOF/no_overwrite/CLABMA04.2DA~ ~override~
+END
+ACTION_IF !(FILE_EXISTS_IN_GAME ~CLABMA05.2DA~) BEGIN
+	COPY ~BetterHOF/no_overwrite/CLABMA05.2DA~ ~override~
+END
+ACTION_IF !(FILE_EXISTS_IN_GAME ~CLABMA06.2DA~) BEGIN
+	COPY ~BetterHOF/no_overwrite/CLABMA06.2DA~ ~override~
+END
+ACTION_IF !(FILE_EXISTS_IN_GAME ~CLABMA07.2DA~) BEGIN
+	COPY ~BetterHOF/no_overwrite/CLABMA07.2DA~ ~override~
+END
+ACTION_IF !(FILE_EXISTS_IN_GAME ~CLABMA08.2DA~) BEGIN
+	COPY ~BetterHOF/no_overwrite/CLABMA08.2DA~ ~override~
+END
+ACTION_IF !(FILE_EXISTS_IN_GAME ~CLABMA09.2DA~) BEGIN
+	COPY ~BetterHOF/no_overwrite/CLABMA09.2DA~ ~override~
+END
+
 COPY_EXISTING ~ohtyr2.spl~ ~override~
 	LPF ALTER_SPELL_EFFECT INT_VAR duration_high=60 END
 	READ_SHORT 0x68 numheaders
@@ -29392,8 +29974,11 @@ COPY_EXISTING ~spcl211.spl~ ~override~ //Paladin Lay on Hands
 		numheaders = numheaders + 1
 	END
 	FOR (i = 1; i <= numheaders; ++i) BEGIN
-		LPF ALTER_SPELL_EFFECT INT_VAR header=i match_opcode=modifycurrenthp parameter1=(i * 2) END
+		LPF ALTER_SPELL_EFFECT INT_VAR header=i match_opcode=modifycurrenthp parameter1=(i * 5) END
 	END
+	SAY UNIDENTIFIED_DESC ~Lay On Hands
+
+The Paladin channels positive energy to heal the touched creature, restoring 5 Hit Points per Paladin level. This ability has no effect on undead, constructs, or extraplanar creatures.~
 
 COPY_EXISTING ~demhit3.eff~ ~override~ ~demdam3.eff~ ~override~ ~draghit.eff~ ~override~ ~dragdam3.eff~ ~override~ ~wyvhit3.eff~ ~override~ ~wyvdam3.eff~ ~override~
 	WRITE_LONG effparameter3 6
@@ -29473,6 +30058,11 @@ COPY_EXISTING ~spcl321.spl~ ~override~
 	SAY UNIDENTIFIED_DESC ~Enrage
 
 The character becomes enraged for 1 turn. While enraged, all slashing, piercing, and crushing damage dealt by the character is increased by 50%, but all physical damage taken by the character is also increased by 50%. The character also becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.~
+
+COPY_EXISTING ~spcl423.spl~ ~override~
+	SAY UNIDENTIFIED_DESC ~Poison Weapon
+
+Each successful hit within the next 5 rounds will inject poison into the target, dealing an extra 1 points of damage per second for 6 seconds with no Saving Throw. For every 10 levels, another point of damage is dealt per second.~
 
 COPY_EXISTING ~spcl521.spl~ ~override~
 	LPF DELETE_EFFECT INT_VAR silent=1 check_headers=1 check_globals=1 match_opcode=protectionfromopcode match_parameter2=haste1 END
@@ -29745,6 +30335,44 @@ COPY_EXISTING ~spirsud7.eff~ ~override/spirsud8.eff~
 COPY_EXISTING ~spirsud8.eff~ ~override/spirsud9.eff~
 	WRITE_ASCII effresource ~SPWOLF9~ #8
 
+COPY_EXISTING ~spcl721.spl~ ~override~
+	LPF ALTER_SPELL_HEADER INT_VAR speed=3 END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~sppr250~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~mepr325d~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~sppr423~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~sppr617~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~sppr705~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~sppr722~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~spwi004~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~spwi016~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~spwi213~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~spwi404~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~spwi502~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~spwi614~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~spwi724~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~spwi810~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~spwi904~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~mems049~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~mems210~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~mems265~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~mems272~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~mems281~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell target=1 timing=0 duration=60 parameter1=spellineffective power=3 resist_dispel=3 STR_VAR resource=~mems285~ END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=setspellstate target=1 timing=0 duration=60 parameter2=251 power=3 resist_dispel=3 special=1 END
+	LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=protectionfromnormalmissiles new_opcode=visualeffectbg2 parameter2=1 STR_VAR resource=~#storm~ END
+	READ_SHORT 0x68 numheaders
+	FOR (i = numheaders; i < 50; ++i) BEGIN
+		LPF ADD_SPELL_HEADER INT_VAR copy_header=i insert_point=i END
+		numheaders = numheaders + 1
+	END
+	FOR (i = 1; i <= numheaders; ++i) BEGIN
+		LPF ALTER_SPELL_HEADER INT_VAR header=i min_level=i END
+		LPF ALTER_SPELL_EFFECT INT_VAR header=i duration_high=((i * 6) + 30) END
+	END
+	SAY UNIDENTIFIED_DESC ~Storm Shield
+
+This spell lasts 5 rounds plus 1 round per level of the caster. It protects the caster completely from lightning, fire, cold, and normal missiles. In addition, the caster is protected from harmful storm and cloud spells and abilities, including Stinking Cloud, Writhing Fog, Ice Storm, Auril's Blizzard, Cloud of Pestilence, Cloudkill, Death Fog, Whirlwind, Acid Storm, Fire Storm, Stygian Ice Storm, Storm of Vengeance, Incendiary Cloud, Malavon's Corrosive Fog, Great Tornado, Greater Ghast Stench, Hell Cloud, Festering Drowned Dead auras. Beneficial spells of those types like Cloudburst and Mist of Eldath still affect the caster. Chain Lightning will not jump to the caster unless the caster was the original target.~
+
 COPY_EXISTING ~spcl722.spl~ ~override~
 	READ_SHORT 0x68 numheaders
 	FOR (i = numheaders; i < 50; ++i) BEGIN
@@ -29783,6 +30411,7 @@ COPY_EXISTING ~spcl741.spl~ ~override~
 	LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=modifysavevsbreath END
 	LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=modifysavevspolymorph END
 	LPF ALTER_SPELL_EFFECT INT_VAR target=2 duration_high=300 END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromopcode match_parameter2=leveldrain opcode=protectionfromspell2 parameter2=0 STR_VAR resource=~spin190~ END
 	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromopcode match_parameter2=leveldrain opcode=protectionfromspell2 parameter2=0 STR_VAR resource=~ghast1~ END
 	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromopcode match_parameter2=leveldrain opcode=protectionfromspell2 parameter2=0 STR_VAR resource=~ltouch~ END
 	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromopcode match_parameter2=leveldrain opcode=protectionfromspell2 parameter2=0 STR_VAR resource=~shadless~ END
@@ -29811,8 +30440,10 @@ COPY_EXISTING ~spcl741.spl~ ~override~
 	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromopcode match_parameter2=leveldrain opcode=protectionfromspell2 parameter2=0 STR_VAR resource=~mems225~ END
 	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromopcode match_parameter2=leveldrain opcode=protectionfromspell2 parameter2=0 STR_VAR resource=~mems226~ END
 	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromopcode match_parameter2=leveldrain opcode=protectionfromspell2 parameter2=0 STR_VAR resource=~mems230~ END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromopcode match_parameter2=leveldrain opcode=protectionfromspell2 parameter2=0 STR_VAR resource=~mems250~ END
 	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromopcode match_parameter2=leveldrain opcode=protectionfromspell2 parameter2=0 STR_VAR resource=~mems268d~ END
 	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromopcode match_parameter2=leveldrain opcode=protectionfromspell2 parameter2=0 STR_VAR resource=~mems270~ END
+	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromopcode match_parameter2=leveldrain opcode=protectionfromspell2 parameter2=0 STR_VAR resource=~mems281~ END
 	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromopcode match_parameter2=leveldrain opcode=protectionfromspell2 parameter2=0 STR_VAR resource=~memyrsen~ END
 	LPF CLONE_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=protectionfromopcode match_parameter2=leveldrain opcode=protectionfromanimation STR_VAR resource=~meedrain~ END
 	LPF CLONE_EFFECT INT_VAR multi_match=1 check_headers=1 check_globals=0 match_opcode=protectionfromstring parameter1=RESOLVE_STR_REF(~Six Levels Drained~) END
@@ -29858,8 +30489,11 @@ COPY_EXISTING ~spcl815.spl~ ~override~
 		numheaders = numheaders + 1
 	END
 	FOR (i = 1; i <= numheaders; ++i) BEGIN
-		LPF ALTER_SPELL_EFFECT INT_VAR header=i match_opcode=modifycurrenthp parameter1=(i * 2) END
+		LPF ALTER_SPELL_EFFECT INT_VAR header=i match_opcode=modifycurrenthp parameter1=(i * 5) END
 	END
+	SAY UNIDENTIFIED_DESC ~Lay On Hands
+
+The Monk channels positive energy to heal <PRO_HIMHER>self, restoring 5 Hit Points per Monk level.~
 	IF_EXISTS
 
 COPY_EXISTING ~spcl820.spl~ ~override~
@@ -29958,6 +30592,7 @@ COPY_EXISTING ~spwi206.spl~ ~override/mera251.spl~ ~spwi607.spl~ ~override/mera6
 COPY_EXISTING ~spwi513.spl~ ~override/meiw513.spl~
 	WRITE_SHORT spelltype 4
 	WRITE_LONG spelllevel 1
+	LPF ALTER_SPELL_HEADER INT_VAR location=4 END
 	LPF ALTER_EFFECT INT_VAR silent=1 check_headers=1 check_globals=1 STR_VAR match_resource= EVAL ~%SOURCE_RES%~ resource= EVAL ~%DEST_RES%~ END
 
 COPY_EXISTING ~medd999.spl~ ~override~
@@ -30073,6 +30708,9 @@ COPY_EXISTING ~mfist12.itm~ ~override/mfist13.itm~
 	WRITE_LONG weaponenchantment 10
 	LPF ALTER_ITEM_HEADER INT_VAR thac0_bonus=10 damage_bonus=10 END
 
+COPY_EXISTING ~meplydrr.itm~ ~override~
+	LPF ADD_ITEM_EQEFFECT INT_VAR opcode=setspellstate target=1 timing=2 parameter2=75 special=1 END
+
 COPY_EXISTING_REGEXP ~.*\.itm~ ~override~
 	LPF ADD_ITEM_EFFECT INT_VAR type=2 opcode=removeeffectsbyresource target=2 timing=9 resist_dispel=2 STR_VAR resource=~mecl851d~ END
 	BUT_ONLY_IF_IT_CHANGES
@@ -30183,6 +30821,17 @@ COPY_EXISTING ~kitlist.2da~ ~override~
 	COUNT_2DA_ROWS 10 numrows
 	FOR (i = 1; i < numrows; ++i) BEGIN
 		READ_2DA_ENTRY i 8 10 class_of_kit
+		PATCH_IF class_of_kit=classfighter OR class_of_kit=classranger OR class_of_kit=classpaladin OR class_of_kit=classmonk BEGIN
+			READ_2DA_ENTRY i 5 10 abilities_of_kit
+			INNER_ACTION BEGIN
+				COPY_EXISTING ~%abilities_of_kit%.2da~ ~override~
+					COUNT_2DA_COLS numcolumns_2
+					COUNT_2DA_ROWS numcolumns_2 numrows_2
+					INSERT_2DA_ROW numrows_2 numcolumns_2 ~MEEXBASE   ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        AP_MEEXBAS  ****        AP_MEEXBAS  ****        AP_MEEXBAS  ****        AP_MEEXBAS  ****        AP_MEEXBAS  ****        AP_MEEXBAS  ****        AP_MEEXBAS  ****        AP_MEEXBAS  ****        AP_MEEXBAS  ****        AP_MEEXBAS  ****        AP_MEEXBAS  ****        AP_MEEXBAS  ****        AP_MEEXBAS  ****        AP_MEEXBAS  ****        AP_MEEXBAS~
+					IF_EXISTS
+					UNLESS ~MEEXBASE~
+			END
+		END
 		PATCH_IF class_of_kit=classmonk BEGIN
 			READ_2DA_ENTRY i 5 10 abilities_of_kit
 			INNER_ACTION BEGIN
@@ -30296,6 +30945,13 @@ COPY_EXISTING ~kitlist.2da~ ~override~
 		END
 	END
 	BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING ~clabfi01.2da~ ~override~ ~clabrn01.2da~ ~override~ ~clabpa01.2da~ ~override~ ~clabmo01.2da~ ~override~
+	COUNT_2DA_COLS numcolumns
+	COUNT_2DA_ROWS numcolumns numrows
+	INSERT_2DA_ROW numrows numcolumns ~MEEXBASE   ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        AP_MEEXBAS  ****        AP_MEEXBAS  ****        AP_MEEXBAS  ****        AP_MEEXBAS  ****        AP_MEEXBAS  ****        AP_MEEXBAS  ****        AP_MEEXBAS  ****        AP_MEEXBAS  ****        AP_MEEXBAS  ****        AP_MEEXBAS  ****        AP_MEEXBAS  ****        AP_MEEXBAS  ****        AP_MEEXBAS  ****        AP_MEEXBAS  ****        AP_MEEXBAS~
+	IF_EXISTS
+	UNLESS ~MEEXBASE~
 
 COPY_EXISTING ~clabba01.2da~ ~override~
 	COUNT_2DA_COLS numcolumns
@@ -30728,3 +31384,158 @@ COPY_EXISTING ~kitlist.2da~ ~override~
 
 	description_ref = RESOLVE_STR_REF(@540)
 	SET_2DA_ENTRY therow 4 10 ~%description_ref%~
+
+BEGIN ~Turn Undead Synergy~ REQUIRE_COMPONENT ~EEex.tp2~ ~0~ ~This component requires EEex to be installed.~ DESIGNATED 896
+
+ACTION_IF !(FILE_EXISTS_IN_GAME ~M__MEFUN.LUA~) BEGIN
+
+	COPY ~BetterHOF/Allfiles/M__MEFUN.LUA~ ~override~
+END
+
+COPY ~BetterHOF/TurnUndeadSynergy~ ~override~
+
+ADD_PROJECTILE ~override/meturnsg.pro~ //Turn Undead Synergy
+
+COPY_EXISTING ~meturnsg.spl~ ~override~
+	LPF ALTER_SPELL_HEADER INT_VAR projectile=meturnsg END
+	READ_SHORT 0x68 numheaders
+	FOR (i = numheaders; i < 50; ++i) BEGIN
+		LPF ADD_SPELL_HEADER INT_VAR copy_header=i insert_point=i END
+		LPF ALTER_SPELL_HEADER INT_VAR header=(i + 1) min_level=(i + 1) END
+		LPF ALTER_SPELL_EFFECT INT_VAR header=(i + 1) match_opcode=modifyturnundeadlevel parameter1=(i + 1) END
+		numheaders = numheaders + 1
+	END
+
+COPY_EXISTING ~kitlist.2da~ ~override~
+	COUNT_2DA_ROWS 10 numrows
+	FOR (i = 1; i < numrows; ++i) BEGIN
+		READ_2DA_ENTRY i 8 10 class_of_kit
+		PATCH_IF class_of_kit=classpaladin OR class_of_kit=classcleric BEGIN
+			READ_2DA_ENTRY i 5 10 abilities_of_kit
+			INNER_ACTION BEGIN
+				COPY_EXISTING ~%abilities_of_kit%.2da~ ~override~
+					COUNT_2DA_COLS numcolumns_2
+					COUNT_2DA_ROWS numcolumns_2 numrows_2
+					INSERT_2DA_ROW numrows_2 numcolumns_2 ~METURNSS   AP_METURNSS ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****       ~
+					IF_EXISTS
+					UNLESS ~METURNSS~
+			END
+		END
+	END
+
+COPY_EXISTING ~clabpa01.2da~ ~override~ ~clabpr01.2da~ ~override~
+	COUNT_2DA_COLS numcolumns
+	COUNT_2DA_ROWS numcolumns numrows
+	INSERT_2DA_ROW numrows numcolumns ~METURNSS   AP_METURNSS ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****       ~
+	IF_EXISTS
+	UNLESS ~METURNSS~
+
+BEGIN ~Allow high-level spellcasters to cast multiple low-level spells per round~ DESIGNATED 1024
+
+COPY ~BetterHOF/SpellQuickening~ ~override~
+
+ACTION_IF !(FILE_EXISTS_IN_GAME ~CLABMA01.2DA~) BEGIN
+	COPY ~BetterHOF/no_overwrite/CLABMA01.2DA~ ~override~
+END
+ACTION_IF !(FILE_EXISTS_IN_GAME ~CLABMA02.2DA~) BEGIN
+	COPY ~BetterHOF/no_overwrite/CLABMA02.2DA~ ~override~
+END
+ACTION_IF !(FILE_EXISTS_IN_GAME ~CLABMA03.2DA~) BEGIN
+	COPY ~BetterHOF/no_overwrite/CLABMA03.2DA~ ~override~
+END
+ACTION_IF !(FILE_EXISTS_IN_GAME ~CLABMA04.2DA~) BEGIN
+	COPY ~BetterHOF/no_overwrite/CLABMA04.2DA~ ~override~
+END
+ACTION_IF !(FILE_EXISTS_IN_GAME ~CLABMA05.2DA~) BEGIN
+	COPY ~BetterHOF/no_overwrite/CLABMA05.2DA~ ~override~
+END
+ACTION_IF !(FILE_EXISTS_IN_GAME ~CLABMA06.2DA~) BEGIN
+	COPY ~BetterHOF/no_overwrite/CLABMA06.2DA~ ~override~
+END
+ACTION_IF !(FILE_EXISTS_IN_GAME ~CLABMA07.2DA~) BEGIN
+	COPY ~BetterHOF/no_overwrite/CLABMA07.2DA~ ~override~
+END
+ACTION_IF !(FILE_EXISTS_IN_GAME ~CLABMA08.2DA~) BEGIN
+	COPY ~BetterHOF/no_overwrite/CLABMA08.2DA~ ~override~
+END
+ACTION_IF !(FILE_EXISTS_IN_GAME ~CLABMA09.2DA~) BEGIN
+	COPY ~BetterHOF/no_overwrite/CLABMA09.2DA~ ~override~
+END
+
+COPY_EXISTING_REGEXP ~.......\.spl~ ~override~
+	READ_SHORT spelltype thespelltype
+	READ_LONG spelllevel thelevel
+	LPF ADD_SPELL_CFEFFECT INT_VAR opcode=removeeffectsbyresource target=1 timing=1 insert_point=0 STR_VAR resource=~MEQUICSP~ END
+	PATCH_IF (thespelltype = 1 OR thespelltype = 2) AND (thelevel >= 1 AND thelevel <= 5) BEGIN
+		LPF ADD_SPELL_CFEFFECT INT_VAR opcode=applyeffectslist target=1 timing=1 parameter1=238 parameter2=110 insert_point=1 dicenumber=62 dicesize=(thelevel * 10) STR_VAR resource=~MEQUICSP~ END
+	END
+	IF_EXISTS
+	UNLESS ~MEQUICSP~
+	BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING ~kitlist.2da~ ~override~
+	COUNT_2DA_ROWS 10 numrows
+	FOR (i = 1; i < numrows; ++i) BEGIN
+		READ_2DA_ENTRY i 8 10 class_of_kit
+		PATCH_IF class_of_kit=classmage OR class_of_kit=classsorcerer OR class_of_kit=classcleric OR class_of_kit=classdruid OR class_of_kit=classshaman BEGIN
+			READ_2DA_ENTRY i 5 10 abilities_of_kit
+			INNER_ACTION BEGIN
+				COPY_EXISTING ~%abilities_of_kit%.2da~ ~override~
+					COUNT_2DA_COLS numcolumns_2
+					COUNT_2DA_ROWS numcolumns_2 numrows_2
+					INSERT_2DA_ROW numrows_2 numcolumns_2 ~ME_QUICSS   AP_MEQUICSS ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****       ~
+					IF_EXISTS
+					UNLESS ~MEQUICSS~
+			END
+		END
+	END
+
+COPY_EXISTING ~clabma01.2da~ ~override~ ~clabso01.2da~ ~override~ ~clabpr01.2da~ ~override~ ~clabdr01.2da~ ~override~ ~clabsh01.2da~ ~override~
+	COUNT_2DA_COLS numcolumns
+	COUNT_2DA_ROWS numcolumns numrows
+	INSERT_2DA_ROW numrows numcolumns ~ME_QUICSS   AP_MEQUICSS ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****       ~
+	IF_EXISTS
+	UNLESS ~MEQUICSS~
+
+COPY_EXISTING_REGEXP ~.*\.cre~ ~override~
+	READ_BYTE class theclass
+	PATCH_IF theclass = 1 OR theclass = 3 OR theclass = 7 OR theclass = 8 OR theclass = 10 OR theclass = 11 OR (theclass >= 13 AND theclass <= 19) OR theclass = 21 BEGIN
+		LPF ADD_CRE_EFFECT INT_VAR opcode=setspellstate target=2 timing=9 parameter2=238 special=1 resist_dispel=2 STR_VAR effsource=~MEQUICSS~ END
+	END
+	UNLESS ~MEQUICSS~
+	BUT_ONLY_IF_IT_CHANGES
+
+BEGIN ~Allow druids to cast spells while shapeshifted~ DESIGNATED 1152
+
+COPY ~BetterHOF/ShapeshiftedCasting~ ~override~
+
+COPY_EXISTING ~plywwolf.itm~ ~override~ ~plybeetl.itm~ ~override~ ~felem.itm~ ~override~ ~eelem.itm~ ~override~ ~welem.itm~ ~override~ ~plyspid2.itm~ ~override~ ~plywyvrn.itm~ ~override~ ~plysala.itm~ ~override~ ~werewlf1.itm~ ~override~ ~werewlf2.itm~ ~override~
+	LPF DELETE_EFFECT INT_VAR silent=1 check_headers=0 check_globals=1 match_opcode=useefffile STR_VAR match_resource=~MEDISSHP~ END
+	LPF DELETE_EFFECT INT_VAR silent=1 check_headers=0 check_globals=1 match_opcode=useefffile STR_VAR match_resource=~MEDISSHW~ END
+	LPF DELETE_EFFECT INT_VAR silent=1 check_headers=0 check_globals=1 match_opcode=disablespellcasting END
+	IF_EXISTS
+/*
+COPY_EXISTING ~kitlist.2da~ ~override~
+	COUNT_2DA_ROWS 10 numrows
+	FOR (i = 1; i < numrows; ++i) BEGIN
+		READ_2DA_ENTRY i 8 10 class_of_kit
+		PATCH_IF class_of_kit=classdruid BEGIN
+			READ_2DA_ENTRY i 5 10 abilities_of_kit
+			INNER_ACTION BEGIN
+				COPY_EXISTING ~%abilities_of_kit%.2da~ ~override~
+					COUNT_2DA_COLS numcolumns_2
+					COUNT_2DA_ROWS numcolumns_2 numrows_2
+					INSERT_2DA_ROW numrows_2 numcolumns_2 ~ME_CL175   AP_MECL175  ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****       ~
+					IF_EXISTS
+					UNLESS ~MECL175~
+			END
+		END
+	END
+
+COPY_EXISTING ~clabdr01.2da~ ~override~
+	COUNT_2DA_COLS numcolumns
+	COUNT_2DA_ROWS numcolumns numrows
+	INSERT_2DA_ROW numrows numcolumns ~ME_CL175   AP_MECL175  ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****       ~
+	IF_EXISTS
+	UNLESS ~MECL175~
+*/
