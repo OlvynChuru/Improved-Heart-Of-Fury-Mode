@@ -1898,7 +1898,7 @@ COPY_EXISTING ~tooltip.2da~ ~override~
 	END
 
 ACTION_IF (MOD_IS_INSTALLED ~EEex.tp2~ ~0~) BEGIN
-	COPY ~MESpells/lua/M__MEFUN.lua~ ~override~
+	COPY ~BetterHOF/lua/M__MEFUN.lua~ ~override~
 END
 
 COPY_EXISTING ~eeex_ini.lua~ ~override~
