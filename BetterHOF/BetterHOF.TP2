@@ -1973,8 +1973,8 @@ end
 
 ACTION_IF !(MOD_IS_INSTALLED ~EEex.tp2~ ~0~) BEGIN
 
-OUTER_SPRINT stringfighter @2400
-OUTER_SPRINT stringmage @2401
+OUTER_SPRINT stringfighter ~Fighter~
+OUTER_SPRINT stringmage ~Mage~
 SILENT
 
 COPY_EXISTING ~ui.menu~ ~override~
