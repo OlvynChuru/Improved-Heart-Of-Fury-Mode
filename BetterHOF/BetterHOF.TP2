@@ -14873,7 +14873,11 @@ COPY_EXISTING ~bandoth.cre~ ~override~
 	ADD_CRE_ITEM ~mebossim~ #0 #0 #0 ~NONE~ ~AMULET~
 	ADD_CRE_ITEM ~dagg01~ #0 #0 #0 ~NONE~ ~WEAPON1~ EQUIP
 	LPF ADD_CRE_EFFECT INT_VAR opcode=modifyallsaves target=1 timing=9 parameter1=9 END
-	LPF ADD_CRE_EFFECT INT_VAR opcode=stoneskin target=1 timing=1 parameter1=15 resist_dispel=3 school=8 sectype=7 END
+	PATCH_IF MOD_IS_INSTALLED ~MESpells.tp2~ ~24081~ BEGIN
+		LPF ADD_CRE_EFFECT INT_VAR opcode=401 target=1 timing=1 parameter1=15 resist_dispel=3 school=8 sectype=7 END
+	END ELSE BEGIN
+		LPF ADD_CRE_EFFECT INT_VAR opcode=stoneskin target=1 timing=1 parameter1=15 resist_dispel=3 school=8 sectype=7 END
+	END
 
 COPY_EXISTING_REGEXP ~bar[123].*\.cre~ ~override~ ~dlbar[123].*\.cre~ ~override~ ~angaar.cre~ ~override~ 
 	WRITE_LONG killxp 8000
@@ -15610,7 +15614,7 @@ COPY_EXISTING ~drowsor.cre~ ~override~
 	ADD_MEMORIZED_SPELL ~spwi709~ #6 ~wizard~ (1)
 	ADD_MEMORIZED_SPELL ~spwi715~ #6 ~wizard~ (2)
 	ADD_MEMORIZED_SPELL ~spwi716~ #6 ~wizard~ (1)
-	ADD_MEMORIZED_SPELL ~mems013~ #7 ~wizard~ (2)
+	ADD_MEMORIZED_SPELL ~mesu013~ #7 ~wizard~ (2)
 	ADD_MEMORIZED_SPELL ~spwi907~ #8 ~wizard~ (1)
 	ADD_MEMORIZED_SPELL ~spwi912~ #8 ~wizard~ (1)
 	ADD_MEMORIZED_SPELL ~spwi913~ #8 ~wizard~ (1)
@@ -24539,7 +24543,7 @@ COPY_EXISTING ~spwi117.spl~ ~override~ //Chill Touch
 	LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=(0 - 1) END
 	LPF ADD_SPELL_EFFECT INT_VAR opcode=damage target=2 timing=1 power=1 parameter2=magiccolddamage dicenumber=5 dicesize=4 resist_dispel=1 END
 	LPF ADD_SPELL_EFFECT INT_VAR opcode=modifystrength target=2 timing=0 duration=30 power=1 parameter1=(0 - 3) resist_dispel=1 savingthrow=vsdeath END
-	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell2 target=2 timing=0 duration=1 power=1 parameter2=1 resist_dispel=1 insert_point=0 END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=protectionfromspell2 target=2 timing=0 duration=1 power=1 parameter2=1 resist_dispel=1 insert_point=0 STR_VAR resource=~spwi117~ END
 	LPF ADD_SPELL_EFFECT INT_VAR opcode=applyeffectslist target=2 timing=1 power=1 parameter2=1 resist_dispel=1 insert_point=0 STR_VAR resource=~spwi117a~ END
 	LPF ADD_SPELL_EFFECT INT_VAR opcode=applyeffectslist target=2 timing=1 power=1 parameter2=1 resist_dispel=1 insert_point=0 STR_VAR resource=~spwi117c~ END
 	SAY UNIDENTIFIED_DESC @21117

@@ -1790,7 +1790,7 @@ Level: 7
 Sphere: Elemental Earth
 Range: 0
 Duration: 12 rounds
-Casting Time: 6
+Casting Time: 3
 Area of Effect: 15-ft. radius
 Saving Throw: Special
 
@@ -1806,9 +1806,9 @@ Range: Visual range of the caster
 Duration: 4 rounds
 Casting Time: 9
 Area of Effect: 14-ft. radius
-Saving Throw: None
+Saving Throw: 1/2
 
-This spell causes the area of effect to be covered in roaring flames, dealing 2d8 points of damage plus 1 per level of the caster to anything within the area of effect each round.~
+This spell causes the area of effect to be covered in roaring flames, dealing 2d8 points of damage plus 1 per level of the caster to anything within the area of effect each round. Creatures can Save vs. Spell for half damage.~
 @20706=~Symbol, Fear
 (Conjuration/Summoning)
 
