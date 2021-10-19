@@ -82,6 +82,8 @@ The Berserker Enrage ability has been changed substantially:
 
 ENRAGE: The character becomes enraged for 1 turn. While enraged, all slashing, piercing, and crushing damage dealt by the character is increased by 50%, but all physical damage taken by the character is also increased by 50%. The character also becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.
 
+Berserkers also can no longer wear medium or heavy armor. Being tanky isn't their specialty.
+
 Wizard Slayers now gain +5% magic resistance per level and can use certain magic items whose purpose is largely to protect against magic (e.g. Potions of Magic Protection/Blocking/Shielding).
 
 The Kensai Kai ability now lasts a number of seconds equal to the character's Wisdom. Also, Kensai can now wear bracers and gauntlets. Their bonuses to hit and damage rolls keep increasing up to level 48.
@@ -90,7 +92,7 @@ Barbarians now keep rolling their full d12 for HP each level even after level 9.
 
 The Dwarven Defender Defensive Stance ability now only lasts 4 rounds and reduces movement speed by 80%. It still gives +50% physical damage resistance, so it should still be useful.
 
-Rangers and Paladins now learn spells faster. They get their first 1st-level spell slot at level 2, and they gain access to a higher spell level every 3 levels thereafter (2nd-level spells at level 5, 3rd-level spells at level 8, 4th-level spells at level 11, 5th-level spells at level 4, and 6th-level spells at level 17).
+Rangers and Paladins now learn spells faster. They get their first 1st-level spell slot at level 2, and they gain access to a higher spell level every 3 levels thereafter (2nd-level spells at level 5, 3rd-level spells at level 8, 4th-level spells at level 11, 5th-level spells at level 14, and 6th-level spells at level 17).
 
 All spellcasters (Mages, Sorcerers, Bards, Clerics, Druids, Rangers, Paladins) now continue to gain spell slots each level all the way up to level 50.
 
@@ -171,7 +173,7 @@ The Priest of Talos Lightning Bolt ability is now Talos Bolt:
 
 TALOS BOLT: This spell fires a bolt of lightning at the target, similar to the Lightning Bolt spell, except that the damage is not capped at 10d6, dealing as much as 50d6 damage from a 50th level caster.
 
-The Priest of Helm Seeker Sword ability has been improved:
+The Priest of Helm Seeking Sword ability has been improved:
 
 SEEKING SWORD: This spell creates a sword in the Cleric's hand that cannot be dropped or unequipped. The sword is enchanted as a +4 weapon, provides a +100 THAC0 bonus, and will not critically miss. It deals 2d4+4 damage to any target it hits and dispels Mirror Image, Invisibility, and Improved Invisibility effects on the target. The weapon sets the Cleric's number of attacks per round to 3 and lasts for 1 round per level.
 

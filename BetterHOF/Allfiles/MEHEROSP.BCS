@@ -175,7 +175,7 @@ OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
 OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
-24 0 0 0 0"AR9711ME_Hero_Spawn_Delay" "" AC
+48 0 0 0 0"AR9711ME_Hero_Spawn_Delay" "" AC
 AC
 7OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
@@ -184,6 +184,70 @@ OB
 OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
 0 1363 612 0 0"TRHARLD" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16399 4 0 0 0 "AR9711ME_Hero_Spawn" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16437 4 0 0 0 "AR9711ME_Hero_Spawn_Shorten" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16465 0 0 0 0 "METRErris" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16465 0 0 0 0 "METRGeddian" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16465 0 0 0 0 "METRGiles" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16465 0 0 0 0 "METRZierkki" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16465 0 0 0 0 "METRHobart" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16465 0 0 0 0 "METRHarald" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "MYAREAMAP_GROUP_HOSTILE9" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 0 0 0 "ME_Hero_Spawn_Delay" "AR9711" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+30OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+4 0 0 0 0"AR9711ME_Hero_Spawn_Shorten" "" AC
+AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+3 0 0 0 0"AR9711ME_Hero_Spawn_Delay" "" AC
 RE
 RS
 CR
@@ -219,7 +283,7 @@ OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
 OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
-18 0 0 0 0"AR9711ME_Hero_Spawn_Delay" "" AC
+36 0 0 0 0"AR9711ME_Hero_Spawn_Delay" "" AC
 AC
 7OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
@@ -228,6 +292,50 @@ OB
 OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
 0 837 640 0 0"METRRAKS" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16399 5 0 0 0 "AR9711ME_Hero_Spawn" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16437 5 0 0 0 "AR9711ME_Hero_Spawn_Shorten" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16465 0 0 0 0 "METRMaharajah" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "MYAREAMAP_GROUP_HOSTILE9" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 0 0 0 "ME_Hero_Spawn_Delay" "AR9711" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+30OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+5 0 0 0 0"AR9711ME_Hero_Spawn_Shorten" "" AC
+AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+3 0 0 0 0"AR9711ME_Hero_Spawn_Delay" "" AC
 RE
 RS
 CR
@@ -263,7 +371,7 @@ OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
 OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
-42 0 0 0 0"AR9711ME_Hero_Spawn_Delay" "" AC
+63 0 0 0 0"AR9711ME_Hero_Spawn_Delay" "" AC
 AC
 7OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
@@ -288,6 +396,62 @@ OB
 OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
 0 1155 774 0 0"TRCRIEK" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16399 6 0 0 0 "AR9711ME_Hero_Spawn" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16437 6 0 0 0 "AR9711ME_Hero_Spawn_Shorten" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16465 0 0 0 0 "METRMaharajah" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16465 0 0 0 0 "METRAdran" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16465 0 0 0 0 "METRShelhai" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16465 0 0 0 0 "METRCriek" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "MYAREAMAP_GROUP_HOSTILE9" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 0 0 0 "ME_Hero_Spawn_Delay" "AR9711" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+30OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+6 0 0 0 0"AR9711ME_Hero_Spawn_Shorten" "" AC
+AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+9 0 0 0 0"AR9711ME_Hero_Spawn_Delay" "" AC
 RE
 RS
 CR
@@ -323,7 +487,7 @@ OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
 OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
-54 0 0 0 0"AR9711ME_Hero_Spawn_Delay" "" AC
+81 0 0 0 0"AR9711ME_Hero_Spawn_Delay" "" AC
 AC
 7OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
@@ -356,6 +520,62 @@ OB
 OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
 0 1499 604 0 0"METRBEHO" "" AC
+RE
+RS
+CR
+CR
+CO
+TR
+16399 7 0 0 0 "AR9711ME_Hero_Spawn" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16437 7 0 0 0 "AR9711ME_Hero_Spawn_Shorten" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16465 0 0 0 0 "METRHarpyQueen" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16465 0 0 0 0 "METRJackalPackLeader" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16465 0 0 0 0 "METRMinotaurLord" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16465 0 0 0 0 "METRElderHiveMother" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16399 0 1 0 0 "MYAREAMAP_GROUP_HOSTILE9" "" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+TR
+16449 0 0 0 0 "ME_Hero_Spawn_Delay" "AR9711" OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+TR
+CO
+RS
+RE
+100AC
+30OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+7 0 0 0 0"AR9711ME_Hero_Spawn_Shorten" "" AC
+AC
+115OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+OB
+0 0 0 0 0 0 0 0 0 0 0 0 ""OB
+6 0 0 0 0"AR9711ME_Hero_Spawn_Delay" "" AC
 RE
 RS
 CR
