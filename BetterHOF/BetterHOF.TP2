@@ -3477,7 +3477,7 @@ COPY_EXISTING ~bwtalis.itm~ ~override~
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifyac parameter1=2 END
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifysavevsbreath new_opcode=modifyallsaves parameter1=2 END
 	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifycoldresistance parameter1=40 END
-	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifymaxhp parameter1=20 parameter2=0 END
+	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=0 check_globals=1 match_opcode=modifymaxhp parameter1=20 END
 	WRITE_LONG price 8000
 	SAY NAME2 @112
 	SAY IDENTIFIED_DESC @113
@@ -6367,8 +6367,10 @@ COPY_EXISTING ~ulswd3a.itm~ ~override~
 	SAY IDENTIFIED_DESC @530
 
 COPY_EXISTING ~ulswd3c.itm~ ~override~
-	LPF DELETE_ITEM_EFFECT INT_VAR opcode_to_delete=(0 - 1) END
-	LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=castspell target=1 timing=1 parameter1=15 parameter2=2 probability1=6 STR_VAR resource=~sppr607~ END
+	// LPF DELETE_ITEM_EFFECT INT_VAR opcode_to_delete=(0 - 1) END
+	// LPF ADD_ITEM_EFFECT INT_VAR type=1 opcode=castspell target=1 timing=1 parameter1=15 parameter2=2 probability1=6 STR_VAR resource=~sppr607~ END
+	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=1 check_globals=0 match_opcode=modifycurrenthp parameter1=100 parameter2=2 dicenumber=0 dicesize=0 END
+	LPF ALTER_ITEM_EFFECT INT_VAR check_headers=1 check_globals=0 match_probability1=15 probability1=6 END
 	WRITE_BYTE firstheaderspeedfactor 3
 	WRITE_LONG price 5000
 	SAY IDENTIFIED_DESC @531
